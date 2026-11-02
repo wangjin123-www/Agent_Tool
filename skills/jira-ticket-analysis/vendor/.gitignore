@@ -1,0 +1,8 @@
+# 机器相关，不进版本库也不进分发包
+sources.json
+jira-tool/scripts/config.json
+lark-cli/*.exe
+
+# 上游工具自带的缓存
+__pycache__/
+canlog/output/

@@ -1,0 +1,16 @@
+# Configuration for s32k3-rtd-master
+# Copy to config/config.conf and fill in real values.
+# config/config.conf is gitignored; this .example file is committed.
+#
+# Put machine-specific or project-specific values here (absolute paths, tool
+# chain locations, credentials, endpoints). SKILL.md and scripts must read
+# these at runtime instead of hardcoding absolute paths.
+
+# Example:
+# PROJECT_ROOT=/abs/path/to/project
+# TOOLCHAIN_PATH=/abs/path/to/toolchain
+
+[paths]
+# S32K3xx RM/DS 手册 markdown 库根目录（rm 子命令用）。
+# 留空则自动回退：<skill>/docs/NXP_S32K3（随 skill 分发，正主）→ <工程根>/doc/NXP_S32K3（旧位置兼容）。
+# docs_root = d:/wnagjin/Compay_Project/CDC_7255/cdc_7255/.agents/skills/s32k3-rtd-master/docs/NXP_S32K3

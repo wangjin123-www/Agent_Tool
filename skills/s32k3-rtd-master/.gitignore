@@ -1,0 +1,9 @@
+# Runtime output - never commit
+output/
+
+# Real config holds machine-specific values; commit config/*.example instead
+config/config.conf
+
+# Python
+__pycache__/
+*.pyc

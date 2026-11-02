@@ -1,0 +1,24 @@
+# doc/ 目录过滤规则 —— .gitignore 语法,一行一条
+# 双通道:
+#   ① 你直接在这里手填(改完保存即可,filter 模式会用)
+#   ② filter 模式分析 doc/ 后回写此文件(auto_analyze/writeback = true 时)
+# 回写会自动备份为 doc-filter.txt.bak
+
+# === 二进制文档 → 排除(进上下文也是乱码) ===
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+
+# === 例外:业务文档必须保留 ===
+!**/CLAUDE.md
+!**/*.md

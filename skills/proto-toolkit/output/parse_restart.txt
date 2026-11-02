@@ -1,0 +1,6 @@
+解析完成 → D:\wnagjin\Compay_Project\CDC_7255\cdc_7255\.claude\skills\proto-toolkit\output\protocol.json
+  服务 13 / 接口 65 / struct 9 / 枚举 22 / revision 1115
+生成[c] → D:\wnagjin\Compay_Project\CDC_7255\cdc_7255\.claude\skills\proto-toolkit\codegen\c\generated\Proto_Types.h
+生成[c] → D:\wnagjin\Compay_Project\CDC_7255\cdc_7255\.claude\skills\proto-toolkit\codegen\c\generated\Proto_Enums.h
+生成[c] → D:\wnagjin\Compay_Project\CDC_7255\cdc_7255\.claude\skills\proto-toolkit\codegen\c\generated\Proto_CmdTable.c
+生成[c] → D:\wnagjin\Compay_Project\CDC_7255\cdc_7255\.claude\skills\proto-toolkit\codegen\c\generated\Proto_CmdStub.c

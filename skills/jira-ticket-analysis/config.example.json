@@ -1,0 +1,72 @@
+{
+  "_must_edit_note": "★★★ 用之前必须改完下面 6 处，否则会拿【别人的工程 / 别人的仓库 / 别人的邮箱】去分析：① email.to ② projects[].name ③ projects[].desc ④ projects[].gitlab.project ⑤ projects[].gitlab.branch ⑥ projects[].analysis_scope（分析范围就是仓库根时填空串 \"\"）。改完把本文件另存为 config.json（同目录），不要直接改本文件。",
+
+  "jira": {
+    "jql": "assignee = currentUser() AND statusCategory != Done ORDER BY priority desc, updated desc",
+    "max_tickets": 5,
+    "skip_if_unchanged": true,
+    "notify_when_empty": false
+  },
+  "gitlab": {
+    "host": "https://gitlab.gz.cvte.cn",
+    "token_source": "git-credential-manager",
+    "ssl_verify": true
+  },
+  "_email_note": "【必改】to 必须换成你自己的邮箱，默认示例值会发给别人。要真发信还需把 lark-cli.exe 放进 vendor/lark-cli/（不随包分发）；不发信则整条分析链路照跑。",
+  "email": {
+    "to": "you@example.com",
+    "cc": ""
+  },
+  "dbc_dir": "dbc",
+  "feedback": {
+    "subtask_type": "",
+    "_note": "回写时新建的分析子任务用哪个 issue 类型。留空则自动探测该项目下 subtask=true 的类型并缓存到 workspace/out/subtask_types.json；该项目有多个子任务类型时，在此显式写类型名。",
+    "stage": "",
+    "_stage_note": "分析子任务的「所处阶段」。取值由你自己项目的 JIRA 字段配置决定，须填 JIRA 里真实存在的选项名。留空则不发该字段。",
+    "due_days": 7,
+    "_due_days_note": "到期日兜底：父单到期日已过期（或没有）时，取今天 + 本天数。",
+    "assignee": "",
+    "_assignee_note": "责任人/经办人兜底。留空则继承父单经办人；父单也没经办人时才用这里填的 JIRA 账号名。",
+    "skip_required_check": false,
+    "_skip_required_check_note": "建子任务时是否加 --no-check-required。很多项目的 createmeta 会把「有默认值、实际不强制」的字段也标成必填（如带 has_default 的日期字段），而 create_issue.py 的 preflight 不认 has_default，会误判缺失并以退出码 2 拒绝创建。判断方法：先 --apply，若报「必填字段缺失」而去掉该字段后 JIRA 并不报错，就打开本项。",
+    "extra_fields": {},
+    "_extra_fields_note": "建子任务时额外并入的 Jira 字段（原样进 --data，parent 不可覆盖）。有些项目的 createmeta 会把若干自定义字段标为必填，但真实 issue 里它们是空的、实际不阻塞创建；若 --apply 真报 400，就在此处按字段名或 id 补齐。"
+  },
+  "claude_md": {
+    "local_seed_dir": "docs_seed",
+    "_note": "工具内的 CLAUDE.md 投放点，目录结构 docs_seed/<repo>@<branch>/。只从这里复制 CLAUDE.md 文档本身播种缓存，代码永远来自工具自己的工作区快照。留空则不播种，改由内置的 mdmap.py 走 brief→subagent→install。"
+  },
+  "projects": [
+    {
+      "_project_note": "一个工程一项。下方 name/desc/gitlab.project/gitlab.branch/analysis_scope 五项都要改成你自己的。多个工程并存时，AI 靠 desc 判断工单归属，所以 desc 要写清产品/芯片/RTOS/负责功能/适用车型，不要求精确规则。",
+      "_name_note": "【必改】工程名，会出现在报告与汇总表里。",
+      "name": "你的工程名（示例：CDC_7255 车载控制器）",
+      "_desc_note": "【必改】AI 据此判断工单属于哪个工程。写一段大概描述即可：产品 / 芯片 / RTOS / 负责功能 / 适用车型。",
+      "desc": "一段描述：基于什么芯片与 RTOS、分层结构、负责哪些功能、适用车型。",
+      "gitlab": {
+        "_project_note": "【必改】GitLab 项目路径（不含 host，形如 group/subgroup/repo），要能从 gitlab.host 访问到。",
+        "project": "your_group/your_repo",
+        "_branch_note": "【必改】要分析的分支名，必须是上面项目里真实存在的分支。",
+        "branch": "your_branch"
+      },
+      "_analysis_scope_note": "【必改】只取这个子目录的代码（sparse-checkout）。若分析范围就是仓库根（CLAUDE.md 在根目录），填空串 \"\"；填了仓库里不存在的目录会导致取码为空。",
+      "analysis_scope": "FreeRTOS_S32K312",
+      "dbc_hint": "WB101 / WB102 车型的 IHU CAN 矩阵"
+    }
+  ],
+  "_paths_note": "以下路径一律相对工具根目录（换成绝对路径也支持）。改用相对路径后，整个工具可以 zip 走、解压到任意位置、换盘符都不必改配置。",
+  "paths": {
+    "workspace_root": "workspace",
+    "jira_ops": "vendor/jira-tool/scripts/ops",
+    "frame_extractor": "vendor/frame_extractor/frame_extractor.py",
+    "canlog_dir": "vendor/canlog",
+    "claude_md_map": "vendor/claude-md-map/mdmap.py",
+    "lark_cli": "vendor/lark-cli/lark-cli.exe",
+    "_venv_note": "venv_py 通常不用填 —— 默认找 <工具目录>/.venv。只在想把 venv 放到工具外时才填。",
+    "venv_py": "",
+    "_uv_note": "uv 只在重建 .venv 时用。留 'uv' 表示走 PATH；也可填绝对路径。",
+    "uv": "uv",
+    "_base_python_note": "重建 venv 时用的基础解释器版本或路径。留空默认 3.12。",
+    "base_python": ""
+  }
+}

@@ -1,0 +1,13 @@
+# build_mode.conf — 构建模式开关
+#
+# 用法:复制本文件为同目录下的 build_mode.conf,按需改 mode。
+# 优先级:命令行 --mode compile|full > 本文件 > 默认 compile。
+#
+#   compile = 仅编译检查(-c 不链接,产物 .o 落 skill output/obj,不碰 Debug_FLASH)
+#   full    = 完整构建(调 Debug_FLASH/makefile:编译+链接,生成 .elf/.map/.hex,
+#             并补 arm-none-eabi-objcopy -O binary 产出 .bin)
+#
+# 前提(full 模式):
+#   - Debug_FLASH/ 下存在 S32DS 生成的 makefile/subdir.mk/*.args(GUI 构建过一次即有)
+#   - DLP 已放行 arm-none-eabi-gcc.exe(同 check 模式前提)
+mode = compile

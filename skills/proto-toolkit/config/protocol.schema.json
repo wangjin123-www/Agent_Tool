@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "protocol.json 契约（表格为权威，本文件是其投影的约定校验）",
+  "type": "object",
+  "required": ["schema_version", "source", "services", "structs", "enums"],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet", "spreadsheet_token", "revision"],
+      "properties": {
+        "spreadsheet": {"type": "string"},
+        "spreadsheet_token": {"type": "string"},
+        "revision": {"type": ["integer", "null"]},
+        "parse_stats": {
+          "type": "object",
+          "properties": {
+            "si": {"$ref": "#/definitions/parse_stats"},
+            "ds": {"$ref": "#/definitions/parse_stats"},
+            "pe": {"$ref": "#/definitions/parse_stats"}
+          }
+        }
+      }
+    },
+    "services": {"type": "array", "items": {"$ref": "#/definitions/service"}},
+    "structs": {"type": "array", "items": {"$ref": "#/definitions/struct"}},
+    "enums": {"type": "array", "items": {"$ref": "#/definitions/enum"}}
+  },
+  "definitions": {
+    "parse_stats": {
+      "type": "object",
+      "properties": {
+        "rows": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "array"}
+      }
+    },
+    "service": {
+      "type": "object",
+      "required": ["name", "id", "id_hex", "interfaces"],
+      "properties": {
+        "name": {"type": "string"},
+        "id": {"type": ["integer", "null"], "minimum": 0, "maximum": 255},
+        "id_hex": {"type": "string", "pattern": "^0x[0-9A-F]{2}$"},
+        "desc": {"type": "string"},
+        "namespace": {"type": "string"},
+        "interfaces": {"type": "array", "items": {"$ref": "#/definitions/interface"}}
+      }
+    },
+    "interface": {
+      "type": "object",
+      "required": ["name", "direction", "msg_id", "msg_id_hex"],
+      "properties": {
+        "name": {"type": "string"},
+        "desc": {"type": "string"},
+        "type": {"type": "string"},
+        "tx_type": {"type": "string"},
+        "direction": {"enum": ["SOC_TO_MCU", "MCU_TO_SOC", ""]},
+        "section_dir": {"enum": ["SOC_TO_MCU", "MCU_TO_SOC", ""]},
+        "msg_id": {"type": "integer", "minimum": 0, "maximum": 65535},
+        "msg_id_hex": {"type": "string", "pattern": "^0x[0-9A-F]{4}$"},
+        "pair_id": {"type": "integer", "minimum": 0, "maximum": 65535},
+        "pair_id_hex": {"type": "string", "pattern": "^0x[0-9A-F]{4}$"},
+        "transport": {"type": "string"},
+        "qos": {"type": "string"},
+        "params": {"type": "array", "items": {"$ref": "#/definitions/param"}}
+      }
+    },
+    "param": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {"type": "string"},
+        "type": {"type": "string"},
+        "desc": {"type": "string"},
+        "io": {"type": "string"},
+        "enum_ref": {"type": "string"}
+      }
+    },
+    "struct": {
+      "type": "object",
+      "required": ["name", "members"],
+      "properties": {
+        "name": {"type": "string"},
+        "service": {"type": "string"},
+        "namespace": {"type": "string"},
+        "desc": {"type": "string"},
+        "category": {"type": "string"},
+        "size": {"type": "string"},
+        "members": {"type": "array", "items": {"$ref": "#/definitions/member"}}
+      }
+    },
+    "member": {
+      "type": "object",
+      "required": ["name", "type", "byte_start", "byte_end", "open"],
+      "properties": {
+        "name": {"type": "string"},
+        "type": {"type": "string"},
+        "byte_start": {"type": ["integer", "null"], "minimum": 0},
+        "byte_end": {"type": ["integer", "null"], "minimum": 0},
+        "open": {"type": "boolean"},
+        "bit": {"type": "string"},
+        "desc": {"type": "string"},
+        "enum_ref": {"type": "string"}
+      }
+    },
+    "enum": {
+      "type": "object",
+      "required": ["name", "items"],
+      "properties": {
+        "name": {"type": "string"},
+        "items": {"type": "array", "items": {"$ref": "#/definitions/enum_item"}}
+      }
+    },
+    "enum_item": {
+      "type": "object",
+      "required": ["value", "value_hex", "c_name"],
+      "properties": {
+        "value": {"type": ["integer", "null"], "minimum": 0, "maximum": 255},
+        "value_hex": {"type": "string", "pattern": "^0x[0-9A-F]{2}$"},
+        "c_name": {"type": "string"},
+        "desc": {"type": "string"}
+      }
+    }
+  }
+}

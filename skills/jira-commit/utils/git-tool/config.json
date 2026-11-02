@@ -1,0 +1,9 @@
+{
+  "id": "git-tool",
+  "name": "Git提交日志生成器",
+  "description": "快速生成规范化的Git提交信息，支持多种提交类型和自动填充功能",
+  "icon": "📝",
+  "category": "开发工具",
+  "version": "1.0.0",
+  "author": "LH"
+}

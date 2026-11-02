@@ -1,0 +1,2546 @@
+{
+  "schema_version": "1.1.0",
+  "source": {
+    "spreadsheet": "7255 MCU&SOC 通信协议表",
+    "spreadsheet_token": "YrK8sncCThe8UstV0yBcvkjQnMR",
+    "revision": 1144,
+    "parse_stats": {
+      "si": {
+        "rows": 91,
+        "skipped": []
+      },
+      "ds": {
+        "rows": 34,
+        "skipped": []
+      },
+      "pe": {
+        "rows": 116,
+        "skipped": []
+      }
+    }
+  },
+  "services": [
+    {
+      "name": "PowerMgr",
+      "id": 1,
+      "id_hex": "0x01",
+      "desc": "电源管理：上下电握手/休眠/复位/心跳",
+      "namespace": "power",
+      "interfaces": [
+        {
+          "name": "PowerOnHandshakeMtd",
+          "desc": "上电握手：MPU 启动后首先发送本命令与 MCU 建立通讯握手\n1 秒内未收到 0x8100 需重发，握手成功后停放",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 256,
+          "msg_id_hex": "0x0100",
+          "pair_id": 33024,
+          "pair_id_hex": "0x8100",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "MPURequestsDataSynchronization",
+              "type": "uint8",
+              "desc": "MPU请求数据同步",
+              "io": "NONE",
+              "enum_ref": "MPU_REQ_DATA_SYNC"
+            }
+          ]
+        },
+        {
+          "name": "PowerOffReqMtd",
+          "desc": "SoC 主动向 MCU 请求睡眠或关机",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 257,
+          "msg_id_hex": "0x0101",
+          "pair_id": 33025,
+          "pair_id_hex": "0x8101",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "PowerReqCmd",
+              "type": "uint8",
+              "desc": "电源请求命令",
+              "io": "IN",
+              "enum_ref": "POWER_REQ_CMD"
+            }
+          ]
+        },
+        {
+          "name": "HeartbeatSetMtd",
+          "desc": "心跳设置下发：开启/关闭 Comm UART 或 Fast UART 心跳",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 258,
+          "msg_id_hex": "0x0102",
+          "pair_id": 33026,
+          "pair_id_hex": "0x8102",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "HeartbeatSet",
+              "type": "uint8",
+              "desc": "心跳设置状态",
+              "io": "IN",
+              "enum_ref": "HEARTBEAT_SET"
+            }
+          ]
+        },
+        {
+          "name": "HeartbeatReqMtd",
+          "desc": "心跳请求：周期 1000ms 发送；握手后默认开启心跳",
+          "type": "event",
+          "tx_type": "Cycle(1000ms)",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 259,
+          "msg_id_hex": "0x0103",
+          "pair_id": 33027,
+          "pair_id_hex": "0x8103",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "HeartbeatState",
+              "type": "uint8",
+              "desc": "心跳状态",
+              "io": "IN",
+              "enum_ref": "HEARTBEAT_STATE"
+            }
+          ]
+        },
+        {
+          "name": "PowerMgmtReqMtd",
+          "desc": "SoC 主动查询 MCU 的电源状态",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 261,
+          "msg_id_hex": "0x0105",
+          "pair_id": 33029,
+          "pair_id_hex": "0x8105",
+          "transport": "spi&uart"
+        },
+        {
+          "name": "StrStateFbMtd",
+          "desc": "STR 状态反馈",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 262,
+          "msg_id_hex": "0x0106",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "STRState",
+              "type": "uint8",
+              "desc": "STR状态",
+              "io": "IN",
+              "enum_ref": "STR_STATE"
+            }
+          ]
+        },
+        {
+          "name": "StrDebugSetMtd",
+          "desc": "SoC 向 MCU 通知 STR 最大维持时长",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 286,
+          "msg_id_hex": "0x011E",
+          "pair_id": 33054,
+          "pair_id_hex": "0x811E",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "StrMaxDuration",
+              "type": "struct",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "PowerStateSetMtd",
+          "desc": "SoC 向 MCU 同步自身电源状态",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 264,
+          "msg_id_hex": "0x0108",
+          "pair_id": 33032,
+          "pair_id_hex": "0x8108",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "powerState",
+              "type": "uint8",
+              "desc": "高4bit OTA模式，低4bit SoC电源状态",
+              "io": "IN",
+              "enum_ref": "IC_POWER_STATE"
+            }
+          ]
+        },
+        {
+          "name": "PowerOffReqAckEvt",
+          "desc": "SoC 应答 MCU 关机通知",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 287,
+          "msg_id_hex": "0x011F",
+          "pair_id": 33055,
+          "pair_id_hex": "0x811F",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "BatteryStatusAckEvt",
+          "desc": "SoC 应答电压异常上报",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 263,
+          "msg_id_hex": "0x0107",
+          "pair_id": 33031,
+          "pair_id_hex": "0x8107",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "EnterStrAckEvt",
+          "desc": "SoC 应答进入 STR 通知",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 269,
+          "msg_id_hex": "0x010D",
+          "pair_id": 33037,
+          "pair_id_hex": "0x810D",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "WakeSocAckEvt",
+          "desc": "SoC 应答唤醒",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 270,
+          "msg_id_hex": "0x010E",
+          "pair_id": 33038,
+          "pair_id_hex": "0x810E",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "McuRestartReqMtd",
+          "desc": "SoC 主动请求 MCU 对其重启",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 271,
+          "msg_id_hex": "0x010F",
+          "pair_id": 33039,
+          "pair_id_hex": "0x810F",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "restartType",
+              "type": "uint8",
+              "desc": "重启类型",
+              "io": "IN",
+              "enum_ref": "RESTART_TYPE"
+            }
+          ]
+        },
+        {
+          "name": "KeyRestartAckEvt",
+          "desc": "SoC 回复按键结果",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 272,
+          "msg_id_hex": "0x0110",
+          "pair_id": 33040,
+          "pair_id_hex": "0x8110",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "keyResult",
+              "type": "uint8",
+              "desc": "0=NOK，1=OK",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "RtcRestartAckEvt",
+          "desc": "SoC 应答 RTC 重启请求",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 273,
+          "msg_id_hex": "0x0111",
+          "pair_id": 33041,
+          "pair_id_hex": "0x8111",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "restartResult",
+              "type": "uint8",
+              "desc": "0=OK，1=NOK",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "SocPowerCtrlAckEvt",
+          "desc": "SoC 应答外设供电控制",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 274,
+          "msg_id_hex": "0x0112",
+          "pair_id": 33042,
+          "pair_id_hex": "0x8112",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "PeripheralPowerAck",
+              "type": "struct",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "McuPowerCtrlReqMtd",
+          "desc": "SoC 请求 MCU 控制某些外设电源",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 275,
+          "msg_id_hex": "0x0113",
+          "pair_id": 33043,
+          "pair_id_hex": "0x8113",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "McuPowerReq",
+              "type": "struct",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "RtcTimeSetMtd",
+          "desc": "SoC 向 MCU 通知 RTC 唤醒时间",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 276,
+          "msg_id_hex": "0x0114",
+          "pair_id": 33044,
+          "pair_id_hex": "0x8114",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "DateTime",
+              "type": "struct",
+              "desc": "年/月/日/时/分/秒",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "TimeZoneSetMtd",
+          "desc": "SoC 向 MCU 通知当前时区",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 277,
+          "msg_id_hex": "0x0115",
+          "pair_id": 33045,
+          "pair_id_hex": "0x8115",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "TimeZoneInfo",
+              "type": "struct",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "SentryModeSetMtd",
+          "desc": "SoC 通知 MCU 哨兵模式激活状态",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 278,
+          "msg_id_hex": "0x0116",
+          "pair_id": 33046,
+          "pair_id_hex": "0x8116",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "enable",
+              "type": "uint8",
+              "desc": "0=关闭，1=开启",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "PetModeSetMtd",
+          "desc": "SoC 通知 MCU 宠物模式激活状态",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 279,
+          "msg_id_hex": "0x0117",
+          "pair_id": 33047,
+          "pair_id_hex": "0x8117",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "enable",
+              "type": "uint8",
+              "desc": "0=关闭，1=开启",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "BatteryVoltageAckEvt",
+          "desc": "SoC 应答电池电压",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 280,
+          "msg_id_hex": "0x0118",
+          "pair_id": 33048,
+          "pair_id_hex": "0x8118",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "VehicleSignalAckEvt",
+          "desc": "SoC 应答车身信号",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 281,
+          "msg_id_hex": "0x0119",
+          "pair_id": 33049,
+          "pair_id_hex": "0x8119",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "HeartbeatLostAckEvt",
+          "desc": "SoC 应答心跳丢失通知",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 282,
+          "msg_id_hex": "0x011A",
+          "pair_id": 33050,
+          "pair_id_hex": "0x811A",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=OK，1=NOK",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "HeartbeatRecoveredAckEvt",
+          "desc": "SoC 应答心跳恢复通知",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 283,
+          "msg_id_hex": "0x011B",
+          "pair_id": 33051,
+          "pair_id_hex": "0x811B",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=OK，1=NOK",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "TemperatureAbnormalAckEvt",
+          "desc": "SoC 应答温度异常上报",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 284,
+          "msg_id_hex": "0x011C",
+          "pair_id": 33052,
+          "pair_id_hex": "0x811C",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "HandshakeAckEvt",
+          "desc": "MCU 回复 MPU 握手成功",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33024,
+          "msg_id_hex": "0x8100",
+          "pair_id": 256,
+          "pair_id_hex": "0x0100",
+          "transport": "spi&uart"
+        },
+        {
+          "name": "PowerOffReqEvt",
+          "desc": "MCU 通知 SoC 关机（0x8101）",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33055,
+          "msg_id_hex": "0x811F",
+          "pair_id": 287,
+          "pair_id_hex": "0x011F",
+          "transport": "spi&uart"
+        },
+        {
+          "name": "HeartbeatSetStatusEvt",
+          "desc": "MCU 心跳开关状态上报",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33026,
+          "msg_id_hex": "0x8102",
+          "pair_id": 258,
+          "pair_id_hex": "0x0102",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "HeartbeatStatus",
+              "type": "uint8",
+              "desc": "心跳开关状态",
+              "io": "OUT",
+              "enum_ref": "HEARTBEAT_STATUS"
+            }
+          ]
+        },
+        {
+          "name": "HeartbeatFeedbackEvt",
+          "desc": "MCU 心跳反馈",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33027,
+          "msg_id_hex": "0x8103",
+          "pair_id": 259,
+          "pair_id_hex": "0x0103",
+          "transport": "spi&uart"
+        },
+        {
+          "name": "PowerMgmtStatusEvt",
+          "desc": "MCU 电源管理状态上报",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33029,
+          "msg_id_hex": "0x8105",
+          "pair_id": 261,
+          "pair_id_hex": "0x0105",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "PowerManageStatus",
+              "type": "uint8",
+              "desc": "电源管理状态",
+              "io": "OUT",
+              "enum_ref": "POWER_MGMT_STATUS"
+            }
+          ]
+        },
+        {
+          "name": "AccStatusEvt",
+          "desc": "MCU 上报 ACC 状态",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33030,
+          "msg_id_hex": "0x8106",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "ACC_Status",
+              "type": "uint8",
+              "desc": "ACC状态",
+              "io": "OUT",
+              "enum_ref": "ACC_STATUS"
+            }
+          ]
+        },
+        {
+          "name": "BatteryStatusEvt",
+          "desc": "MCU 通知 SoC 电压异常（0x8107）：0超低压/1低压/2正常/3高压/4超高压/5断开",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33031,
+          "msg_id_hex": "0x8107",
+          "pair_id": 263,
+          "pair_id_hex": "0x0107",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "batteryStatus",
+              "type": "uint8",
+              "desc": "0超低压/1低压/2正常/3高压/4超高压/5断开",
+              "io": "OUT",
+              "enum_ref": "VOLTAGE_STATUS"
+            }
+          ]
+        },
+        {
+          "name": "ResetReasonEvt",
+          "desc": "MCU 上报启动状态：复位原因值定义见 MCU 芯片手册",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33053,
+          "msg_id_hex": "0x811D",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "ResetReason",
+              "type": "uint8",
+              "desc": "复位原因，值定义见 MCU 芯片手册",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "AutosarNmModeEvt",
+          "desc": "MCU 上报 Autosar 网络管理模式与状态",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33034,
+          "msg_id_hex": "0x810A",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "AutosarNmStatus",
+              "type": "struct",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "VehicleAntiTheftEvt",
+          "desc": "MCU 上报车辆防盗状态",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33035,
+          "msg_id_hex": "0x810B",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "VehicleAntiCurrentSts",
+              "type": "uint8",
+              "desc": "车辆防盗状态",
+              "io": "OUT",
+              "enum_ref": "VEHICLE_ANTI_THEFT_STS"
+            }
+          ]
+        },
+        {
+          "name": "RemoteControlModeEvt",
+          "desc": "MCU 上报远程控制模式",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33036,
+          "msg_id_hex": "0x810C",
+          "transport": "spi&uart",
+          "params": [
+            {
+              "name": "RemoteControlSt",
+              "type": "uint8",
+              "desc": "远程控制模式",
+              "io": "OUT",
+              "enum_ref": "REMOTE_CTRL_ST"
+            }
+          ]
+        },
+        {
+          "name": "PowerOffReqStatusEvt",
+          "desc": "MCU 应答 SoC 睡眠/关机请求：0=成功，非0=错误码",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33025,
+          "msg_id_hex": "0x8101",
+          "pair_id": 257,
+          "pair_id_hex": "0x0101",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "PowerOffReqResult",
+              "type": "struct",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "PowerStateSetStatusEvt",
+          "desc": "MCU 应答 SoC 电源状态同步",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33032,
+          "msg_id_hex": "0x8108",
+          "pair_id": 264,
+          "pair_id_hex": "0x0108",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "PowerStateSyncResult",
+              "type": "struct",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "StrDebugSetStatusEvt",
+          "desc": "MCU 应答 STR 最大维持时长设置",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33054,
+          "msg_id_hex": "0x811E",
+          "pair_id": 286,
+          "pair_id_hex": "0x011E",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "StrMaxDuration",
+              "type": "struct",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "EnterStrEvt",
+          "desc": "MCU 通知 SoC 进入 STR",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33037,
+          "msg_id_hex": "0x810D",
+          "pair_id": 269,
+          "pair_id_hex": "0x010D",
+          "transport": "spi&uart",
+          "qos": "level1"
+        },
+        {
+          "name": "WakeSocEvt",
+          "desc": "MCU 唤醒 SoC",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33038,
+          "msg_id_hex": "0x810E",
+          "pair_id": 270,
+          "pair_id_hex": "0x010E",
+          "transport": "spi&uart",
+          "qos": "level1"
+        },
+        {
+          "name": "McuRestartAckEvt",
+          "desc": "MCU 应答 SoC 重启请求",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33039,
+          "msg_id_hex": "0x810F",
+          "pair_id": 271,
+          "pair_id_hex": "0x010F",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "KeyRestartReqEvt",
+          "desc": "MCU 因按键请求重启 SoC（有车速时 SoC 弹窗确认）",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33040,
+          "msg_id_hex": "0x8110",
+          "pair_id": 272,
+          "pair_id_hex": "0x0110",
+          "transport": "spi&uart",
+          "qos": "level1"
+        },
+        {
+          "name": "RtcRestartReqEvt",
+          "desc": "MCU 因 RTC 定时时间到请求重启 SoC",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33041,
+          "msg_id_hex": "0x8111",
+          "pair_id": 273,
+          "pair_id_hex": "0x0111",
+          "transport": "spi&uart",
+          "qos": "level1"
+        },
+        {
+          "name": "SocPowerCtrlReqEvt",
+          "desc": "MCU 向 SoC 请求对某些外设进行供电控制",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33042,
+          "msg_id_hex": "0x8112",
+          "pair_id": 274,
+          "pair_id_hex": "0x0112",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "PeripheralPowerReq",
+              "type": "struct",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "McuPowerCtrlAckEvt",
+          "desc": "MCU 应答外设电源控制",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33043,
+          "msg_id_hex": "0x8113",
+          "pair_id": 275,
+          "pair_id_hex": "0x0113",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "McuPowerAck",
+              "type": "struct",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "RtcTimeSetAckEvt",
+          "desc": "MCU 应答 RTC 时间设置",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33044,
+          "msg_id_hex": "0x8114",
+          "pair_id": 276,
+          "pair_id_hex": "0x0114",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "TimeZoneSetAckEvt",
+          "desc": "MCU 应答时区设置",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33045,
+          "msg_id_hex": "0x8115",
+          "pair_id": 277,
+          "pair_id_hex": "0x0115",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "SentryModeAckEvt",
+          "desc": "MCU 应答哨兵模式状态",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33046,
+          "msg_id_hex": "0x8116",
+          "pair_id": 278,
+          "pair_id_hex": "0x0116",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "PetModeAckEvt",
+          "desc": "MCU 应答宠物模式状态",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33047,
+          "msg_id_hex": "0x8117",
+          "pair_id": 279,
+          "pair_id_hex": "0x0117",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "result",
+              "type": "uint8",
+              "desc": "0=成功，非0=错误码",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "BatteryVoltageEvt",
+          "desc": "MCU 向 SoC 通知电池电压",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33048,
+          "msg_id_hex": "0x8118",
+          "pair_id": 280,
+          "pair_id_hex": "0x0118",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "voltage",
+              "type": "uint16",
+              "desc": "电池电压",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "VehicleSignalEvt",
+          "desc": "MCU 向 SoC 通知车身信号（IGN、车门等）",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33049,
+          "msg_id_hex": "0x8119",
+          "pair_id": 281,
+          "pair_id_hex": "0x0119",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "VehicleSignalStatus",
+              "type": "struct",
+              "desc": "IGN 状态与整车 IGN 状态",
+              "io": "OUT"
+            }
+          ]
+        },
+        {
+          "name": "HeartbeatLostEvt",
+          "desc": "MCU 通知 SoC 其心跳已丢失",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33050,
+          "msg_id_hex": "0x811A",
+          "pair_id": 282,
+          "pair_id_hex": "0x011A",
+          "transport": "spi&uart",
+          "qos": "level1"
+        },
+        {
+          "name": "HeartbeatRecoveredEvt",
+          "desc": "MCU 通知 SoC 心跳丢失现象已恢复",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33051,
+          "msg_id_hex": "0x811B",
+          "pair_id": 283,
+          "pair_id_hex": "0x011B",
+          "transport": "spi&uart",
+          "qos": "level1"
+        },
+        {
+          "name": "TemperatureAbnormalEvt",
+          "desc": "MCU 通知 SoC 温度异常",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 33052,
+          "msg_id_hex": "0x811C",
+          "pair_id": 284,
+          "pair_id_hex": "0x011C",
+          "transport": "spi&uart",
+          "qos": "level1",
+          "params": [
+            {
+              "name": "temperatureStatus",
+              "type": "uint8",
+              "desc": "温度状态",
+              "io": "OUT",
+              "enum_ref": "TEMPERATURE_STATUS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BacklightSrv",
+      "id": 2,
+      "id_hex": "0x02",
+      "desc": "背光与亮度",
+      "namespace": "backlight",
+      "interfaces": []
+    },
+    {
+      "name": "AdasSrv",
+      "id": 4,
+      "id_hex": "0x04",
+      "desc": "ADAS 控制：子项设置/查询全部/全量回显",
+      "namespace": "adas",
+      "interfaces": []
+    },
+    {
+      "name": "BodySrv",
+      "id": 5,
+      "id_hex": "0x05",
+      "desc": "车身与灯光：子项设置/执行控制/查询全部/全量回显",
+      "namespace": "body",
+      "interfaces": []
+    },
+    {
+      "name": "HvacSrv",
+      "id": 6,
+      "id_hex": "0x06",
+      "desc": "空调：子项设置/查询全部/全量回显",
+      "namespace": "hvac",
+      "interfaces": []
+    },
+    {
+      "name": "SeatSrv",
+      "id": 7,
+      "id_hex": "0x07",
+      "desc": "座椅：主/副驾设置",
+      "namespace": "seat",
+      "interfaces": []
+    },
+    {
+      "name": "SelfCtrlSrv",
+      "id": 8,
+      "id_hex": "0x08",
+      "desc": "自身控制：SOC 降温风扇",
+      "namespace": "selfctrl",
+      "interfaces": [
+        {
+          "name": "SocFanQueryMtd",
+          "desc": "SOC 降温风扇查询：查询风扇速度",
+          "type": "method(rr)",
+          "tx_type": "",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 2049,
+          "msg_id_hex": "0x0801",
+          "pair_id": 34818,
+          "pair_id_hex": "0x8802"
+        },
+        {
+          "name": "SocFanCtrlMtd",
+          "desc": "SOC 降温风扇控制：通过 pwm 值调整风扇转速",
+          "type": "method(rr)",
+          "tx_type": "",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 2050,
+          "msg_id_hex": "0x0802",
+          "pair_id": 34818,
+          "pair_id_hex": "0x8802",
+          "params": [
+            {
+              "name": "pwm",
+              "type": "uint8",
+              "desc": "PWM 值，范围 [0-100]",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "SocFanSpeedEvt",
+          "desc": "SOC 降温风扇转速事件：控制与查询的响应都走这里",
+          "type": "event",
+          "tx_type": "",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 34818,
+          "msg_id_hex": "0x8802",
+          "params": [
+            {
+              "name": "speed",
+              "type": "uint16",
+              "desc": "风扇转速",
+              "io": "OUT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SafetySrv",
+      "id": 10,
+      "id_hex": "0x0A",
+      "desc": "安全与告警",
+      "namespace": "safety",
+      "interfaces": []
+    },
+    {
+      "name": "DiagSrv",
+      "id": 11,
+      "id_hex": "0x0B",
+      "desc": "诊断：UDS 透传",
+      "namespace": "diag",
+      "interfaces": []
+    },
+    {
+      "name": "OtaSrv",
+      "id": 12,
+      "id_hex": "0x0C",
+      "desc": "升级：升级指令/状态/文件信息/分包数据",
+      "namespace": "ota",
+      "interfaces": [
+        {
+          "name": "UpgradeCmdEvt",
+          "desc": "SOC 通知 MCU 升级指令",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 3072,
+          "msg_id_hex": "0x0C00",
+          "transport": "spi",
+          "params": [
+            {
+              "name": "UpgradeReqStatus",
+              "type": "uint8",
+              "desc": "升级请求状态",
+              "io": "IN",
+              "enum_ref": "OTA_REQ_STS"
+            }
+          ]
+        },
+        {
+          "name": "UpgradeFileInfoRspEvt",
+          "desc": "SOC 回复升级文件信息（0x8C02 的响应）",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 3074,
+          "msg_id_hex": "0x0C02",
+          "pair_id": 35842,
+          "pair_id_hex": "0x8C02",
+          "transport": "spi",
+          "params": [
+            {
+              "name": "UpgradeFileInfo",
+              "type": "struct",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "UpgradeDataRspEvt",
+          "desc": "SOC 回复升级包数据（0x8C03 的响应）",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "SOC_TO_MCU",
+          "section_dir": "SOC_TO_MCU",
+          "msg_id": 3075,
+          "msg_id_hex": "0x0C03",
+          "pair_id": 35843,
+          "pair_id_hex": "0x8C03",
+          "transport": "spi",
+          "params": [
+            {
+              "name": "UpgradeDataPkg",
+              "type": "struct",
+              "io": "IN"
+            }
+          ]
+        },
+        {
+          "name": "UpgradeStatusEvt",
+          "desc": "MCU 通知 soc 升级状态",
+          "type": "event",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 35841,
+          "msg_id_hex": "0x8C01",
+          "transport": "spi",
+          "params": [
+            {
+              "name": "MCUUpgradeStatus",
+              "type": "uint8",
+              "desc": "升级状态",
+              "io": "OUT",
+              "enum_ref": "OTA_UPGRADE_STS"
+            }
+          ]
+        },
+        {
+          "name": "UpgradeFileInfoReqMtd",
+          "desc": "MCU 请求升级文件信息",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 35842,
+          "msg_id_hex": "0x8C02",
+          "pair_id": 3074,
+          "pair_id_hex": "0x0C02",
+          "transport": "spi"
+        },
+        {
+          "name": "UpgradeDataReqMtd",
+          "desc": "MCU 请求升级包数据",
+          "type": "method(rr)",
+          "tx_type": "event",
+          "direction": "MCU_TO_SOC",
+          "section_dir": "MCU_TO_SOC",
+          "msg_id": 35843,
+          "msg_id_hex": "0x8C03",
+          "pair_id": 3075,
+          "pair_id_hex": "0x0C03",
+          "transport": "spi",
+          "params": [
+            {
+              "name": "PkgSeq",
+              "type": "uint32",
+              "desc": "包序号 BYTE0-3，从 0 开始每次 +1，到 0xFFFFFFFF 后回 0",
+              "io": "OUT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SysSrv",
+      "id": 13,
+      "id_hex": "0x0D",
+      "desc": "系统服务：时间同步/外设状态",
+      "namespace": "sys",
+      "interfaces": []
+    },
+    {
+      "name": "VersionSrv",
+      "id": 14,
+      "id_hex": "0x0E",
+      "desc": "版本查询",
+      "namespace": "version",
+      "interfaces": []
+    },
+    {
+      "name": "VehicleSignalSrv",
+      "id": 131,
+      "id_hex": "0x83",
+      "desc": "车辆状态与信号：一帧承载 N 个信号",
+      "namespace": "vehicle",
+      "interfaces": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "DateTime",
+      "service": "SysSrv",
+      "namespace": "sys",
+      "desc": "时间同步（0x0D 0x01/0x02、0x8D 0x02）",
+      "category": "struct",
+      "size": "6",
+      "members": [
+        {
+          "name": "year",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "年"
+        },
+        {
+          "name": "month",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "月"
+        },
+        {
+          "name": "day",
+          "type": "uint8",
+          "byte_start": 2,
+          "byte_end": 2,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "日"
+        },
+        {
+          "name": "hour",
+          "type": "uint8",
+          "byte_start": 3,
+          "byte_end": 3,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "时"
+        },
+        {
+          "name": "minute",
+          "type": "uint8",
+          "byte_start": 4,
+          "byte_end": 4,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "分"
+        },
+        {
+          "name": "second",
+          "type": "uint8",
+          "byte_start": 5,
+          "byte_end": 5,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "秒"
+        }
+      ]
+    },
+    {
+      "name": "PeripheralStatus",
+      "service": "SysSrv",
+      "namespace": "sys",
+      "desc": "外设工作状态（0x8D 0x04）",
+      "category": "struct",
+      "size": "3",
+      "members": [
+        {
+          "name": "can1",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "CAN1：0=在线/1=故障"
+        },
+        {
+          "name": "can2",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "CAN2：0=在线/1=故障"
+        },
+        {
+          "name": "other",
+          "type": "uint8",
+          "byte_start": 2,
+          "byte_end": 2,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "其它外设状态"
+        }
+      ]
+    },
+    {
+      "name": "AutosarNmStatus",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "Autosar 网络管理模式与状态（0x810A）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "nm_mode",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "Autosar网络管理模式",
+          "enum_ref": "AUTOSAR_NM_MODE"
+        },
+        {
+          "name": "nm_state",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "Autosar网络管理状态",
+          "enum_ref": "AUTOSAR_NM_STATE"
+        }
+      ]
+    },
+    {
+      "name": "UpgradeFileInfo",
+      "service": "OtaSrv",
+      "namespace": "ota",
+      "desc": "升级文件信息（0x0C02）",
+      "category": "struct",
+      "size": "10",
+      "members": [
+        {
+          "name": "file_size",
+          "type": "uint32",
+          "byte_start": 0,
+          "byte_end": 3,
+          "open": false,
+          "bit": "0-31bit",
+          "desc": "文件大小 BYTE0-3（byte3-byte0）"
+        },
+        {
+          "name": "frame_upgrade_data_len",
+          "type": "uint16",
+          "byte_start": 4,
+          "byte_end": 5,
+          "open": false,
+          "bit": "0-15bit",
+          "desc": "数据分包长度 BYTE4-5（byte1-byte0）"
+        },
+        {
+          "name": "total_pkg_num",
+          "type": "uint32",
+          "byte_start": 6,
+          "byte_end": 9,
+          "open": false,
+          "bit": "0-31bit",
+          "desc": "包序号总数 BYTE6-9（byte3-byte0）"
+        }
+      ]
+    },
+    {
+      "name": "UpgradeDataPkg",
+      "service": "OtaSrv",
+      "namespace": "ota",
+      "desc": "升级包数据（0x0C03）",
+      "category": "struct",
+      "size": "4+N",
+      "members": [
+        {
+          "name": "pkg_seq",
+          "type": "uint32",
+          "byte_start": 0,
+          "byte_end": 3,
+          "open": false,
+          "bit": "0-31bit",
+          "desc": "包序号 BYTE0-3（从 0 开始递增）"
+        },
+        {
+          "name": "upgrade_data",
+          "type": "uint8[]",
+          "byte_start": 4,
+          "byte_end": null,
+          "open": true,
+          "bit": "0-7bit",
+          "desc": "升级包数据 BYTE4-N，末包以 0xFF 填充"
+        }
+      ]
+    },
+    {
+      "name": "StrMaxDuration",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "STR 最大维持时长（MD 14）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "function",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 关闭 / 1 打开 / 2 读取状态"
+        },
+        {
+          "name": "hours",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 - 7×24 小时"
+        }
+      ]
+    },
+    {
+      "name": "VehicleSignalStatus",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "车身信号状态（MD 18）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "ign_state",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 IGN OFF / 1 IGN ON / 0xFF 无效"
+        },
+        {
+          "name": "vehicle_ign_state",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 IGN_OFF / 1 IGN_ACC / 2 IGN_ON / 3 IGN_START"
+        }
+      ]
+    },
+    {
+      "name": "PowerOffReqResult",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "SoC 睡眠/关机请求的响应（MD 4）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "powerReqCmd",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 请求STR / 1 请求关机 / 2 请求重启"
+        },
+        {
+          "name": "result",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 成功 / 非0 错误码"
+        }
+      ]
+    },
+    {
+      "name": "PowerStateSyncResult",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "SoC 电源状态同步的响应（MD 10）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "powerState",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "高4bit OTA模式 / 低4bit SoC电源状态"
+        },
+        {
+          "name": "result",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0 成功 / 非0 错误码"
+        }
+      ]
+    },
+    {
+      "name": "PeripheralPowerReq",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "外设电源控制请求载荷（0x8112）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "power_type",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "外设类型 0x00 背光 / 0x01 功放 / 0x02 中控屏幕 / 0x03 仪表屏幕"
+        },
+        {
+          "name": "on_off",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0x00 关闭 / 0x01 打开"
+        }
+      ]
+    },
+    {
+      "name": "PeripheralPowerAck",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "外设电源控制应答载荷（0x0112）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "power_type",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "外设类型 0x00 背光 / 0x01 功放 / 0x02 中控屏幕 / 0x03 仪表屏幕"
+        },
+        {
+          "name": "result",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0x00 成功 / 非0 错误码"
+        }
+      ]
+    },
+    {
+      "name": "McuPowerReq",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "MCU 电源控制请求载荷（0x0113）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "ctrl_type",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "控制类型 0x00 保留 / 0x01 请求控制 VBUS 电源"
+        },
+        {
+          "name": "ctrl_cmd",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0x00 关闭 / 0x01 打开 / 0x02 重启"
+        }
+      ]
+    },
+    {
+      "name": "McuPowerAck",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "MCU 电源控制应答载荷（0x8113）",
+      "category": "struct",
+      "size": "2",
+      "members": [
+        {
+          "name": "ctrl_type",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "控制类型 0x00 保留 / 0x01 VBUS"
+        },
+        {
+          "name": "result",
+          "type": "uint8",
+          "byte_start": 1,
+          "byte_end": 1,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0x00 成功 / 非0 错误码"
+        }
+      ]
+    },
+    {
+      "name": "TimeZoneInfo",
+      "service": "PowerMgr",
+      "namespace": "power",
+      "desc": "时区偏移信息（0x0115）",
+      "category": "struct",
+      "size": "3",
+      "members": [
+        {
+          "name": "sign",
+          "type": "uint8",
+          "byte_start": 0,
+          "byte_end": 0,
+          "open": false,
+          "bit": "0-7bit",
+          "desc": "0x00 正数 / 0x01 负数"
+        },
+        {
+          "name": "offset_seconds",
+          "type": "uint16",
+          "byte_start": 1,
+          "byte_end": 2,
+          "open": false,
+          "bit": "0-15bit",
+          "desc": "当前需要偏移的秒数"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "MPU_REQ_DATA_SYNC",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "NO_REQUEST",
+          "desc": "无请求"
+        }
+      ]
+    },
+    {
+      "name": "RESET_TYPE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "RESET_MCU",
+          "desc": "复位 MCU"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "RESET_TOUCH_KEY",
+          "desc": "复位 TOUCH KEY"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "RESET_FACTORY",
+          "desc": "恢复出厂设置复位"
+        }
+      ]
+    },
+    {
+      "name": "HEARTBEAT_SET",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "HB_SET_COMM_OFF",
+          "desc": "关闭 Comm UART 心跳功能"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "HB_SET_FAST_ON",
+          "desc": "开启 Fast UART 心跳功能"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "HB_SET_FAST_OFF",
+          "desc": "关闭 Fast UART 心跳功能"
+        }
+      ]
+    },
+    {
+      "name": "HEARTBEAT_STATE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "HEARTBEAT_TIMEOUT",
+          "desc": "接收 MCU 心跳反馈超时 10 秒"
+        }
+      ]
+    },
+    {
+      "name": "POWER_MGMT_REQ",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "PWR_EXIT_DELAY_WORK",
+          "desc": "退出延时工作"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "PWR_BATT_TOO_HIGH_READY",
+          "desc": "电池电压过高就绪"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "PWR_BATT_TOO_LOW_READY",
+          "desc": "电池电压过低就绪"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "PWR_ENTRY_STANDBY",
+          "desc": "进入待机"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "PWR_EXIT_STANDBY",
+          "desc": "退出待机"
+        },
+        {
+          "value": 6,
+          "value_hex": "0x06",
+          "c_name": "PWR_ENTRY_CLOCK_MODE",
+          "desc": "进入时钟模式"
+        },
+        {
+          "value": 7,
+          "value_hex": "0x07",
+          "c_name": "PWR_EXIT_CLOCK_MODE",
+          "desc": "退出时钟模式"
+        },
+        {
+          "value": 8,
+          "value_hex": "0x08",
+          "c_name": "PWR_ENTRY_HALF_RUN",
+          "desc": "进入半运行（预留）"
+        },
+        {
+          "value": 9,
+          "value_hex": "0x09",
+          "c_name": "PWR_EXIT_HALF_RUN",
+          "desc": "退出半运行"
+        },
+        {
+          "value": 255,
+          "value_hex": "0xFF",
+          "c_name": "PWR_REQ_INVALID",
+          "desc": "无效值"
+        }
+      ]
+    },
+    {
+      "name": "STR_STATE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "STR_PREPARE_ENTRY",
+          "desc": "准备进入 STR 状态"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "STR_NOTIFY_MCU_ENTRY",
+          "desc": "通知 MCU 进入 STR 状态"
+        }
+      ]
+    },
+    {
+      "name": "STR_DEBUG",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "STR_DEBUG_1MIN",
+          "desc": "1 分钟"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "STR_DEBUG_5MIN",
+          "desc": "5 分钟"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "STR_DEBUG_30MIN",
+          "desc": "30 分钟"
+        }
+      ]
+    },
+    {
+      "name": "IC_POWER_STATE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "IC_PWR_RUN",
+          "desc": "RUN 运行（KL15 ON）"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "IC_PWR_STANDBY1",
+          "desc": "STANDBY1 待机模式1（ACC OFF 10 分钟且无报警、无设防）"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "IC_PWR_STANDBY2",
+          "desc": "STANDBY2 待机模式2（ACC ON 但未完全进入 RUN，或报警/门等特殊场景后恢复）"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "IC_PWR_STANDBY3",
+          "desc": "STANDBY3 待机模式3（KL15 OFF，但带部分显示/控制）"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "IC_PWR_STANDBY4",
+          "desc": "STANDBY4 待机模式4（有报警信息）"
+        },
+        {
+          "value": 6,
+          "value_hex": "0x06",
+          "c_name": "IC_PWR_STR",
+          "desc": "STR 系统休眠（等待网络信号 MCU 触发唤醒）"
+        },
+        {
+          "value": 7,
+          "value_hex": "0x07",
+          "c_name": "IC_PWR_STR_PREPARE",
+          "desc": "STR_PREPARE 休眠准备"
+        },
+        {
+          "value": 8,
+          "value_hex": "0x08",
+          "c_name": "IC_PWR_STR_ENTER",
+          "desc": "STR_ENTER 进入中"
+        },
+        {
+          "value": 9,
+          "value_hex": "0x09",
+          "c_name": "IC_PWR_STR_FAILED",
+          "desc": "STR_FAILED 休眠失败"
+        },
+        {
+          "value": 10,
+          "value_hex": "0x0A",
+          "c_name": "IC_PWR_REMOTE_CTRL",
+          "desc": "REMOTE_CTRL 远程控制模式"
+        },
+        {
+          "value": 11,
+          "value_hex": "0x0B",
+          "c_name": "IC_PWR_UPDATE",
+          "desc": "UPDATE 软件升级中"
+        }
+      ]
+    },
+    {
+      "name": "HEARTBEAT_STATUS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "HB_STS_COMM_OFF",
+          "desc": "关闭 Comm UART 心跳功能"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "HB_STS_FAST_ON",
+          "desc": "开启 Fast UART 心跳功能"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "HB_STS_FAST_OFF",
+          "desc": "关闭 Fast UART 心跳功能"
+        }
+      ]
+    },
+    {
+      "name": "POWER_MGMT_STATUS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "PWR_ST_HALF_RUN",
+          "desc": "半运行"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "PWR_ST_RUNNING",
+          "desc": "运行中"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "PWR_ST_EXTEND_RUN",
+          "desc": "延长运行"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "PWR_ST_STANDBY",
+          "desc": "待机"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "PWR_ST_PRE_SLEEP",
+          "desc": "休眠前"
+        },
+        {
+          "value": 6,
+          "value_hex": "0x06",
+          "c_name": "PWR_ST_SLEEP",
+          "desc": "休眠"
+        },
+        {
+          "value": 7,
+          "value_hex": "0x07",
+          "c_name": "PWR_ST_DEEP_SLEEP",
+          "desc": "深度休眠"
+        },
+        {
+          "value": 8,
+          "value_hex": "0x08",
+          "c_name": "PWR_ST_BATT_HIGH",
+          "desc": "电池电压高"
+        },
+        {
+          "value": 9,
+          "value_hex": "0x09",
+          "c_name": "PWR_ST_BATT_LOW",
+          "desc": "电池电压低"
+        },
+        {
+          "value": 10,
+          "value_hex": "0x0A",
+          "c_name": "PWR_ST_STR",
+          "desc": "STR"
+        }
+      ]
+    },
+    {
+      "name": "ACC_STATUS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "ACC_ON",
+          "desc": "ACC 开"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "IGN_ON",
+          "desc": "IGN 开"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "ACC_START",
+          "desc": "启动"
+        }
+      ]
+    },
+    {
+      "name": "BATTERY_STATUS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "BATTERY_HIGH",
+          "desc": "高电压"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "BATTERY_LOW",
+          "desc": "低电压"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "BATTERY_OVER",
+          "desc": "超高电压"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "BATTERY_UNDER",
+          "desc": "超低电压"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "BATTERY_INVALID",
+          "desc": "无效"
+        }
+      ]
+    },
+    {
+      "name": "AUTOSAR_NM_MODE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "NM_MODE_PREPARE_BUS_SLEEP",
+          "desc": "准备总线睡眠模式"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "NM_MODE_SYNCHRONIZED",
+          "desc": "同步模式"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "NM_MODE_NETWORK",
+          "desc": "网络模式"
+        }
+      ]
+    },
+    {
+      "name": "AUTOSAR_NM_STATE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "NM_STATE_BUS_SLEEP",
+          "desc": "总线睡眠状态"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "NM_STATE_PREPARE_BUS_SLEEP",
+          "desc": "准备总线睡眠状态"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "NM_STATE_READY_SLEEP",
+          "desc": "就绪睡眠状态"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "NM_STATE_NORMAL_OPERATION",
+          "desc": "正常运行状态"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "NM_STATE_REPEAT_MESSAGE",
+          "desc": "重复消息状态"
+        },
+        {
+          "value": 6,
+          "value_hex": "0x06",
+          "c_name": "NM_STATE_SYNCHRONIZED",
+          "desc": "同步状态"
+        },
+        {
+          "value": 7,
+          "value_hex": "0x07",
+          "c_name": "NM_STATE_WAIT_CHECK_ACTIVATION",
+          "desc": "等待检查激活"
+        },
+        {
+          "value": 8,
+          "value_hex": "0x08",
+          "c_name": "NM_STATE_WAIT_NETWORK_STARTUP",
+          "desc": "等待网络启动"
+        }
+      ]
+    },
+    {
+      "name": "VEHICLE_ANTI_THEFT_STS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "ANTI_PRE_ALARMED",
+          "desc": "预警状态"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "ANTI_FULL_ALARMED",
+          "desc": "全报警状态"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "ANTI_ALARMED",
+          "desc": "报警状态"
+        }
+      ]
+    },
+    {
+      "name": "REMOTE_CTRL_ST",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "REMOTE_CTRL_ACTIVE",
+          "desc": "远程控制模式"
+        }
+      ]
+    },
+    {
+      "name": "OTA_REQ_STS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "OTA_REQ_FLAG_SAVED",
+          "desc": "升级请求（MCU 收到后存储升级标志位）"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "OTA_REQ_START",
+          "desc": "升级开始"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "OTA_REQ_DONE_REBOOT",
+          "desc": "升级完成，请求重启"
+        }
+      ]
+    },
+    {
+      "name": "OTA_UPGRADE_STS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "OTA_STS_FLAG_SAVED",
+          "desc": "升级标志位已存储，准备重启进入升级"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "OTA_STS_READY",
+          "desc": "升级就绪"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "OTA_STS_COND_UNSAT",
+          "desc": "当前条件不满足升级条件，退出升级"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "OTA_STS_FILE_DONE",
+          "desc": "当前文件升级结束，升级 OK"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "OTA_STS_REQ_TIMEOUT",
+          "desc": "数据请求次数超时，退出升级"
+        },
+        {
+          "value": 6,
+          "value_hex": "0x06",
+          "c_name": "OTA_STS_ERASE_FAIL",
+          "desc": "MCU 擦除 flash 失败，退出升级"
+        },
+        {
+          "value": 7,
+          "value_hex": "0x07",
+          "c_name": "OTA_STS_WRITE_FAIL",
+          "desc": "MCU 写 flash 失败，退出升级"
+        },
+        {
+          "value": 8,
+          "value_hex": "0x08",
+          "c_name": "OTA_STS_SIGN_FAIL",
+          "desc": "签名校验失败，退出升级"
+        },
+        {
+          "value": 9,
+          "value_hex": "0x09",
+          "c_name": "OTA_STS_HASH_FAIL",
+          "desc": "升级文件 hash 校验失败，退出升级"
+        }
+      ]
+    },
+    {
+      "name": "POWER_REQ_CMD",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "PWR_REQ_SHUTDOWN",
+          "desc": "请求关机"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "PWR_REQ_RESTART",
+          "desc": "请求重启"
+        }
+      ]
+    },
+    {
+      "name": "TEMPERATURE_STATUS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "TEMP_LOW",
+          "desc": "低温"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "TEMP_NORMAL",
+          "desc": "正常"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "TEMP_HIGH",
+          "desc": "高温"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "TEMP_OVER",
+          "desc": "超高温"
+        }
+      ]
+    },
+    {
+      "name": "VOLTAGE_STATUS",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "VOLTAGE_LOW",
+          "desc": "低压"
+        },
+        {
+          "value": 2,
+          "value_hex": "0x02",
+          "c_name": "VOLTAGE_NORMAL",
+          "desc": "正常"
+        },
+        {
+          "value": 3,
+          "value_hex": "0x03",
+          "c_name": "VOLTAGE_HIGH",
+          "desc": "高压"
+        },
+        {
+          "value": 4,
+          "value_hex": "0x04",
+          "c_name": "VOLTAGE_OVER",
+          "desc": "超高压"
+        },
+        {
+          "value": 5,
+          "value_hex": "0x05",
+          "c_name": "VOLTAGE_DISCONNECT",
+          "desc": "断开"
+        }
+      ]
+    },
+    {
+      "name": "RESTART_TYPE",
+      "items": [
+        {
+          "value": 1,
+          "value_hex": "0x01",
+          "c_name": "RESTART_WAKE_UP",
+          "desc": "wake up"
+        }
+      ]
+    }
+  ]
+}

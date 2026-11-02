@@ -1,0 +1,66 @@
+
+== 语义校验 ==
+  ! [S15] PowerMgr.PowerOnHandshakeMtd 缺QoS
+  ! [S15] PowerMgr.PowerOffReqMtd 缺QoS
+  ! [S15] PowerMgr.HeartbeatSetMtd 缺QoS
+  ! [S15] PowerMgr.HeartbeatReqMtd 缺QoS
+  ! [S15] PowerMgr.PowerMgmtReqMtd 缺QoS
+  ! [S15] PowerMgr.StrStateFbMtd 缺QoS
+  ! [S15] PowerMgr.StrDebugSetMtd 缺QoS
+  ! [S15] PowerMgr.PowerStateSetMtd 缺QoS
+  ! [S15] PowerMgr.HandshakeAckEvt 缺QoS
+  ! [S15] PowerMgr.PowerOffReqEvt 缺QoS
+  ! [S15] PowerMgr.HeartbeatSetStatusEvt 缺QoS
+  ! [S15] PowerMgr.HeartbeatFeedbackEvt 缺QoS
+  ! [S15] PowerMgr.PowerMgmtStatusEvt 缺QoS
+  ! [S15] PowerMgr.AccStatusEvt 缺QoS
+  ! [S15] PowerMgr.BatteryStatusEvt 缺QoS
+  ! [S15] PowerMgr.ResetReasonEvt 缺QoS
+  ! [S15] PowerMgr.AutosarNmModeEvt 缺QoS
+  ! [S15] PowerMgr.VehicleAntiTheftEvt 缺QoS
+  ! [S15] PowerMgr.RemoteControlModeEvt 缺QoS
+  ✗ [S05] SelfCtrlSrv.SocFanQueryMtd → 0x8802 单向指配（对方回指 空）
+  ! [S15] SelfCtrlSrv.SocFanQueryMtd 缺传输层/QoS/发送类型
+  ✗ [S05] SelfCtrlSrv.SocFanCtrlMtd → 0x8802 单向指配（对方回指 空）
+  ! [S15] SelfCtrlSrv.SocFanCtrlMtd 缺传输层/QoS/发送类型
+  ! [S15] SelfCtrlSrv.SocFanSpeedEvt 缺传输层/QoS/发送类型
+  ! [S15] OtaSrv.UpgradeCmdEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeFileInfoRspEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeDataRspEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeStatusEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeFileInfoReqMtd 缺QoS
+  ! [S15] OtaSrv.UpgradeDataReqMtd 缺QoS
+  · [SEC] BacklightSrv 为空服务块（占位）
+  · [SEC] AdasSrv 为空服务块（占位）
+  · [SEC] BodySrv 为空服务块（占位）
+  · [SEC] HvacSrv 为空服务块（占位）
+  · [SEC] SeatSrv 为空服务块（占位）
+  · [SEC] SafetySrv 为空服务块（占位）
+  · [SEC] DiagSrv 为空服务块（占位）
+  · [SEC] SysSrv 为空服务块（占位）
+  · [SEC] VersionSrv 为空服务块（占位）
+  · [SEC] VehicleSignalSrv 为空服务块（占位）
+  ! [LNK] parameter_enum!A116 缺链接 → 已重算写入 P19
+  ! [LNK] 枚举 RESET_TYPE（PE A4）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [LNK] 枚举 POWER_MGMT_REQ（PE A14）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [LNK] 枚举 STR_DEBUG（PE A28）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [LNK] 枚举 BATTERY_STATUS（PE A63）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [STY] RESTART_TYPE（A116:E116）缺边框/样式 → 已补齐
+  ! [S16] SI!P8 含内联值域但已有枚举链接，建议 P 只留描述：电源请求：0=请求STR/1=请求关机/2=请求重启
+  ! [S16] SI!P20 含内联值域且无枚举链接，应改用 Parameter Enum：0=NOK，1=OK
+  ! [S16] SI!P21 含内联值域且无枚举链接，应改用 Parameter Enum：0=OK，1=NOK
+  ! [S16] SI!P22 含内联值域且无枚举链接，应改用 Parameter Enum：0=背光，1=功放，2=中控屏幕，3=仪表屏幕
+  ! [S16] SI!P24 含内联值域且无枚举链接，应改用 Parameter Enum：0=保留，1=请求控制 VBUS 电源
+  ! [S16] SI!P25 含内联值域且无枚举链接，应改用 Parameter Enum：0=关闭，1=打开，2=重启
+  ! [S16] SI!P27 含内联值域且无枚举链接，应改用 Parameter Enum：0=正数，1=负数
+  ! [S16] SI!P29 含内联值域且无枚举链接，应改用 Parameter Enum：0=关闭，1=开启
+  ! [S16] SI!P30 含内联值域且无枚举链接，应改用 Parameter Enum：0=关闭，1=开启
+  ! [S16] SI!P33 含内联值域且无枚举链接，应改用 Parameter Enum：0=OK，1=NOK
+  ! [S16] SI!P34 含内联值域且无枚举链接，应改用 Parameter Enum：0=OK，1=NOK
+  ! [S16] SI!P56 含内联值域且无枚举链接，应改用 Parameter Enum：0=背光，1=功放，2=中控屏幕，3=仪表屏幕
+  ! [S16] SI!P57 含内联值域且无枚举链接，应改用 Parameter Enum：0=OFF，1=ON
+  ! [S16] SI!P58 含内联值域且无枚举链接，应改用 Parameter Enum：0=保留，1=VBUS
+  ! [S16] SI!P68 含内联值域但已有枚举链接，建议 P 只留描述：0=超低温，1=低温，2=正常，3=高温，4=超高温
+
+  汇总: 2 错误 / 49 告警 / 155 通过
+protocol: 13 服务 / 65 接口 / 9 struct / 22 枚举  (revision=1112)

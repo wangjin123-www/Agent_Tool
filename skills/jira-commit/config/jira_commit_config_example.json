@@ -1,0 +1,81 @@
+{
+  "_security_warning": "不要提交此文件到Git仓库！包含敏感认证信息",
+  "_usage": "❗️复制此文件为 jira_commit_config.json 并填写实际配置❗️",
+
+  "jira_url": "url",
+  "jira_project": "AERDM",
+
+  "default_pull_branch": "origin/main",
+
+  "auth": {
+    "username": "❗️填写你的域名❗️",
+    "password": "❗️填写你的密码❗️"
+  },
+
+  "notification": {
+    "_comment": "完成后通知：飞书邮件（lark-cli）。收件人自动取当前飞书账号邮箱，无需配置；email_cc 为抄送人邮箱列表，按需添加；email_enabled 设为 false 可关闭邮件通知",
+    "email_enabled": true,
+    "email_cc": [
+      "❗️填写抄送人邮箱❗️",
+      "❗️可继续追加，每行一个❗️"
+    ]
+  },
+
+  "commit_types": {
+    "feature": "功能和需求的修改和完善",
+    "bugfix": "针对BUG的修改和完善",
+    "config": "客户配置和参数的修改",
+    "merge": "合并其他分支已解决问题或功能",
+    "revert": "还原已提交修改项"
+  },
+
+  "impact_levels": {
+    "S": "系统级 - 影响整个系统架构或多个应用",
+    "A": "应用级 - 影响单个应用或主业务流程",
+    "B": "模块级 - 影响单个模块或功能单元",
+    "C": "组件级 - 影响单个组件或类",
+    "D": "细节级 - 小范围修改（变量、注释、格式等）"
+  },
+
+  "difficulty_levels": {
+    "A": {
+      "days": 3,
+      "hours": 24,
+      "label": "3天",
+      "description": "核心功能开发（主业务流程、算法实现、协议实现）、跨模块协作（≥3个模块）、性能优化（≥20%）"
+    },
+    "B": {
+      "days": 1,
+      "hours": 8,
+      "label": "1天",
+      "description": "独立功能开发（单个模块）、接口适配（第三方库集成）、一般性优化（<20%）"
+    },
+    "C": {
+      "days": 0.5,
+      "hours": 4,
+      "label": "0.5天",
+      "description": "辅助功能开发（日志、配置、工具函数）、缺陷修复、测试用例编写"
+    },
+    "D": {
+      "days": 0.125,
+      "hours": 1,
+      "label": "1小时",
+      "description": "文档编写、代码重构（不改变功能）、简单缺陷修复（<10行代码）"
+    }
+  },
+
+  "field_mappings": {
+    "issuetype": {"name": "任务"},
+    "assignee": {"name": "❗️填写经办人域名❗️"},
+    "customfield_10447": [{"name": "❗️填写责任人域名❗️"}],
+    "customfield_14804": {"name": "❗️填写审核人域名❗️"},
+    "customfield_10310": {"value": "EVT"}
+  },
+
+  "due_dates": {
+    "A": {"days": 3, "label": "3天"},
+    "B": {"days": 1, "label": "1天"},
+    "C": {"days": 0.5, "label": "0.5天"},
+    "D": {"days": 0.04, "label": "1小时"}
+  }
+}

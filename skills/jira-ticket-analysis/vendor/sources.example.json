@@ -1,0 +1,47 @@
+{
+  "//": "vendor 源路径映射 —— 复制成 sources.json 并按本机实际情况修改。",
+  "//why": "这是整个工具里唯一会出现绝对路径的地方，且只在开发期跑 tools/sync_vendor.py 时用；",
+  "//at_runtime": "运行时所有路径都由 config.json 的**相对路径**解析，不受本文件影响。",
+  "//refreshing": "上游工具更新后，重跑 python tools/sync_vendor.py 刷新 vendor/。",
+  "//portable": "下面留 `<本机路径>/...` 占位；换机器时改成自己的实际路径即可。sources.json 已进 .gitignore，不进分发包。",
+
+  "jira-tool": {
+    "//": "Jira 访问（python-jira）。scripts/ 下是 jira_bootstrap + jira_ops + 12 个 ops CLI。",
+    "//note": "config.json 含真实 PAT，会被 sync_vendor 一并搬运，但已进 .gitignore 与打包排除表。",
+    "src": "<本机路径>/skills/jira-tool/scripts",
+    "dest": "vendor/jira-tool/scripts",
+    "include": ["jira_bootstrap.py", "jira_ops.py", "ops", "config.json"]
+  },
+
+  "frame_extractor": {
+    "//": "5AA5 SOC↔MCU 数据帧提取。纯标准库单文件。",
+    "src": "<本机路径>/AI_Log_parsing",
+    "dest": "vendor/frame_extractor",
+    "include": ["frame_extractor.py"]
+  },
+
+  "canlog": {
+    "//": "BLF + DBC 解码，产出 AI 可读的 bundle。本地包 canlog_tool（非 pip 包）。",
+    "//note": "canlog_config.json 带机器绝对路径，sync_vendor 会重置它（去 history、output_root 改相对）。",
+    "src": "<本机路径>/AI_canlog",
+    "dest": "vendor/canlog",
+    "include": ["canlog_tool", "canlog_config.json"]
+  },
+
+  "claude-md-map": {
+    "//": "分层 CLAUDE.md 生成器。纯标准库单文件，靠 __file__ 与 --repo 定位，无硬编码路径。",
+    "src": "<本机路径>/skills/claude-md-map/scripts",
+    "dest": "vendor/claude-md-map",
+    "include": ["mdmap.py"]
+  },
+
+  "lark-cli": {
+    "//": "发汇总邮件用。49MB 的 Go 单文件 exe，**不随包分发**（体积翻倍，且换机器必须重新登录）。",
+    "//note": "optional=true：源不存在时 sync_vendor 只提示跳过。需要发邮件时手动把这个 exe 拷到 dest。",
+    "//auth": "登录态在用户目录 ~/.lark-cli/ 下，机器本地，本来就搬不走 —— 换机器要重新认证。",
+    "src": "<本机路径>/bin",
+    "dest": "vendor/lark-cli",
+    "include": ["lark-cli.exe"],
+    "optional": true
+  }
+}

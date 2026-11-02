@@ -1,0 +1,8 @@
+{
+  "ops": [
+    {
+      "kind": "delete_interface",
+      "name": "PowerOffReqAckEvt"
+    }
+  ]
+}

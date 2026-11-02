@@ -1,0 +1,111 @@
+{
+  "protocols": {
+    "魏桥协议": {
+      "desc": "7255 MCU-SOC UART 帧: {frame}; {len}, {sum}",
+      "fields": [
+        {
+          "name": "SYNC",
+          "len": 2,
+          "value": "5A A5",
+          "auto": "const"
+        },
+        {
+          "name": "ACK",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "LEN",
+          "len": 2,
+          "value": "00",
+          "role": "len",
+          "from": "MODE",
+          "to": "PARAM"
+        },
+        {
+          "name": "MODE",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "CMD",
+          "len": 2,
+          "value": ""
+        },
+        {
+          "name": "PARAM",
+          "len": -1,
+          "value": ""
+        },
+        {
+          "name": "SUM",
+          "len": 1,
+          "role": "sum",
+          "from": "ACK",
+          "to": "PARAM",
+          "alg": "sum_neg"
+        }
+      ]
+    }
+  },
+  "groups": {
+    "project": [
+      {
+        "name": "7255",
+        "protocol": "魏桥协议",
+        "children": [
+          {
+            "name": "风扇测试",
+            "cmds": [
+              {
+                "name": "7255_fan_0",
+                "fields": {
+                  "ACK": "00",
+                  "MODE": "00",
+                  "CMD": "0B 01",
+                  "PARAM": "00"
+                }
+              },
+              {
+                "name": "7255_fan_50",
+                "fields": {
+                  "ACK": "00",
+                  "MODE": "00",
+                  "CMD": "0B 01",
+                  "PARAM": "32"
+                }
+              }
+            ],
+            "children": []
+          },
+          {
+            "name": "echo测试",
+            "cmds": [
+              {
+                "name": "7255_echo_3B",
+                "fields": {
+                  "CMD": "0F FF",
+                  "PARAM": "00 02 03"
+                }
+              }
+            ],
+            "children": []
+          }
+        ],
+        "cmds": []
+      },
+      {
+        "name": "1",
+        "children": [],
+        "cmds": []
+      }
+    ],
+    "other": [
+      {
+        "name": "shell",
+        "children": [],
+        "cmds": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_comment": "语言注册表：新增语言 = 建 codegen/<lang>/（config/templates/generated）+ 写 scripts/gen/lang_<lang>.py + 这里加一条。status: ready=可生成 / todo=目录骨架已就绪，生成器待实现。",
+  "default": "c",
+  "languages": {
+    "c": {
+      "name": "C",
+      "status": "ready",
+      "entry": "lang_c",
+      "root": "codegen/c",
+      "config": "codegen/c/config/codegen_config.json"
+    },
+    "java": {
+      "name": "Java",
+      "status": "todo",
+      "entry": "lang_java",
+      "root": "codegen/java",
+      "config": "codegen/java/config/codegen_config.json"
+    }
+  }
+}

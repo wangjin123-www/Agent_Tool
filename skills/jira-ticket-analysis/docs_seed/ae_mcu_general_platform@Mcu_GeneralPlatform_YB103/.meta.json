@@ -1,0 +1,20 @@
+{
+  "project": "ae_mcu_projects/platform/ae_mcu_general_platform",
+  "branch": "Mcu_GeneralPlatform_YB103",
+  "sha": "f07b8e4e167ca9b51fc4bde9a304e4d19ac4f21b",
+  "files": [
+    "CLAUDE.md",
+    "CVI_McuPlatform\\CLAUDE.md",
+    "generate\\CLAUDE.md",
+    "HSE\\CLAUDE.md",
+    "inc\\CLAUDE.md",
+    "Project_Settings\\CLAUDE.md",
+    "CVI_McuPlatform\\L1_Applications\\CLAUDE.md",
+    "CVI_McuPlatform\\L2_Tasks\\CLAUDE.md",
+    "CVI_McuPlatform\\L3_RTOS\\CLAUDE.md",
+    "CVI_McuPlatform\\L4_Services\\CLAUDE.md",
+    "CVI_McuPlatform\\L5_EcuAL\\CLAUDE.md",
+    "RTD\\include\\CLAUDE.md",
+    "RTD\\src\\CLAUDE.md"
+  ]
+}

@@ -1,0 +1,28 @@
+# serial-log skill 配置（复制为 config.conf 使用, 不入库）
+[serial]
+# 上次使用的串口(capture 自动记忆)
+port = COM6
+# 上次使用的波特率
+baud = 921600
+# 网页波特率下拉候选(逗号分隔, 从低到高; 网页输入框仍可手填任意值)
+bauds = 9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600, 1000000, 1500000, 2000000, 3000000
+
+[mail]
+# 邮件开关 false=不发
+enabled = true
+# 抄送人邮箱, 逗号分隔, 留空=只发自己
+cc =
+
+# log 保存根目录(所有采集主 log/告警/快照/完成采集/分析产物/ctl 都落在这里)
+# 留空或删掉这一行 = 默认 <skill>/output/logs
+[log]
+dir =
+
+# 关联工程注册表: 编号 = 工程根目录绝对路径
+# 分析时用日志里的 file:line(固定格式)或打印内容里的标识符(自由格式)反查到这里, 结论里给出源码文件/行/函数
+[projects]
+1 = d:\wnagjin\Compay_Project\DAB_BOX\DAB_BOX_CODE\dabbox_app
+2 = d:\wnagjin\Compay_Project\CDC_7255\cdc_7255
+# 默认工程编号: 分析时自动关联它, 结论里给出源码文件/行/函数
+# 留空(default =) 或注释掉该行 -> 每次分析都必须问用哪个工程; 不回答则结论不关联代码(仅基于日志本身)
+default = 2

@@ -1,0 +1,2916 @@
+VERSION "created by canmatrix"
+
+
+NS_ :
+
+BS_:
+
+BU_: IVI BCM CDU GW AMP ADU_I PDC AVAS WCM CPS SWS WCM_P 
+
+
+BO_ 144 IHU_3: 8 CDU
+ SG_ IHU_AEBSwtSet : 1|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_FCWSnvtySet : 3|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_FCWSwtSet : 5|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_LDWWarnVoiceSwtSet : 7|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_LDWSwtSet : 9|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_LDWLDPSnvtySet : 11|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_TSRSwtSet : 13|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU__IHBCSwtSet : 15|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_TSROverSpeedSwSet : 17|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_TSROverSpeedAcousticSwSet : 19|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_FlaoutUnlockSet : 21|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_AutoWshWipSet : 23|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SpeedLockSet : 26|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_HornAlertVolumeSet : 29|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_WindowRemoteAutoDownSet : 31|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_AssistIlluminationSet : 33|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_exRearMirrorAutoFoldSet : 35|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_WindowAutoUPbyLockSet : 37|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SearchCarWarnModSet : 39|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_FLSeatHeatLvlSet : 43|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_FRSeatHeatLvlSet : 47|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_FLSeatMassgLvlSet : 50|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_FLSeatMassgModSet : 55|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_ClsWinSpdSet : 58|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_Frontwindshieldheatingtset : 60|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_Nozzleheatingset : 62|2@0+ (1,0) [0|3] "" GW
+
+BO_ 145 IHU_6: 8 CDU
+ SG_ IHU_WindowPosFLCmd : 6|7@0+ (1,0) [0|100] "" GW
+ SG_ IHU_WindowPosFRCmd : 14|7@0+ (1,0) [0|100] "" GW
+ SG_ IHU_WindowPosRLCmd : 22|7@0+ (1,0) [0|100] "" GW
+ SG_ IHU_WindowPosRRCmd : 30|7@0+ (1,0) [0|100] "" GW
+ SG_ IHU_BackMirrorFoldCmd : 37|2@0+ (1,0) [0|3] "" GW
+
+BO_ 146 IHU_10: 8 CDU
+ SG_ IHU_AmbientLightSwtSet : 1|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_AmbientLightLvlSet : 5|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_ACMaxSwtSet : 7|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SteeringWheelHeatingSWSet : 9|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_AVASSwtSet : 11|2@0+ (1,0) [0|3] "" AVAS,GW
+ SG_ IHU_FLSeatVentLvlSet : 15|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_AVASSoundTypSet : 19|3@0+ (1,0) [0|7] "" AVAS,GW
+ SG_ IHU_FRSeatVentLvlSet : 23|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_CarWashModeSet : 28|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RAEBSwtSet : 30|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RadarSwtSet : 16|2@0+ (1,0) [0|3] "" PDC,GW
+ SG_ IHU_FRSeatMassgLvlSet : 34|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_FRSeatMassgModSet : 39|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_WWRSwtSet : 43|2@0+ (1,0) [0|3] "" WWR,GW
+ SG_ IHU_PhoneReminderSwitchSet : 45|2@0+ (1,0) [0|3] "" WCM,GW
+ SG_ IHU_NapModeSet : 47|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_LPedalSet : 49|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RPedalSet : 51|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_NapModeSeatSelectSwtSet_FL : 53|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_NapModeSeatSelectSwtSet_FR : 55|2@0+ (1,0) [0|3] "" GW
+
+BO_ 147 IHU_11: 8 CDU
+ SG_ IHU_VDCSwtSet : 3|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_TCSSwtSet : 5|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_CSTSwtSet : 7|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SOCHoldHEVSwtSet : 10|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SOCHoldHEVTgtSOCSet : 1|7@0+ (1,0) [0|100] "%" GW
+ SG_ IHU_GearPGenerationReq : 17|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_GearPGenerationTgtSOCSet : 8|7@0+ (1,0) [0|100] "%" GW
+ SG_ IHU_GearPGenerationPwLvlSet : 25|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_HYBModReq : 27|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_V2LSwtSet : 29|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_V2LLowSOCStrtSwtSet : 31|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_BrakeAssistModeSet : 33|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_V2VSwtSet : 35|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_CoastdwnRegDepthLvlSet : 37|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RollingFunctionSwtSet : 39|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_TrailerModeSet : 41|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_EPSModeSet : 44|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_St_VTOLkeepSw : 46|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_VehShowModeSwtSet : 50|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_St_VTOLkeepTime : 55|5@0+ (1,0) [0|25] "" GW
+ SG_ IHU_ExpertModeBcsSet : 58|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_ExpertModeDriveSet : 61|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_ExpertModeEpsSet : 48|3@0+ (1,0) [0|7] "" GW
+
+BO_ 149 IHU_17: 8 CDU
+ SG_ IHU_RsvnChrgSwtSet : 3|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RsvnChrgTSocFullSet : 5|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RsvnChrgModSet : 7|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RsvnChrgStpTimSet_hour : 12|5@0+ (1,0) [0|24] "h" GW
+ SG_ IHU_RsvnChrgStrTimSet_hour : 1|5@0+ (1,0) [0|24] "h" GW
+ SG_ IHU_RsvnChrgUserDefineSet : 23|8@0+ (1,0) [0|255] "" GW
+ SG_ IHU_RsvnChrgStrTimSet_min : 31|6@0+ (1,0) [0|60] "min" GW
+ SG_ IHU_RsvnChrgStpTimSet_min : 25|6@0+ (1,0) [0|60] "min" GW
+ SG_ IHU_SentryModeSwitchSts : 47|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RsvnBattHeatSwtSet : 49|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RsvnBattHeatModSet : 51|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RsvnBattHeatStrTimSet_min : 58|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_RsvnBattHeatStrTimSet_hour : 63|5@0+ (1,0) [0|24] "h" GW
+
+BO_ 150 IHU_18: 8 CDU
+ SG_ IHU_SlideMotorPosSet_FL : 7|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_BackMotorPosSet_FL : 15|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_HeightMotorPosSet_FL : 23|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_CushionAngleMotorPosSet_FL : 31|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_LegRetractableMotorPosSet_FL : 39|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_SeatMemoryPosSet_FL : 42|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_SeatGetMemoryPosSet_FL : 45|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_EasyEntryExitSeatSwtSet_FL : 49|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SeatMemorySwtSet : 51|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_SeatHeatLvlSet_RL : 55|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_SeatHeatLvlSet_RR : 59|4@0+ (1,0) [0|15] "" GW
+
+BO_ 151 IHU_19: 8 CDU
+ SG_ IHU_SlideMotorPosSet_FR : 7|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_BackMotorPosSet_FR : 15|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_HeightMotorPosSet_FR : 23|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_LegRetractableMotorPosSet_FR : 31|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_LegAngleMotorPosSet_FR : 39|8@0+ (1,0) [0|101] "%" GW
+ SG_ IHU_SeatMemoryPosSet_FR : 42|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_SeatGetMemoryPosSet_FR : 45|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_EasyEntryExitSeatSwtSet_FR : 49|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_ZeroGravitySwtSet_FR : 51|2@0+ (1,0) [0|3] "" GW
+
+BO_ 152 TBOX_3: 8 GW
+ SG_ TBOX_SentryModeSW : 39|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 154 IHU_20: 8 CDU
+ SG_ IHU_SunroofCmdSts_Percentage : 7|8@0+ (1,0) [0|102] "" GW
+ SG_ IHU_SunshadeCmdSts_Percentage : 15|8@0+ (1,0) [0|102] "" GW
+ SG_ IHU_ApproveUnlockSwtSet : 17|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_WalkAwayLockSwtSet : 19|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_ClsWinRainSwtSet : 21|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_WiperRepairSwtSet : 23|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_MirrorReverseDownSwtSet : 25|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_MirrorUnfoldSwtSet : 27|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_DoorCmdDomeLightSwtSet : 29|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_LgoLightSwtSet : 31|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_CentralLockCmd : 33|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_FLUnlockModeSet : 35|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_ArmFailedHornSoundSwtSet : 37|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_DisrmHornSoundSwtSet : 39|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_TrailerModReq : 49|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_BCALLReq : 51|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_UnlockLightModeSet : 58|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_UnlockLightModePreviewReq : 59|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_LockLightModeSet : 62|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_LockLightModePreviewReq : 63|1@0+ (1,0) [0|1] "" GW
+
+BO_ 155 IHU_21: 8 CDU
+ SG_ IHU_AudioSourceSet : 1|2@0+ (1,0) [0|3] "" AMP
+ SG_ IHU_MediaVolStep : 7|6@0+ (1,0) [0|31] "" AMP
+ SG_ IHU_MuteReq : 9|2@0+ (1,0) [0|3] "" AMP
+ SG_ IHU_BtMusicVolStep : 15|6@0+ (1,0) [0|31] "" AMP
+ SG_ IHU_ChimeSysSelect : 17|2@0+ (1,0) [0|3] "" AMP
+ SG_ IHU_NaviVolStep : 23|6@0+ (1,0) [0|31] "" AMP
+ SG_ IHU_BeepSoundEnable : 25|2@0+ (1,0) [0|3] "" AMP
+ SG_ IHU_CommVol : 31|6@0+ (1,0) [0|31] "" AMP
+ SG_ IHU_PhoneLinkEnable : 33|2@0+ (1,0) [0|3] "" AMP
+ SG_ IHU_VCVol : 39|6@0+ (1,0) [0|31] "" AMP
+ SG_ IHU_LoudnessEnable : 41|2@0+ (1,0) [0|3] "" AMP
+ SG_ IHU_RingToneVolStep : 47|6@0+ (1,0) [0|31] "" AMP
+ SG_ IHU_VSCLevel : 55|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_PositionSelect : 52|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_ModeSelect : 49|2@0+ (1,0) [0|3] "" AMP
+
+BO_ 156 IHU_22: 8 CDU
+ SG_ IHU_LeftBackMirrorAdjust_LR : 7|8@0+ (1,0) [0|100] "%" GW
+ SG_ IHU_LeftBackMirrorAdjust_UD : 15|8@0+ (1,0) [0|100] "%" GW
+ SG_ IHU_RightBackMirrorAdjust_LR : 23|8@0+ (1,0) [0|100] "%" GW
+ SG_ IHU_RightBackMirrorAdjust_UD : 31|8@0+ (1,0) [0|100] "%" GW
+ SG_ IHU_TailgateMotorMaxPosSet : 39|8@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ IHU_TailgateModeSet : 47|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ IHU_TailgateSwtSet : 45|2@0+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 157 IHU_23: 8 CDU
+ SG_ IHU_FCW_ONOFF_Sts : 2|3@0+ (1,0) [0|7] "" ADU_I
+ SG_ IHU_AEBONOFFSts : 5|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_LSSONOFFSts : 7|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_LDWLDPONOFFSts : 10|3@0+ (1,0) [0|7] "" ADU_I
+ SG_ IHU_LDWSnvtySts : 13|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_LDWWarnModSts : 15|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_ELKONOFFSts : 17|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_SLIFSLWFONOFFSts : 21|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_SLWFONOFFSts : 23|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_SLWFAcousticONOFFSts : 25|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_SLWFNmberAb : 31|6@0+ (1,0) [0|63] "" ADU_I
+ SG_ IHU_SLWFModeSts : 33|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_SLWFNmberRe : 39|6@0+ (1,0) [0|63] "" ADU_I
+ SG_ IHU_SCFONOFFSts : 41|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_SPLChangeONOFFSts : 43|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_DAIONOFFSts : 45|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_IHBCONOFFSts : 47|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_PDCVoiceONOFFSts : 49|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_DCLCONOFFSts : 51|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_FCTAONOFFSts : 53|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_FCTBONOFFSts : 55|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_ACPEONOFFSts : 57|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_ADASDrivingModeSetSts : 59|2@0+ (1,0) [0|3] "" ADU_I
+
+BO_ 158 IHU_24: 8 CDU
+ SG_ IHU_BSDONOFFSts : 1|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_DOWONOFFSts : 3|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_BSDVoiceONOFFSts : 5|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_RCTAONOFFSts : 7|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_RCTBONOFFSts : 9|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_RCWONOFFSts : 11|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ IHU_RCWVoiceONOFFSts : 13|2@0+ (1,0) [0|3] "" ADU_I
+
+BO_ 159 IHU_27: 8 CDU
+ SG_ IntrLiAmb1BnIngrd : 7|8@0+ (1,0) [0|255] "" GW
+ SG_ IntrLiAmb1GrnIngrd : 15|8@0+ (1,0) [0|255] "" GW
+ SG_ IntrLiAmb1RedIngrd : 23|8@0+ (1,0) [0|255] "" GW
+ SG_ IntrLiAmb1SelCmd1 : 31|8@0+ (1,0) [0|255] "" GW
+ SG_ IntrLiAmb1SelCmd2 : 39|8@0+ (1,0) [0|255] "" GW
+ SG_ IntrLiAmb1TargetTransitionTime : 47|8@0+ (1,0) [0|250] "" GW
+ SG_ IntrLiAmb1SynchDelay : 54|7@0+ (1,0) [0|127] "" GW
+ SG_ IntrLiAmb1Trigger : 55|1@0+ (1,0) [0|1] "" GW
+ SG_ IntrLiAmb1Intensty : 62|7@0+ (1,0) [0|127] "" GW
+ SG_ IntrLiAmb1Update : 63|1@0+ (1,0) [0|1] "" GW
+
+BO_ 274 TCU_3: 8 Vector__XXX
+ SG_ TCU_GearboxpositionPfaulty : 4|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_TargetGear : 27|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ TCU_TargetGearValid : 30|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_Drivemode : 37|6@0+ (1,0) [0|62] "" CDU
+ SG_ TCU_GearboxinpositionN : 38|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_DriverpresenceunknowninDorR : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_DrivemodeOperationNotice : 43|4@0+ (1,0) [0|15] "" CDU
+ SG_ TCU_Gearboxfaulty : 44|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_DrivePowertrainfaulty : 45|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_MechanicallimphomeinD : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_MechanicallimphomeinP : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_Gearboxselectorfaulty : 52|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_Driverwarninginformationinva : 53|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_SpeedistoohightoenterP : 54|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_Runaway_warning : 55|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 289 VCU_31: 8 GW
+ SG_ VCU_VehRunSta : 1|2@0+ (1,0) [0|3] "" CDU,PDC
+ SG_ VCU_VehModDisply : 2|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_HYBModDisply : 4|2@0+ (1,0) [0|3] "" CDU
+ SG_ VCU_VehFauLamp : 5|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_MILLamp : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_TurtleLamp : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_HVILFauSta : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_LvBat_ERR_MIL : 12|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 290 VCU_32: 8 GW
+ SG_ VCU_ReleaseSig : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ VCU_Drivemode : 7|6@0+ (1,0) [0|63] "" CDU,CPS
+ SG_ VCU_ActualOperatingMode : 10|3@0+ (1,0) [0|7] "" CDU
+ SG_ VCU_GearShiftPosition : 23|4@0+ (1,0) [0|15] "" CDU,PDC
+ SG_ VCU_GearShiftPositionValid : 27|1@0+ (1,0) [0|1] "" CDU,PDC
+ SG_ VCU_DrivemodeOperationNotice : 47|4@0+ (1,0) [0|15] "" CDU
+
+BO_ 316 BMS_40: 8 GW
+ SG_ B2V_ST1_PackCurrent : 7|15@0+ (0.1,-1000) [-1000|1000] "A" CDU
+ SG_ B2V_ST1_PackPower : 8|13@0+ (0.1,0) [0|500] "kW" CDU
+ SG_ B2V_ST1_PackVolt : 27|13@0+ (0.1,0) [0|500] "V" CDU
+
+BO_ 336 GW_PC_1: 8 GW
+ SG_ EMS_2_EngineSpeed : 7|16@0+ (0.25,0) [0|16383.5] "rpm" CDU
+ SG_ EMS_2_EngineSpeedValid : 16|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_3_EngineReleaseSig : 18|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ EMS_3_SS_Screen_tip : 19|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_3_SS_Active_Lamp : 20|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_3_SS_Fault_Lamp : 21|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_1_TcuFaultLamp : 22|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_3_SS_SetSts : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_1_TransOilWrnLmpReq : 30|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_1_ActualGearValid : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_1_GearShiftPositionValid : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_1_LimpHomeMode : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCU_1_ShiftRecommendation : 35|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ TCU_1_ActualGear : 39|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ TCU_1_IcInformaition : 43|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ TCU_1_GearShiftPosition : 47|4@0+ (1,0) [0|15] "" CDU
+ SG_ EMS_2_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_3_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_1_Timeout_Flag : 58|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 341 GW_PC_6: 8 GW
+ SG_ EMS_4_EngineCoolantTemp : 7|8@0+ (0.75,-48) [-48|142.5] "deg C" Vector__XXX
+ SG_ EMS_4_FuelConsumption : 15|8@0+ (0.004,0) [0|1.016] "ml/100ms" Vector__XXX
+ SG_ EMS_4_SVS : 16|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_4_MIL : 17|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_4_CruiseControlStatus : 21|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ EMS_4_EngineCoolantTempValid : 22|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_4_CruiseActiveStatus : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_4_CruiseMainLamp : 29|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_4_CruiseTargetSpeed : 28|13@0+ (0.05625,0) [0|450] "" Vector__XXX
+ SG_ EMS_6_OilPressure : 55|8@0+ (4,0) [0|1000] "kPa" Vector__XXX
+ SG_ EMS_6_GPFState : 61|3@0+ (1,0) [0|7] "" CDU
+ SG_ EMS_6_GeneratorFaultLamp : 62|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_6_OilPressureLamp : 63|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_4_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_6_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 512 ABS_1: 8 GW
+ SG_ ABS_FLWheelSpeed : 7|13@0+ (0.05625,0) [0|450] "Km/h" CDU
+ SG_ ABS_FLWheelSpeedValid : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_FLWheelSpeedRC : 9|10@0+ (1,0) [0|1022] "" CDU
+ SG_ ABS_FRWheelSpeed : 31|13@0+ (0.05625,0) [0|450] "Km/h" CDU
+ SG_ ABS_FRWheelSpeedValid : 34|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_FRWheelSpeedRC : 33|10@0+ (1,0) [0|1022] "" CDU
+ SG_ ABS_FLWheelSts : 53|2@0+ (1,0) [0|3] "" CDU
+ SG_ ABS_FRWheelSts : 55|2@0+ (1,0) [0|3] "" CDU
+ SG_ ABS_1_RollingCounter : 51|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ABS_1_Checksum : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 513 ABS_2: 8 GW
+ SG_ ABS_RLWheelSpeed : 7|13@0+ (0.05625,0) [0|450] "Km/h" CDU
+ SG_ ABS_RLWheelSpeedValid : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_RLWheelSpeedRC : 9|10@0+ (1,0) [0|1022] "" CDU
+ SG_ ABS_RRWheelSpeed : 31|13@0+ (0.05625,0) [0|450] "Km/h" CDU
+ SG_ ABS_RRWheelSpeedValid : 34|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_RRWheelSpeedRC : 33|10@0+ (1,0) [0|1022] "" CDU
+ SG_ ABS_RLWheelSts : 53|2@0+ (1,0) [0|3] "" CDU
+ SG_ ABS_RRWheelSts : 55|2@0+ (1,0) [0|3] "" CDU
+ SG_ ABS_2_RollingCounter : 51|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ABS_2_Checksum : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 514 ABS_3: 8 GW
+ SG_ ABS_VehicleSpeedValid : 5|1@0+ (1,0) [0|1] "" CDU,AVAS,WCM,PDC
+ SG_ ABS_AbsFault : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_AbsActive : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_VehicleSpeed : 4|13@0+ (0.05625,0) [0|450] "Km/h" CDU,AVAS,WCM,PDC
+ SG_ ABS_BrakeFluidLevelIndication : 19|2@0+ (1,0) [0|3] "" CDU
+ SG_ ABS_EbdFault : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ ABS_EbdActive : 23|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 529 ESP_2: 8 Vector__XXX
+ SG_ ESP_LongitAccel : 7|16@0+ (0.027127,-21.593092) [-21.593092|21.593092] "m/s^2" CDU
+ SG_ ESP_LateralAccel : 23|16@0+ (0.027127,-21.593092) [-21.593092|21.593092] "m/s^2" CDU
+ SG_ ESP_YawRate : 39|16@0+ (0.0009765625,-2.0947265625) [-2.0947265625|2.0947265625] "rad/s" CDU
+ SG_ ESP_LongitSensorValid : 52|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_LateralSensorValid : 53|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_YawRateSensorValid : 54|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 532 ESP_5: 8 GW
+ SG_ ESP_CCO_TgtGear : 7|4@0+ (1,0) [0|15] "" CDU
+ SG_ ESP_CCO_Active : 18|2@0+ (1,0) [0|3] "" CDU,CPS
+ SG_ ESP_CCO_Sts : 19|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ ESP_CCO_Require_EPBRelease : 20|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_CCO_Require_DriverSeatBelt : 21|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_CCO_Require_DriverDoor : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_CCO_Require_4L : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_CCO_Display_Red_Warn : 26|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_CCO_Failed : 27|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ ESP_CCO_Require_NotReverseGear : 28|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_CCO_Warning : 31|3@0+ (1,0) [0|7] "" CDU
+
+BO_ 533 EPB_1: 8 GW
+ SG_ EPB_AutoHold_Standby : 2|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_WarningLamp : 3|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_ActiveLamp : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ EPB_TextDisplay : 14|4@0+ (1,0) [0|15] "" CDU
+ SG_ EPB_TrailerModeSts : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_AutoholdActive : 17|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_AutoholdValid : 18|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_WrnMsg : 20|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_WrnMsg2 : 21|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPB_TAB_Warningmessage : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ EPB_TAB_SW_Status : 38|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ EPB_TAB_Available : 39|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ EPB_TAB_Sts : 47|2@0+ (1,0) [0|3] "" CDU,CPS
+
+BO_ 536 IPB_3: 8 GW
+ SG_ IPB_MILReq : 0|1@0+ (1,0) [0|1] "" CDU
+ SG_ IPB_Faultlevel : 6|3@0+ (1,0) [0|7] "" CDU
+ SG_ IPB_FWA_warning : 9|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 592 GW_PC_2: 8 GW
+ SG_ ESP_1_ESPOff : 0|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ ESP_1_ESPActive : 1|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_TCSActive : 2|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_ESPFault : 3|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_TCSFault : 4|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_DVTSessionFlag : 5|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_HDCControl : 7|2@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_HDCFault : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_VDCSwtSts : 9|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_TCSSwtSts : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_CSTSwtSts : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_BrakeAssistModeSts : 13|2@0+ (1,0) [0|3] "" CDU
+ SG_ ESP_1_VDCActive : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ ESP_1_BrakeDiscTempHigh : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ SAS_1_SteeringAngleSpeedEXValid : 20|1@0+ (1,0) [0|1] "" CDU
+ SG_ SAS_1_SteeringAngleSpeedEX : 19|12@0+ (0.5,0) [0|1016] "deg/s" CDU
+ SG_ EPS_1_OverTempSts : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPS_1_WarningLamp : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ SAS_1_SteeringAngleValid : 34|1@0+ (1,0) [0|1] "" CDU
+ SG_ SAS_1_FailureSts : 35|1@0+ (1,0) [0|1] "" CDU
+ SG_ SAS_1_CalibratedSt : 36|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPS_1_EPSMode : 39|3@0+ (1,0) [0|7] "" CDU
+ SG_ SAS_1_SteeringAngle : 47|16@0+ (0.1,-780) [-780|780] "��" CDU
+ SG_ IPB_2_CRB_State : 63|2@0+ (1,0) [0|3] "" CDU
+ SG_ ESP_1_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ EPS_1_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+ SG_ IPB_2_Timeout_Flag : 58|1@0+ (1,0) [0|1] "" CDU
+ SG_ SAS_1_Timeout_Flag : 59|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 597 GW_PC_7: 8 GW
+ SG_ AWD_1_SystemOperatingMode : 3|4@0+ (1,0) [0|15] "" CDU
+ SG_ AWD_1_ShiftSystemActuatorFault : 4|1@0+ (1,0) [0|1] "" CDU
+ SG_ AWD_1_ShiftSystemStuckinLow : 5|1@0+ (1,0) [0|1] "" CDU
+ SG_ AWD_1_ShiftSystemEncoderFault : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ AWD_1_DiagnosticLampRequest : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ AWD_1_ClutchCircuitFaultStatus : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ AWD_1_Lamp2WD : 11|2@0+ (1,0) [0|3] "" CDU,CPS
+ SG_ AWD_1_Lamp4WDLock : 13|2@0+ (1,0) [0|3] "" CDU,CPS
+ SG_ AWD_1_Lamp4WDLow : 15|2@0+ (1,0) [0|3] "" CDU,CPS
+ SG_ AWD_1_OpreationNotice : 17|2@0+ (1,0) [0|3] "" CDU
+ SG_ EDL_1_FrontDiffLockGreenLamp : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ EDL_1_FrontDiffLockYellowLamp : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ EDL_1_RearDiffLockGreenLamp : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ EDL_1_RearDiffLockYellowLamp : 27|2@0+ (1,0) [0|3] "" CDU
+ SG_ EDL_1_StatusNotice : 31|4@0+ (1,0) [0|15] "" CDU
+ SG_ AWD_1_Lamp4WDAuto : 33|2@0+ (1,0) [0|3] "" CDU,CPS
+ SG_ AWD_1_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU,CPS
+ SG_ EDL_1_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 598 GW_PC_27: 8 GW
+ SG_ EMS_11_EngSpd : 7|16@0+ (0.125,0) [0|8191.75] "Tr/min" CDU
+ SG_ EMS_11_EngSpdValid : 16|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_11_EngRunningStatusValid : 17|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_11_EngRunningStatus : 19|2@0+ (1,0) [0|3] "" CDU
+ SG_ EMS_11_SVS : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_11_MIL : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_14_OilPressureLamp : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_14_GPFState : 35|3@0+ (1,0) [0|7] "" CDU
+ SG_ EMS_14_engCoolantTempValid : 36|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_14_engCoolantTemp : 29|9@0+ (0.5,-40) [-40|215] "��" CDU
+ SG_ EMS_14_AirAbsolutePressure : 47|8@0+ (1,0) [0|254] "kPa" CDU
+ SG_ EMS_14_OilPressure : 55|8@0+ (4,0) [0|1000] "kPa" CDU
+ SG_ EMS_11_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_14_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 599 GW_PC_28: 8 GW
+ SG_ MCU_10_Motor_TempFault1 : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ MCU_10_Motor_ContrlTempFault1 : 11|2@0+ (1,0) [0|3] "" CDU
+ SG_ MCU_10_EMFaultLevel : 14|3@0+ (1,0) [0|7] "" CDU
+ SG_ TCU_16_TrOilTempHighTrqLimInd : 16|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_TrNonEmsnRltdMalfA : 17|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_DrvrShftCtrlReqDeniedIndc : 18|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_ShiftRecommend_M : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ TCU_16_GbxPosPrkFaulty : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_MecnclLimphomeInDrv : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_MecnclLimphomeInPrk : 24|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_GbxInPosNetrl : 25|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_StepOnBrkToEngeGer : 26|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_PrsRlseButonToEngeGer : 27|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_AcousticWarnngShftngInMec : 28|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_GbxSelectFaulty : 29|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_GbxFaulty : 30|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_DrvorPwrtrainFaulty : 31|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_VehSpdTooHighForPosRvesor : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_GbxPosPrkOnlyAtStdstil : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_DrvrPrsUkwnInDrvorRves : 34|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_DrvrWrnngInvd : 35|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_DisplayGear_ZF : 39|4@0+ (1,0) [0|15] "" CDU
+ SG_ MCU_10_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ TCU_16_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 616 PEPS_1: 8 GW
+ SG_ PEPS_ESCL_LearningStatus : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ PEPS_PowerRelayOutputFail : 16|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_PIN_LearningStatus : 17|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_SSB_FailStatus : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_ESCL_FailStatus : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_FailStatus : 24|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_ESCL_NotUnlockWarning : 35|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_ESCL_NotLockWarning : 36|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_NotPNWarning : 39|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_BrakeIndicationWarning : 40|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_ClutchIndicationWarning : 41|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_KeyReminderWarning : 42|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_NoKeyFoundWarning : 43|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_KeyOutWarning1 : 44|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_KeyBatteryWarning : 45|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_KeyIntWarning1 : 46|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_LockNotOFFWarning : 47|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 617 PEPS_3: 8 GW
+ SG_ PEPS_RemoteControlSt : 0|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_OTAModeSt : 40|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_3_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ PEPS_3_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 620 IHU_15: 8 CDU
+ SG_ IHU_LongitAccel : 7|16@0+ (0.00098,-21.59234) [-21.59234|21.59234] "m/s^2" GW
+ SG_ IHU_LateralAccel : 23|16@0+ (0.00098,-21.59234) [-21.59234|21.59234] "m/s^2" GW
+ SG_ IHU_VerticalAccel : 39|16@0+ (0.00098,-21.59234) [-21.59234|21.59234] "m/s^2" GW
+ SG_ IHU_LongitAccelValid : 52|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_LateralAccelValid : 53|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_VerticalAccelValid : 54|1@0+ (1,0) [0|1] "" GW
+
+BO_ 768 IHU_1: 8 CDU
+ SG_ IHU_EPMModSet : 1|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_ACSelfCleanModeSet : 3|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_FrontDefrostButtonSts : 5|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_RearDefrostButtonSts : 7|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_FollowMeHome_Time : 10|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_LeaveHome_Time : 13|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_ACButtonSts : 15|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_InteriorLightTimeAjust : 18|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_TemperatureAjust : 22|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_ACSystemOff : 23|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_BlowerSpeedAjust : 26|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_AirDistributeMode : 29|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_AirCirculationMode : 31|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_DPFButtonSts : 32|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_PTCButtonSts : 34|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_AUTOButtonSts : 36|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_AUTOPassengerButtonSts : 38|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_DualButtonSts : 41|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_DriverSetTemperature : 47|6@0+ (0.5,15.5) [15.5|46.5] "��" GW
+ SG_ IHU_PngSetTemperature : 53|6@0+ (0.5,15.5) [15.5|46.5] "��" GW
+ SG_ IHU_SS_Set : 55|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_DrivemodeSet : 61|6@0+ (1,0) [0|62] "" GW
+ SG_ IHU_WirelessChargeSwtSet : 63|2@0+ (1,0) [0|3] "" WCM,GW
+
+BO_ 780 ADU_9: 8 ADU_I
+ SG_ ADU_ACC_SysSts : 7|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_TimeGapSet : 11|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_ACC_SetDis : 4|9@0+ (0.5,0) [0|255] "km/h" CDU
+ SG_ ADU_LSS_Indicator : 19|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_AEBS_SysSts : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SLIFSysSts : 8|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_SLIF_Value : 29|6@0+ (1,0) [0|33] "" CDU
+ SG_ ADU_IHBC_SysSts : 16|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_SCFIndicator : 35|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_LCC_SysSts : 39|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_HNOA_SysSts : 43|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_FTBA_SysSts : 46|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_ISAmode : 33|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_9_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_CNOA_SysSts : 55|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_9_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 781 ADU_10: 8 ADU_I
+ SG_ ADU_LSSTakeoverReq : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_LDP_SysSts : 4|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_LDW_SysSts : 7|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_LCCTextInfo : 11|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_LCCEnaRemend : 12|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_LCCTakeoverReq : 15|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_ACC_TextInfo : 20|5@0+ (1,0) [0|31] "" CDU
+ SG_ ADU_ELKA_SysSts : 23|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_DAI_TextInfo : 24|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_ACC_ACCTakeOverReq : 25|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_AEBS_TextInfo : 29|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_SCF_TextInfo : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_FuncBeep_Info : 39|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_FWCamera_Info : 41|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_ACPE_TextInfo : 44|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_SLWFWarning : 45|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_FCTAWarnRi : 46|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_FCTAWarnLe : 47|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_10_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_ACPE_SysSts : 54|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_RotatingHubMode : 55|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_10_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 782 ADU_11: 8 CDU
+ SG_ ADU_PDC_RRSDis : 7|6@0+ (1,15) [15|35] "cm" ADU_I
+ SG_ ADU_PDC_RLSDis : 1|6@0+ (1,15) [15|35] "cm" ADU_I
+ SG_ ADU_PDC_FRSDis : 11|6@0+ (1,15) [15|35] "cm" ADU_I
+ SG_ ADU_PDC_FLSDis : 21|6@0+ (1,15) [15|35] "cm" ADU_I
+ SG_ ADU_PDC_RRCDis : 31|7@0+ (1,15) [15|90] "cm" ADU_I
+ SG_ ADU_PDC_RLCDis : 24|7@0+ (1,15) [15|90] "cm" ADU_I
+ SG_ ADU_PDC_FRCDis : 33|7@0+ (1,15) [15|90] "cm" ADU_I
+ SG_ ADU_PDC_FLCDis : 42|7@0+ (1,15) [15|90] "cm" ADU_I
+ SG_ ADU_11_RollingCounter : 51|4@0+ (1,0) [0|15] "" ADU_I
+ SG_ ADU_11_Checksum : 63|8@0+ (1,0) [0|255] "" ADU_I
+
+BO_ 783 ADU_12: 8 CDU
+ SG_ ADU_PDC_RRMDis : 7|7@0+ (1,15) [15|120] "cm" ADU_I
+ SG_ ADU_PDC_RLMDis : 0|7@0+ (1,15) [15|120] "cm" ADU_I
+ SG_ ADU_PDC_FRMDis : 9|7@0+ (1,15) [15|120] "cm" ADU_I
+ SG_ ADU_PDC_FLMDis : 18|7@0+ (1,15) [15|120] "cm" ADU_I
+ SG_ ADU_PDC_WarnRate_R : 27|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ ADU_PDC_WarnRate_F : 25|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ ADU_FrontAVM_Info : 33|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ ADU_RearAVM_Info : 35|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ ADU_LeftAVM_Info : 37|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ ADU_RightAVM_Info : 39|2@0+ (1,0) [0|3] "" ADU_I
+ SG_ ADU_PDC_SysSts : 45|3@0+ (1,0) [0|7] "" ADU_I
+ SG_ ADU_12_RollingCounter : 51|4@0+ (1,0) [0|15] "" ADU_I
+ SG_ ADU_12_Checksum : 63|8@0+ (1,0) [0|255] "" ADU_I
+
+BO_ 785 SWS_1: 8 SWS
+ SG_ SWS_RESPlusBtnSts : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_SETMinusBtnSts : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_TimeGapAddBtnSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_HeadwayMinusSts : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_OkButtonSts : 15|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_ReturnKeySts : 17|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_NOAKeySts : 19|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_360KeySts : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_VolPlusSts : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_VolMinusSts : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_MuteSts : 27|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_PrevTrackSts : 29|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_NextTrackSts : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_VoiceKeySts : 33|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_CustomKeySts : 35|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_BTPhoneSts : 37|2@0+ (1,0) [0|3] "" CDU
+ SG_ SWS_1_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ SWS_1_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 789 GW_1: 8 GW
+ SG_ GW_29AuthRelease : 4|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 791 TBOX_4: 8 GW
+ SG_ TBOX_AudioMuteRequest : 0|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_RsvnChrgSwt : 20|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_RsvnChrgTSocFull : 21|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_RsvnChrgMod : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ TBOX_RsvnChrgStpTim_hour : 28|5@0+ (1,0) [0|23] "h" CDU
+ SG_ TBOX_RsvnChrgStrTim_hour : 17|5@0+ (1,0) [0|23] "h" CDU
+ SG_ TBOX_RsvnChrgUserDefine : 39|8@0+ (1,0) [0|255] "" CDU
+ SG_ TBOX_RsvnChrgStrTim_min : 47|6@0+ (1,0) [0|59] "min" CDU
+ SG_ TBOX_RsvnBattHeatSwt : 48|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_RsvnBattHeatMod : 51|2@0+ (1,0) [0|3] "" CDU
+ SG_ TBOX_RsvnChrgStpTim_min : 41|6@0+ (1,0) [0|59] "min" CDU
+ SG_ TBOX_RsvnBattHeatStrTim_min : 58|3@0+ (1,0) [0|7] "" CDU
+ SG_ TBOX_RsvnBattHeatStrTim_hour : 63|5@0+ (1,0) [0|23] "h" CDU
+
+BO_ 794 ADU_13: 8 ADU_I
+ SG_ ADU_LeObjColor : 2|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_LeftTargetVehicleSubType : 6|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_LeObjID : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_LeObjHozDstX : 15|8@0+ (0.5,0) [0|127] "m" CDU
+ SG_ ADU_RightTargetVehicleSubType : 28|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_RiObjID : 29|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_LeObjHozDstY : 23|10@0+ (0.1,-50) [-50|50] "m" CDU
+ SG_ ADU_RiObjColor : 24|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_RiObjLgtDstX : 37|8@0+ (0.5,0) [0|127] "m" CDU
+ SG_ ADU_13_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_RiObjHozDstY : 45|10@0+ (0.1,-50) [-50|50] "m" CDU
+ SG_ ADU_13_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 795 ADU_14: 8 ADU_I
+ SG_ ADU_EgoLeLineTyp : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_EgoLeLineColor : 6|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_EgoLeLineID : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_EgoLeLineCrvt : 1|10@0+ (6E-005,-0.0156) [-0.0156|0.0156] "1/m" CDU
+ SG_ ADU_EgoRiLineTyp : 26|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_EgoRiLineColor : 29|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_EgoRiLineID : 30|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_EgoLeLineHozlDst : 23|9@0+ (0.1,-25) [-25|25] "m" CDU
+ SG_ ADU_EgoRiLineHozlDst : 24|9@0+ (0.1,-25) [-25|25] "m" CDU
+ SG_ ADU_14_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_EgoRiLineCrvt : 47|10@0+ (6E-005,-0.0156) [-0.0156|0.0156] "1/m" CDU
+ SG_ ADU_14_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 796 ADU_15: 8 ADU_I
+ SG_ ADU_NeborLeLineTyp : 4|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_NeborLeLineColor : 6|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_NeborLeLineID : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_NeborLeLineHozlDst : 2|9@0+ (0.1,-25) [-25|25] "m" CDU
+ SG_ ADU_NeborLeLineCrvt : 9|10@0+ (6E-005,-0.0156) [-0.0156|0.0156] "1/m" CDU
+ SG_ ADU_NeborRiLineTyp : 28|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_NeborRiLineColor : 30|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_NeborRiLineID : 31|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_NeborRiLineHozlDst : 26|9@0+ (0.1,-25) [-25|25] "m" CDU
+ SG_ ADU_NeborRiLineCrvt : 33|10@0+ (6E-005,-0.0156) [-0.0156|0.0156] "1/m" CDU
+ SG_ ADU_15_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_15_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 797 ADU_16: 8 ADU_I
+ SG_ ADU_dxTarObjcolor : 2|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_ALCCObjTyp : 6|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_ALCCObjID : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_ALCCObjLgtDstX : 15|8@0+ (0.5,0) [0|127] "m" CDU
+ SG_ ADU_ALCCObjHozDstY : 23|10@0+ (0.1,-50) [-50|50] "m" CDU
+ SG_ ADU_16_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_16_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 798 ADU_17: 8 ADU_I
+ SG_ ADU_BSDONOFFSts : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_DOWONOFFSts : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_BSDVoiceONOFFSts : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_RCTAONOFFSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_RCTBONOFFSts : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_RCWONOFFSts : 11|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_RCWVoiceONOFFSts : 13|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_RCTA_Warning_L_TextInfo : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_RCTA_Warning_R_TextInfo : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_BSD_SysSts : 18|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_RCTB_Warning_TextInfo : 19|1@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_RCW_Warning_Info : 21|2@0+ (1,0) [0|1] "" CDU
+ SG_ ADU_DOWWarning_Info_R : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_BSDLight_Right_Rqst : 27|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_BSDLight_Left_Rqst : 29|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_DOWWarning_Info_L : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_BSDWarning_Info_L : 33|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_BSDWarning_Info_R : 35|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_RRMR_SysSts : 38|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_LRMR_SysSts : 25|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_17_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_17_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 801 VCU_37: 8 GW
+ SG_ VCU_DrvInstantPower : 7|11@0+ (1,-500) [-500|1000] "kW" CDU
+ SG_ VCU_DrvMaxOutputPower : 12|10@0+ (1,0) [0|1000] "kW" CDU
+ SG_ VCU_DrvMaxChargePower : 18|9@0+ (1,-500) [-500|0] "kW" CDU
+ SG_ VCU_EnergyFlowDisply : 35|4@0+ (1,0) [0|15] "" CDU
+ SG_ VCU_St_VTOLkeepSw : 41|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_St_VTOLkeepTime : 40|5@0+ (1,0) [0|24] "h" CDU
+
+BO_ 802 VCU_38: 8 GW
+ SG_ VCU_CruiseControlStatus : 12|4@0+ (1,0) [0|15] "" CDU
+ SG_ VCU_CruiseValid : 13|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_CruiseActiveStatus : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_CruiseMainLamp : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_CruiseTargetSpeed : 8|9@0+ (1,0) [0|510] "" CDU
+ SG_ VCU_SOCHoldHEVSts : 24|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_SOCHoldHEVTgtSOC : 31|7@0+ (1,0) [0|100] "%" CDU
+ SG_ VCU_GearPGenerationSts : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_GearPGenerationTgtSOC : 39|7@0+ (1,0) [0|100] "%" CDU
+ SG_ VCU_GearPGenerationPwLvl : 40|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_CoastdwnRegDepthLvl : 44|2@0+ (1,0) [0|3] "" CDU
+ SG_ VCU_V2LAllow : 45|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_V2LSwtSts : 46|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_V2LLowSOCStrtSwtSts : 47|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_V2LFailRsn : 55|4@0+ (1,0) [0|15] "" CDU
+
+BO_ 804 VCU_41: 8 GW
+ SG_ VCU_DrvRangeFuel : 7|11@0+ (1,0) [0|2046] "km" CDU
+ SG_ VCU_DrvRangeEV : 12|10@0+ (1,0) [0|1022] "km" CDU
+ SG_ VCU_DrvRangeTotal : 18|11@0+ (1,0) [0|2046] "km" CDU
+ SG_ VCU_InsPwrConsumption : 39|14@0+ (0.1,-500) [-500|1000] "kWh/h" CDU
+
+BO_ 848 ACU_1: 8 GW
+ SG_ ACU_CrashOutputSts : 7|8@0+ (1,0) [0|255] "" CDU
+ SG_ ACU_RollingFunctionSetSts : 14|2@0+ (1,0) [0|3] "" CDU
+ SG_ ACU_AirbagWarningStatus : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ ACU_AirbagInhibitWarning : 16|1@0+ (1,0) [0|1] "" CDU
+ SG_ ACU_SeatbeltWarningCmd_Driver : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ ACU_SeatbeltWarningCmd_Passenger : 27|2@0+ (1,0) [0|3] "" CDU
+ SG_ ACU_SeatbeltWarningCmd_RL : 29|2@0+ (1,0) [0|3] "" CDU
+ SG_ ACU_SeatbeltWarningCmd_RM : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ ACU_SeatbeltWarningCmd_RR : 33|2@0+ (1,0) [0|3] "" CDU
+ SG_ ACU_SeatBeltSts_Driver : 35|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 850 EMS_8: 8 Vector__XXX
+ SG_ EMS_Carbamide : 7|8@0+ (0.4,0) [0|100] "%" Vector__XXX
+ SG_ EMS_CarbamideOdo : 15|13@0+ (1,0) [0|8000] "km" Vector__XXX
+ SG_ EMS_CarbamideLevel : 18|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ EMS_CarbamideQuality : 28|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ EMS_CarbamideConsume : 31|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ EMS_CarbamideSystem : 38|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ EMS_EmissionOver : 25|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ EMS_WaitToStartLamp : 52|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_WaterInFuelLamp : 53|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 851 EMS_17: 8 GW
+ SG_ EMS_SoakTime : 7|16@0+ (1,0) [0|65535] "min" Vector__XXX
+ SG_ EMS_EngRunTime : 23|16@0+ (1,0) [0|65535] "second" Vector__XXX
+ SG_ EMS_FuelInjected : 39|16@0+ (0.001,0) [0|65.535] "mL" CDU
+ SG_ EMS_SoakTimeValid : 52|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_EngRunTimeValid : 53|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EMS_FuelInjectedValid : 54|1@0+ (1,0) [0|1] "" CDU
+ SG_ EMS_17_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ EMS_17_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 864 BCM_1: 8 GW
+ SG_ BCM_PowerMode : 1|2@0+ (1,0) [0|3] "" ADU_I,CDU
+ SG_ BCM_LowBeamSts : 3|2@0+ (1,0) [0|3] "" ADU_I,CDU
+ SG_ BCM_HighBeamSts : 5|2@0+ (1,0) [0|3] "" ADU_I,CDU
+ SG_ BCM_LeftTurnLightSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_RightTurnLightSts : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_PositionLightSts : 11|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_EmergencyLightSts : 13|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_RearFogLightSts : 15|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_FrontFogLightSts : 17|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_DaytimeRunningLightSts : 19|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_FrontLeftDoorSts : 25|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_FrontRightDoorSts : 26|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_RearLeftDoorSts : 27|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_RearRightDoorSts : 28|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_TailGateOpenSts : 29|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_FrontLeftDoorLockStatus : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_ACRearFrostSts : 48|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_ReverseGearInfo : 50|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_VehicleAntiCurrentSts : 52|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_BreakPadelStatus : 53|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_BackMirrorFolderSts : 55|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_HoodSts : 59|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_FillerCapSts : 61|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 865 BCM_2: 8 GW
+ SG_ BCM_WindowRunningStatusFL : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_WindowRunningStatusFR : 27|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_WindowRunningStatusRL : 29|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_WindowRunningStatusRR : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_WindowPosFL : 38|7@0+ (1,0) [0|100] "" CDU
+ SG_ BCM_WindowPosFR : 46|7@0+ (1,0) [0|100] "" CDU
+ SG_ BCM_WindowPosRL : 54|7@0+ (1,0) [0|100] "" CDU
+ SG_ BCM_WindowPosRR : 62|7@0+ (1,0) [0|100] "" CDU
+
+BO_ 866 BCM_4: 8 GW
+ SG_ BCM_FollowMeHomeTimeSetSts : 2|3@0+ (1,0) [0|6] "" CDU
+ SG_ BCM_LeaveHomeTimeSetSts : 5|3@0+ (1,0) [0|6] "" CDU
+ SG_ BCM_WindowRemoteAutoDownSetSts : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_AssistIlluminationSetSts : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_InteriorLightTimeSetSts : 10|3@0+ (1,0) [0|6] "" CDU
+ SG_ BCM_SpeedLockSetSts : 13|3@0+ (1,0) [0|6] "" CDU
+ SG_ BCM_exRearMirrorAutoFoldSetSts : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_VINCompareValid : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_HornAlertVolumeSetSts : 18|3@0+ (1,0) [0|6] "" CDU
+ SG_ BCM_WindowAutoUPbyLockSetSts : 19|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_SearchCarWarnModSetSts : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_AutoWshWipSetSts : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_FlaoutUnlockSetSts : 24|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_ClsWinSpdSetSts : 26|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_AmbientLightSwtSts : 27|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_AmbientLightLvl : 31|4@0+ (1,0) [0|15] "" CDU
+ SG_ BCM_FillerCapOpenWarning : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_FrontwindshieldheatingSts : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_NozzleheatingSts : 34|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_SteeringwheelheatingSts : 35|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_CarWashMode : 37|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_CargoBoxLightSts : 41|2@0+ (1,0) [0|3] "" CDU,CPS
+ SG_ BCM_AAL_ONOFFSts : 47|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_AAL_PitchAngle : 55|8@0+ (1,-90) [-90|90] "��" CDU
+ SG_ BCM_AAL_YawAngle : 63|8@0+ (1,-180) [-180|60] "��" CDU
+
+BO_ 869 TPMS_1: 8 GW
+ SG_ TPMS_SystemStatus : 1|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 870 TPMS_2: 8 GW
+ SG_ TPMS_SensorLost_FL : 0|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireLeakage_FL : 1|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_LearningStatus_FL : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TirePressureStatus_FL : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TireTemperatureSts_FL : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireBatteryPowerSts_FL : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TirePressure_FL : 15|8@0+ (2.75,0) [0|698.5] "kPa" CDU
+ SG_ TPMS_TireTemperature_FL : 23|8@0+ (1,-60) [-60|185] "��" CDU
+ SG_ TPMS_TireBatteryPower_FL : 31|8@0+ (0.1,0) [0|4] "V" CDU
+ SG_ TPMS_SensorLost_FR : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireLeakage_FR : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_LearningStatus_FR : 35|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TirePressureStatus_FR : 37|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TireTemperatureSts_FR : 38|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireBatteryPowerSts_FR : 39|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TirePressure_FR : 47|8@0+ (2.75,0) [0|698.5] "kPa" CDU
+ SG_ TPMS_TireTemperature_FR : 55|8@0+ (1,-60) [-60|185] "��" CDU
+ SG_ TPMS_TireBatteryPower_FR : 63|8@0+ (0.1,0) [0|4] "V" CDU
+
+BO_ 871 TCM_1: 8 GW
+ SG_ TCM_LeftTurnLightSWSts : 0|1@0+ (1,0) [0|1] "" ADU_I,CDU
+ SG_ TCM_LeftTurnLightSWStsValid : 1|1@0+ (1,0) [0|1] "" ADU_I,CDU
+ SG_ TCM_RightTurnLightSWSts : 2|1@0+ (1,0) [0|1] "" ADU_I,CDU
+ SG_ TCM_RightTurnLightSWStsValid : 3|1@0+ (1,0) [0|1] "" ADU_I,CDU
+ SG_ TCM_HighBeamSWSts : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCM_HighBeamSWStsValid : 9|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCM_FlashLightSWSts : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TCM_FlashLightSWStsValid : 11|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 872 TPMS_3: 8 GW
+ SG_ TPMS_SensorLost_RL : 0|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireLeakage_RL : 1|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_LearningStatus_RL : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TirePressureStatus_RL : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TireTemperatureSts_RL : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireBatteryPowerSts_RL : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TirePressure_RL : 15|8@0+ (2.75,0) [0|698.5] "kPa" CDU
+ SG_ TPMS_TireTemperature_RL : 23|8@0+ (1,-60) [-60|185] "��" CDU
+ SG_ TPMS_TireBatteryPower_RL : 31|8@0+ (0.1,0) [0|4] "V" CDU
+ SG_ TPMS_SensorLost_RR : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireLeakage_RR : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_LearningStatus_RR : 35|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TirePressureStatus_RR : 37|2@0+ (1,0) [0|3] "" CDU
+ SG_ TPMS_TireTemperatureSts_RR : 38|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TireBatteryPowerSts_RR : 39|1@0+ (1,0) [0|1] "" CDU
+ SG_ TPMS_TirePressure_RR : 47|8@0+ (2.75,0) [0|698.5] "kPa" CDU
+ SG_ TPMS_TireTemperature_RR : 55|8@0+ (1,-60) [-60|185] "��" CDU
+ SG_ TPMS_TireBatteryPower_RR : 63|8@0+ (0.1,0) [0|4] "V" CDU
+
+BO_ 875 WCM_1: 8 WCM
+ SG_ WCM_ChargingSts : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ WCM_FailureSts : 5|3@0+ (1,0) [0|7] "" CDU,GW
+ SG_ WCM_WirelessChargeSwtSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ WCM_PhoneReminder : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ WCM_PhoneReminderSwitchSts : 13|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 876 WCM_P_1: 8 WCM_P
+ SG_ WCM_P_ChargingSts : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ WCM_P_FailureSts : 5|3@0+ (1,0) [0|7] "" CDU
+ SG_ WCM_P_WirelessChargeSwtSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ WCM_P_PhoneReminder : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ WCM_P_PhoneReminderSwitchSts : 13|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 881 VCU_44: 8 GW
+ SG_ VCU_VehShowModeSts : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_VehShowModePowerlimitSts : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ VCU_IntegntmodeFlg : 5|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 885 IC_1: 8 CDU
+ SG_ IC_SurplusFuel : 6|7@0+ (1,0) [0|100] "%" GW
+ SG_ IC_ParkingBrakeIndication : 7|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_BrakeFluidLevelIndication : 10|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_FuelSignalShortToGND : 11|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_FuelSignalShortToBattery : 12|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_FuelSignalOpen : 13|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_EngineOilLowPressure : 14|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_BrakeSysFailIndication : 15|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_SurplusMileage : 9|10@0+ (1,0) [0|1022] "km" GW
+ SG_ IC_SurplusFuelValid : 28|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_OdoMeterValid : 29|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_DrvSeatbeltBucklestatus : 31|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_PassSeatbeltBucklestatus : 30|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_OdoMeter : 27|20@0+ (1,0) [0|999999] "km" GW
+ SG_ IC_ICFaultSts : 52|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_RearleftsideSeatbeltBucklesta : 53|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_RearmiddleSeatbeltBucklestatu : 54|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_RearrightsideSeatbeltBucklest : 55|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_DisplayVehicleSpeedUnit : 58|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_DisplayVehicleSpeedValue : 51|9@0+ (1,0) [0|510] "" ADU_I,GW
+ SG_ IC_AirbagInhibitWarning : 57|2@0+ (1,0) [0|3] "" GW
+
+BO_ 886 IC_2: 8 CDU
+ SG_ IC_TripAvgFuelConsRate : 7|9@0+ (0.1,0) [0|29.9] "L/100km" GW
+ SG_ IC_LifeTimeAvgFuelConsRate : 14|9@0+ (0.1,0) [0|29.9] "L/100km" GW
+ SG_ IC_OdoMeterExValid : 28|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_AvgFuelConslast50km : 21|9@0+ (0.1,0) [0|51] "L/100km" GW
+ SG_ IC_OdoMeterEx : 27|24@0+ (0.1,0) [0|999999.9] "km" GW
+ SG_ IC_BattChrgLmpSts : 56|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_InsAvgFuelConsUnit : 57|1@0+ (1,0) [0|1] "" GW
+ SG_ IC_InsAvgFuelCons : 51|10@0+ (0.1,0) [0|99.9] "" GW
+
+BO_ 887 IC_3: 8 CDU
+ SG_ IC_AvgPwrConsTrip : 7|11@0+ (0.1,-40) [-40|164.6] "kWh/100km" GW
+ SG_ IC_AvgPwrConsLifetime : 12|11@0+ (0.1,-40) [-40|164.6] "kWh/100km" GW
+ SG_ IC_AvgPwrConslast50km : 17|11@0+ (0.1,-40) [-40|164.6] "kWh/100km" GW
+ SG_ IC_AvgEgyConslast50km : 38|9@0+ (0.1,0) [0|51] "L/100km" GW
+ SG_ IC_SurplusMileageEx : 45|11@0+ (1,0) [0|2000] "km" GW
+ SG_ IC_MaintenanceRemind : 50|1@0+ (1,0) [0|1] "" GW
+
+BO_ 888 IC_4: 8 CDU
+ SG_ IC_OdoMeterHEV : 7|24@0+ (0.1,0) [0|999999.9] "km" GW
+ SG_ IC_OdoMeterEV : 31|24@0+ (0.1,0) [0|999999.9] "km" GW
+
+BO_ 895 IC_5: 8 CDU
+ SG_ IC_Fuel_Algorithm : 21|2@0+ (1,0) [0|3] "" GW
+ SG_ IC_FuelTankUnfilteredR : 15|10@0+ (1,0) [0|1022] "��" GW
+ SG_ IC_Fuel_Average0il_30km : 19|12@0+ (1,0) [0|4095] "" GW
+ SG_ IC_Fuel_TanklPercent : 39|8@0+ (1,0) [0|255] "" GW
+ SG_ IC_Fuel_ByAvgRtank : 47|8@0+ (1,0) [0|255] "" GW
+ SG_ IC_Fuel_ByRtank : 55|8@0+ (1,0) [0|255] "" GW
+ SG_ IC_Fuel_litersOlL : 63|8@0+ (1,0) [0|255] "" GW
+
+BO_ 899 GSM_1: 8 GW
+ SG_ GSM_GearShiftAuthRelease : 10|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 912 BMS_3: 8 GW
+ SG_ B2V_FaultInfo_32960_OverTemp : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ B2V_FaultInfo_32960_ThermalRunaw : 29|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 925 BMS_33: 8 GW
+ SG_ BMS_BatPackSOCDisply : 3|10@0+ (0.1,0) [0|100] "%" CDU
+ SG_ BMS_BatPackHiResSOC : 9|10@0+ (0.1,0) [0|100] "%" CDU
+ SG_ BMS_BatPackRemainingEngy : 39|16@0+ (0.1,0) [0|6553.4] "kwh" CDU
+
+BO_ 928 GW_PC_4: 8 GW
+ SG_ Swaybar_1_FrontSwaybarGreenLamp : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ Swaybar_1_FrontSwaybarYellowLamp : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ Swaybar_1_StatusNotice : 11|4@0+ (1,0) [0|15] "" CDU
+ SG_ Swaybar_1_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 938 WWR_1: 8 SWS
+ SG_ WWR_WorkSts : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ WWR_TextDisp : 5|4@0+ (1,0) [0|15] "" CDU
+ SG_ WWR_SwitchSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ WWR_Left_Distance : 15|10@0+ (1,0) [0|799] "cm" CDU
+ SG_ WWR_Right_Distance : 21|10@0+ (1,0) [0|799] "cm" CDU
+ SG_ WWR_LSensorFailSts : 27|1@0+ (1,0) [0|1] "" CDU
+ SG_ WWR_RSensorFailSts : 26|1@0+ (1,0) [0|1] "" CDU
+ SG_ WWR_SoundIndcn : 25|3@0+ (1,0) [0|7] "" CDU
+
+BO_ 940 GW_BD_14: 8 GW
+ SG_ AC_1_TemperatureLevel : 3|4@0+ (1,0) [0|15] "" CDU
+ SG_ AC_1_AirDistributeMode : 6|3@0+ (1,0) [0|7] "" CDU
+ SG_ AC_1_AirCirculationMode : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_BlowerSpeedLevel : 10|3@0+ (1,0) [0|7] "" CDU
+ SG_ AC_1_ACButtonSts : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_FrontDefrostButtonSts : 12|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_RearDefrostButtonSts : 13|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_ACSystemSts : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_PTCButtonSts : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_BlowerSpeedLevelRear : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ AC_1_ButtonTriggerStatus : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_RearModeSts : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_DriverSetTemperature : 29|6@0+ (0.5,15.5) [15.5|46.5] "��" CDU
+ SG_ AC_2_PngSetTemperature : 19|6@0+ (0.5,15.5) [15.5|46.5] "��" CDU
+ SG_ AC_2_OutsideTemperature : 39|8@0+ (0.5,-40) [-40|87] "Deg C" CDU,PDC
+ SG_ AC_2_OutsideTemperatureValid : 40|1@0+ (1,0) [0|1] "" CDU,PDC
+ SG_ AC_2_DualMode : 41|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_AUTOButtonSts : 42|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_AUTOPassengerButtonSts : 43|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_DualButtonSts : 44|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_ACSelfCleanModeSts : 45|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_ACFaultSts : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ AC_1_ACMaxSwSts : 47|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_acAutoState : 48|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_ModeAutoState : 49|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_NcfAutoState : 50|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_FanAutoState : 51|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_1_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ AC_2_Timeout_Flag : 57|1@0+ (1,0) [0|1] "" CDU,PDC
+
+BO_ 944 IHU_4: 8 CDU
+ SG_ IHU_NavSpeedLimitStatus : 1|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ IHU_NavSpeedLimit : 7|6@0+ (1,0) [0|59] "" Vector__XXX
+ SG_ IHU_NavSpeedLimitUnits : 9|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ IHU_NavCurrRoadType : 13|4@0+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 945 IHU_5: 8 CDU
+ SG_ IHU_BrightnessLevel : 3|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_SentryModeFaultRe : 7|4@0+ (1,0) [0|15] "" GW
+ SG_ IHU_VehiclePitchAngle : 15|12@0+ (0.1,-180) [-180|180] "��" GW
+ SG_ IHU_VehicleRollAngle : 19|12@0+ (0.1,-180) [-180|180] "��" GW
+ SG_ IHU_DVSts : 32|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_VideoSts : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_GPSErr : 34|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_GPSAntennaShortCircuit : 35|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_GPSAntennaTurnOff : 36|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_SentryModeWorkingSts : 39|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_GPSSatelliteNum : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ IHU_AudioMuteSts : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_IHUFaultSts : 49|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_USBtoTboxConnectSts : 50|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_CustomSw1Sts : 51|1@0+ (1,0) [0|1] "" CPS
+ SG_ IHU_CustomSw2Sts : 52|1@0+ (1,0) [0|1] "" CPS
+ SG_ IHU_VINCompareValid : 53|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ IHU_DVcomSt : 55|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_CameraErrorSt_Front : 56|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_CameraErrorSt_Rear : 57|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_CameraErrorSt_Left : 58|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_CameraErrorSt_Right : 59|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_EmergencyLightReq : 60|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_SentryWarInfo : 63|3@0+ (1,0) [0|7] "" GW
+
+BO_ 946 IHU_26: 8 CDU
+ SG_ IHU_MusicData : 7|16@0+ (1,0) [0|65535] "" Vector__XXX
+ SG_ IHU_MusicStatus : 23|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ IHU_VPAWakeupStatus : 21|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ IHU_AmbientLightLMode : 19|4@0+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 955 BMS_46: 8 GW
+ SG_ BMS_ChrgSysSta : 0|1@0+ (1,0) [0|1] "" CDU
+ SG_ BMS_ChrgConctSta : 3|3@0+ (1,0) [0|7] "" CDU
+ SG_ BMS_RsvnCharge_Sta : 6|1@0+ (1,0) [0|1] "" CDU
+ SG_ BMS_ChrgSta : 10|3@0+ (1,0) [0|7] "" CDU
+
+BO_ 972 GW_BD_29: 8 GW
+ SG_ SCU_1_FLSeatHeatLvlSts : 3|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCU_1_FRSeatHeatLvlSts : 7|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCU_1_FLSeatMassgLvlSts : 10|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_1_FLSeatMassgModSts : 15|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCU_1_FaultsStatus : 23|8@0+ (1,0) [0|255] "" CDU
+ SG_ SCU_1_ZeroGravityFailedRemind_FR : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ EPM_1_LPedalSts : 29|2@0+ (1,0) [0|3] "" CDU
+ SG_ EPM_1_RPedalSts : 31|2@0+ (1,0) [0|3] "" CDU
+ SG_ EPM_1_EPMModSts : 34|2@0+ (1,0) [0|3] "" CDU
+ SG_ EPM_1_FltSts : 35|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SCU_1_FLSeatVentLvlSts : 39|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCU_1_LumbarModeSts_FL : 41|2@0+ (1,0) [0|3] "" CDU
+ SG_ SCU_1_LumbarModeSts_FR : 43|2@0+ (1,0) [0|3] "" CDU
+ SG_ SCU_1_FRSeatVentLvlSts : 47|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCU_1_FRSeatMassgLvlSts : 50|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_1_ZeroGravitySts_FR : 61|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_1_FRSeatMassgModSts : 55|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCU_1_Timeout_Flag : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ EPM_1_Timeout_Flag : 58|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_1_SeatMemorySwtSts : 63|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 981 AMP_1: 8 AMP
+ SG_ AMP_AudioSourceSts : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ AMP_MediaVolStepSts : 7|6@0+ (1,0) [0|31] "" CDU
+ SG_ AMP_MuteSts : 9|2@0+ (1,0) [0|3] "" CDU
+ SG_ AMP_BtMusicVolStepSts : 15|6@0+ (1,0) [0|31] "" CDU
+ SG_ AMP_ChimeSysSelect : 17|2@0+ (1,0) [0|3] "" CDU
+ SG_ AMP_NaviVolStepSts : 23|6@0+ (1,0) [0|31] "" CDU
+ SG_ AMP_BeepSoundEnableSts : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ AMP_CommVolStepSts : 31|6@0+ (1,0) [0|31] "" CDU
+ SG_ AMP_PhoneLinkEnableSts : 33|2@0+ (1,0) [0|3] "" CDU
+ SG_ AMP_VCVolStepSts : 39|6@0+ (1,0) [0|31] "" CDU
+ SG_ AMP_LoudnessEnableSts : 41|2@0+ (1,0) [0|3] "" CDU
+ SG_ AMP_RingToneVolStepSts : 47|6@0+ (1,0) [0|31] "" CDU
+ SG_ AMP_VSCLevelSts : 55|3@0+ (1,0) [0|7] "" CDU
+ SG_ AMP_PositionSelect : 52|3@0+ (1,0) [0|7] "" CDU
+ SG_ AMP_ModeSelect : 49|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 982 AMP_2: 8 AMP
+ SG_ AMP_BalanceStepSts : 7|5@0+ (1,0) [0|18] "" CDU
+ SG_ AMP_FadeStepSts : 2|5@0+ (1,0) [0|18] "" CDU
+ SG_ AMP_BassStepSts : 13|5@0+ (1,0) [0|18] "" CDU
+ SG_ AMP_MidrangeStepSts : 8|5@0+ (1,0) [0|18] "" CDU
+ SG_ AMP_TrebleStepSts : 19|5@0+ (1,0) [0|18] "" CDU
+
+BO_ 984 BCM_9: 8 GW
+ SG_ BCM_LeftBackMirrorSts_LR : 7|8@0+ (1,0) [0|100] "%" CDU
+ SG_ BCM_LeftBackMirrorSts_UD : 15|8@0+ (1,0) [0|100] "%" CDU
+ SG_ BCM_RightBackMirrorSts_LR : 23|8@0+ (1,0) [0|100] "%" CDU
+ SG_ BCM_RightBackMirrorSts_UD : 31|8@0+ (1,0) [0|100] "%" CDU
+ SG_ BCM_BackMirrorMemReq : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_UnlockLightMode : 39|3@0+ (1,0) [0|7] "" CDU
+ SG_ BCM_LockLightMode : 47|3@0+ (1,0) [0|7] "" CDU
+ SG_ BCM_LogoLightOutputSts : 44|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 985 BCM_6: 8 GW
+ SG_ BCM_FrontWiperSts : 6|3@0+ (1,0) [0|7] "" CDU
+ SG_ BCM_WiperRepairSts : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_ApproveUnlockSetSts : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_WalkAwayLockSetSts : 9|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_FLUnlockMode : 11|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_DoorCmdDomeLightSetSts : 13|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_LgoLightSetSts : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_ClsWinRainSetSts : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_MirrorUnfoldSetSts : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_MirrorReverseDownSetSts : 27|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_RefuelingSts : 29|2@0+ (1,0) [0|3] "" CDU
+ SG_ BCM_RefuelProhibitWarning : 30|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_TailGateAjarSts : 32|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_TailGateFullOpenSts : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_SteeringWheelHeatingSetSts : 34|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_ArmFailedHornSoundSetSts : 35|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_DisrmHornSoundSetSts : 36|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_WiperRepairOperationNotice : 37|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_WiperOperationNotice : 38|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_OdoMeterExBackup : 47|24@0+ (0.1,0) [0|999999.9] "km" CDU
+
+BO_ 987 SCU_2: 8 GW
+ SG_ SCU_SlideMotorPosSts_FL : 7|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_BackMotorPosSts_FL : 15|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_HeightMotorPosSts_FL : 23|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_CushionAngleMotorPosSts_FL : 31|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_LegRetractableMotorPosSet_FL : 39|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_SeatMemoryPosSts_FL : 42|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_SeatGetMemoryPosSts_FL : 45|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_NapModeSeatSelectSts_FL : 46|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_EasyEntryExitSeatSetSts_FL : 47|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_SlideApReason_FL : 48|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_BackApReason_FL : 49|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_HeightApReason_FL : 50|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_CushionApReason_FL : 51|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegRetractableApReason_FL : 52|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_SeatMemoryPopupReq : 53|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegRetractableFrontAdjSW_FL : 54|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegRetractableRearAdjSW_FL : 55|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_FrontAdjSW_FL : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_RearAdjSW_FL : 57|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_BackFrontAdjSW_FL : 58|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_BackRearAdjSW_FL : 59|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_UpAdjSW_FL : 60|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_DownAdjSW_FL : 61|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_CushionUpAdjtSW_FL : 62|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_CushionDownAdjSW_FL : 63|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 988 SCU_3: 8 GW
+ SG_ SCU_SlideMotorPosSts_FR : 7|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_BackMotorPosSts_FR : 15|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_HeightMotorPosSts_FR : 23|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_LegRetractableMotorPosSts_FR : 31|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_LegAngleMotorPosSts_FR : 39|8@0+ (1,0) [0|100] "%" CDU
+ SG_ SCU_SeatMemoryPosSts_FR : 42|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_SeatGetMemoryPosSts_FR : 45|3@0+ (1,0) [0|7] "" CDU
+ SG_ SCU_NapModeSeatSelectSts_FR : 46|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_EasyEntryExitSeatSetSts_FR : 47|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_SlideApReason_FR : 48|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_BackApReason_FR : 49|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_HeightApReason_FR : 50|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegAngleApReason_FR : 52|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegRetractableApReason_FR : 53|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegAngleUpAdjSw_FR : 54|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegAngleDownAdjSw_FR : 55|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_FrontAdjSW_FR : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_RearAdjSW_FR : 57|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_BackFrontAdjSW_FR : 58|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_BackRearAdjSW_FR : 59|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_UpAdjSW_FR : 60|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_DownAdjSW_FR : 61|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegRetractableFrontAdjSW_FR : 62|1@0+ (1,0) [0|1] "" CDU
+ SG_ SCU_LegRetractableRearAdjSW_FR : 63|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 989 PEPS_5: 8 GW
+ SG_ PEPS_RunStartWarning : 22|1@0+ (1,0) [0|1] "" CDU
+ SG_ PEPS_AccLeaveWarning : 23|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 990 BTK_1: 8 GW
+ SG_ BTK_VINCompareValid : 40|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 995 ADU_7: 8 ADU_I
+ SG_ ADU_FCW_ONOFF_Sts : 2|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_AEBONOFFSts : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_LSSONOFFSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_LDWLDPONOFFSts : 10|3@0+ (1,0) [0|7] "" CDU
+ SG_ ADU_LDWSnvtySts : 13|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_LDWWarnModSts : 15|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_ELKONOFFSts : 17|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SLIFSLWFONOFFSts : 21|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SLWFONOFFSts : 23|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SLWFAcousticONOFFSts : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SLWFNmberAb : 31|6@0+ (1,0) [0|63] "" CDU
+ SG_ ADU_SLWFModeSts : 33|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SLWFNmberRe : 39|6@0+ (1,0) [0|63] "" CDU
+ SG_ ADU_SCFONOFFSts : 41|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_SPLChangeONOFFSts : 43|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_DAIONOFFSts : 45|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_IHBCONOFFSts : 47|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_7_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_FCTAONOFFSts : 53|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_FCTBONOFFSts : 55|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_7_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 996 ADU_8: 8 ADU_I
+ SG_ ADU_PDCVoiceONOFFSts : 1|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_DCLCONOFFSts : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_ACPEONOFFSts : 5|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_ADASDrivingModeSts : 7|2@0+ (1,0) [0|3] "" CDU
+ SG_ ADU_8_RollingCounter : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ ADU_8_Checksum : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 1008 SRF_1: 8 GW
+ SG_ SRF_SWSt : 7|4@0+ (1,0) [0|15] "" CDU
+ SG_ SRF_InitializeStatus : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_SW_Fault : 9|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_Motor_Circuit_Fault : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_ECU_Fault : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_Alarm : 12|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_Response_Error : 13|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_Overheat_Fault : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_Voltage_Fault : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ SRF_PosStatus_Percentage : 39|8@0+ (1,0) [0|255] "%" CDU
+ SG_ SRF_CmdResponse : 43|4@0+ (1,0) [0|15] "" CDU
+ SG_ SRF_CmdAbnormalReason : 47|4@0+ (1,0) [0|15] "" CDU
+ SG_ SRF_InterlockingCmd : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ SRF_WorkingSts : 55|4@0+ (1,0) [0|15] "" CDU
+ SG_ SRF_Software : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 1009 SDD_1: 8 GW
+ SG_ SSD_SWSt : 7|4@0+ (1,0) [0|15] "" CDU
+ SG_ SSD_InitializeStatus : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_SW_Fault : 9|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_Motor_Circuit_Fault : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_ECU_Fault : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_Alarm : 12|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_Response_Error : 13|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_Overheat_Fault : 14|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_Voltage_Fault : 15|1@0+ (1,0) [0|1] "" CDU
+ SG_ SSD_PosStatus_Percentage : 39|8@0+ (1,0) [0|255] "%" CDU
+ SG_ SSD_CmdResponse : 43|4@0+ (1,0) [0|15] "" CDU
+ SG_ SSD_CmdAbnormalReason : 47|4@0+ (1,0) [0|15] "" CDU
+ SG_ SSD_InterlockingCmd : 51|4@0+ (1,0) [0|15] "" CDU
+ SG_ SSD_WorkingSts : 55|4@0+ (1,0) [0|15] "" CDU
+ SG_ SSD_Software : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 1010 RLS_1: 8 GW
+ SG_ RLS_RQ_LowBeam : 7|1@0+ (1,0) [0|1] "" CDU
+ SG_ RLS_RQ_PositionLamp : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ RLS_Fault_Rain : 9|1@0+ (1,0) [0|1] "" CDU
+ SG_ RLS_Fault_Light : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ RLS_REP_Error : 11|1@0+ (1,0) [0|1] "" CDU
+ SG_ RLS_VOLT_Error : 13|2@0+ (1,0) [0|3] "" CDU
+ SG_ RLS_Solar_Driver : 23|8@0+ (4,0) [0|1000] "w/m2" CDU
+ SG_ RLS_Solar_Passenger : 31|8@0+ (4,0) [0|1000] "w/m2" CDU
+
+BO_ 1011 HOD_1: 8 CDU
+ SG_ HOD_ErrorInfo : 3|4@0+ (1,0) [0|15] "" ADU_I
+ SG_ HOD_Sts : 7|4@0+ (1,0) [0|15] "" ADU_I
+ SG_ HOD_RespEr : 8|1@0+ (1,0) [0|1] "" ADU_I
+ SG_ HOD_CalCmIndc : 9|1@0+ (1,0) [0|1] "" ADU_I
+ SG_ HOD_1_RollingCounter : 51|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ HOD_1_Checksum : 63|8@0+ (1,0) [0|255] "" ADU_I
+
+BO_ 1013 SCM_B_1: 8 GW
+ SG_ SCM_SeatHeatLvlSts_RL : 3|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCM_SeatHeatLvlSts_RR : 7|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCM_FLSeatHeatLvlSts : 11|4@0+ (1,0) [0|15] "" CDU
+ SG_ SCM_FRSeatHeatLvlSts : 15|4@0+ (1,0) [0|15] "" CDU
+
+BO_ 1280 VCU_6: 8 GW
+ SG_ VCU_DCEnable : 33|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 1288 EMS_18: 8 GW
+ SG_ EMS_VIN_10 : 7|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_11 : 15|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_12 : 23|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_13 : 31|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_14 : 39|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_15 : 47|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_16 : 55|8@0+ (1,0) [0|255] "" CDU
+ SG_ EMS_VIN_17 : 63|8@0+ (1,0) [0|255] "" CDU
+
+BO_ 1320 IBS_1: 8 GW
+ SG_ IBS_U_BATT : 7|14@0+ (0.0009765625,3) [3|18] "V" CDU
+
+BO_ 1321 IBS_2: 8 GW
+ SG_ IBS_SOC : 7|8@0+ (1,0) [0|100] "%" CDU
+
+BO_ 1346 IHU_2: 8 CDU
+ SG_ IHU_DateTimeSecond : 5|6@0+ (1,0) [0|59] "��" AVAS,CPS,PDC,GW
+ SG_ IHU_DateTimeMinute : 13|6@0+ (1,0) [0|59] "��" AVAS,CPS,PDC,GW
+ SG_ IHU_DateTimeHour : 20|5@0+ (1,0) [0|23] "ʱ" AVAS,CPS,PDC,GW
+ SG_ IHU_DateTimeDay : 28|5@0+ (1,1) [1|31] "��" AVAS,CPS,PDC,GW
+ SG_ IHU_DateTimeMonth : 35|4@0+ (1,1) [1|12] "��" AVAS,CPS,PDC,GW
+ SG_ IHU_DateTimeYear : 46|7@0+ (1,2000) [2000|2100] "��" AVAS,CPS,PDC,GW
+ SG_ IHU_TimeValid : 63|1@0+ (1,0) [0|1] "" AVAS,CPS,PDC,GW
+
+BO_ 1361 OBC_3: 8 GW
+ SG_ C2V_N_ACVoltageOutput : 7|8@0+ (1,0) [0|250] "V" CDU
+ SG_ C2V_N_AVCurrentOutput : 15|8@0+ (0.2,0) [0|50] "A" CDU
+ SG_ C2V_N_AVPowerOutput : 23|8@0+ (0.1,0) [0|25.4] "kW" CDU
+ SG_ C2V_St_VTOLPlugStatus : 25|2@0+ (1,0) [0|3] "" CDU
+ SG_ C2V_VTOLStatus : 28|3@0+ (1,0) [0|7] "" CDU
+ SG_ C2V_F_VTOLOverfulRatedPower : 29|1@0+ (1,0) [0|1] "" CDU
+ SG_ C2V_F_VTOLHardware : 30|1@0+ (1,0) [0|1] "" CDU
+ SG_ C2V_F_VTOLOverTemp : 31|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 1368 DCDC_1: 8 GW
+ SG_ DCDC_WorkStatus : 33|1@0+ (1,0) [0|1] "" CDU
+ SG_ DCDC_HvLockErr : 39|1@0+ (1,0) [0|1] "" CDU
+ SG_ DCDC_AC_Insulation_Fault : 47|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 1383 TLM_1: 8 GW
+ SG_ TLM_TrailerModSts : 18|1@0+ (1,0) [0|1] "" CDU
+ SG_ TLM_TrailerindicatorSts : 21|3@0+ (1,0) [0|7] "" CDU
+
+BO_ 1388 AVAS_1: 8 AVAS
+ SG_ AVAS_SwtSts : 1|1@0+ (1,0) [0|1] "" CDU
+ SG_ AVAS_SoundTypSts : 35|3@0+ (1,0) [0|7] "" CDU
+
+BO_ 1400 BMS_23: 8 GW
+ SG_ BMS_6C0_VEH_INSULATION_FAULT_IND : 16|1@0+ (1,0) [0|1] "" CDU
+ SG_ BMS_6C0_BATT_FAULT_IND : 17|1@0+ (1,0) [0|1] "" CDU
+ SG_ BMS_6C0_OBC_ERR_IND : 21|1@0+ (1,0) [0|1] "" CDU
+ SG_ BMS_6C0_OBC_REMIND_LAMP : 23|1@0+ (1,0) [0|1] "" CDU
+ SG_ BMS_6C0_BATT_TEMP_LAMP : 58|3@0+ (1,0) [0|5] "" CDU
+
+BO_ 1404 BMS_49: 8 GW
+ SG_ BMS_RemChrgTime : 7|12@0+ (1,0) [0|4094] "min" CDU
+ SG_ BMS_ChrgTimeElasped : 11|12@0+ (1,0) [0|4094] "min" CDU
+ SG_ BMS_BatChrgEngy : 55|16@0+ (0.1,0) [0|6553.4] "kWh" CDU
+
+BO_ 1405 BMS_50: 8 GW
+ SG_ B2V_TotalDCChrgEnergy : 23|24@0+ (1,0) [0|16777214] "kWh" CDU
+ SG_ B2V_TotalACChrgEnergy : 47|24@0+ (1,0) [0|16777214] "kWh" CDU
+
+BO_ 1408 IHU_7: 8 CDU
+ SG_ IHU_GPSDataGroup_1 : 3|4@0+ (1,0) [0|15] "" ADU_I,GW
+ SG_ IHU_GPSDataType_1 : 5|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_GPSPositioningSts : 7|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_GPSviaGPS : 9|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_GPSviaBeidou : 11|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_GPSviaGLONASS : 13|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_GPSviaGALILEO : 15|2@0+ (1,0) [0|3] "" GW
+ SG_ IHU_GPSAltitude : 23|16@0+ (1,-16383) [-16383|49151] "m" GW
+ SG_ IHU_GPSLatitudeDirection : 57|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_GPSLatitude : 39|30@0+ (1,0) [0|1073741822] "�̡�" ADU_I,GW
+
+BO_ 1409 IHU_8: 8 CDU
+ SG_ IHU_GPSDataGroup_2 : 3|4@0+ (1,0) [0|15] "" ADU_I,GW
+ SG_ IHU_GPSDataType_2 : 5|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_GPSLongitudeDirection : 7|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_GPSLongitude : 15|30@0+ (1,0) [0|1073741822] "�̡�" ADU_I,GW
+ SG_ IHU_GPSVehicleDirection : 32|9@0+ (1,0) [0|359] "��" ADU_I,GW
+ SG_ IHU_GPSVehicleSpeed : 55|16@0+ (0.1,0) [0|6553.4] "km/h" ADU_I,GW
+
+BO_ 1410 IHU_9: 8 CDU
+ SG_ IHU_GPSDataGroup_3 : 3|4@0+ (1,0) [0|15] "" ADU_I,GW
+ SG_ IHU_GPSDataType_3 : 5|2@0+ (1,0) [0|3] "" ADU_I,GW
+ SG_ IHU_GPSTime : 15|32@0+ (1,0) [0|4294967294] "s" GW
+ SG_ IHU_NavCountryCodeInfo : 46|7@0+ (1,0) [0|127] "" ADU_I,GW
+
+BO_ 1411 IHU_25: 8 CDU
+ SG_ IHU_BalanceStep : 7|5@0+ (1,0) [0|19] "" AMP
+ SG_ IHU_FadeStep : 2|5@0+ (1,0) [0|19] "" AMP
+ SG_ IHU_BassStep : 13|5@0+ (1,0) [0|19] "" AMP
+ SG_ IHU_MidrangeStep : 8|5@0+ (1,0) [0|19] "" AMP
+ SG_ IHU_TrebleStep : 19|5@0+ (1,0) [0|19] "" AMP
+ SG_ IHU_MediaSourceSet : 30|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_VCSourceSet : 27|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_NaviSourceSet : 24|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_BeepSourceSet : 37|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_CommSourceSet : 34|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_ChimeSourceSet : 47|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_DBBeepSourceSet : 44|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_PhoneLinkSourceSet : 41|3@0+ (1,0) [0|7] "" AMP
+ SG_ IHU_RingToneSourceSet : 54|3@0+ (1,0) [0|7] "" AMP
+
+BO_ 1422 BMS_61: 8 GW
+ SG_ B2V_TotalDisChrgEnergy : 7|24@0+ (1,0) [0|16777214] "kWh" CDU
+ SG_ B2V_SingleDCChrgEnergy : 31|16@0+ (0.1,0) [0|6553.4] "kWh" CDU
+ SG_ B2V_SingleACChrgEnergy : 47|16@0+ (0.1,0) [0|6553.4] "kWh" CDU
+
+BO_ 1424 OBC_2: 8 GW
+ SG_ OBC_ChargeStatus : 3|2@0+ (1,0) [0|3] "" CDU
+ SG_ OBC_ChargePlugStatus : 5|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 1429 DCDC_2: 8 GW
+ SG_ DCDC_SocketVTOLStatus : 53|2@0+ (1,0) [0|3] "" CDU
+
+BO_ 1432 TBOX_1: 8 GW
+ SG_ TBOX_DateTimeSecond : 5|6@0+ (1,0) [0|59] "��" CDU
+ SG_ TBOX_DateTimeMinute : 13|6@0+ (1,0) [0|59] "��" CDU
+ SG_ TBOX_DateTimeHour : 20|5@0+ (1,0) [0|23] "ʱ" CDU
+ SG_ TBOX_DateTimeDay : 28|5@0+ (1,1) [1|31] "��" CDU
+ SG_ TBOX_DateTimeMonth : 35|4@0+ (1,1) [1|12] "��" CDU
+ SG_ TBOX_DateTimeYear : 46|7@0+ (1,2000) [2000|2100] "��" CDU
+ SG_ TBOX_BatteryErr : 49|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_PowerOverSuply : 50|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_BatteryUseUp : 51|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_GSMErr : 52|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_SIMErr : 53|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_GPSErr : 54|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_GPSAntennaShortCircuit : 55|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_GPSAntennaTurnOff : 56|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_ExternalMemoryErr : 57|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_TempretureHigh : 58|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_CANErr : 59|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_DateTimeValid : 63|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 1433 TBOX_2: 8 GW
+ SG_ TBOX_CommSignalVail : 7|8@0+ (1,0) [0|31] "" CDU
+ SG_ TBOX_BCALLStatus : 20|2@0+ (1,0) [0|3] "" CDU
+ SG_ TBOX_EcallStatus : 58|2@0+ (1,0) [0|3] "" CDU
+ SG_ TBOX_EcallErr : 59|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_VINCompareValid : 60|1@0+ (1,0) [0|1] "" CDU
+ SG_ TBOX_DVCtrl : 63|3@0+ (1,0) [0|7] "" CDU
+
+BO_ 1457 BCM_8: 8 GW
+ SG_ BCM_WindowAntipinchSts_FL : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_WindowAntipinchSts_FR : 9|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_WindowAntipinchSts_RL : 10|1@0+ (1,0) [0|1] "" CDU
+ SG_ BCM_WindowAntipinchSts_RR : 11|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 1664 GW_NM_AUTOSAR: 8 GW
+ SG_ GW_NM_SourceID : 7|8@0+ (1,0) [0|127] "" CDU
+ SG_ GW_NM_RepeatMessageReq : 8|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_ActiveWakeup : 12|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_State : 18|3@0+ (1,0) [0|7] "" CDU
+ SG_ GW_NM_GatewayRequest : 19|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource1 : 24|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource2 : 25|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource3 : 26|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource4 : 27|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource5 : 28|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource6 : 29|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource7 : 30|1@0+ (1,0) [0|1] "" CDU
+ SG_ GW_NM_WakeupSource8 : 31|1@0+ (1,0) [0|1] "" CDU
+
+BO_ 1665 TBOX_NM_AUTOSAR: 8 Vector__XXX
+ SG_ TBOX_NM_SourceID : 7|8@0+ (1,0) [0|127] "" CDU,GW
+ SG_ TBOX_NM_RepeatMessageReq : 8|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_ActiveWakeup : 12|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_State : 18|3@0+ (1,0) [0|7] "" CDU,GW
+ SG_ TBOX_NM_GatewayRequest : 19|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource1 : 24|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource2 : 25|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource3 : 26|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource4 : 27|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource5 : 28|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource6 : 29|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource7 : 30|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ TBOX_NM_WakeupSource8 : 31|1@0+ (1,0) [0|1] "" CDU,GW
+
+BO_ 1744 IC_NM_AUTOSAR: 8 Vector__XXX
+ SG_ IC_NM_SourceID : 7|8@0+ (1,0) [0|127] "" CDU,GW
+ SG_ IC_NM_RepeatMessageReq : 8|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_ActiveWakeup : 12|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_State : 18|3@0+ (1,0) [0|7] "" CDU,GW
+ SG_ IC_NM_GatewayRequest : 19|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource1 : 24|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource2 : 25|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource3 : 26|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource4 : 27|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource5 : 28|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource6 : 29|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource7 : 30|1@0+ (1,0) [0|1] "" CDU,GW
+ SG_ IC_NM_WakeupSource8 : 31|1@0+ (1,0) [0|1] "" CDU,GW
+
+BO_ 1745 IHU_NM_AUTOSAR: 8 CDU
+ SG_ IHU_NM_SourceID : 7|8@0+ (1,0) [0|127] "" GW
+ SG_ IHU_NM_RepeatMessageReq : 8|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_ActiveWakeup : 12|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_State : 18|3@0+ (1,0) [0|7] "" GW
+ SG_ IHU_NM_GatewayRequest : 19|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource1 : 24|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource2 : 25|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource3 : 26|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource4 : 27|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource5 : 28|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource6 : 29|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource7 : 30|1@0+ (1,0) [0|1] "" GW
+ SG_ IHU_NM_WakeupSource8 : 31|1@0+ (1,0) [0|1] "" GW
+
+BO_ 1856 DiagPhyReq_IC: 8 GW
+ SG_ IC_Physical_Diagnostic_Rx : 7|64@0+ (1,0) [0|1.8446744073709552E+019] "" CDU
+
+BO_ 1857 DiagPhyReq_IHU: 8 GW
+ SG_ IHU_Physical_Diagnostic_Rx : 7|64@0+ (1,0) [0|1.8446744073709552E+019] "" CDU
+
+BO_ 1864 DiagResp_IC: 8 CDU
+ SG_ IC_Physical_Diagnostic_Tx : 7|64@0+ (1,0) [0|1.8446744073709552E+019] "" GW
+
+BO_ 1865 DiagResp_IHU: 8 CDU
+ SG_ IHU_Physical_Diagnostic_Tx : 7|64@0+ (1,0) [0|1.8446744073709552E+019] "" GW
+
+BO_ 2015 DiagFunReq_Tester: 8 GW
+ SG_ Tester_FunctionAddressingReq : 7|64@0+ (1,0) [0|1.8446744073709552E+019] "" ADU_I,CDU,AVAS,CPS,WCM,PDC
+
+
+
+
+
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 100000000000;
+
+
+BA_ "GenMsgCycleTime" BO_ 274 10;
+BA_ "GenMsgCycleTime" BO_ 289 10;
+BA_ "GenMsgCycleTime" BO_ 290 10;
+BA_ "GenMsgCycleTime" BO_ 316 10;
+BA_ "GenMsgCycleTime" BO_ 336 10;
+BA_ "GenMsgCycleTime" BO_ 341 10;
+BA_ "GenMsgCycleTime" BO_ 512 20;
+BA_ "GenMsgCycleTime" BO_ 513 20;
+BA_ "GenMsgCycleTime" BO_ 514 20;
+BA_ "GenMsgCycleTime" BO_ 529 20;
+BA_ "GenMsgCycleTime" BO_ 532 20;
+BA_ "GenMsgCycleTime" BO_ 533 20;
+BA_ "GenMsgCycleTime" BO_ 536 20;
+BA_ "GenMsgCycleTime" BO_ 592 20;
+BA_ "GenMsgCycleTime" BO_ 597 20;
+BA_ "GenMsgCycleTime" BO_ 598 20;
+BA_ "GenMsgCycleTime" BO_ 599 20;
+BA_ "GenMsgCycleTime" BO_ 616 20;
+BA_ "GenMsgCycleTime" BO_ 617 20;
+BA_ "GenMsgCycleTime" BO_ 620 20;
+BA_ "GenMsgCycleTime" BO_ 780 50;
+BA_ "GenMsgCycleTime" BO_ 781 50;
+BA_ "GenMsgCycleTime" BO_ 782 50;
+BA_ "GenMsgCycleTime" BO_ 783 50;
+BA_ "GenMsgCycleTime" BO_ 785 50;
+BA_ "GenMsgCycleTime" BO_ 789 50;
+BA_ "GenMsgCycleTime" BO_ 791 50;
+BA_ "GenMsgCycleTime" BO_ 794 50;
+BA_ "GenMsgCycleTime" BO_ 795 50;
+BA_ "GenMsgCycleTime" BO_ 796 50;
+BA_ "GenMsgCycleTime" BO_ 797 50;
+BA_ "GenMsgCycleTime" BO_ 798 50;
+BA_ "GenMsgCycleTime" BO_ 801 50;
+BA_ "GenMsgCycleTime" BO_ 802 50;
+BA_ "GenMsgCycleTime" BO_ 804 50;
+BA_ "GenMsgCycleTime" BO_ 848 100;
+BA_ "GenMsgCycleTime" BO_ 850 100;
+BA_ "GenMsgCycleTime" BO_ 851 100;
+BA_ "GenMsgCycleTime" BO_ 864 100;
+BA_ "GenMsgCycleTime" BO_ 865 100;
+BA_ "GenMsgCycleTime" BO_ 866 100;
+BA_ "GenMsgCycleTime" BO_ 869 100;
+BA_ "GenMsgCycleTime" BO_ 870 100;
+BA_ "GenMsgCycleTime" BO_ 871 100;
+BA_ "GenMsgCycleTime" BO_ 872 100;
+BA_ "GenMsgCycleTime" BO_ 875 100;
+BA_ "GenMsgCycleTime" BO_ 876 100;
+BA_ "GenMsgCycleTime" BO_ 881 100;
+BA_ "GenMsgCycleTime" BO_ 885 100;
+BA_ "GenMsgCycleTime" BO_ 886 100;
+BA_ "GenMsgCycleTime" BO_ 887 100;
+BA_ "GenMsgCycleTime" BO_ 888 100;
+BA_ "GenMsgCycleTime" BO_ 895 100;
+BA_ "GenMsgCycleTime" BO_ 899 100;
+BA_ "GenMsgCycleTime" BO_ 912 100;
+BA_ "GenMsgCycleTime" BO_ 925 100;
+BA_ "GenMsgCycleTime" BO_ 928 100;
+BA_ "GenMsgCycleTime" BO_ 938 100;
+BA_ "GenMsgCycleTime" BO_ 940 100;
+BA_ "GenMsgCycleTime" BO_ 944 100;
+BA_ "GenMsgCycleTime" BO_ 945 100;
+BA_ "GenMsgCycleTime" BO_ 946 100;
+BA_ "GenMsgCycleTime" BO_ 955 100;
+BA_ "GenMsgCycleTime" BO_ 972 100;
+BA_ "GenMsgCycleTime" BO_ 981 100;
+BA_ "GenMsgCycleTime" BO_ 982 100;
+BA_ "GenMsgCycleTime" BO_ 984 100;
+BA_ "GenMsgCycleTime" BO_ 985 100;
+BA_ "GenMsgCycleTime" BO_ 987 100;
+BA_ "GenMsgCycleTime" BO_ 988 100;
+BA_ "GenMsgCycleTime" BO_ 989 100;
+BA_ "GenMsgCycleTime" BO_ 990 100;
+BA_ "GenMsgCycleTime" BO_ 995 100;
+BA_ "GenMsgCycleTime" BO_ 996 100;
+BA_ "GenMsgCycleTime" BO_ 1008 100;
+BA_ "GenMsgCycleTime" BO_ 1009 100;
+BA_ "GenMsgCycleTime" BO_ 1010 100;
+BA_ "GenMsgCycleTime" BO_ 1011 100;
+BA_ "GenMsgCycleTime" BO_ 1013 100;
+BA_ "GenMsgCycleTime" BO_ 1280 200;
+BA_ "GenMsgCycleTime" BO_ 1288 1000;
+BA_ "GenMsgCycleTime" BO_ 1320 100;
+BA_ "GenMsgCycleTime" BO_ 1321 100;
+BA_ "GenMsgCycleTime" BO_ 1346 500;
+BA_ "GenMsgCycleTime" BO_ 1361 500;
+BA_ "GenMsgCycleTime" BO_ 1368 500;
+BA_ "GenMsgCycleTime" BO_ 1383 100;
+BA_ "GenMsgCycleTime" BO_ 1388 200;
+BA_ "GenMsgCycleTime" BO_ 1400 1000;
+BA_ "GenMsgCycleTime" BO_ 1404 1000;
+BA_ "GenMsgCycleTime" BO_ 1405 1000;
+BA_ "GenMsgCycleTime" BO_ 1408 1000;
+BA_ "GenMsgCycleTime" BO_ 1409 1000;
+BA_ "GenMsgCycleTime" BO_ 1410 1000;
+BA_ "GenMsgCycleTime" BO_ 1411 200;
+BA_ "GenMsgCycleTime" BO_ 1422 1000;
+BA_ "GenMsgCycleTime" BO_ 1424 500;
+BA_ "GenMsgCycleTime" BO_ 1429 500;
+BA_ "GenMsgCycleTime" BO_ 1432 500;
+BA_ "GenMsgCycleTime" BO_ 1433 1000;
+BA_ "GenMsgCycleTime" BO_ 1457 500;
+
+BA_ "GenSigStartValue" SG_ 157 IHU_PDCVoiceONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 158 IHU_BSDONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 158 IHU_DOWONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 158 IHU_BSDVoiceONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 158 IHU_RCTAONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 158 IHU_RCTBONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 158 IHU_RCWONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 158 IHU_RCWVoiceONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 290 VCU_GearShiftPositionValid 1;
+BA_ "GenSigStartValue" SG_ 316 B2V_ST1_PackCurrent 10000;
+BA_ "GenSigStartValue" SG_ 336 EMS_2_EngineSpeedValid 1;
+BA_ "GenSigStartValue" SG_ 336 TCU_1_ActualGearValid 1;
+BA_ "GenSigStartValue" SG_ 336 TCU_1_GearShiftPositionValid 1;
+BA_ "GenSigStartValue" SG_ 336 TCU_1_LimpHomeMode 1;
+BA_ "GenSigStartValue" SG_ 341 EMS_4_EngineCoolantTemp 184;
+BA_ "GenSigStartValue" SG_ 341 EMS_4_EngineCoolantTempValid 1;
+BA_ "GenSigStartValue" SG_ 512 ABS_FLWheelSpeedValid 1;
+BA_ "GenSigStartValue" SG_ 512 ABS_FRWheelSpeedValid 1;
+BA_ "GenSigStartValue" SG_ 513 ABS_RLWheelSpeedValid 1;
+BA_ "GenSigStartValue" SG_ 513 ABS_RRWheelSpeedValid 1;
+BA_ "GenSigStartValue" SG_ 514 ABS_VehicleSpeedValid 1;
+BA_ "GenSigStartValue" SG_ 529 ESP_LongitAccel 796;
+BA_ "GenSigStartValue" SG_ 529 ESP_LateralAccel 796;
+BA_ "GenSigStartValue" SG_ 529 ESP_YawRate 2145;
+BA_ "GenSigStartValue" SG_ 529 ESP_LongitSensorValid 1;
+BA_ "GenSigStartValue" SG_ 529 ESP_LateralSensorValid 1;
+BA_ "GenSigStartValue" SG_ 529 ESP_YawRateSensorValid 1;
+BA_ "GenSigStartValue" SG_ 532 ESP_CCO_Display_Red_Warn 1;
+BA_ "GenSigStartValue" SG_ 532 ESP_CCO_Failed 1;
+BA_ "GenSigStartValue" SG_ 533 EPB_TrailerModeSts 1;
+BA_ "GenSigStartValue" SG_ 533 EPB_AutoholdValid 1;
+BA_ "GenSigStartValue" SG_ 592 SAS_1_SteeringAngleSpeedEXValid 1;
+BA_ "GenSigStartValue" SG_ 592 EPS_1_OverTempSts 1;
+BA_ "GenSigStartValue" SG_ 592 SAS_1_SteeringAngleValid 1;
+BA_ "GenSigStartValue" SG_ 598 EMS_11_EngSpdValid 1;
+BA_ "GenSigStartValue" SG_ 598 EMS_11_EngRunningStatusValid 1;
+BA_ "GenSigStartValue" SG_ 598 EMS_14_engCoolantTempValid 1;
+BA_ "GenSigStartValue" SG_ 598 EMS_14_engCoolantTemp 80;
+BA_ "GenSigStartValue" SG_ 620 IHU_LongitAccelValid 1;
+BA_ "GenSigStartValue" SG_ 620 IHU_LateralAccelValid 1;
+BA_ "GenSigStartValue" SG_ 620 IHU_VerticalAccelValid 1;
+BA_ "GenSigStartValue" SG_ 768 IHU_TemperatureAjust 1;
+BA_ "GenSigStartValue" SG_ 780 ADU_SLIFSysSts 1;
+BA_ "GenSigStartValue" SG_ 780 ADU_IHBC_SysSts 1;
+BA_ "GenSigStartValue" SG_ 781 ADU_LDW_SysSts 1;
+BA_ "GenSigStartValue" SG_ 781 ADU_ACPE_TextInfo 1;
+BA_ "GenSigStartValue" SG_ 794 ADU_LeObjHozDstY 500;
+BA_ "GenSigStartValue" SG_ 794 ADU_RiObjHozDstY 500;
+BA_ "GenSigStartValue" SG_ 795 ADU_EgoLeLineCrvt 260;
+BA_ "GenSigStartValue" SG_ 795 ADU_EgoLeLineHozlDst 250;
+BA_ "GenSigStartValue" SG_ 795 ADU_EgoRiLineHozlDst 250;
+BA_ "GenSigStartValue" SG_ 795 ADU_EgoRiLineCrvt 260;
+BA_ "GenSigStartValue" SG_ 796 ADU_NeborLeLineHozlDst 250;
+BA_ "GenSigStartValue" SG_ 796 ADU_NeborLeLineCrvt 260;
+BA_ "GenSigStartValue" SG_ 796 ADU_NeborRiLineHozlDst 250;
+BA_ "GenSigStartValue" SG_ 796 ADU_NeborRiLineCrvt 260;
+BA_ "GenSigStartValue" SG_ 797 ADU_dxTarObjcolor 4;
+BA_ "GenSigStartValue" SG_ 797 ADU_ALCCObjHozDstY 500;
+BA_ "GenSigStartValue" SG_ 798 ADU_BSDONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_DOWONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_BSDVoiceONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_RCTAONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_RCTBONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 798 ADU_RCWONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_RCWVoiceONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_BSDLight_Right_Rqst 1;
+BA_ "GenSigStartValue" SG_ 798 ADU_BSDLight_Left_Rqst 1;
+BA_ "GenSigStartValue" SG_ 801 VCU_DrvInstantPower 1000;
+BA_ "GenSigStartValue" SG_ 801 VCU_St_VTOLkeepSw 1;
+BA_ "GenSigStartValue" SG_ 802 VCU_CruiseValid 1;
+BA_ "GenSigStartValue" SG_ 804 VCU_InsPwrConsumption 10000;
+BA_ "GenSigStartValue" SG_ 848 ACU_RollingFunctionSetSts 1;
+BA_ "GenSigStartValue" SG_ 866 BCM_AAL_PitchAngle 180;
+BA_ "GenSigStartValue" SG_ 870 TPMS_TireTemperature_FL 60;
+BA_ "GenSigStartValue" SG_ 870 TPMS_TireTemperature_FR 60;
+BA_ "GenSigStartValue" SG_ 871 TCM_LeftTurnLightSWStsValid 1;
+BA_ "GenSigStartValue" SG_ 871 TCM_RightTurnLightSWStsValid 1;
+BA_ "GenSigStartValue" SG_ 871 TCM_HighBeamSWStsValid 1;
+BA_ "GenSigStartValue" SG_ 871 TCM_FlashLightSWStsValid 1;
+BA_ "GenSigStartValue" SG_ 872 TPMS_TireTemperature_RL 60;
+BA_ "GenSigStartValue" SG_ 872 TPMS_TireTemperature_RR 60;
+BA_ "GenSigStartValue" SG_ 881 VCU_VehShowModeSts 1;
+BA_ "GenSigStartValue" SG_ 881 VCU_VehShowModePowerlimitSts 1;
+BA_ "GenSigStartValue" SG_ 881 VCU_IntegntmodeFlg 1;
+BA_ "GenSigStartValue" SG_ 885 IC_SurplusFuelValid 1;
+BA_ "GenSigStartValue" SG_ 885 IC_OdoMeterValid 1;
+BA_ "GenSigStartValue" SG_ 887 IC_AvgPwrConsTrip 400;
+BA_ "GenSigStartValue" SG_ 887 IC_AvgPwrConsLifetime 400;
+BA_ "GenSigStartValue" SG_ 887 IC_AvgPwrConslast50km 400;
+BA_ "GenSigStartValue" SG_ 940 AC_1_TemperatureLevel 1;
+BA_ "GenSigStartValue" SG_ 940 AC_2_DriverSetTemperature 7;
+BA_ "GenSigStartValue" SG_ 940 AC_2_PngSetTemperature 7;
+BA_ "GenSigStartValue" SG_ 940 AC_2_OutsideTemperature 80;
+BA_ "GenSigStartValue" SG_ 940 AC_2_OutsideTemperatureValid 1;
+BA_ "GenSigStartValue" SG_ 981 AMP_AudioSourceSts 1;
+BA_ "GenSigStartValue" SG_ 981 AMP_MediaVolStepSts 13;
+BA_ "GenSigStartValue" SG_ 981 AMP_MuteSts 2;
+BA_ "GenSigStartValue" SG_ 981 AMP_BtMusicVolStepSts 13;
+BA_ "GenSigStartValue" SG_ 981 AMP_ChimeSysSelect 2;
+BA_ "GenSigStartValue" SG_ 981 AMP_NaviVolStepSts 13;
+BA_ "GenSigStartValue" SG_ 981 AMP_BeepSoundEnableSts 1;
+BA_ "GenSigStartValue" SG_ 981 AMP_CommVolStepSts 13;
+BA_ "GenSigStartValue" SG_ 981 AMP_PhoneLinkEnableSts 1;
+BA_ "GenSigStartValue" SG_ 981 AMP_VCVolStepSts 13;
+BA_ "GenSigStartValue" SG_ 981 AMP_LoudnessEnableSts 2;
+BA_ "GenSigStartValue" SG_ 981 AMP_RingToneVolStepSts 13;
+BA_ "GenSigStartValue" SG_ 981 AMP_VSCLevelSts 1;
+BA_ "GenSigStartValue" SG_ 981 AMP_PositionSelect 1;
+BA_ "GenSigStartValue" SG_ 981 AMP_ModeSelect 1;
+BA_ "GenSigStartValue" SG_ 982 AMP_BalanceStepSts 10;
+BA_ "GenSigStartValue" SG_ 982 AMP_FadeStepSts 10;
+BA_ "GenSigStartValue" SG_ 982 AMP_BassStepSts 11;
+BA_ "GenSigStartValue" SG_ 982 AMP_MidrangeStepSts 11;
+BA_ "GenSigStartValue" SG_ 982 AMP_TrebleStepSts 11;
+BA_ "GenSigStartValue" SG_ 995 ADU_FCW_ONOFF_Sts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_AEBONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_LSSONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_LDWLDPONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 995 ADU_LDWSnvtySts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_LDWWarnModSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_ELKONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 995 ADU_SLIFSLWFONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_SLWFONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_SLWFAcousticONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_SLWFModeSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_SCFONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 995 ADU_SPLChangeONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 995 ADU_DAIONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_IHBCONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_FCTAONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 995 ADU_FCTBONOFFSts 2;
+BA_ "GenSigStartValue" SG_ 996 ADU_PDCVoiceONOFFSts 1;
+BA_ "GenSigStartValue" SG_ 1008 SRF_PosStatus_Percentage 102;
+BA_ "GenSigStartValue" SG_ 1009 SSD_PosStatus_Percentage 102;
+BA_ "GenSigStartValue" SG_ 1010 RLS_Solar_Driver 64;
+BA_ "GenSigStartValue" SG_ 1010 RLS_Solar_Passenger 64;
+BA_ "GenSigStartValue" SG_ 1346 IHU_TimeValid 1;
+BA_ "GenSigStartValue" SG_ 1408 IHU_GPSAltitude 16383;
+BA_ "GenSigStartValue" SG_ 1409 IHU_GPSDataType_2 1;
+BA_ "GenSigStartValue" SG_ 1410 IHU_GPSDataType_3 2;
+BA_ "GenSigStartValue" SG_ 1432 TBOX_DateTimeValid 1;
+BA_ "GenSigStartValue" SG_ 1433 TBOX_BCALLStatus 3;
+BA_ "GenSigStartValue" SG_ 1433 TBOX_EcallStatus 3;
+
+VAL_ 144 IHU_AEBSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_FCWSnvtySet 0 "Not Active" 1 "standard" 2 "near" 3 "far";
+VAL_ 144 IHU_FCWSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_LDWWarnVoiceSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_LDWSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_LDWLDPSnvtySet 0 "Not Active" 1 "LOW" 2 "HIGH" 3 "Not Used";
+VAL_ 144 IHU_TSRSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU__IHBCSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_TSROverSpeedSwSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_TSROverSpeedAcousticSwSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_FlaoutUnlockSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_AutoWshWipSet 0 "Not Active" 1 "short time 300ms" 2 "middle time 500ms" 3 "long time 800ms";
+VAL_ 144 IHU_SpeedLockSet 0 "Not Active" 1 "Off" 2 "15km/h Lock" 3 "40km/h Lock";
+VAL_ 144 IHU_HornAlertVolumeSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Normal" 4 "High";
+VAL_ 144 IHU_WindowRemoteAutoDownSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_AssistIlluminationSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_exRearMirrorAutoFoldSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_WindowAutoUPbyLockSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 144 IHU_SearchCarWarnModSet 0 "Not Active" 1 "Light" 2 "Sound" 3 "Light+Sound";
+VAL_ 144 IHU_FLSeatHeatLvlSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 144 IHU_FRSeatHeatLvlSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 144 IHU_FLSeatMassgLvlSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 144 IHU_FLSeatMassgModSet 0 "Not Active" 1 "����" 2 "��Խ" 3 "��Ծ" 4 "����" 5 "��չ" 6 "����" 7 "�粿";
+VAL_ 144 IHU_ClsWinSpdSet 0 "Not Active" 1 "OFF" 2 "60km/h Close" 3 "80km/h Close" 4 "100km/h Close";
+VAL_ 144 IHU_Frontwindshieldheatingtset 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 144 IHU_Nozzleheatingset 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 145 IHU_WindowPosFLCmd 0 "No Request��" 1 "0%����ȫ�رգ�" 101 "100%(��ȫ��)";
+VAL_ 145 IHU_WindowPosFRCmd 0 "No Request��" 1 "0%����ȫ�رգ�" 101 "100%(��ȫ��)";
+VAL_ 145 IHU_WindowPosRLCmd 0 "No Request��" 1 "0%����ȫ�رգ�" 101 "100%(��ȫ��)";
+VAL_ 145 IHU_WindowPosRRCmd 0 "No Request��" 1 "0%����ȫ�رգ�" 101 "100%(��ȫ��)";
+VAL_ 145 IHU_BackMirrorFoldCmd 0 "No Request��" 1 "unfold" 2 "fold" 3 "Reserved";
+VAL_ 146 IHU_AmbientLightSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_AmbientLightLvlSet 0 "Not Active" 1 "level 1" 2 "level 2" 3 "level 3" 4 "level 4" 5 "level 5" 6 "level 6" 7 "level 7" 8 "level 8" 9 "level 9" 10 "level 10";
+VAL_ 146 IHU_ACMaxSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_SteeringWheelHeatingSWSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_AVASSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_FLSeatVentLvlSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 146 IHU_AVASSoundTypSet 0 "Not Active" 1 "Sound1" 2 "Sound2";
+VAL_ 146 IHU_FRSeatVentLvlSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 146 IHU_CarWashModeSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_RAEBSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_RadarSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_FRSeatMassgLvlSet 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 146 IHU_FRSeatMassgModSet 0 "Not Active" 1 "����" 2 "��Խ" 3 "��Ծ" 4 "����" 5 "��չ" 6 "����" 7 "�粿";
+VAL_ 146 IHU_WWRSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_PhoneReminderSwitchSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_NapModeSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_LPedalSet 0 "Not Active" 1 "Extend" 2 "retract" 3 "reserve";
+VAL_ 146 IHU_RPedalSet 0 "Not Active" 1 "Extend" 2 "retract" 3 "reserve";
+VAL_ 146 IHU_NapModeSeatSelectSwtSet_FL 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 146 IHU_NapModeSeatSelectSwtSet_FR 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_VDCSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_TCSSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_CSTSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_SOCHoldHEVSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_SOCHoldHEVTgtSOCSet 0 "Not Active" 1 "0%" 101 "100%";
+VAL_ 147 IHU_GearPGenerationReq 0 "Not Active" 1 "פ�������" 2 "פ������ر�" 3 "Reserved";
+VAL_ 147 IHU_GearPGenerationTgtSOCSet 0 "Not Active" 1 "0%" 101 "100%";
+VAL_ 147 IHU_GearPGenerationPwLvlSet 0 "Not Active" 1 "�͹���" 2 "�߹���" 3 "Reserved";
+VAL_ 147 IHU_HYBModReq 0 "Not Active" 1 "��������" 2 "ǿ�ƴ���" 3 "�춯ģʽ";
+VAL_ 147 IHU_V2LSwtSet 0 "Not Active" 1 "V2L��" 2 "V2L�ر�" 3 "Reserved";
+VAL_ 147 IHU_V2LLowSOCStrtSwtSet 0 "Not Active" 1 "��" 2 "�ر�" 3 "Not Used";
+VAL_ 147 IHU_BrakeAssistModeSet 0 "Not Active" 1 "Comfort" 2 "Sport" 3 "Reserved";
+VAL_ 147 IHU_V2VSwtSet 0 "Not Active" 1 "V2V��" 2 "V2V�ر�" 3 "Reserved";
+VAL_ 147 IHU_CoastdwnRegDepthLvlSet 0 "Not Active" 1 "��" 2 "��" 3 "��";
+VAL_ 147 IHU_RollingFunctionSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_TrailerModeSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_EPSModeSet 0 "Not Active" 1 "Comfort" 2 "Normal" 3 "Sport";
+VAL_ 147 IHU_St_VTOLkeepSw 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_VehShowModeSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 147 IHU_St_VTOLkeepTime 0 "Not Active";
+VAL_ 147 IHU_ExpertModeBcsSet 0 "Not Active" 1 "ALL ON" 2 "TCS OFF" 3 "VDC OFF" 4 "TCS&VDC OFF" 5 "ALL OFF";
+VAL_ 147 IHU_ExpertModeDriveSet 0 "Not Active" 1 "Standard" 2 "Economic" 3 "Sport";
+VAL_ 147 IHU_ExpertModeEpsSet 0 "Not Active" 1 "Comfort" 2 "Normal" 3 "Sport";
+VAL_ 149 IHU_RsvnChrgSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 149 IHU_RsvnChrgTSocFullSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 149 IHU_RsvnChrgModSet 0 "Not Active" 1 "SingleDay" 2 "EveryDay" 3 "UserDefine";
+VAL_ 149 IHU_RsvnChrgStpTimSet_hour 0 "Not Active";
+VAL_ 149 IHU_RsvnChrgStrTimSet_hour 0 "Not Active";
+VAL_ 149 IHU_RsvnChrgStrTimSet_min 0 "Not Active";
+VAL_ 149 IHU_RsvnChrgStpTimSet_min 0 "Not Active";
+VAL_ 149 IHU_SentryModeSwitchSts 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 149 IHU_RsvnBattHeatSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 149 IHU_RsvnBattHeatModSet 0 "Not Active" 1 "SingleDay" 2 "EveryDay" 3 "Reserved";
+VAL_ 149 IHU_RsvnBattHeatStrTimSet_min 0 "No Request" 1 "0min" 2 "10min" 3 "20min" 4 "30min" 5 "40min" 6 "50min" 7 "Reserved";
+VAL_ 149 IHU_RsvnBattHeatStrTimSet_hour 0 "Not Active";
+VAL_ 150 IHU_SlideMotorPosSet_FL 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 150 IHU_BackMotorPosSet_FL 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 150 IHU_HeightMotorPosSet_FL 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 150 IHU_CushionAngleMotorPosSet_FL 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 150 IHU_LegRetractableMotorPosSet_FL 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 150 IHU_SeatMemoryPosSet_FL 0 "Not Active" 1 "����λ��1" 2 "����λ��2" 3 "����λ��3";
+VAL_ 150 IHU_SeatGetMemoryPosSet_FL 0 "Not Active" 1 "����λ��1" 2 "����λ��2" 3 "����λ��3";
+VAL_ 150 IHU_EasyEntryExitSeatSwtSet_FL 0 "Not Active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 150 IHU_SeatMemorySwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 150 IHU_SeatHeatLvlSet_RL 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 150 IHU_SeatHeatLvlSet_RR 0 "Not Active" 1 "Off" 2 "Low" 3 "Mid" 4 "High";
+VAL_ 151 IHU_SlideMotorPosSet_FR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 151 IHU_BackMotorPosSet_FR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 151 IHU_HeightMotorPosSet_FR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 151 IHU_LegRetractableMotorPosSet_FR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 151 IHU_LegAngleMotorPosSet_FR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 151 IHU_SeatMemoryPosSet_FR 0 "Not Active" 1 "����λ��1" 2 "����λ��2" 3 "����λ��3";
+VAL_ 151 IHU_SeatGetMemoryPosSet_FR 0 "Not Active" 1 "����λ��1" 2 "����λ��2" 3 "����λ��3";
+VAL_ 151 IHU_EasyEntryExitSeatSwtSet_FR 0 "Not Active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 151 IHU_ZeroGravitySwtSet_FR 0 "Not Active" 1 "չ��" 2 "�ָ�" 3 "Reserved";
+VAL_ 152 TBOX_SentryModeSW 0 "Not Active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 154 IHU_SunroofCmdSts_Percentage 0 "No Request��" 1 "0%����ȫ�رգ�" 101 "100%(��ȫ��)" 102 "Tilt";
+VAL_ 154 IHU_SunshadeCmdSts_Percentage 0 "No Request��" 1 "0%����ȫ�رգ�" 101 "100%(��ȫ��)" 102 "Half";
+VAL_ 154 IHU_ApproveUnlockSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_WalkAwayLockSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_ClsWinRainSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_WiperRepairSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_MirrorReverseDownSwtSet 0 "Not Active" 1 "OFF" 2 "Right" 3 "Double";
+VAL_ 154 IHU_MirrorUnfoldSwtSet 0 "Not Active" 1 "Unlock(����ʱ��" 2 "Door Open������ʱ��" 3 "Not Used";
+VAL_ 154 IHU_DoorCmdDomeLightSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_LgoLightSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_CentralLockCmd 0 "No Request��" 1 "unLock" 2 "Lock" 3 "Reserved";
+VAL_ 154 IHU_FLUnlockModeSet 0 "Not Active" 1 "Unlock Driver Door" 2 "Unlock ALL Door" 3 "Reserved";
+VAL_ 154 IHU_ArmFailedHornSoundSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_DisrmHornSoundSwtSet 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_TrailerModReq 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 154 IHU_BCALLReq 0 "Not Active" 1 "ON����callup��" 2 "OFF�Ҷϣ�hangup��" 3 "Not Used";
+VAL_ 154 IHU_UnlockLightModeSet 0 "Not Active" 1 "Mode_1" 2 "Mode_2" 3 "Mode_3";
+VAL_ 154 IHU_UnlockLightModePreviewReq 0 "No Request" 1 "Request";
+VAL_ 154 IHU_LockLightModeSet 0 "Not Active" 1 "Mode_1" 2 "Mode_2" 3 "Mode_3";
+VAL_ 154 IHU_LockLightModePreviewReq 0 "No Request" 1 "Request";
+VAL_ 155 IHU_AudioSourceSet 0 "Not Active" 1 "ý����" 2 "��������" 3 "Not Used";
+VAL_ 155 IHU_MediaVolStep 0 "Not Active";
+VAL_ 155 IHU_MuteReq 0 "Not Active" 1 "Mute������ý������" 2 "Not Mute" 3 "Mute All������������";
+VAL_ 155 IHU_BtMusicVolStep 0 "Not Active";
+VAL_ 155 IHU_ChimeSysSelect 0 "Not Active" 1 "������" 2 "������" 3 "������";
+VAL_ 155 IHU_NaviVolStep 0 "Not Active";
+VAL_ 155 IHU_BeepSoundEnable 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 155 IHU_CommVol 0 "Not Active";
+VAL_ 155 IHU_PhoneLinkEnable 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 155 IHU_VCVol 0 "Not Active";
+VAL_ 155 IHU_LoudnessEnable 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 155 IHU_RingToneVolStep 0 "Not Active";
+VAL_ 155 IHU_VSCLevel 0 "Not Active" 1 "OFF" 2 "��" 3 "��" 4 "��";
+VAL_ 155 IHU_PositionSelect 0 "Not Active" 1 "ȫ��" 2 "����" 3 "����" 4 "����" 5 "�Զ���";
+VAL_ 155 IHU_ModeSelect 0 "Not Active" 1 "��Ȼԭ��ģʽ��Ĭ�ϣ�" 2 "����ģʽ" 3 "������ģʽ";
+VAL_ 156 IHU_LeftBackMirrorAdjust_LR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 156 IHU_LeftBackMirrorAdjust_UD 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 156 IHU_RightBackMirrorAdjust_LR 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 156 IHU_RightBackMirrorAdjust_UD 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 156 IHU_TailgateMotorMaxPosSet 0 "No Request��" 1 "0%" 101 "100%";
+VAL_ 156 IHU_TailgateModeSet 0 "Not Active" 1 "Power Mode" 2 "Manual Mode" 3 "Reserved";
+VAL_ 156 IHU_TailgateSwtSet 0 "No Request" 1 "Close" 2 "Open" 3 "Reserved";
+VAL_ 157 IHU_FCW_ONOFF_Sts 0 "Not active" 1 "OFF" 2 "Standard" 3 "Near" 4 "Far";
+VAL_ 157 IHU_AEBONOFFSts 0 "Not active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 157 IHU_LSSONOFFSts 0 "Not active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 157 IHU_LDWLDPONOFFSts 0 "Not active" 1 "OFF �ر�" 2 "Only LDW ƫ������" 3 "Only LDP ƫ������" 4 "LDW + LDP ƫ������+����";
+VAL_ 157 IHU_LDWSnvtySts 0 "Not active" 1 "LowSensitivity ��������" 2 "HighSensitivity ��������" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_LDWWarnModSts 0 "Not active" 1 "only voice ������" 2 "only shock ����" 3 "voice and shock ����+��";
+VAL_ 157 IHU_ELKONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_SLIFSLWFONOFFSts 0 "Notactive" 1 "OFF" 2 "OnlySLIF" 3 "SLIF_SLWF";
+VAL_ 157 IHU_SLWFONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_SLWFAcousticONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_SLWFNmberAb 0 "Not active" 1 "-20" 2 "-19" 3 "-18" 4 "-17" 5 "-16" 6 "-15" 7 "-14" 8 "-13" 9 "-12" 10 "-11" 11 "-10" 12 "-9" 13 "-8" 14 "-7" 15 "-6" 16 "-5" 17 "-4" 18 "-3" 19 "-2" 20 "-1" 21 "0" 22 "1" 23 "2" 24 "3" 25 "4" 26 "5" 27 "6" 28 "7" 29 "8" 30 "9" 31 "10" 32 "11" 33 "12" 34 "13" 35 "14" 36 "15" 37 "16" 38 "17" 39 "18" 40 "19" 41 "20";
+VAL_ 157 IHU_SLWFModeSts 0 "Not active" 1 "Absolute �̶�ֵƫ��" 2 "Relative ���ֵƫ��" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_SLWFNmberRe 0 "Not active" 1 "-20%" 2 "-19%" 3 "-18%" 4 "-17%" 5 "-16%" 6 "-15%" 7 "-14%" 8 "-13%" 9 "-12%" 10 "-11%" 11 "-10%" 12 "-9%" 13 "-8%" 14 "-7%" 15 "-6%" 16 "-5%" 17 "-4%" 18 "-3%" 19 "-2%" 20 "-1%" 21 "0%" 22 "1%" 23 "2%" 24 "3%" 25 "4%" 26 "5%" 27 "6%" 28 "7%" 29 "8%" 30 "9%" 31 "10%" 32 "11%" 33 "12%" 34 "13%" 35 "14%" 36 "15%" 37 "16%" 38 "17%" 39 "18%" 40 "19%" 41 "20%";
+VAL_ 157 IHU_SCFONOFFSts 0 "Not active" 1 "Manual confirm �������ֶ�ȷ��" 2 "OFF �ر�" 3 "Auto confirm �������Զ�ȷ��";
+VAL_ 157 IHU_SPLChangeONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Closed For Ever ���ùر�";
+VAL_ 157 IHU_DAIONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_IHBCONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_PDCVoiceONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_DCLCONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Closed For Ever ���ùر�";
+VAL_ 157 IHU_FCTAONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_FCTBONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 157 IHU_ACPEONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Closed For Ever ���ùر�";
+VAL_ 157 IHU_ADASDrivingModeSetSts 0 "Not active" 1 "ACC" 2 "LCC" 3 "NOA";
+VAL_ 158 IHU_BSDONOFFSts 0 "Not active" 1 "OFF �ر�" 2 "Only_vision ���Ӿ�" 3 "Vision_Voice �Ӿ�������";
+VAL_ 158 IHU_DOWONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 158 IHU_BSDVoiceONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 158 IHU_RCTAONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 158 IHU_RCTBONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 158 IHU_RCWONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 158 IHU_RCWVoiceONOFFSts 0 "Not active" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 274 TCU_GearboxpositionPfaulty 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_TargetGear 0 "N" 1 "1st gear" 2 "2nd gear" 3 "3rd gear" 4 "4th gear" 5 "5th gear" 6 "6th gear" 7 "7th gear" 8 "8th gear" 9 "R" 10 "P" 11 "Reserved" 12 "No display" 15 "Invalid";
+VAL_ 274 TCU_TargetGearValid 0 "Valid" 1 "Invalid";
+VAL_ 274 TCU_Drivemode 0 "Standard" 1 "Economic" 2 "Sport" 3 "Snow" 4 "Comfort" 5 "Deep Snow" 6 "Cross" 7 "Slip Mud" 8 "Intelligent" 9 "Mountain" 10 "Uneven" 16 "Sand" 17 "Rock" 18 "Mud" 19 "Wade" 20 "ExpertMode_Standard" 21 "ExpertMode_Economic" 22 "ExpertMode_Sport" 63 "Invalid";
+VAL_ 274 TCU_GearboxinpositionN 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_DriverpresenceunknowninDorR 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_DrivemodeOperationNotice 0 "No Request" 1 "Please shift to 4H/4L whereby this drivemode is available" 2 "Please shift to 2H/4H whereby this drivemode is available" 3 "Please shift to 4L whereby this drivemode is available";
+VAL_ 274 TCU_Gearboxfaulty 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_DrivePowertrainfaulty 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_MechanicallimphomeinD 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_MechanicallimphomeinP 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_Gearboxselectorfaulty 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_Driverwarninginformationinva 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_SpeedistoohightoenterP 0 "No warning" 1 "Warning";
+VAL_ 274 TCU_Runaway_warning 0 "No warning" 1 "Ride with care";
+VAL_ 289 VCU_VehRunSta 0 "HV OFF" 1 "HV ON" 2 "Ready" 3 "Invalid";
+VAL_ 289 VCU_VehModDisply 0 "EV" 1 "HEV";
+VAL_ 289 VCU_HYBModDisply 0 "��������" 1 "ǿ�ƴ���" 2 "�춯ģʽ" 3 "Reserved";
+VAL_ 289 VCU_VehFauLamp 0 "OFF" 1 "ON";
+VAL_ 289 VCU_MILLamp 0 "OFF" 1 "ON";
+VAL_ 289 VCU_TurtleLamp 0 "OFF" 1 "ON";
+VAL_ 289 VCU_HVILFauSta 0 "Normal" 1 "Fault";
+VAL_ 289 VCU_LvBat_ERR_MIL 0 "lamp off" 1 "lamp on";
+VAL_ 290 VCU_ReleaseSig 0 "Default(Certification Is In Progress)" 1 "Security Authen Fail" 2 "Security Authen Success" 3 "Security Authen Not Learnt";
+VAL_ 290 VCU_Drivemode 0 "Standard" 1 "Economic" 2 "Sport" 3 "Snow" 4 "Comfort" 5 "Deep Snow" 6 "Cross" 7 "Slip Mud" 8 "Intelligent" 9 "Mountain" 10 "Uneven" 11 "Maximize Range" 12 "2H" 13 "4H" 14 "4L" 15 "4A" 16 "Sand" 17 "Rock" 18 "Mud" 19 "Wade" 20 "ExpertMode_Standard" 21 "ExpertMode_Economic" 22 "ExpertMode_Sport" 63 "Invalid";
+VAL_ 290 VCU_ActualOperatingMode 0 "EV" 1 "����_SLIPSTRT" 2 "����_DRGSTRT" 3 "����_STRTRSTRT" 4 "ͣ��" 5 "����" 6 "SPLITDRV" 7 "Reserved";
+VAL_ 290 VCU_GearShiftPosition 0 "P" 1 "R" 2 "N" 3 "D" 4 "+ position" 5 "- position" 7 "M" 15 "Invalid";
+VAL_ 290 VCU_GearShiftPositionValid 0 "Valid" 1 "Invalid";
+VAL_ 290 VCU_DrivemodeOperationNotice 0 "No Request" 1 "Please shift to 4H/4L whereby this drivemode is available" 2 "Please shift to 2H/4H whereby this drivemode is available" 3 "Please shift to 4L whereby this drivemode is available" 4 "Please exit 4L then select this drivemode";
+VAL_ 316 B2V_ST1_PackCurrent 32767 "Invalid";
+VAL_ 316 B2V_ST1_PackPower 8191 "Invalid";
+VAL_ 316 B2V_ST1_PackVolt 8191 "Invalid";
+VAL_ 336 EMS_2_EngineSpeed 65535 "Invalid";
+VAL_ 336 EMS_2_EngineSpeedValid 0 "Valid" 1 "Invalid";
+VAL_ 336 EMS_3_EngineReleaseSig 0 "�ϵ�Ĭ��״̬����֤���ڽ��У�" 1 "������֤ʧ��" 2 "������֤�ɹ�" 3 "EMS����δƥ��";
+VAL_ 336 EMS_3_SS_Screen_tip 0 "no screen tip" 1 "screen tip";
+VAL_ 336 EMS_3_SS_Active_Lamp 0 "Lamp off" 1 "Lamp on";
+VAL_ 336 EMS_3_SS_Fault_Lamp 0 "Lamp off" 1 "Lamp on";
+VAL_ 336 TCU_1_TcuFaultLamp 0 "Lamp Off" 1 "Lamp On";
+VAL_ 336 EMS_3_SS_SetSts 0 "Off" 1 "On";
+VAL_ 336 TCU_1_TransOilWrnLmpReq 0 "Lamp Off" 1 "Lamp On";
+VAL_ 336 TCU_1_ActualGearValid 0 "Valid" 1 "Invalid";
+VAL_ 336 TCU_1_GearShiftPositionValid 0 "Valid" 1 "Invalid";
+VAL_ 336 TCU_1_LimpHomeMode 0 "Normal" 1 "LimpHome";
+VAL_ 336 TCU_1_ShiftRecommendation 0 "no recommendation" 1 "upshift recommadation" 2 "downshift recommadation";
+VAL_ 336 TCU_1_ActualGear 0 "N" 1 "1st gear" 2 "2nd gear" 3 "3rd gear" 4 "4th gear" 5 "5th gear" 6 "6th gear" 7 "7th gear" 8 "8th gear" 9 "R" 10 "P" 11 "Reserved" 12 "No display" 15 "Invalid";
+VAL_ 336 TCU_1_IcInformaition 0 "No Request" 1 "\"���ɲ��\"" 2 "\"�밴Unlock��������\"" 3 "\"�뽵�ͳ��ٺ󻻵�\"" 4 "\"���������������󻻵�\"" 5 "\"������δ����\"" 6 "��������δ��λ��";
+VAL_ 336 TCU_1_GearShiftPosition 0 "P" 1 "R" 2 "N" 3 "D" 4 "+ position" 5 "- position" 7 "M" 15 "Invalid";
+VAL_ 336 EMS_2_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 336 EMS_3_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 336 TCU_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 341 EMS_4_EngineCoolantTemp 255 "Invalid";
+VAL_ 341 EMS_4_SVS 0 "lamp off" 1 "lamp on";
+VAL_ 341 EMS_4_MIL 0 "lamp off" 1 "lamp on";
+VAL_ 341 EMS_4_CruiseControlStatus 0 "CC Off" 1 "CC Standby" 2 "CC Active" 3 "CC Override" 4 "Accelerate" 5 "Decelerate" 6 "Resume Last Speed" 7 "Tap+" 8 "Tap-";
+VAL_ 341 EMS_4_EngineCoolantTempValid 0 "Valid" 1 "Invalid";
+VAL_ 341 EMS_4_CruiseActiveStatus 0 "Inactive" 1 "Active";
+VAL_ 341 EMS_4_CruiseMainLamp 0 "lamp off" 1 "lamp on";
+VAL_ 341 EMS_6_OilPressure 255 "Invalid";
+VAL_ 341 EMS_6_GPFState 0 "Ĭ��ֵ������ʾ" 1 "G/DPF��Ҫ����" 2 "G/DPF��������" 3 "Reserved" 4 "Reserved" 5 "Reserved" 6 "Reserved" 7 "Invalid";
+VAL_ 341 EMS_6_GeneratorFaultLamp 0 "lamp off" 1 "lamp on";
+VAL_ 341 EMS_6_OilPressureLamp 0 "lamp off" 1 "lamp on";
+VAL_ 341 EMS_4_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 341 EMS_6_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 512 ABS_FLWheelSpeed 8191 "Invalid";
+VAL_ 512 ABS_FLWheelSpeedValid 0 "Valid" 1 "Invalid";
+VAL_ 512 ABS_FLWheelSpeedRC 1023 "Invalid";
+VAL_ 512 ABS_FRWheelSpeed 8191 "Invalid";
+VAL_ 512 ABS_FRWheelSpeedValid 0 "Valid" 1 "Invalid";
+VAL_ 512 ABS_FRWheelSpeedRC 1023 "Invalid";
+VAL_ 512 ABS_FLWheelSts 0 "No Direction" 1 "Forward" 2 "Backward" 3 "Invalid";
+VAL_ 512 ABS_FRWheelSts 0 "No Direction" 1 "Forward" 2 "Backward" 3 "Invalid";
+VAL_ 513 ABS_RLWheelSpeed 8191 "Invalid";
+VAL_ 513 ABS_RLWheelSpeedValid 0 "Valid" 1 "Invalid";
+VAL_ 513 ABS_RLWheelSpeedRC 1023 "Invalid";
+VAL_ 513 ABS_RRWheelSpeed 8191 "Invalid";
+VAL_ 513 ABS_RRWheelSpeedValid 0 "Valid" 1 "Invalid";
+VAL_ 513 ABS_RRWheelSpeedRC 1023 "Invalid";
+VAL_ 513 ABS_RLWheelSts 0 "No Direction" 1 "Forward" 2 "Backward" 3 "Invalid";
+VAL_ 513 ABS_RRWheelSts 0 "No Direction" 1 "Forward" 2 "Backward" 3 "Invalid";
+VAL_ 514 ABS_VehicleSpeedValid 0 "Valid" 1 "Invalid";
+VAL_ 514 ABS_AbsFault 0 "Not fault" 1 "Fault";
+VAL_ 514 ABS_AbsActive 0 "Inactive" 1 "Active";
+VAL_ 514 ABS_VehicleSpeed 8191 "Invalid";
+VAL_ 514 ABS_BrakeFluidLevelIndication 0 "Brake fluid level enough" 1 "Brake fluid level not enough" 2 "Brake fluid switch error" 3 "Reserved";
+VAL_ 514 ABS_EbdFault 0 "Not fault" 1 "Fault";
+VAL_ 514 ABS_EbdActive 0 "Inactive" 1 "Active";
+VAL_ 529 ESP_LongitSensorValid 0 "Valid" 1 "Invalid";
+VAL_ 529 ESP_LateralSensorValid 0 "Valid" 1 "Invalid";
+VAL_ 529 ESP_YawRateSensorValid 0 "Valid" 1 "Invalid";
+VAL_ 532 ESP_CCO_TgtGear 0 "No Information" 1 "1st gear" 2 "2nd gear" 3 "3rd gear" 4 "4th gear" 5 "5th gear" 6 "6th gear" 7 "7th gear" 8 "8th gear" 9 "9th gear                                      0xA:10th gear                            0xB:11th gear                                   0xC:12th gear               0xD~0xF:Reserved";
+VAL_ 532 ESP_CCO_Active 0 "Not Active" 1 "Active" 2 "Stand by" 3 "Reserved";
+VAL_ 532 ESP_CCO_Sts 0 "OFF" 1 "ON";
+VAL_ 532 ESP_CCO_Require_EPBRelease 0 "Requirement met" 1 "Requirement not met";
+VAL_ 532 ESP_CCO_Require_DriverSeatBelt 0 "Requirement met" 1 "Requirement not met";
+VAL_ 532 ESP_CCO_Require_DriverDoor 0 "Requirement met" 1 "Requirement not met";
+VAL_ 532 ESP_CCO_Require_4L 0 "Requirement met" 1 "Requirement not met";
+VAL_ 532 ESP_CCO_Display_Red_Warn 0 "No warning" 1 "CCO functon exits";
+VAL_ 532 ESP_CCO_Failed 0 "Not Failed" 1 "Failed";
+VAL_ 532 ESP_CCO_Require_NotReverseGear 0 "Requirement met" 1 "Requirement not met";
+VAL_ 532 ESP_CCO_Warning 0 "No warning" 1 "overgrade" 2 "Out of ax /ay range" 3 "over speed" 4 "over temperature";
+VAL_ 533 EPB_AutoHold_Standby 0 "Not Standby" 1 "Standby";
+VAL_ 533 EPB_WarningLamp 0 "No Warning" 1 "Warning";
+VAL_ 533 EPB_ActiveLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 533 EPB_TextDisplay 0 "No Text Message" 1 "Gradient Too High" 2 "Park brake force not enough" 3 "Park brake system overheated" 4 "Remind driver to apply safety belt" 5 "Park brake maintenance mode" 6 "Roller bench mode(Ԥ����" 7 "Please Release EPB" 8 "Please close the door" 9 "Trailer mode(Ԥ����";
+VAL_ 533 EPB_TrailerModeSts 0 "OFF" 1 "ON";
+VAL_ 533 EPB_AutoholdActive 0 "not active������δ���" 1 "active�����ܼ��";
+VAL_ 533 EPB_AutoholdValid 0 "valid��������Ч��" 1 "Invalid��������Ч��";
+VAL_ 533 EPB_WrnMsg 0 "off" 1 "Press the brake pedal first ��then release the APB button";
+VAL_ 533 EPB_WrnMsg2 0 "off" 1 "please close the door or seatblet";
+VAL_ 533 EPB_TAB_Warningmessage 0 "off" 1 "Please release rear EDL" 2 "TAB is limited" 3 "Please activate CCO";
+VAL_ 533 EPB_TAB_SW_Status 0 "TAB OFF" 1 "TAB ON";
+VAL_ 533 EPB_TAB_Available 0 "TAB available" 1 "TAB not available";
+VAL_ 533 EPB_TAB_Sts 0 "Function OFF" 1 "Standby" 2 "Active" 3 "Failure";
+VAL_ 536 IPB_MILReq 0 "Not Request" 1 "Request";
+VAL_ 536 IPB_Faultlevel 0 "no fault" 1 "fault level 1" 2 "fault level 2" 3 "fault level 3" 4 "fault level 4" 5 "fault level 5" 6 "fault level 6" 7 "Reserved";
+VAL_ 536 IPB_FWA_warning 0 "no failure/Init/Default" 1 "Warnig level 1 for high Temp. of Brake system" 2 "Warnig level 2 for high Temp. of Brake system" 3 "reserved";
+VAL_ 592 ESP_1_ESPOff 0 "ESP_OFF_Lamp OFF" 1 "ESP_OFF_Lamp ON";
+VAL_ 592 ESP_1_ESPActive 0 "Inactive" 1 "Active";
+VAL_ 592 ESP_1_TCSActive 0 "Inactive" 1 "Active";
+VAL_ 592 ESP_1_ESPFault 0 "Not fault" 1 "Fault";
+VAL_ 592 ESP_1_TCSFault 0 "Not fault" 1 "Fault";
+VAL_ 592 ESP_1_DVTSessionFlag 0 "Not DVT mode" 1 "DVT mode";
+VAL_ 592 ESP_1_HDCControl 0 "OFF" 1 "On active braking" 2 "On not active" 3 "reserved";
+VAL_ 592 ESP_1_HDCFault 0 "Not fault" 1 "Fault";
+VAL_ 592 ESP_1_VDCSwtSts 0 "VDC_OFF_Lamp OFF" 1 "VDC_OFF_Lamp ON";
+VAL_ 592 ESP_1_TCSSwtSts 0 "TCS_OFF_Lamp OFF" 1 "TCS_OFF_Lamp ON";
+VAL_ 592 ESP_1_CSTSwtSts 0 "OFF" 1 "ON";
+VAL_ 592 ESP_1_BrakeAssistModeSts 0 "Comfort" 1 "Sport" 2 "reserved" 3 "reserved";
+VAL_ 592 ESP_1_VDCActive 0 "Inactive" 1 "Active";
+VAL_ 592 ESP_1_BrakeDiscTempHigh 0 "not high" 1 "temp too high";
+VAL_ 592 SAS_1_SteeringAngleSpeedEXValid 0 "Valid" 1 "Invalid";
+VAL_ 592 SAS_1_SteeringAngleSpeedEX 4095 "Invalid";
+VAL_ 592 EPS_1_OverTempSts 0 "Normal" 1 "OverTemp";
+VAL_ 592 EPS_1_WarningLamp 0 "OFF" 1 "ON";
+VAL_ 592 SAS_1_SteeringAngleValid 0 "Valid" 1 "Invalid";
+VAL_ 592 SAS_1_FailureSts 0 "not Failure" 1 "Failure";
+VAL_ 592 SAS_1_CalibratedSt 0 "Not calibrated" 1 "Calibrated";
+VAL_ 592 EPS_1_EPSMode 0 "Initial Value" 1 "Comfort" 2 "Normal" 3 "Sport";
+VAL_ 592 SAS_1_SteeringAngle 65535 "Invalid";
+VAL_ 592 IPB_2_CRB_State 0 "not working" 1 "working" 2 "error" 3 "Reserved";
+VAL_ 592 ESP_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 592 EPS_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 592 IPB_2_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 592 SAS_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 597 AWD_1_SystemOperatingMode 0 "Mode Unknown" 1 "System Fault" 2 "Mode 2WD" 3 "Mode 4WD (Lock)" 4 "Mode Active (AWD)" 5 "Mode Neutral" 6 "Mode 4WD Low Range" 7 "Sport Mode (Active)";
+VAL_ 597 AWD_1_ShiftSystemActuatorFault 0 "ShiftSysActuator is not faulted" 1 "ShiftSysActuator is faulted";
+VAL_ 597 AWD_1_ShiftSystemStuckinLow 0 "ShiftSystem is not  Stuck in low" 1 "ShiftSystem is  Stuck in low";
+VAL_ 597 AWD_1_ShiftSystemEncoderFault 0 "Encoder is not faulted" 1 "Encoder is faulted";
+VAL_ 597 AWD_1_DiagnosticLampRequest 0 "Lamp is not being requested" 1 "Lamp is being requested";
+VAL_ 597 AWD_1_ClutchCircuitFaultStatus 0 "Normal Operation" 1 "Clutch  Circuit Shorted to  Battery" 2 "Clutch  Circuit Shorted to Ground" 3 "Clutch Circuit Open";
+VAL_ 597 AWD_1_Lamp2WD 0 "Lamp Off" 1 "Blink Lamp" 2 "Lamp On" 3 "Unused";
+VAL_ 597 AWD_1_Lamp4WDLock 0 "Lamp Off" 1 "Blink Lamp" 2 "Lamp On" 3 "Unused";
+VAL_ 597 AWD_1_Lamp4WDLow 0 "Lamp Off" 1 "Blink Lamp" 2 "Lamp On" 3 "Unused";
+VAL_ 597 AWD_1_OpreationNotice 0 "No Request" 1 "���ڳ��٣�80Km/h�²���" 2 "\"����ͣ��״̬��N������\"" 3 "\"�ֶ������ȣ�����4Hģʽ\"";
+VAL_ 597 EDL_1_FrontDiffLockGreenLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 597 EDL_1_FrontDiffLockYellowLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 597 EDL_1_RearDiffLockGreenLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 597 EDL_1_RearDiffLockYellowLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 597 EDL_1_StatusNotice 0 "No Request" 1 "\"���ڳ���С��5km/h�²���������\"" 2 "\"��2H��4Hģʽ�²�����ֹǰ������\"" 3 "\"���ɿ����Ų���������\"" 4 "\"����ֹ�����������ֹǰ������\"" 5 "\"���ٳ��ٲ������Զ�����\"" 6 "\"���˳�4Lģʽ�������Զ�����\"" 7 "\"������������ǰ�������Զ�����\"" 8 "\"��ϵͳ���ϲ�����ֹ������\"" 9 "��̹�˵�ͷģʽ�²�����ֹ���������";
+VAL_ 597 AWD_1_Lamp4WDAuto 0 "Lamp Off" 1 "Blink Lamp" 2 "Lamp On" 3 "Unused";
+VAL_ 597 AWD_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 597 EDL_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 598 EMS_11_EngSpd 65535 "Invalid";
+VAL_ 598 EMS_11_EngSpdValid 0 "Valid" 1 "Invalid";
+VAL_ 598 EMS_11_EngRunningStatusValid 0 "Valid" 1 "Invalid";
+VAL_ 598 EMS_11_EngRunningStatus 0 "engine stopped" 1 "Reserved" 2 "engine running" 3 "engine cranking";
+VAL_ 598 EMS_11_SVS 0 "lamp off" 1 "lamp on";
+VAL_ 598 EMS_11_MIL 0 "lamp off" 1 "lamp on";
+VAL_ 598 EMS_14_OilPressureLamp 0 "lamp off" 1 "lamp on";
+VAL_ 598 EMS_14_GPFState 0 "Ĭ��ֵ������ʾ" 1 "GPF��Ҫ����" 2 "GPF��������" 3 "GPF��������" 4 "GPF�����޷�����" 5 "Reserved" 6 "Reserved" 7 "Invalid";
+VAL_ 598 EMS_14_engCoolantTempValid 0 "Valid" 1 "Invalid";
+VAL_ 598 EMS_14_engCoolantTemp 511 "Invalid";
+VAL_ 598 EMS_14_AirAbsolutePressure 255 "Invalid";
+VAL_ 598 EMS_14_OilPressure 255 "Invalid";
+VAL_ 598 EMS_11_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 598 EMS_14_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 599 MCU_10_Motor_TempFault1 0 "Normal" 1 "Level 1 Fault" 2 "Level 2 Fault" 3 "Level 3 Fault";
+VAL_ 599 MCU_10_Motor_ContrlTempFault1 0 "Normal" 1 "Level 1 Fault" 2 "Level 2 Fault" 3 "Level 3 Fault";
+VAL_ 599 MCU_10_EMFaultLevel 0 "No Error" 1 "Err_level1LowSeverity" 2 "Err_level2Medium Severity" 3 "Err_level3High Severity";
+VAL_ 599 TCU_16_TrOilTempHighTrqLimInd 0 "FALSE" 1 "TRUE";
+VAL_ 599 TCU_16_TrNonEmsnRltdMalfA 0 "FALSE" 1 "TRUE";
+VAL_ 599 TCU_16_DrvrShftCtrlReqDeniedIndc 0 "False" 1 "True";
+VAL_ 599 TCU_16_ShiftRecommend_M 0 "No Recommendation" 1 "Up Shift" 2 "Down Shift";
+VAL_ 599 TCU_16_GbxPosPrkFaulty 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_MecnclLimphomeInDrv 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_MecnclLimphomeInPrk 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_GbxInPosNetrl 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_StepOnBrkToEngeGer 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_PrsRlseButonToEngeGer 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_AcousticWarnngShftngInMec 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_GbxSelectFaulty 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_GbxFaulty 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_DrvorPwrtrainFaulty 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_VehSpdTooHighForPosRvesor 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_GbxPosPrkOnlyAtStdstil 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_DrvrPrsUkwnInDrvorRves 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_DrvrWrnngInvd 0 "Not Active" 1 "Active";
+VAL_ 599 TCU_16_DisplayGear_ZF 0 "Current_gear_N" 1 "Current_gear_1" 2 "Current_gear_2" 3 "Current_gear_3" 4 "Current_gear_4" 5 "Current_gear_5" 6 "Current_gear_6" 7 "Current_gear_7" 8 "Current_gear_8" 9 "Current_gear_9" 10 "Reserved" 11 "Current_gear_R" 12 "Reserved" 13 "Current_gear_P" 14 "Reserved" 15 "Invalid Value";
+VAL_ 599 MCU_10_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 599 TCU_16_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 616 PEPS_ESCL_LearningStatus 0 "Undefined" 1 "Virgin" 2 "Learnt" 3 "reserved";
+VAL_ 616 PEPS_PowerRelayOutputFail 0 "Normal" 1 "Fail";
+VAL_ 616 PEPS_PIN_LearningStatus 0 "Virgin" 1 "Learnt";
+VAL_ 616 PEPS_SSB_FailStatus 0 "No Error" 1 "Error";
+VAL_ 616 PEPS_ESCL_FailStatus 0 "No Error" 1 "Error";
+VAL_ 616 PEPS_FailStatus 0 "No Error" 1 "Error";
+VAL_ 616 PEPS_ESCL_NotUnlockWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_ESCL_NotLockWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_NotPNWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_BrakeIndicationWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_ClutchIndicationWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_KeyReminderWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_NoKeyFoundWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_KeyOutWarning1 0 "Off" 1 "On";
+VAL_ 616 PEPS_KeyBatteryWarning 0 "Off" 1 "On";
+VAL_ 616 PEPS_KeyIntWarning1 0 "Off" 1 "On";
+VAL_ 616 PEPS_LockNotOFFWarning 0 "Off" 1 "On";
+VAL_ 617 PEPS_RemoteControlSt 0 "Not Remote control mode" 1 "Remote control mode";
+VAL_ 617 PEPS_OTAModeSt 0 "Not OTA mode" 1 "OTA mode";
+VAL_ 620 IHU_LongitAccel 65535 "Invalid";
+VAL_ 620 IHU_LateralAccel 65535 "Invalid";
+VAL_ 620 IHU_VerticalAccel 65535 "Invalid";
+VAL_ 620 IHU_LongitAccelValid 0 "Valid" 1 "Invalid";
+VAL_ 620 IHU_LateralAccelValid 0 "Valid" 1 "Invalid";
+VAL_ 620 IHU_VerticalAccelValid 0 "Valid" 1 "Invalid";
+VAL_ 768 IHU_EPMModSet 0 "Not Active" 1 "Auto" 2 "����ģʽ" 3 "�ֶ�ģʽ";
+VAL_ 768 IHU_ACSelfCleanModeSet 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_FrontDefrostButtonSts 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_RearDefrostButtonSts 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_FollowMeHome_Time 0 "Not Active" 1 "Off" 2 "30s" 3 "60s" 4 "90s" 5 "120s" 6 "Reserved" 7 "Reserved";
+VAL_ 768 IHU_LeaveHome_Time 0 "Not Active" 1 "Off" 2 "30s" 3 "60s" 4 "90s" 5 "120s" 6 "Reserved" 7 "Reserved";
+VAL_ 768 IHU_ACButtonSts 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_InteriorLightTimeAjust 0 "Normal" 1 "Off" 2 "2min" 3 "5min" 4 "10min" 5 "Reserved" 6 "Reserved" 7 "Reserved";
+VAL_ 768 IHU_TemperatureAjust 0 "Not Active";
+VAL_ 768 IHU_ACSystemOff 0 "Not Active" 1 "Off";
+VAL_ 768 IHU_BlowerSpeedAjust 0 "Not Active" 1 "Blower SpeedLevel 1" 2 "Blower SpeedLevel 2" 3 "Blower SpeedLevel 3" 4 "Blower SpeedLevel 4" 5 "Blower SpeedLevel 5" 6 "Blower SpeedLevel 6" 7 "Blower SpeedLevel 7";
+VAL_ 768 IHU_AirDistributeMode 0 "Not Active" 1 "Face" 2 "Face and Foot" 3 "Face and Foot and Defrost" 4 "Foot" 5 "Foot and Defrost" 6 "Face and Defrost" 7 "Reserved";
+VAL_ 768 IHU_AirCirculationMode 0 "Not Active" 1 "External Circulation" 2 "Internal Circulation" 3 "Reserved";
+VAL_ 768 IHU_DPFButtonSts 0 "Not Active" 1 "Button pressed";
+VAL_ 768 IHU_PTCButtonSts 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_AUTOButtonSts 0 "Not Active" 1 "Reserved" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_AUTOPassengerButtonSts 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_DualButtonSts 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_DriverSetTemperature 0 "Not Active" 1 "LO" 62 "HI" 63 "Invalid";
+VAL_ 768 IHU_PngSetTemperature 0 "Not Active" 1 "LO" 62 "HI" 63 "Invalid";
+VAL_ 768 IHU_SS_Set 0 "Not Active" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 768 IHU_DrivemodeSet 0 "Not Active" 1 "Standard" 2 "Economic" 3 "Sport" 4 "Snow" 5 "Comfort" 6 "Deep Snow" 7 "Cross" 8 "Slip Mud" 9 "Intelligent" 10 "Mountain" 11 "Uneven" 12 "Maximize Range" 13 "2H" 14 "4H" 15 "4L" 16 "4A" 17 "Sand" 18 "Rock" 19 "Mud" 20 "Wade" 21 "ExpertMode" 22 "ExpertModeExit" 63 "Invalid";
+VAL_ 768 IHU_WirelessChargeSwtSet 0 "No Request" 1 "Off" 2 "On" 3 "Reserved";
+VAL_ 780 ADU_ACC_SysSts 0 "OFF" 1 "Passive" 2 "Standby" 3 "Active Control" 4 "Brake Only" 5 "Override" 6 "Stand Wait" 7 "Failure";
+VAL_ 780 ADU_TimeGapSet 0 "No Display" 1 "Gap_1" 2 "Gap_2" 3 "Gap_3" 4 "Gap_4" 5 "Gap_5";
+VAL_ 780 ADU_LSS_Indicator 0 "OFF" 1 "Passive��ͼ���ɫ����" 2 "Standby��ͼ����ɫ����" 3 "Active Mode��ͼ����ɫ��˸" 4 "FailureMode��ͼ���ɫ����";
+VAL_ 780 ADU_AEBS_SysSts 0 "No Display" 1 "OFF" 2 "Active" 3 "Failure";
+VAL_ 780 ADU_SLIFSysSts 0 "Off �ر�" 1 "Fusion Mode �ں�ģʽ" 2 "Vision Mode �Ӿ�ģʽ" 3 "Navigation Only Mode ����ģʽ" 4 "Fault ����";
+VAL_ 780 ADU_SLIF_Value 0 "No Display" 1 "SPL Cancelled" 2 "SPL 5" 3 "SPL 10" 4 "SPL 15" 5 "SPL 20" 6 "SPL 25" 7 "SPL 30" 8 "SPL 35" 9 "SPL 40" 10 "SPL 45" 11 "SPL 50" 12 "SPL 55" 13 "SPL 60" 14 "SPL 65" 15 "SPL 70" 16 "SPL 75" 17 "SPL 80" 18 "SPL 85" 19 "SPL 90" 20 "SPL 95" 21 "SPL 100" 22 "SPL 105" 23 "SPL 110" 24 "SPL 115" 25 "SPL 120" 26 "SPL 125" 27 "SPL 130" 28 "SPL 135" 29 "SPL 140" 30 "SPL 145" 31 "SPL 150" 32 "No speedlimit ������" 33 "Speedlimit missing δ֪����";
+VAL_ 780 ADU_IHBC_SysSts 0 "OFF ������ʾ" 1 "Passive ������ʾ" 2 "Standby��ͼ���ɫ����" 3 "Active ��ͼ����ɫ����" 4 "Failure��ͼ���ɫ����";
+VAL_ 780 ADU_SCFIndicator 0 "No Display" 1 "Higher" 2 "Lower" 3 "Auto confirmed";
+VAL_ 780 ADU_LCC_SysSts 0 "Failure" 1 "OFF" 2 "Passive" 3 "Standby" 4 "Active" 5 "Lateral_Override" 6 "SafeStop" 7 "Longitudinal_Override" 8 "Overall_Override";
+VAL_ 780 ADU_HNOA_SysSts 0 "Off" 1 "Passive" 2 "Standby" 3 "Active control" 4 "Longitudinal Suspend" 5 "TOR" 6 "Safe stop" 7 "Lateral Suspend" 8 "Failure";
+VAL_ 780 ADU_FTBA_SysSts 0 "OFF" 1 "passive" 2 "standby" 3 "failure" 4 "guidance_active" 5 "completed" 6 "terminated" 7 "suspend";
+VAL_ 780 ADU_ISAmode 0 "Off �ر�" 1 "only SLIF ֻ��SLIF" 2 "SLIF+VisualWarning SLIF+��ѧ����" 3 "SLIF+CompleteWarningSLIF+��ѧ/��������" 4 "Fault ����";
+VAL_ 780 ADU_CNOA_SysSts 0 "Off" 1 "Passive" 2 "Standby" 3 "Active control" 4 "Longitudinal Suspend" 5 "TOR" 6 "Safe stop" 7 "Lateral Suspend" 8 "Failure";
+VAL_ 781 ADU_LSSTakeoverReq 0 "Not Active" 1 "Take Over Warning һ�����ֱ������б�������" 2 "Take Over Safty �������ֱ������б�������" 3 "Suppressed";
+VAL_ 781 ADU_LDP_SysSts 0 "off" 1 "standby" 2 "active" 3 "passive" 4 "fault";
+VAL_ 781 ADU_LDW_SysSts 0 "off" 1 "standby" 2 "active" 3 "passive" 4 "fault";
+VAL_ 781 ADU_LCCTextInfo 0 "No display" 1 "Unable to active LCC" 2 "LCC  is active" 3 "LCC is in co-pilot" 4 "LCC  is exit reminder" 5 "IES is active" 6 "LCC error" 7 "LCC Lateral Passive" 8 "LCC Recover" 9 "LCC Punishment" 10 "Driver to Middle" 11 "LCC is switched on" 12 "LCC is switched off";
+VAL_ 781 ADU_LCCEnaRemend 0 "Not recommend" 1 "Recommend";
+VAL_ 781 ADU_LCCTakeoverReq 0 "Not Active" 1 "HOR Warning Level 1" 2 "EOR Warning Level 1" 3 "HOR Warning Level 2" 4 "EOR Warning Level 2" 5 "DCA Warning" 6 "RMF is active" 7 "Reserved";
+VAL_ 781 ADU_ACC_TextInfo 0 "No Display" 1 "ACC Activated" 2 "ACC  is exit reminder" 3 "ACC Cannot be Active" 4 "ACC Failure" 5 "Longitudinal Override" 6 "Over Max Speed" 7 "Fasten Seat Belt" 8 "Close Doors" 9 "Aligning Steering Wheel" 10 "Release Brake Pedal" 11 "Release EPB" 12 "Unfold Rear View" 13 "ESC OFF Status" 14 "Drive Mode Cannot Support" 15 "Low Power" 16 "Fwiperin High Speed" 17 "TMPS Abnormal" 18 "Steep Descent Function Status" 19 "Vehicle started��notice arround";
+VAL_ 781 ADU_ELKA_SysSts 0 "off" 1 "standby" 2 "active" 3 "passive" 4 "fault";
+VAL_ 781 ADU_DAI_TextInfo 0 "No  Display" 1 "DAI active";
+VAL_ 781 ADU_ACC_ACCTakeOverReq 0 "no TakeOver request" 1 "TakeOver request";
+VAL_ 781 ADU_AEBS_TextInfo 0 "No Display" 1 "cannot open AEB" 2 "cannot open FCW" 3 "Latent distance Warning" 4 "PreWarning" 5 "Emergency Warning to car" 6 "Breaking to car" 7 "Emergency Warning to PED" 8 "Breaking to PED" 9 "Error" 10 "AEB is Switched on" 11 "AEB is Switched off" 12 "FCW is Switched on" 13 "FCW is Switched off" 14 "FCTB Braking" 15 "RCTB Braking";
+VAL_ 781 ADU_SCF_TextInfo 0 "No Display" 1 "Higher" 2 "Lower" 3 "Auto confirmed";
+VAL_ 781 ADU_FuncBeep_Info 0 "No_warning" 1 "Tip_warning ������ʾ" 2 "Active_warning ���ܼ���" 3 "Failed_warning ���ܹ���" 4 "Safety_warning �����ٱ���" 5 "Warning_sound ���ٱ���" 6 "Abort_warning  �쳣��ֹ����" 7 "Takeover_warning  �ӹܱ���" 8 "Cancel_warning  �����˳�����" 9 "ACC_Active_warning  ACC�����" 10 "LCC_Active_warning   LCC�����" 11 "ACPE Active  ACPE�����̧�ű���";
+VAL_ 781 ADU_FWCamera_Info 0 "Camera normal" 1 "Camera failure" 2 "Camera blocked" 3 "High Temp";
+VAL_ 781 ADU_ACPE_TextInfo 0 "No Display" 1 "ACPE Warning" 2 "ACPE Braking" 3 "ACPE is Switched on" 4 "ACPE is Switched off" 5 "Cannot open ACPE";
+VAL_ 781 ADU_SLWFWarning 0 "No Warning ������" 1 "Warning ����";
+VAL_ 781 ADU_FCTAWarnRi 0 "Not Warning δ����" 1 "Warning ����";
+VAL_ 781 ADU_FCTAWarnLe 0 "Not Warning δ����" 1 "Warning ����";
+VAL_ 781 ADU_ACPE_SysSts 0 "OFF �ر�" 1 "Passive ����" 2 "Standby ����" 3 "Warning ����" 4 "Braking  �ƶ�" 5 "Error ����" 6 "Closed For Ever ���ùر�" 7 "Reserved Ԥ��";
+VAL_ 781 ADU_RotatingHubMode 0 "Off" 1 "On";
+VAL_ 782 ADU_PDC_RRSDis 62 "No Obstacle" 63 "Invalid";
+VAL_ 782 ADU_PDC_RLSDis 62 "No Obstacle" 63 "Invalid";
+VAL_ 782 ADU_PDC_FRSDis 62 "No Obstacle" 63 "Invalid";
+VAL_ 782 ADU_PDC_FLSDis 62 "No Obstacle" 63 "Invalid";
+VAL_ 782 ADU_PDC_RRCDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 782 ADU_PDC_RLCDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 782 ADU_PDC_FRCDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 782 ADU_PDC_FLCDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 783 ADU_PDC_RRMDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 783 ADU_PDC_RLMDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 783 ADU_PDC_FRMDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 783 ADU_PDC_FLMDis 126 "No Obstacle" 127 "Invalid";
+VAL_ 783 ADU_PDC_WarnRate_R 0 "Off" 1 "1Hz" 2 "2Hz" 3 "On";
+VAL_ 783 ADU_PDC_WarnRate_F 0 "Off" 1 "1Hz" 2 "2Hz" 3 "On";
+VAL_ 783 ADU_FrontAVM_Info 0 "Camera normal" 1 "Camera failure" 2 "Camera blocked" 3 "Reserved";
+VAL_ 783 ADU_RearAVM_Info 0 "Camera normal" 1 "Camera failure" 2 "Camera blocked" 3 "Reserved";
+VAL_ 783 ADU_LeftAVM_Info 0 "Camera normal" 1 "Camera failure" 2 "Camera blocked" 3 "Reserved";
+VAL_ 783 ADU_RightAVM_Info 0 "Camera normal" 1 "Camera failure" 2 "Camera blocked" 3 "Reserved";
+VAL_ 783 ADU_PDC_SysSts 0 "Off" 1 "On" 2 "ALL-On" 3 "SystemError" 4 "TrailerMode";
+VAL_ 785 SWS_RESPlusBtnSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_SETMinusBtnSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_TimeGapAddBtnSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_HeadwayMinusSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_OkButtonSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_ReturnKeySts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_NOAKeySts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_360KeySts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_VolPlusSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_VolMinusSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_MuteSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_PrevTrackSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_NextTrackSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_VoiceKeySts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_CustomKeySts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 785 SWS_BTPhoneSts 0 "Not action" 1 "Pressed" 2 "Stuck" 3 "invalid";
+VAL_ 789 GW_29AuthRelease 0 "��֤�رգ�����ģʽ��" 1 "��֤δͨ��" 2 "��֤��ͨ��" 3 "reserved";
+VAL_ 791 TBOX_AudioMuteRequest 0 "No Request" 1 "Request Mute";
+VAL_ 791 TBOX_RsvnChrgSwt 0 "OFF" 1 "ON";
+VAL_ 791 TBOX_RsvnChrgTSocFull 0 "OFF" 1 "ON";
+VAL_ 791 TBOX_RsvnChrgMod 0 "SingleDay" 1 "EveryDay" 2 "UserDefine" 3 "Reserved";
+VAL_ 791 TBOX_RsvnBattHeatSwt 0 "OFF" 1 "ON";
+VAL_ 791 TBOX_RsvnBattHeatMod 0 "SingleDay" 1 "EveryDay" 2 "Reserved" 3 "Reserved";
+VAL_ 791 TBOX_RsvnBattHeatStrTim_min 0 "0min" 1 "10min" 2 "20min" 3 "30min" 4 "40min" 5 "50min" 6 "Reserved" 7 "Reserved";
+VAL_ 794 ADU_LeObjColor 0 "Gray" 1 "Yellow";
+VAL_ 794 ADU_LeftTargetVehicleSubType 0 "No type" 1 "Car" 2 "Truck" 3 "Motorcycle" 4 "Pedestrian" 5 "Cyclist" 6 "Bus";
+VAL_ 794 ADU_LeObjID 0 "Invalid" 1 "Valid";
+VAL_ 794 ADU_RightTargetVehicleSubType 0 "No type" 1 "Car" 2 "Truck" 3 "Motorcycle" 4 "Pedestrian" 5 "Cyclist" 6 "Bus";
+VAL_ 794 ADU_RiObjID 0 "Invalid" 1 "Valid";
+VAL_ 794 ADU_RiObjColor 0 "Gray" 1 "Yellow";
+VAL_ 795 ADU_EgoLeLineTyp 0 "No display" 1 "Type_Unknown" 2 "Type_Solid_Line" 3 "Type_Dashed_Line";
+VAL_ 795 ADU_EgoLeLineColor 0 "No display" 1 "Normal" 2 "Yellow" 3 "Red" 4 "Red Highlights" 5 "Blue";
+VAL_ 795 ADU_EgoLeLineID 0 "Invalid" 1 "Valid";
+VAL_ 795 ADU_EgoRiLineTyp 0 "No display" 1 "Type_Unknown" 2 "Type_Solid_Line" 3 "Type_Dashed_Line";
+VAL_ 795 ADU_EgoRiLineColor 0 "No display" 1 "Normal" 2 "Yellow" 3 "Red" 4 "Red Highlights" 5 "Blue";
+VAL_ 795 ADU_EgoRiLineID 0 "Invalid" 1 "Valid";
+VAL_ 796 ADU_NeborLeLineTyp 0 "No display" 1 "Type_Unknown" 2 "Type_Solid_Line" 3 "Type_Dashed_Line";
+VAL_ 796 ADU_NeborLeLineColor 0 "No display" 1 "Color_Unknown" 2 "Color_White" 3 "Color_Yellow";
+VAL_ 796 ADU_NeborLeLineID 0 "Invalid" 1 "Valid";
+VAL_ 796 ADU_NeborRiLineTyp 0 "No display" 1 "Type_Unknown" 2 "Type_Solid_Line" 3 "Type_Dashed_Line";
+VAL_ 796 ADU_NeborRiLineColor 0 "No display" 1 "Color_Unknown" 2 "Color_White" 3 "Color_Yellow";
+VAL_ 796 ADU_NeborRiLineID 0 "Invalid" 1 "Valid";
+VAL_ 797 ADU_dxTarObjcolor 0 "green ��ɫ" 1 "yellow ��ɫ" 2 "red ��ɫ" 3 "gray ��ɫ" 4 "no display ����ʾ";
+VAL_ 797 ADU_ALCCObjTyp 0 "No type" 1 "Car" 2 "Truck" 3 "Motorcycle" 4 "Pedestrian" 5 "Cyclist" 6 "Bus";
+VAL_ 797 ADU_ALCCObjID 0 "Invalid" 1 "Valid";
+VAL_ 798 ADU_BSDONOFFSts 0 "Not active δ����" 1 "OFF �ر�" 2 "Only_vision ���Ӿ�" 3 "Vision_Voice �Ӿ�������";
+VAL_ 798 ADU_DOWONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 798 ADU_BSDVoiceONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 798 ADU_RCTAONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 798 ADU_RCTBONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 798 ADU_RCWONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 798 ADU_RCWVoiceONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 798 ADU_RCTA_Warning_L_TextInfo 0 "No  Warning" 1 "RCTA Warning";
+VAL_ 798 ADU_RCTA_Warning_R_TextInfo 0 "No  Warning" 1 "RCTA Warning";
+VAL_ 798 ADU_BSD_SysSts 0 "OFF" 1 "Passive" 2 "Standby" 3 "Active" 4 "Failure";
+VAL_ 798 ADU_RCTB_Warning_TextInfo 0 "No  Warning" 1 "RCTB Active";
+VAL_ 798 ADU_RCW_Warning_Info 0 "No Warning" 1 "Level1 Warning" 2 "Level2 Warning" 3 "Reserved";
+VAL_ 798 ADU_DOWWarning_Info_R 0 "No Warning" 1 "Level1 Warning" 2 "Level2 Warning" 3 "Reserved";
+VAL_ 798 ADU_BSDLight_Right_Rqst 0 "Default" 1 "No Requst" 2 "Level 1 Requst" 3 "Level 2 Requst";
+VAL_ 798 ADU_BSDLight_Left_Rqst 0 "Default" 1 "No Requst" 2 "Level 1 Requst" 3 "Level 2 Requst";
+VAL_ 798 ADU_DOWWarning_Info_L 0 "No Warning" 1 "Level1 Warning" 2 "Level2 Warning" 3 "Reserved";
+VAL_ 798 ADU_BSDWarning_Info_L 0 "No Warning" 1 "Level1 Warning" 2 "Level2 Warning" 3 "Reserved";
+VAL_ 798 ADU_BSDWarning_Info_R 0 "No Warning" 1 "Level1 Warning" 2 "Level2 Warning" 3 "Reserved";
+VAL_ 798 ADU_RRMR_SysSts 0 "Normal" 1 "Block" 2 "Temporary Error" 3 "System Error";
+VAL_ 798 ADU_LRMR_SysSts 0 "Normal" 1 "Block" 2 "Temporary Error" 3 "System Error";
+VAL_ 801 VCU_DrvInstantPower 2047 "Invalid";
+VAL_ 801 VCU_DrvMaxOutputPower 1023 "Invalid";
+VAL_ 801 VCU_DrvMaxChargePower 511 "Invalid";
+VAL_ 801 VCU_EnergyFlowDisply 0 "��������" 1 "��������ģʽ" 2 "�������ģʽ" 3 "AC/DC ���" 4 "ͣ��V2L �ŵ�+���ٷ���" 5 "ͣ��V2L �ŵ�" 6 "ͣ�����ٷ���" 7 "�������+���������� -��������" 8 "��ػ���+���������磨������-��������������������" 9 "��ػ���+���������磨�������գ�-������������" 10 "�������+���������� -����������������Դ" 11 "��ػ���+�������������������գ�-������������" 12 "�������+����������+���������-����������������Դ" 15 "Invalid";
+VAL_ 801 VCU_St_VTOLkeepSw 0 "OFF" 1 "ON";
+VAL_ 802 VCU_CruiseControlStatus 0 "CC Off" 1 "CC Standby" 2 "CC Active" 3 "CC Override" 4 "Accelerate" 5 "Decelerate" 6 "Resume Last Speed" 7 "Tap+" 8 "Tap-";
+VAL_ 802 VCU_CruiseValid 0 "Valid" 1 "Invalid";
+VAL_ 802 VCU_CruiseActiveStatus 0 "Inactive" 1 "Active";
+VAL_ 802 VCU_CruiseMainLamp 0 "lamp off" 1 "lamp on";
+VAL_ 802 VCU_CruiseTargetSpeed 511 "Invalid";
+VAL_ 802 VCU_SOCHoldHEVSts 0 "ǿ�Ʊ���ر�" 1 "ǿ�Ʊ��翪��";
+VAL_ 802 VCU_SOCHoldHEVTgtSOC 127 "Invalid";
+VAL_ 802 VCU_GearPGenerationSts 0 "פ������ر�" 1 "פ�����翪��";
+VAL_ 802 VCU_GearPGenerationTgtSOC 127 "Invalid";
+VAL_ 802 VCU_GearPGenerationPwLvl 0 "�͹���" 1 "�߹���";
+VAL_ 802 VCU_CoastdwnRegDepthLvl 0 "��" 1 "��" 2 "��" 3 "Reserved";
+VAL_ 802 VCU_V2LAllow 0 "V2L������" 1 "V2L����";
+VAL_ 802 VCU_V2LSwtSts 0 "V2L�ر�" 1 "V2L��";
+VAL_ 802 VCU_V2LLowSOCStrtSwtSts 0 "�ر�" 1 "��";
+VAL_ 802 VCU_V2LFailRsn 0 "����" 1 "��������󣨲���ʾ��" 2 "��طŵ繦�ʵͣ�������ʾ��" 3 "�������ǹ�����ӣ���ֹ�ŵ�" 4 "��ѹδ����" 5 "SOC�����趨ֵ" 6 "���������ͣ��" 7 "SOC���ͣ�����";
+VAL_ 804 VCU_DrvRangeFuel 32767 "Invalid";
+VAL_ 804 VCU_DrvRangeEV 16383 "Invalid";
+VAL_ 804 VCU_DrvRangeTotal 32767 "Invalid";
+VAL_ 804 VCU_InsPwrConsumption 2047 "Invalid";
+VAL_ 848 ACU_CrashOutputSts 0 "No deploy crash" 1 "BT deploy crash" 2 "Front deploy crash" 4 "Rear deploy crash" 8 "Driver side deploy crash" 16 "Passenger side deploy crash";
+VAL_ 848 ACU_RollingFunctionSetSts 0 "OFF" 1 "ON" 2 "reserved" 3 "reserved";
+VAL_ 848 ACU_AirbagWarningStatus 0 "Lamp off" 1 "Lamp on";
+VAL_ 848 ACU_AirbagInhibitWarning 0 "Lamp off" 1 "Lamp on";
+VAL_ 848 ACU_SeatbeltWarningCmd_Driver 0 "Lamp off" 1 "Lamp on" 2 "reserved" 3 "reserved";
+VAL_ 848 ACU_SeatbeltWarningCmd_Passenger 0 "Lamp off" 1 "Lamp on" 2 "reserved" 3 "reserved";
+VAL_ 848 ACU_SeatbeltWarningCmd_RL 0 "Lamp off" 1 "Lamp on" 2 "reserved" 3 "reserved";
+VAL_ 848 ACU_SeatbeltWarningCmd_RM 0 "Lamp off" 1 "Lamp on" 2 "reserved" 3 "reserved";
+VAL_ 848 ACU_SeatbeltWarningCmd_RR 0 "Lamp off" 1 "Lamp on" 2 "reserved" 3 "reserved";
+VAL_ 848 ACU_SeatBeltSts_Driver 0 "Invalid" 1 "Buckled" 2 "Unbuckled" 3 "reserved";
+VAL_ 850 EMS_CarbamideLevel 0 "Inactive" 1 "adbuleҺλ�ͣ��뾡����װ������������EMS_CarbamideOdo������޷��𶯣�����ȡ�������������3����" 2 "adbuleҺλ�ͣ��뾡����װ������������EMS_CarbamideOdo������޷��𶯣����жȡ�������������3����" 3 "adbuleҺλ�ͣ��뾡����װ������������EMS_CarbamideOdo������޷��𶯣����ضȡ�������������3����" 4 "adbuleҺλ�գ���������װ���𶯷�������������������3������";
+VAL_ 850 EMS_CarbamideQuality 0 "Inactive" 1 "�����������ϸ�����ϵ����վ������������EMS_CarbamideOdo������޷������𶯣�����ȣ�" 2 "�����������ϸ�����ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����жȣ�" 3 "�����������ϸ�����ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����ضȣ�" 4 "�����������ϸ񣬷������޷������𶯣�";
+VAL_ 850 EMS_CarbamideConsume 0 "Inactive" 1 "���������쳣������ϵ����վ������������EMS_CarbamideOdo������޷������𶯣�����ȣ�" 2 "���������쳣������ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����жȣ�" 3 "���������쳣������ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����ضȣ�" 4 "���������쳣���������޷������𶯣�";
+VAL_ 850 EMS_CarbamideSystem 0 "Inactive" 1 "���ع����쳣������ϵ����վ������������EMS_CarbamideOdo������޷������𶯣�����ȣ�" 2 "���ع����쳣������ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����жȣ�" 3 "���ع����쳣������ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����ضȣ�" 4 "���ع����쳣���������޷������𶯣�";
+VAL_ 850 EMS_EmissionOver 0 "Inactive" 1 "�����ŷų��꣬����ϵ����վ������������EMS_CarbamideOdo������޷������𶯣�����ȣ�" 2 "�����ŷų��꣬����ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����жȣ�" 3 "�����ŷų��꣬����ϵ����վ������������EMS_CarbamideOdo������޷������𶯣����ضȣ�" 4 "�����ŷų��꣬�������޷������𶯣�";
+VAL_ 850 EMS_WaitToStartLamp 0 "lamp off" 1 "lamp on";
+VAL_ 850 EMS_WaterInFuelLamp 0 "lamp off" 1 "lamp on";
+VAL_ 851 EMS_SoakTimeValid 0 "Valid" 1 "Invalid";
+VAL_ 851 EMS_EngRunTimeValid 0 "Valid" 1 "Invalid";
+VAL_ 851 EMS_FuelInjectedValid 0 "Valid" 1 "Invalid";
+VAL_ 864 BCM_PowerMode 0 "OFF" 1 "ACC" 2 "ON" 3 "START";
+VAL_ 864 BCM_LowBeamSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_HighBeamSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_LeftTurnLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_RightTurnLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_PositionLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_EmergencyLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_RearFogLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_FrontFogLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_DaytimeRunningLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_FrontLeftDoorSts 0 "Close" 1 "Open";
+VAL_ 864 BCM_FrontRightDoorSts 0 "Close" 1 "Open";
+VAL_ 864 BCM_RearLeftDoorSts 0 "Close" 1 "Open";
+VAL_ 864 BCM_RearRightDoorSts 0 "Close" 1 "Open";
+VAL_ 864 BCM_TailGateOpenSts 0 "Close" 1 "Open";
+VAL_ 864 BCM_FrontLeftDoorLockStatus 0 "Unlocked" 1 "Locked" 2 "Reserved" 3 "Invalid";
+VAL_ 864 BCM_ACRearFrostSts 0 "Off" 1 "On";
+VAL_ 864 BCM_ReverseGearInfo 0 "ReverseGeer not engaged" 1 "ReverseGeer engaged";
+VAL_ 864 BCM_VehicleAntiCurrentSts 0 "Disalarmed" 1 "Pre-alarmed" 2 "FullAlarmed" 3 "Alarmed";
+VAL_ 864 BCM_BreakPadelStatus 0 "Not Press" 1 "Press";
+VAL_ 864 BCM_BackMirrorFolderSts 0 "Off" 1 "On";
+VAL_ 864 BCM_HoodSts 0 "Close" 1 "Open";
+VAL_ 864 BCM_FillerCapSts 0 "Close" 1 "Open";
+VAL_ 865 BCM_WindowRunningStatusFL 0 "StandStill" 1 "Opening" 2 "Closing" 3 "Reserved";
+VAL_ 865 BCM_WindowRunningStatusFR 0 "StandStill" 1 "Opening" 2 "Closing" 3 "Reserved";
+VAL_ 865 BCM_WindowRunningStatusRL 0 "StandStill" 1 "Opening" 2 "Closing" 3 "Reserved";
+VAL_ 865 BCM_WindowRunningStatusRR 0 "StandStill" 1 "Opening" 2 "Closing" 3 "Reserved";
+VAL_ 865 BCM_WindowPosFL 127 "Invalid";
+VAL_ 865 BCM_WindowPosFR 127 "Invalid";
+VAL_ 865 BCM_WindowPosRL 127 "Invalid";
+VAL_ 865 BCM_WindowPosRR 127 "Invalid";
+VAL_ 866 BCM_FollowMeHomeTimeSetSts 0 "Off" 1 "30s" 2 "60s" 3 "90s" 4 "120s" 7 "Invalid";
+VAL_ 866 BCM_LeaveHomeTimeSetSts 0 "Off" 1 "30s" 2 "60s" 3 "90s" 4 "120s" 7 "Invalid";
+VAL_ 866 BCM_WindowRemoteAutoDownSetSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_AssistIlluminationSetSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_InteriorLightTimeSetSts 0 "Off" 1 "2min" 2 "5min" 3 "10min" 7 "Invalid";
+VAL_ 866 BCM_SpeedLockSetSts 0 "Off" 1 "15km/h Lock" 2 "40km/h Lock" 7 "Invalid";
+VAL_ 866 BCM_exRearMirrorAutoFoldSetSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_VINCompareValid 0 "Valid(���ݺϷ�)" 1 "Invalid(���ݲ��Ϸ�)";
+VAL_ 866 BCM_HornAlertVolumeSetSts 0 "Off" 1 "Low" 2 "Normal" 3 "High" 7 "Invalid";
+VAL_ 866 BCM_WindowAutoUPbyLockSetSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_SearchCarWarnModSetSts 0 "Light" 1 "Sound" 2 "Light+Sound" 3 "Invalid";
+VAL_ 866 BCM_AutoWshWipSetSts 0 "short time 300ms" 1 "middle time 500ms" 2 "long time 800ms" 3 "Invalid";
+VAL_ 866 BCM_FlaoutUnlockSetSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_ClsWinSpdSetSts 0 "OFF" 1 "60km/h Close" 2 "80km/h Close" 3 "100km/h Close";
+VAL_ 866 BCM_AmbientLightSwtSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_AmbientLightLvl 0 "Reserved" 1 "level 1" 2 "level 2" 3 "level 3" 4 "level 4" 5 "level 5" 6 "level 6" 7 "level 7" 8 "level 8" 9 "level 9" 10 "level 10";
+VAL_ 866 BCM_FillerCapOpenWarning 0 "No Request" 1 "Request";
+VAL_ 866 BCM_FrontwindshieldheatingSts 0 "Off" 1 "On";
+VAL_ 866 BCM_NozzleheatingSts 0 "Off" 1 "On";
+VAL_ 866 BCM_SteeringwheelheatingSts 0 "Not heating" 1 "heating";
+VAL_ 866 BCM_CarWashMode 0 "Off" 1 "On";
+VAL_ 866 BCM_CargoBoxLightSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 866 BCM_AAL_ONOFFSts 0 "OFF" 1 "ON";
+VAL_ 866 BCM_AAL_PitchAngle 255 "Invalid";
+VAL_ 866 BCM_AAL_YawAngle 255 "Invalid";
+VAL_ 869 TPMS_SystemStatus 0 "Normal" 1 "Self Inspection" 2 "System Warning" 3 "Reserved";
+VAL_ 870 TPMS_SensorLost_FL 0 "Not Lost" 1 "Lost";
+VAL_ 870 TPMS_TireLeakage_FL 0 "Normal" 1 "Fast Leakage";
+VAL_ 870 TPMS_LearningStatus_FL 0 "Unlearned" 1 "Learning" 2 "Learning Complete" 3 "Learning Failed";
+VAL_ 870 TPMS_TirePressureStatus_FL 0 "Normal" 1 "Over Pressure" 2 "UnderPressure" 3 "Reserved";
+VAL_ 870 TPMS_TireTemperatureSts_FL 0 "Normal" 1 "High Temperature";
+VAL_ 870 TPMS_TireBatteryPowerSts_FL 0 "Normal" 1 "Low Power";
+VAL_ 870 TPMS_TirePressure_FL 255 "Invalid";
+VAL_ 870 TPMS_TireTemperature_FL 255 "Invalid";
+VAL_ 870 TPMS_TireBatteryPower_FL 255 "Invalid";
+VAL_ 870 TPMS_SensorLost_FR 0 "Not Lost" 1 "Lost";
+VAL_ 870 TPMS_TireLeakage_FR 0 "Normal" 1 "Fast Leakage";
+VAL_ 870 TPMS_LearningStatus_FR 0 "Unlearned" 1 "Learning" 2 "Learning Complete" 3 "Learning Failed";
+VAL_ 870 TPMS_TirePressureStatus_FR 0 "Normal" 1 "Over Pressure" 2 "UnderPressure" 3 "Reserved";
+VAL_ 870 TPMS_TireTemperatureSts_FR 0 "Normal" 1 "High Temperature";
+VAL_ 870 TPMS_TireBatteryPowerSts_FR 0 "Normal" 1 "Low Power";
+VAL_ 870 TPMS_TirePressure_FR 255 "Invalid";
+VAL_ 870 TPMS_TireTemperature_FR 255 "Invalid";
+VAL_ 870 TPMS_TireBatteryPower_FR 255 "Invalid";
+VAL_ 871 TCM_LeftTurnLightSWSts 0 "OFF" 1 "ON";
+VAL_ 871 TCM_LeftTurnLightSWStsValid 0 "Valid" 1 "Invalid";
+VAL_ 871 TCM_RightTurnLightSWSts 0 "OFF" 1 "ON";
+VAL_ 871 TCM_RightTurnLightSWStsValid 0 "Valid" 1 "Invalid";
+VAL_ 871 TCM_HighBeamSWSts 0 "OFF" 1 "ON";
+VAL_ 871 TCM_HighBeamSWStsValid 0 "Valid" 1 "Invalid";
+VAL_ 871 TCM_FlashLightSWSts 0 "OFF" 1 "ON";
+VAL_ 871 TCM_FlashLightSWStsValid 0 "Valid" 1 "Invalid";
+VAL_ 872 TPMS_SensorLost_RL 0 "Not Lost" 1 "Lost";
+VAL_ 872 TPMS_TireLeakage_RL 0 "Normal" 1 "Fast Leakage";
+VAL_ 872 TPMS_LearningStatus_RL 0 "Unlearned" 1 "Learning" 2 "Learning Complete" 3 "Learning Failed";
+VAL_ 872 TPMS_TirePressureStatus_RL 0 "Normal" 1 "Over Pressure" 2 "UnderPressure" 3 "Reserved";
+VAL_ 872 TPMS_TireTemperatureSts_RL 0 "Normal" 1 "High Temperature";
+VAL_ 872 TPMS_TireBatteryPowerSts_RL 0 "Normal" 1 "Low Power";
+VAL_ 872 TPMS_TirePressure_RL 255 "Invalid";
+VAL_ 872 TPMS_TireTemperature_RL 255 "Invalid";
+VAL_ 872 TPMS_TireBatteryPower_RL 255 "Invalid";
+VAL_ 872 TPMS_SensorLost_RR 0 "Not Lost" 1 "Lost";
+VAL_ 872 TPMS_TireLeakage_RR 0 "Normal" 1 "Fast Leakage";
+VAL_ 872 TPMS_LearningStatus_RR 0 "Unlearned" 1 "Learning" 2 "Learning Complete" 3 "Learning Failed";
+VAL_ 872 TPMS_TirePressureStatus_RR 0 "Normal" 1 "Over Pressure" 2 "UnderPressure" 3 "Reserved";
+VAL_ 872 TPMS_TireTemperatureSts_RR 0 "Normal" 1 "High Temperature";
+VAL_ 872 TPMS_TireBatteryPowerSts_RR 0 "Normal" 1 "Low Power";
+VAL_ 872 TPMS_TirePressure_RR 255 "Invalid";
+VAL_ 872 TPMS_TireTemperature_RR 255 "Invalid";
+VAL_ 872 TPMS_TireBatteryPower_RR 255 "Invalid";
+VAL_ 875 WCM_ChargingSts 0 "No Charge" 1 "Charging" 2 "Charge Completed" 3 "Fault";
+VAL_ 875 WCM_FailureSts 0 "Normal" 1 "Under Voltage" 2 "Over Voltage" 3 "Over Temperature" 4 "Foreign Matter Detected" 5 "Over Power";
+VAL_ 875 WCM_WirelessChargeSwtSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 875 WCM_PhoneReminder 0 "No Warning" 1 "Warning Phone Forgotten";
+VAL_ 875 WCM_PhoneReminderSwitchSts 0 "Off" 1 "On" 2 "Reserved" 3 "Reserved";
+VAL_ 876 WCM_P_ChargingSts 0 "No Charge" 1 "Charging" 2 "Charge Completed" 3 "Fault";
+VAL_ 876 WCM_P_FailureSts 0 "Normal" 1 "Under Voltage" 2 "Over Voltage" 3 "Over Temperature" 4 "Foreign Matter Detected" 5 "Over Power";
+VAL_ 876 WCM_P_WirelessChargeSwtSts 0 "Off" 1 "On" 2 "Reserved" 3 "Invalid";
+VAL_ 876 WCM_P_PhoneReminder 0 "No Warning" 1 "Warning Phone Forgotten";
+VAL_ 876 WCM_P_PhoneReminderSwitchSts 0 "Off" 1 "On" 2 "Reserved" 3 "Reserved";
+VAL_ 881 VCU_VehShowModeSts 0 "OFF" 1 "ON";
+VAL_ 881 VCU_VehShowModePowerlimitSts 0 "unlimit" 1 "limit";
+VAL_ 881 VCU_IntegntmodeFlg 0 "NoActive" 1 "Active";
+VAL_ 885 IC_SurplusFuel 127 "Invalid";
+VAL_ 885 IC_ParkingBrakeIndication 0 "Parking brake inactive" 1 "Parking brake active";
+VAL_ 885 IC_BrakeFluidLevelIndication 0 "Brake fluid level enough" 1 "Brake fluid level not enough";
+VAL_ 885 IC_FuelSignalShortToGND 0 "Not short" 1 "Short";
+VAL_ 885 IC_FuelSignalShortToBattery 0 "Not short" 1 "Short";
+VAL_ 885 IC_FuelSignalOpen 0 "Not Open" 1 "Open";
+VAL_ 885 IC_EngineOilLowPressure 0 "Normal" 1 "Low";
+VAL_ 885 IC_BrakeSysFailIndication 0 "Brake system normal" 1 "Brake system fail";
+VAL_ 885 IC_SurplusMileage 1023 "Invalid";
+VAL_ 885 IC_SurplusFuelValid 0 "Vaild" 1 "Invaild";
+VAL_ 885 IC_OdoMeterValid 0 "Vaild" 1 "Invaild";
+VAL_ 885 IC_DrvSeatbeltBucklestatus 0 "Lamp off" 1 "Lamp on";
+VAL_ 885 IC_PassSeatbeltBucklestatus 0 "Lamp off" 1 "Lamp on";
+VAL_ 885 IC_OdoMeter 1048575 "Invalid";
+VAL_ 885 IC_ICFaultSts 0 "No fault" 1 "Fault";
+VAL_ 885 IC_RearleftsideSeatbeltBucklesta 0 "Lamp off" 1 "Lamp on";
+VAL_ 885 IC_RearmiddleSeatbeltBucklestatu 0 "Lamp off" 1 "Lamp on";
+VAL_ 885 IC_RearrightsideSeatbeltBucklest 0 "Lamp off" 1 "Lamp on";
+VAL_ 885 IC_DisplayVehicleSpeedUnit 0 "kilometer" 1 "mile";
+VAL_ 885 IC_DisplayVehicleSpeedValue 511 "Invalid";
+VAL_ 885 IC_AirbagInhibitWarning 0 "Warning off" 1 "Warning on" 2 "Reserved" 3 "Not Used";
+VAL_ 886 IC_OdoMeterExValid 0 "Vaild" 1 "Invaild";
+VAL_ 886 IC_AvgFuelConslast50km 511 "Invalid";
+VAL_ 886 IC_OdoMeterEx 16777215 "Invalid";
+VAL_ 886 IC_BattChrgLmpSts 0 "Lamp off" 1 "Lamp on";
+VAL_ 886 IC_InsAvgFuelConsUnit 0 "L/100km" 1 "L/h";
+VAL_ 887 IC_AvgPwrConsTrip 32767 "Invalid";
+VAL_ 887 IC_AvgPwrConsLifetime 32767 "Invalid";
+VAL_ 887 IC_AvgPwrConslast50km 32767 "Invalid";
+VAL_ 887 IC_AvgEgyConslast50km 511 "Invalid";
+VAL_ 887 IC_SurplusMileageEx 2047 "Invalid";
+VAL_ 887 IC_MaintenanceRemind 0 "Lamp off" 1 "Lamp on";
+VAL_ 888 IC_OdoMeterHEV 16777215 "Invalid";
+VAL_ 888 IC_OdoMeterEV 16777215 "Invalid";
+VAL_ 895 IC_Fuel_Algorithm 0 "Normal" 1 "Reduce Quickly" 2 "Sieep" 3 "Reserved";
+VAL_ 895 IC_FuelTankUnfilteredR 1023 "Invalid";
+VAL_ 899 GSM_GearShiftAuthRelease 0 "��֤���ڽ���" 1 "��֤δͨ��" 2 "��֤��ͨ��" 3 "����δƥ��";
+VAL_ 912 B2V_FaultInfo_32960_OverTemp 0 "Normal" 1 "Fault Level I" 2 "Fault Level II" 3 "Fault Level III";
+VAL_ 912 B2V_FaultInfo_32960_ThermalRunaw 0 "Normal" 1 "Error" 2 "Reserved" 3 "Invalid";
+VAL_ 925 BMS_BatPackSOCDisply 1023 "Invalid";
+VAL_ 925 BMS_BatPackHiResSOC 1023 "Invalid";
+VAL_ 925 BMS_BatPackRemainingEngy 65535 "Invalid";
+VAL_ 928 Swaybar_1_FrontSwaybarGreenLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 928 Swaybar_1_FrontSwaybarYellowLamp 0 "OFF" 1 "ON" 2 "flashing" 3 "Not used";
+VAL_ 928 Swaybar_1_StatusNotice 0 "No Request" 1 "\"����4L��4Hģʽ�²����Ͽ��ȶ���\"" 2 "\"�ȶ��˶Ͽ���\"" 3 "\"�ȶ����ѶϿ�\"" 4 "\"�ȶ���������\"" 5 "\"�ȶ���������\"" 6 "\"���˳�4Lģʽ�ȶ����Զ��Ӻ�\"" 7 "\"���˳�4Hģʽ�ȶ����Զ��Ӻ�\"" 15 "Invalid";
+VAL_ 928 Swaybar_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 938 WWR_WorkSts 0 "Disable" 1 "Standby" 2 "Active" 3 "Failure";
+VAL_ 938 WWR_TextDisp 0 "WWR_Active" 1 "WWR_Speed��10km/h" 2 "WWR_Speed��5km/h and Deep water" 3 "deep exceed 800mm" 4 "Controller pedal deploy" 5 "The ramp angle exceeds 10��" 6 "The vehicle door is open" 7 "Trunk is open" 8 "WWR_Failure";
+VAL_ 938 WWR_SwitchSts 0 "Off" 1 "On" 2 "Reserved" 3 "Reserved";
+VAL_ 938 WWR_Left_Distance 800 "ALERT" 1022 "No Obstacle" 1023 "Invalid";
+VAL_ 938 WWR_Right_Distance 800 "ALERT" 1022 "No Obstacle" 1023 "Invalid";
+VAL_ 938 WWR_LSensorFailSts 0 "Sensor normal" 1 "Sensor fault";
+VAL_ 938 WWR_RSensorFailSts 0 "Sensor normal" 1 "Sensor fault";
+VAL_ 938 WWR_SoundIndcn 0 "Off" 1 "Long beep��������" 2 "4Hz" 3 "2Hz" 4 "1Hz" 5 "Not used" 6 "Not used" 7 "Not used";
+VAL_ 940 AC_1_TemperatureLevel 15 "Reserved";
+VAL_ 940 AC_1_AirDistributeMode 0 "Face" 1 "Face and Foot" 2 "Face and Foot and Defrost" 3 "Foot" 4 "Foot and Defrost" 5 "Face and Defrost";
+VAL_ 940 AC_1_AirCirculationMode 0 "External Circulation" 1 "Internal Circulation";
+VAL_ 940 AC_1_BlowerSpeedLevel 0 "Off" 1 "Blower SpeedLevel 1" 2 "Blower SpeedLevel 2" 3 "Blower SpeedLevel 3" 4 "Blower SpeedLevel 4" 5 "Blower SpeedLevel 5" 6 "Blower SpeedLevel 6" 7 "Blower SpeedLevel 7";
+VAL_ 940 AC_1_ACButtonSts 0 "Off" 1 "On";
+VAL_ 940 AC_1_FrontDefrostButtonSts 0 "Off" 1 "On";
+VAL_ 940 AC_1_RearDefrostButtonSts 0 "Not Pressed" 1 "Pressed";
+VAL_ 940 AC_1_ACSystemSts 0 "Off" 1 "On";
+VAL_ 940 AC_1_PTCButtonSts 0 "Off" 1 "On";
+VAL_ 940 AC_1_BlowerSpeedLevelRear 0 "Off" 1 "Blower SpeedLevel 1" 2 "Blower SpeedLevel 2" 3 "Blower SpeedLevel 3";
+VAL_ 940 AC_1_ButtonTriggerStatus 0 "Not Pressed" 1 "Pressed";
+VAL_ 940 AC_1_RearModeSts 0 "Off" 1 "On";
+VAL_ 940 AC_2_DriverSetTemperature 0 "No display" 1 "LO" 62 "HI" 63 "Invalid";
+VAL_ 940 AC_2_PngSetTemperature 0 "No display" 1 "LO" 62 "HI" 63 "Invalid";
+VAL_ 940 AC_2_OutsideTemperature 255 "Invalid";
+VAL_ 940 AC_2_OutsideTemperatureValid 0 "Valid" 1 "Invalid";
+VAL_ 940 AC_2_DualMode 0 "signal mode ����ģʽ" 1 "dual mode ˫��ģʽ";
+VAL_ 940 AC_2_AUTOButtonSts 0 "Off" 1 "On";
+VAL_ 940 AC_2_AUTOPassengerButtonSts 0 "Off" 1 "On";
+VAL_ 940 AC_2_DualButtonSts 0 "Off" 1 "On";
+VAL_ 940 AC_1_ACSelfCleanModeSts 0 "Off" 1 "On";
+VAL_ 940 AC_1_ACFaultSts 0 "No fault" 1 "Fault";
+VAL_ 940 AC_1_ACMaxSwSts 0 "Off" 1 "On";
+VAL_ 940 AC_2_acAutoState 0 "Manual" 1 "Auto";
+VAL_ 940 AC_2_ModeAutoState 0 "Manual" 1 "Auto";
+VAL_ 940 AC_2_NcfAutoState 0 "Manual" 1 "Auto";
+VAL_ 940 AC_2_FanAutoState 0 "Manual" 1 "Auto";
+VAL_ 940 AC_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 940 AC_2_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 944 IHU_NavSpeedLimitStatus 0 "SL_UNKNOWN" 1 "SL_EXISTS" 2 "SL_NOLIMIT" 3 "SL_PLURAL";
+VAL_ 944 IHU_NavSpeedLimit 0 "No Display" 1 "SPL 5" 2 "SPL 10" 3 "SPL 15" 4 "SPL 20" 5 "SPL 25" 6 "SPL 30" 7 "SPL 35" 8 "SPL 40" 9 "SPL 45" 10 "SPL 50" 11 "SPL 55" 12 "SPL 60" 13 "SPL 65" 14 "SPL 70" 15 "SPL 75" 16 "SPL 80" 17 "SPL 85" 18 "SPL 90" 19 "SPL 95" 20 "SPL 100" 21 "SPL 105" 22 "SPL 110" 23 "SPL 115" 24 "SPL 120" 25 "SPL 125" 26 "SPL 130" 27 "SPL 135" 28 "SPL 140" 29 "SPL 145" 30 "SPL 150" 31 "No speedlimit";
+VAL_ 944 IHU_NavSpeedLimitUnits 0 "Unknown" 1 "MPH" 2 "KMH" 3 "Reserved";
+VAL_ 944 IHU_NavCurrRoadType 0 "Highway" 1 "Nationalway" 2 "Provincialway" 3 "Countylway" 4 "Townway" 5 "CountyandTownlway" 6 "Expressway" 7 "Mainway" 8 "Minorway" 9 "Commonway" 10 "Nonaviway" 15 "Invalid";
+VAL_ 945 IHU_BrightnessLevel 0 "Reserved" 1 "level 1" 2 "level 2" 3 "level 3" 4 "level 4" 5 "level 5" 6 "level 6" 7 "level 7" 8 "level 8" 9 "level 9" 10 "level 10" 15 "Invalid";
+VAL_ 945 IHU_SentryModeFaultRe 0 "Reserved" 1 "������ص�����" 2 "��ѹϵͳδ�ϵ�" 3 "��ѹϵͳ����" 4 "����ͷ����" 5 "���ص�ѹ��";
+VAL_ 945 IHU_VehiclePitchAngle 4095 "Invalid";
+VAL_ 945 IHU_VehicleRollAngle 4095 "Invalid";
+VAL_ 945 IHU_DVSts 0 "OFF" 1 "ON";
+VAL_ 945 IHU_VideoSts 0 "OFF" 1 "ON";
+VAL_ 945 IHU_GPSErr 0 "����" 1 "����";
+VAL_ 945 IHU_GPSAntennaShortCircuit 0 "����" 1 "����";
+VAL_ 945 IHU_GPSAntennaTurnOff 0 "����" 1 "����";
+VAL_ 945 IHU_SentryModeWorkingSts 0 "δ����" 1 "������" 2 "�Ѽ���" 3 "����ʧ��" 4 "�˳���" 5 "�˳�ʱ��ѹδ��-���糡������" 6 "�˳�ʧ��" 7 "Reserved";
+VAL_ 945 IHU_AudioMuteSts 0 "Not Muted" 1 "Muted";
+VAL_ 945 IHU_IHUFaultSts 0 "No fault" 1 "Fault";
+VAL_ 945 IHU_USBtoTboxConnectSts 0 "Connected" 1 "Not Connected";
+VAL_ 945 IHU_CustomSw1Sts 0 "Function OFF" 1 "Function ON";
+VAL_ 945 IHU_CustomSw2Sts 0 "Function OFF" 1 "Function ON";
+VAL_ 945 IHU_VINCompareValid 0 "Valid(���ݺϷ�)" 1 "Invalid(���ݲ��Ϸ�)";
+VAL_ 945 IHU_DVcomSt 0 "Inactive" 1 "Active" 2 "TSP timeout" 3 "Reserved";
+VAL_ 945 IHU_CameraErrorSt_Front 0 "No Error" 1 "Error";
+VAL_ 945 IHU_CameraErrorSt_Rear 0 "No Error" 1 "Error";
+VAL_ 945 IHU_CameraErrorSt_Left 0 "No Error" 1 "Error";
+VAL_ 945 IHU_CameraErrorSt_Right 0 "No Error" 1 "Error";
+VAL_ 945 IHU_EmergencyLightReq 0 "OFF" 1 "ON";
+VAL_ 945 IHU_SentryWarInfo 0 "Normal" 1 "��Ա����" 2 "��ˮ�ڵ�����ͷ" 3 "��Ϊ�ڵ�����ͷ" 4 "�����쳣��";
+VAL_ 946 IHU_MusicStatus 0 "δ������" 1 "��ͣ" 2 "����" 3 "Reserved";
+VAL_ 946 IHU_VPAWakeupStatus 0 "��Ĭ̬" 1 "����̬" 2 "����̬" 3 "����̬";
+VAL_ 946 IHU_AmbientLightLMode 0 "��̬ģʽ" 1 "��ɫ����ģʽ" 2 "��˸ģʽ" 3 "ӭ��ģʽ" 4 "�ɶ�ģʽ" 5 "��̬ģʽ";
+VAL_ 955 BMS_ChrgSysSta 0 "Normal" 1 "Fault";
+VAL_ 955 BMS_ChrgConctSta 0 "δ����" 1 "�������ǹ����" 2 "ֱ�����ǹ����" 3 "�������ǹ��ֱ�����ǹͬʱ����" 4 "VTOL�ŵ�ǹ����" 5 "VTOV�ŵ�ǹ����";
+VAL_ 955 BMS_RsvnCharge_Sta 0 "��ԤԼ�������" 1 "ԤԼ���������";
+VAL_ 955 BMS_ChrgSta 0 "δ���" 1 "���׼������" 2 "�����" 3 "����������" 4 "���������" 5 "���Ԥ�ȣ�ֻ���Ȳ���磩";
+VAL_ 972 SCU_1_FLSeatHeatLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 972 SCU_1_FRSeatHeatLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 972 SCU_1_FLSeatMassgLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 7 "Invalid";
+VAL_ 972 SCU_1_FLSeatMassgModSts 0 "����" 1 "��Խ" 2 "��Ծ" 3 "����" 4 "��չ" 5 "����" 6 "�粿" 15 "Invalid";
+VAL_ 972 SCU_1_FaultsStatus 0 "�޹���" 1 "��ʻ���˿�����" 2 "�������μ���˿����" 3 "NTC��·" 4 "NTC��·" 5 "SCU�����ѹ����" 6 "SCU�����ѹ����" 7 "MAMͨ�Ź���" 8 "MAM�����ѹ����" 9 "MAM�����ѹ����" 10 "Զ�̿���ģʽ�źŶ�ʧ" 255 "Invalid";
+VAL_ 972 SCU_1_ZeroGravityFailedRemind_FR 0 "No Remined" 1 "P������" 2 "��������" 3 "Reserved";
+VAL_ 972 EPM_1_LPedalSts 0 "Inactive" 1 "Extend" 2 "retract" 3 "reserve";
+VAL_ 972 EPM_1_RPedalSts 0 "Inactive" 1 "Extend" 2 "retract" 3 "reserve";
+VAL_ 972 EPM_1_EPMModSts 0 "invalid" 1 "Auto" 2 "����ģʽ" 3 "�ֶ�ģʽ";
+VAL_ 972 EPM_1_FltSts 0 "Normal" 1 "Fault";
+VAL_ 972 SCU_1_FLSeatVentLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 972 SCU_1_LumbarModeSts_FL 0 "�ر�" 1 "�ϲ�����" 2 "�²�����" 3 "ͬʱ����";
+VAL_ 972 SCU_1_LumbarModeSts_FR 0 "�ر�" 1 "�ϲ�����" 2 "�²�����" 3 "ͬʱ����";
+VAL_ 972 SCU_1_FRSeatVentLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 972 SCU_1_FRSeatMassgLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 7 "Invalid";
+VAL_ 972 SCU_1_ZeroGravitySts_FR 0 "չ��λ" 1 "չ����" 2 "�ָ�λ" 3 "�ָ���" 4 "չ���ж�" 5 "�ָ��ж�";
+VAL_ 972 SCU_1_FRSeatMassgModSts 0 "����" 1 "��Խ" 2 "��Ծ" 3 "����" 4 "��չ" 5 "����" 6 "�粿" 15 "Invalid";
+VAL_ 972 SCU_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 972 EPM_1_Timeout_Flag 0 "Normal" 1 "Timeout";
+VAL_ 972 SCU_1_SeatMemorySwtSts 0 "OFF" 1 "ON" 2 "Reserved" 3 "Reserved";
+VAL_ 981 AMP_AudioSourceSts 0 "Not Active" 1 "ý����" 2 "��������" 3 "Not Used";
+VAL_ 981 AMP_MediaVolStepSts 0 "Not Active";
+VAL_ 981 AMP_MuteSts 0 "Not Active" 1 "Mute������ý������" 2 "Not Mute" 3 "Mute All������������";
+VAL_ 981 AMP_BtMusicVolStepSts 0 "Not Active";
+VAL_ 981 AMP_ChimeSysSelect 0 "Not Active" 1 "������" 2 "������" 3 "������";
+VAL_ 981 AMP_NaviVolStepSts 0 "Not Active";
+VAL_ 981 AMP_BeepSoundEnableSts 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 981 AMP_CommVolStepSts 0 "Not Active";
+VAL_ 981 AMP_PhoneLinkEnableSts 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 981 AMP_VCVolStepSts 0 "Not Active";
+VAL_ 981 AMP_LoudnessEnableSts 0 "Not Active" 1 "ON" 2 "OFF" 3 "Not Used";
+VAL_ 981 AMP_RingToneVolStepSts 0 "Not Active";
+VAL_ 981 AMP_VSCLevelSts 0 "Not Active" 1 "OFF" 2 "��" 3 "��" 4 "��";
+VAL_ 981 AMP_PositionSelect 0 "Not Active" 1 "ȫ��" 2 "����" 3 "����" 4 "����" 5 "�Զ���";
+VAL_ 981 AMP_ModeSelect 0 "Not Active" 1 "��Ȼԭ��ģʽ��Ĭ�ϣ�" 2 "����ģʽ" 3 "������ģʽ";
+VAL_ 982 AMP_BalanceStepSts 0 "Not Active" 1 "Left + 9" 2 "Left + 8" 3 "Left + 7" 4 "Left + 6" 5 "Left + 5" 6 "Left + 4" 7 "Left + 3" 8 "Left + 2" 9 "Left + 1" 10 "Center(default)" 11 "Right + 1" 12 "Right + 2" 13 "Right + 3" 14 "Right + 4" 15 "Right + 5" 16 "Right + 6" 17 "Right + 7" 18 "Right + 8" 19 "Right + 9";
+VAL_ 982 AMP_FadeStepSts 0 "Not Active" 1 "Rear + 9" 2 "Rear + 8" 3 "Rear + 7" 4 "Rear + 6" 5 "Rear + 5" 6 "Rear + 4" 7 "Rear + 3" 8 "Rear + 2" 9 "Rear + 1" 10 "Center(default)" 11 "Front + 1" 12 "Front + 2" 13 "Front + 3" 14 "Front + 4" 15 "Front + 5" 16 "Front + 6" 17 "Front + 7" 18 "Front + 8" 19 "Front + 9";
+VAL_ 982 AMP_BassStepSts 0 "Not Active" 1 "+ 10" 2 "+ 9" 3 "+ 8" 4 "+ 7" 5 "+ 6" 6 "+ 5" 7 "+ 4" 8 "+ 3" 9 "+ 2" 10 "+ 1" 11 "Center(default)" 12 "- 1" 13 "- 2" 14 "- 3" 15 "- 4" 16 "- 5" 17 "- 6" 18 "- 7" 19 "- 8" 20 "- 9" 21 "- 10";
+VAL_ 982 AMP_MidrangeStepSts 0 "Not Active" 1 "+ 10" 2 "+ 9" 3 "+ 8" 4 "+ 7" 5 "+ 6" 6 "+ 5" 7 "+ 4" 8 "+ 3" 9 "+ 2" 10 "+ 1" 11 "Center(default)" 12 "- 1" 13 "- 2" 14 "- 3" 15 "- 4" 16 "- 5" 17 "- 6" 18 "- 7" 19 "- 8" 20 "- 9" 21 "- 10";
+VAL_ 982 AMP_TrebleStepSts 0 "Not Active" 1 "+ 10" 2 "+ 9" 3 "+ 8" 4 "+ 7" 5 "+ 6" 6 "+ 5" 7 "+ 4" 8 "+ 3" 9 "+ 2" 10 "+ 1" 11 "Center(default)" 12 "- 1" 13 "- 2" 14 "- 3" 15 "- 4" 16 "- 5" 17 "- 6" 18 "- 7" 19 "- 8" 20 "- 9" 21 "- 10";
+VAL_ 984 BCM_BackMirrorMemReq 0 "No Request" 1 "Request";
+VAL_ 984 BCM_UnlockLightMode 0 "Mode_1" 1 "Mode_2" 2 "Mode_3";
+VAL_ 984 BCM_LockLightMode 0 "Mode_1" 1 "Mode_2" 2 "Mode_3";
+VAL_ 984 BCM_LogoLightOutputSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_FrontWiperSts 0 "Stop" 1 "Low Speed" 2 "High Speed" 3 "AUTO" 4 "Interval";
+VAL_ 985 BCM_WiperRepairSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_ApproveUnlockSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_WalkAwayLockSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_FLUnlockMode 0 "Unlock Driver Door" 1 "Unlock ALL Door" 2 "Reserved" 3 "Reserved";
+VAL_ 985 BCM_DoorCmdDomeLightSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_LgoLightSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_ClsWinRainSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_MirrorUnfoldSetSts 0 "Unlock" 1 "Door Open" 2 "Reserved" 3 "Reserved";
+VAL_ 985 BCM_MirrorReverseDownSetSts 0 "OFF" 1 "Right" 2 "Double" 3 "Reserved";
+VAL_ 985 BCM_RefuelingSts 0 "No Allow" 1 "Perpare" 2 "Allow" 3 "Error";
+VAL_ 985 BCM_RefuelProhibitWarning 0 "No Request" 1 "Request";
+VAL_ 985 BCM_TailGateAjarSts 0 "Close" 1 "Open";
+VAL_ 985 BCM_TailGateFullOpenSts 0 "Close" 1 "Open";
+VAL_ 985 BCM_SteeringWheelHeatingSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_ArmFailedHornSoundSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_DisrmHornSoundSetSts 0 "OFF" 1 "ON";
+VAL_ 985 BCM_WiperRepairOperationNotice 0 "No Request" 1 "Request";
+VAL_ 985 BCM_WiperOperationNotice 0 "No Request" 1 "Request";
+VAL_ 985 BCM_OdoMeterExBackup 16777215 "Invalid";
+VAL_ 987 SCU_SeatMemoryPosSts_FL 0 "NOT_MEMORYPOSITION" 1 "����λ��1" 2 "����λ��2" 3 "����λ��3" 6 "Memory failed" 7 "Reserved";
+VAL_ 987 SCU_SeatGetMemoryPosSts_FL 0 "Initial Value" 1 "���ڼ���λ��1" 2 "���ڼ���λ��2" 3 "���ڼ���λ��3" 4 "���������λ��1�ƶ�" 5 "���������λ��2�ƶ�" 6 "���������λ��3�ƶ�" 7 "���μ����ȡʧ��";
+VAL_ 987 SCU_NapModeSeatSelectSts_FL 0 "OFF" 1 "ON";
+VAL_ 987 SCU_EasyEntryExitSeatSetSts_FL 0 "OFF" 1 "ON";
+VAL_ 987 SCU_SlideApReason_FL 0 "Not triggered" 1 "Triggered";
+VAL_ 987 SCU_BackApReason_FL 0 "Not triggered" 1 "Triggered";
+VAL_ 987 SCU_HeightApReason_FL 0 "Not triggered" 1 "Triggered";
+VAL_ 987 SCU_CushionApReason_FL 0 "Not triggered" 1 "Triggered";
+VAL_ 987 SCU_LegRetractableApReason_FL 0 "Not triggered" 1 "Triggered";
+VAL_ 987 SCU_SeatMemoryPopupReq 0 "No Request" 1 "Request";
+VAL_ 987 SCU_LegRetractableFrontAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_LegRetractableRearAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_FrontAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_RearAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_BackFrontAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_BackRearAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_UpAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_DownAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_CushionUpAdjtSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 987 SCU_CushionDownAdjSW_FL 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_SeatMemoryPosSts_FR 0 "NOT_MEMORYPOSITION" 1 "����λ��1" 2 "����λ��2" 3 "����λ��3" 6 "Memory failed" 7 "Reserved";
+VAL_ 988 SCU_SeatGetMemoryPosSts_FR 0 "Initial Value" 1 "���ڼ���λ��1" 2 "���ڼ���λ��2" 3 "���ڼ���λ��3" 4 "���������λ��1�ƶ�" 5 "���������λ��2�ƶ�" 6 "���������λ��3�ƶ�" 7 "���μ����ȡʧ��";
+VAL_ 988 SCU_NapModeSeatSelectSts_FR 0 "OFF" 1 "ON";
+VAL_ 988 SCU_EasyEntryExitSeatSetSts_FR 0 "OFF" 1 "ON";
+VAL_ 988 SCU_SlideApReason_FR 0 "Not triggered" 1 "Triggered";
+VAL_ 988 SCU_BackApReason_FR 0 "Not triggered" 1 "Triggered";
+VAL_ 988 SCU_HeightApReason_FR 0 "Not triggered" 1 "Triggered";
+VAL_ 988 SCU_LegAngleApReason_FR 0 "Not triggered" 1 "Triggered";
+VAL_ 988 SCU_LegRetractableApReason_FR 0 "Not triggered" 1 "Triggered";
+VAL_ 988 SCU_LegAngleUpAdjSw_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_LegAngleDownAdjSw_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_FrontAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_RearAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_BackFrontAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_BackRearAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_UpAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_DownAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_LegRetractableFrontAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 988 SCU_LegRetractableRearAdjSW_FR 0 "Notpressed" 1 "Pressed";
+VAL_ 989 PEPS_RunStartWarning 0 "Inactive" 1 "Active";
+VAL_ 989 PEPS_AccLeaveWarning 0 "Inactive" 1 "Active";
+VAL_ 990 BTK_VINCompareValid 0 "Valid(���ݺϷ�)" 1 "Invalid(���ݲ��Ϸ�)";
+VAL_ 995 ADU_FCW_ONOFF_Sts 0 "Not active" 1 "OFF" 2 "Standard" 3 "Near" 4 "Far";
+VAL_ 995 ADU_AEBONOFFSts 0 "Not active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 995 ADU_LSSONOFFSts 0 "Not active" 1 "ON" 2 "OFF" 3 "Reserved";
+VAL_ 995 ADU_LDWLDPONOFFSts 0 "Not active δ����" 1 "OFF �ر�" 2 "Only LDW ƫ������" 3 "Only LDP ƫ������" 4 "LDW +LDP ƫ������+����";
+VAL_ 995 ADU_LDWSnvtySts 0 "Not active δ����" 1 "LowSensitivity ��������" 2 "HighSensitivity ��������" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_LDWWarnModSts 0 "Not active δ����" 1 "only voice ������" 2 "only shock ����" 3 "voice and shock ����+��";
+VAL_ 995 ADU_ELKONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_SLIFSLWFONOFFSts 0 "Notactive" 1 "OFF" 2 "OnlySLIF" 3 "SLIF_SLWF";
+VAL_ 995 ADU_SLWFONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_SLWFAcousticONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_SLWFNmberAb 0 "Not active" 1 "-20" 2 "-19" 3 "-18" 4 "-17" 5 "-16" 6 "-15" 7 "-14" 8 "-13" 9 "-12" 10 "-11" 11 "-10" 12 "-9" 13 "-8" 14 "-7" 15 "-6" 16 "-5" 17 "-4" 18 "-3" 19 "-2" 20 "-1" 21 "0" 22 "1" 23 "2" 24 "3" 25 "4" 26 "5" 27 "6" 28 "7" 29 "8" 30 "9" 31 "10" 32 "11" 33 "12" 34 "13" 35 "14" 36 "15" 37 "16" 38 "17" 39 "18" 40 "19" 41 "20";
+VAL_ 995 ADU_SLWFModeSts 0 "Not active δ����" 1 "Absolute �̶�ֵƫ��" 2 "Relative ���ֵƫ��" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_SLWFNmberRe 0 "Not active" 1 "-20%" 2 "-19%" 3 "-18%" 4 "-17%" 5 "-16%" 6 "-15%" 7 "-14%" 8 "-13%" 9 "-12%" 10 "-11%" 11 "-10%" 12 "-9%" 13 "-8%" 14 "-7%" 15 "-6%" 16 "-5%" 17 "-4%" 18 "-3%" 19 "-2%" 20 "-1%" 21 "0%" 22 "1%" 23 "2%" 24 "3%" 25 "4%" 26 "5%" 27 "6%" 28 "7%" 29 "8%" 30 "9%" 31 "10%" 32 "11%" 33 "12%" 34 "13%" 35 "14%" 36 "15%" 37 "16%" 38 "17%" 39 "18%" 40 "19%" 41 "20%";
+VAL_ 995 ADU_SCFONOFFSts 0 "Not Active  δ����" 1 "Manual confirm �������ֶ�ȷ��" 2 "OFF �ر�" 3 "Auto confirm �������Զ�ȷ��";
+VAL_ 995 ADU_SPLChangeONOFFSts 0 "Not Active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Closed For Ever ���ùر�";
+VAL_ 995 ADU_DAIONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_IHBCONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_FCTAONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 995 ADU_FCTBONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 996 ADU_PDCVoiceONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Reserved Ԥ��";
+VAL_ 996 ADU_DCLCONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Closed For Ever ���ùر�";
+VAL_ 996 ADU_ACPEONOFFSts 0 "Not active δ����" 1 "ON ����" 2 "OFF �ر�" 3 "Closed For Ever ���ùر�";
+VAL_ 996 ADU_ADASDrivingModeSts 0 "Not active" 1 "ACC" 2 "LCC" 3 "NOA";
+VAL_ 1008 SRF_SWSt 0 "No Switch Active" 1 "Roof Switch in ��open�� position����)" 2 "Roof Switch in ��close�� position���أ�" 3 "Roof Switch in ��Tilt up�� position��Ԥ����" 4 "Roof Switch in ��Tilt down�� position��Ԥ����" 14 "multi switch input at the same time" 15 "Not Used";
+VAL_ 1008 SRF_InitializeStatus 0 "No Initialized" 1 "Initialized";
+VAL_ 1008 SRF_SW_Fault 0 "No error" 1 "Error";
+VAL_ 1008 SRF_Motor_Circuit_Fault 0 "No error" 1 "Error";
+VAL_ 1008 SRF_ECU_Fault 0 "No error" 1 "Error";
+VAL_ 1008 SRF_Alarm 0 "Default" 1 "Sunroof Close Alarm";
+VAL_ 1008 SRF_Response_Error 0 "No error" 1 "Error";
+VAL_ 1008 SRF_Overheat_Fault 0 "No error" 1 "Error";
+VAL_ 1008 SRF_Voltage_Fault 0 "No error" 1 "Error";
+VAL_ 1008 SRF_PosStatus_Percentage 255 "Invalid Value";
+VAL_ 1008 SRF_CmdResponse 0 "Default��Ĭ��ֵ��" 1 "Cmd Received&Executing��LINָ��ִ���У�" 2 "Success��LINָ��ִ�гɹ���" 3 "Failed��LINָ��ִ��ʧ�ܣ�";
+VAL_ 1008 SRF_CmdAbnormalReason 0 "Default;��Ĭ��ֵ��" 1 "SRF Fault;���촰����" 2 "Voltage Fault;����ѹ����" 3 "Hall Fault;����������" 4 "Relay Fault;���̵�������" 5 "Pinch;�����У�" 6 "Blocked;����ת��" 7 "Switch Interrupt;�����ش�ϣ�";
+VAL_ 1008 SRF_InterlockingCmd 0 "Idle;��Ĭ��ֵ��" 1 "stop;��ֹͣ��" 2 "goto_full close;����ȫ�أ�" 3 "goto_half;�����뿪��" 4 "goto_full open;����ȫ����" 5 "Clear initialization ;��ȥ��ʼ����" 6 "learn_Logo;����ʼ��ѧϰ��־��" 7 "Learn_Step_Open;����ʼ�����迪��" 8 "Learn_Step_Close;����ʼ������أ�" 9 "Learn_Success;����ʼ���ɹ���";
+VAL_ 1008 SRF_WorkingSts 0 "Stop;����ֹ��" 1 "Openging;�����У�" 2 "Closing;���ر��У�";
+VAL_ 1009 SSD_SWSt 0 "No Switch Active" 1 "Roof Switch in ��open�� position����)" 2 "Roof Switch in ��close�� position���أ�" 3 "Roof Switch in ��Tilt up�� position��Ԥ����" 4 "Roof Switch in ��Tilt down�� position��Ԥ����" 14 "multi switch input at the same time" 15 "Not Used";
+VAL_ 1009 SSD_InitializeStatus 0 "No Initialized" 1 "Initialized";
+VAL_ 1009 SSD_SW_Fault 0 "No error" 1 "Error";
+VAL_ 1009 SSD_Motor_Circuit_Fault 0 "No error" 1 "Error";
+VAL_ 1009 SSD_ECU_Fault 0 "No error" 1 "Error";
+VAL_ 1009 SSD_Alarm 0 "Default" 1 "Sunroof Close Alarm";
+VAL_ 1009 SSD_Response_Error 0 "No error" 1 "Error";
+VAL_ 1009 SSD_Overheat_Fault 0 "No error" 1 "Error";
+VAL_ 1009 SSD_Voltage_Fault 0 "No error" 1 "Error";
+VAL_ 1009 SSD_PosStatus_Percentage 255 "Invalid Value";
+VAL_ 1009 SSD_CmdResponse 0 "Default��Ĭ��ֵ��" 1 "Cmd Received&Executing��LINָ��ִ���У�" 2 "Success��LINָ��ִ�гɹ���" 3 "Failed��LINָ��ִ��ʧ�ܣ�";
+VAL_ 1009 SSD_CmdAbnormalReason 0 "Default;��Ĭ��ֵ��" 1 "SRF Fault;���촰����" 2 "Voltage Fault;����ѹ����" 3 "Hall Fault;����������" 4 "Relay Fault;���̵�������" 5 "Pinch;�����У�" 6 "Blocked;����ת��" 7 "Switch Interrupt;�����ش�ϣ�";
+VAL_ 1009 SSD_InterlockingCmd 0 "Idle;��Ĭ��ֵ��" 1 "stop;��ֹͣ��" 2 "goto_full close;����ȫ�أ�" 3 "goto_half;�����뿪��" 4 "goto_full open;����ȫ����" 5 "Clear initialization ;��ȥ��ʼ����" 6 "learn_Logo;����ʼ��ѧϰ��־��" 7 "Learn_Step_Open;����ʼ�����迪��" 8 "Learn_Step_Close;����ʼ������أ�" 9 "Learn_Success;����ʼ���ɹ���";
+VAL_ 1009 SSD_WorkingSts 0 "Stop;����ֹ��" 1 "Openging;�����У�" 2 "Closing;���ر��У�";
+VAL_ 1010 RLS_RQ_LowBeam 0 "No RQ on Low Beam" 1 "RQ on Low Beam";
+VAL_ 1010 RLS_RQ_PositionLamp 0 "No RQ on Position Lamp" 1 "RQ on Position Lamp";
+VAL_ 1010 RLS_Fault_Rain 0 "Normal Status" 1 "Status Fault";
+VAL_ 1010 RLS_Fault_Light 0 "Normal Status" 1 "Status Fault";
+VAL_ 1010 RLS_REP_Error 0 "No error" 1 "Error";
+VAL_ 1010 RLS_VOLT_Error 0 "No error" 1 "VOLT_Low" 2 "VOLT_High" 3 "Not used";
+VAL_ 1011 HOD_ErrorInfo 0 "No error" 1 "HOD Internal Error" 2 "Undervoltage Error" 3 "Overvoltage Error" 4 "Shield Error" 5 "Sensor Error";
+VAL_ 1011 HOD_Sts 0 "Hands Off" 1 "Hands On" 2 "HOD Invalid";
+VAL_ 1011 HOD_RespEr 0 "No error" 1 "Error";
+VAL_ 1011 HOD_CalCmIndc 0 "False" 1 "True";
+VAL_ 1013 SCM_SeatHeatLvlSts_RL 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 1013 SCM_SeatHeatLvlSts_RR 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 1013 SCM_FLSeatHeatLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 1013 SCM_FRSeatHeatLvlSts 0 "Off" 1 "Low" 2 "Mid" 3 "High" 15 "Invalid";
+VAL_ 1280 VCU_DCEnable 0 "Ԥ��" 1 "����" 2 "ֹͣ" 3 "Ԥ��";
+VAL_ 1320 IBS_U_BATT 16383 "Invalid";
+VAL_ 1321 IBS_SOC 255 "Invalid";
+VAL_ 1346 IHU_DateTimeSecond 63 "Invalid";
+VAL_ 1346 IHU_DateTimeMinute 63 "Invalid";
+VAL_ 1346 IHU_DateTimeHour 31 "Invalid";
+VAL_ 1346 IHU_DateTimeDay 31 "Invalid";
+VAL_ 1346 IHU_DateTimeMonth 15 "Invalid";
+VAL_ 1346 IHU_DateTimeYear 127 "Invalid";
+VAL_ 1346 IHU_TimeValid 0 "Vaild" 1 "Invaild";
+VAL_ 1361 C2V_N_ACVoltageOutput 255 "Invalid";
+VAL_ 1361 C2V_N_AVCurrentOutput 255 "Invalid";
+VAL_ 1361 C2V_N_AVPowerOutput 255 "Invalid";
+VAL_ 1361 C2V_St_VTOLPlugStatus 0 "��" 1 "����" 2 "����" 3 "Ԥ��";
+VAL_ 1361 C2V_VTOLStatus 0 "����" 1 "��������" 2 "�޹�������" 3 "����ͣ��" 4 "��ǹͣ��";
+VAL_ 1361 C2V_F_VTOLOverfulRatedPower 0 "OK" 1 "Fault";
+VAL_ 1361 C2V_F_VTOLHardware 0 "OK" 1 "Fault";
+VAL_ 1361 C2V_F_VTOLOverTemp 0 "OK" 1 "Fault";
+VAL_ 1368 DCDC_WorkStatus 0 "ͣ����������" 1 "����";
+VAL_ 1368 DCDC_HvLockErr 0 "����" 1 "����";
+VAL_ 1368 DCDC_AC_Insulation_Fault 0 "����" 1 "����";
+VAL_ 1383 TLM_TrailerModSts 0 "Off" 1 "On";
+VAL_ 1383 TLM_TrailerindicatorSts 0 "OFF" 1 "Blue" 2 "Yellow" 3 "Red";
+VAL_ 1388 AVAS_SwtSts 0 "Off" 1 "On";
+VAL_ 1388 AVAS_SoundTypSts 0 "Sound1" 1 "Sound2";
+VAL_ 1400 BMS_6C0_VEH_INSULATION_FAULT_IND 0 "����" 1 "����";
+VAL_ 1400 BMS_6C0_BATT_FAULT_IND 0 "����" 1 "����";
+VAL_ 1400 BMS_6C0_OBC_ERR_IND 0 "��" 1 "��";
+VAL_ 1400 BMS_6C0_OBC_REMIND_LAMP 0 "��" 1 "��";
+VAL_ 1400 BMS_6C0_BATT_TEMP_LAMP 0 "��" 1 "��";
+VAL_ 1404 BMS_RemChrgTime 4095 "Invalid";
+VAL_ 1404 BMS_ChrgTimeElasped 4095 "Invalid";
+VAL_ 1404 BMS_BatChrgEngy 65535 "Invalid";
+VAL_ 1405 B2V_TotalDCChrgEnergy 16777215 "Invalid";
+VAL_ 1405 B2V_TotalACChrgEnergy 16777215 "Invalid";
+VAL_ 1408 IHU_GPSDataType_1 0 "���ĸ�ʽ1" 1 "���ĸ�ʽ2" 2 "���ĸ�ʽ3" 3 "Reserved";
+VAL_ 1408 IHU_GPSPositioningSts 0 "δ��λ" 1 "�Ѷ�λ" 2 "Reserved" 3 "Invalid";
+VAL_ 1408 IHU_GPSviaGPS 0 "δʹ��GPS��������" 1 "ʹ����GPS��������" 2 "Reserved" 3 "Invalid";
+VAL_ 1408 IHU_GPSviaBeidou 0 "δʹ�ñ�����������" 1 "ʹ���˱�����������" 2 "Reserved" 3 "Invalid";
+VAL_ 1408 IHU_GPSviaGLONASS 0 "δʹ��GLONASS��������" 1 "ʹ����GLONASS��������" 2 "Reserved" 3 "Invalid";
+VAL_ 1408 IHU_GPSviaGALILEO 0 "δʹ��GALILEO��������" 1 "ʹ����GALILEO��������" 2 "Reserved" 3 "Invalid";
+VAL_ 1408 IHU_GPSAltitude 65535 "Invalid";
+VAL_ 1408 IHU_GPSLatitudeDirection 0 "��γ" 1 "��γ" 2 "Reserved" 3 "Invalid";
+VAL_ 1408 IHU_GPSLatitude 1073741823 "Invalid";
+VAL_ 1409 IHU_GPSDataType_2 0 "���ĸ�ʽ1" 1 "���ĸ�ʽ2" 2 "���ĸ�ʽ3" 3 "Reserved";
+VAL_ 1409 IHU_GPSLongitudeDirection 0 "����" 1 "����" 2 "Reserved" 3 "Invalid";
+VAL_ 1409 IHU_GPSLongitude 1073741823 "Invalid";
+VAL_ 1409 IHU_GPSVehicleDirection 511 "Invalid";
+VAL_ 1409 IHU_GPSVehicleSpeed 65535 "Invalid";
+VAL_ 1410 IHU_GPSDataType_3 0 "���ĸ�ʽ1" 1 "���ĸ�ʽ2" 2 "���ĸ�ʽ3" 3 "Reserved";
+VAL_ 1410 IHU_GPSTime 4294967295 "Invalid";
+VAL_ 1410 IHU_NavCountryCodeInfo 0 "None" 1 "BEL ����ʱ" 2 "BGR ��������" 3 "CYP ����·˹" 4 "CZE �ݿ˹��͹�" 5 "DEU �¹�" 6 "DNK ����" 7 "ESP ������" 8 "EST ��ɳ����" 9 "FIN ����" 10 "FRA ����" 11 "FRO ����Ⱥ��" 12 "GBR Ӣ��" 13 "GRC ϣ��" 14 "GIB ֱ������" 15 "HRV ���޵���" 16 "HUN ������" 17 "IMN ������" 18 "IRL ������" 19 "ITA �����" 20 "LTU ������" 21 "LUX ¬ɭ��" 22 "LVA ����ά��" 23 "MLT ������" 24 "NLD ����" 25 "POL ����" 26 "PRT ������" 27 "ROU ��������" 28 "SVK ˹�工��" 29 "SVN ˹��������" 30 "SWE ���" 31 "AUT �µ���" 32 "NOR Ų��" 33 "CHE ��ʿ" 34 "TUR ������" 35 "ISR ��ɫ��" 36 "SRB ����ά��" 37 "BIH ����" 38 "MKD �������" 39 "MNE ��ɽ" 40 "ALB ����������" 41 "KOS ������" 42 "AUS �Ĵ�����" 43 "NZL ������" 44 "MYS ��������" 45 "CHN �й�";
+VAL_ 1411 IHU_BalanceStep 0 "Not Active" 1 "Left + 9" 2 "Left + 8" 3 "Left + 7" 4 "Left + 6" 5 "Left + 5" 6 "Left + 4" 7 "Left + 3" 8 "Left + 2" 9 "Left + 1" 10 "Center(default)" 11 "Right + 1" 12 "Right + 2" 13 "Right + 3" 14 "Right + 4" 15 "Right + 5" 16 "Right + 6" 17 "Right + 7" 18 "Right + 8" 19 "Right + 9";
+VAL_ 1411 IHU_FadeStep 0 "Not Active" 1 "Rear + 9" 2 "Rear + 8" 3 "Rear + 7" 4 "Rear + 6" 5 "Rear + 5" 6 "Rear + 4" 7 "Rear + 3" 8 "Rear + 2" 9 "Rear + 1" 10 "Center(default)" 11 "Front + 1" 12 "Front + 2" 13 "Front + 3" 14 "Front + 4" 15 "Front + 5" 16 "Front + 6" 17 "Front + 7" 18 "Front + 8" 19 "Front + 9";
+VAL_ 1411 IHU_BassStep 0 "Not Active" 1 "+ 10" 2 "+ 9" 3 "+ 8" 4 "+ 7" 5 "+ 6" 6 "+ 5" 7 "+ 4" 8 "+ 3" 9 "+ 2" 10 "+ 1" 11 "Center(default)" 12 "- 1" 13 "- 2" 14 "- 3" 15 "- 4" 16 "- 5" 17 "- 6" 18 "- 7" 19 "- 8" 20 "- 9" 21 "- 10";
+VAL_ 1411 IHU_MidrangeStep 0 "Not Active" 1 "+ 10" 2 "+ 9" 3 "+ 8" 4 "+ 7" 5 "+ 6" 6 "+ 5" 7 "+ 4" 8 "+ 3" 9 "+ 2" 10 "+ 1" 11 "Center(default)" 12 "- 1" 13 "- 2" 14 "- 3" 15 "- 4" 16 "- 5" 17 "- 6" 18 "- 7" 19 "- 8" 20 "- 9" 21 "- 10";
+VAL_ 1411 IHU_TrebleStep 0 "Not Active" 1 "+ 10" 2 "+ 9" 3 "+ 8" 4 "+ 7" 5 "+ 6" 6 "+ 5" 7 "+ 4" 8 "+ 3" 9 "+ 2" 10 "+ 1" 11 "Center(default)" 12 "- 1" 13 "- 2" 14 "- 3" 15 "- 4" 16 "- 5" 17 "- 6" 18 "- 7" 19 "- 8" 20 "- 9" 21 "- 10";
+VAL_ 1411 IHU_MediaSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_VCSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_NaviSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_BeepSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_CommSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_ChimeSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_DBBeepSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_PhoneLinkSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1411 IHU_RingToneSourceSet 0 "Not Active" 1 "��Դ���ڲ���" 2 "��Դֹͣ����" 3 "��Դ����";
+VAL_ 1422 B2V_TotalDisChrgEnergy 16777215 "Invalid";
+VAL_ 1422 B2V_SingleDCChrgEnergy 65535 "Invalid";
+VAL_ 1422 B2V_SingleACChrgEnergy 65535 "Invalid";
+VAL_ 1424 OBC_ChargeStatus 0 "δ���" 1 "���״̬" 2 "����״̬������״̬��" 3 "������";
+VAL_ 1424 OBC_ChargePlugStatus 0 "��" 1 "����" 2 "����" 3 "Ԥ��";
+VAL_ 1429 DCDC_SocketVTOLStatus 0 "����" 1 "����" 2 "����" 3 "Ԥ��";
+VAL_ 1432 TBOX_DateTimeSecond 63 "Invalid";
+VAL_ 1432 TBOX_DateTimeMinute 63 "Invalid";
+VAL_ 1432 TBOX_DateTimeHour 31 "Invalid";
+VAL_ 1432 TBOX_DateTimeDay 31 "Invalid";
+VAL_ 1432 TBOX_DateTimeMonth 15 "Invalid";
+VAL_ 1432 TBOX_DateTimeYear 127 "Invalid";
+VAL_ 1432 TBOX_BatteryErr 0 "����" 1 "����";
+VAL_ 1432 TBOX_PowerOverSuply 0 "����" 1 "����";
+VAL_ 1432 TBOX_BatteryUseUp 0 "����" 1 "����";
+VAL_ 1432 TBOX_GSMErr 0 "����" 1 "����";
+VAL_ 1432 TBOX_SIMErr 0 "����" 1 "����";
+VAL_ 1432 TBOX_GPSErr 0 "����" 1 "����";
+VAL_ 1432 TBOX_GPSAntennaShortCircuit 0 "����" 1 "����";
+VAL_ 1432 TBOX_GPSAntennaTurnOff 0 "����" 1 "����";
+VAL_ 1432 TBOX_ExternalMemoryErr 0 "����" 1 "����";
+VAL_ 1432 TBOX_TempretureHigh 0 "����" 1 "����";
+VAL_ 1432 TBOX_CANErr 0 "����" 1 "����";
+VAL_ 1432 TBOX_DateTimeValid 0 "Vaild" 1 "Invaild";
+VAL_ 1433 TBOX_BCALLStatus 0 "δͨ����idle��" 1 "�����У�Connecting��" 2 "ͨ�������ӣ�Connected��" 3 "Reserved";
+VAL_ 1433 TBOX_EcallStatus 0 "δͨ����idle��" 1 "�����У�Connecting��" 2 "ͨ�������ӣ�Connected��" 3 "Reserved";
+VAL_ 1433 TBOX_EcallErr 0 "����" 1 "����";
+VAL_ 1433 TBOX_VINCompareValid 0 "Valid(���ݺϷ�)" 1 "Invalid(���ݲ��Ϸ�)";
+VAL_ 1433 TBOX_DVCtrl 0 "No Request" 1 "AVM Left" 2 "AVM Right" 3 "AVM Front" 4 "AVM Rear" 5 "AVM All";
+VAL_ 1457 BCM_WindowAntipinchSts_FL 0 "Inactive" 1 "Active";
+VAL_ 1457 BCM_WindowAntipinchSts_FR 0 "Inactive" 1 "Active";
+VAL_ 1457 BCM_WindowAntipinchSts_RL 0 "Inactive" 1 "Active";
+VAL_ 1457 BCM_WindowAntipinchSts_RR 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_RepeatMessageReq 0 "Repeat Message State not requested" 1 "Repeat Message State requested";
+VAL_ 1664 GW_NM_ActiveWakeup 0 "Node has not woken up the network (Passive wakeup)" 1 "Node has woken up the network (Local active wakeup)";
+VAL_ 1664 GW_NM_State 0 "Reserved" 1 "Repeat Message State(from Bus Sleep Mode)" 2 "Repeat Message State(from Prepare Bus Sleep Mode)" 3 "Repeat Message State(from Normal Operation State)" 4 "Repeat Message State(from Ready Sleep State)" 5 "Normal Operation State(from Repeat Message State)" 6 "Normal Operation State(from Ready Sleep State)" 7 "Reserved";
+VAL_ 1664 GW_NM_GatewayRequest 0 "No Gateway Request" 1 "Gateway Request";
+VAL_ 1664 GW_NM_WakeupSource1 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource2 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource3 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource4 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource5 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource6 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource7 0 "Inactive" 1 "Active";
+VAL_ 1664 GW_NM_WakeupSource8 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_RepeatMessageReq 0 "Repeat Message State not requested" 1 "Repeat Message State requested";
+VAL_ 1665 TBOX_NM_ActiveWakeup 0 "Node has not woken up the network (Passive wakeup)" 1 "Node has woken up the network (Local active wakeup)";
+VAL_ 1665 TBOX_NM_State 0 "Reserved" 1 "Repeat Message State(from Bus Sleep Mode)" 2 "Repeat Message State(from Prepare Bus Sleep Mode)" 3 "Repeat Message State(from Normal Operation State)" 4 "Repeat Message State(from Ready Sleep State)" 5 "Normal Operation State(from Repeat Message State)" 6 "Normal Operation State(from Ready Sleep State)" 7 "Reserved";
+VAL_ 1665 TBOX_NM_GatewayRequest 0 "No Gateway Request" 1 "Gateway Request";
+VAL_ 1665 TBOX_NM_WakeupSource1 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource2 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource3 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource4 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource5 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource6 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource7 0 "Inactive" 1 "Active";
+VAL_ 1665 TBOX_NM_WakeupSource8 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_RepeatMessageReq 0 "Repeat Message State not requested" 1 "Repeat Message State requested";
+VAL_ 1744 IC_NM_ActiveWakeup 0 "Node has not woken up the network (Passive wakeup)" 1 "Node has woken up the network (Local active wakeup)";
+VAL_ 1744 IC_NM_State 0 "Reserved" 1 "Repeat Message State(from Bus Sleep Mode)" 2 "Repeat Message State(from Prepare Bus Sleep Mode)" 3 "Repeat Message State(from Normal Operation State)" 4 "Repeat Message State(from Ready Sleep State)" 5 "Normal Operation State(from Repeat Message State)" 6 "Normal Operation State(from Ready Sleep State)" 7 "Reserved";
+VAL_ 1744 IC_NM_GatewayRequest 0 "No Gateway Request" 1 "Gateway Request";
+VAL_ 1744 IC_NM_WakeupSource1 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource2 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource3 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource4 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource5 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource6 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource7 0 "Inactive" 1 "Active";
+VAL_ 1744 IC_NM_WakeupSource8 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_RepeatMessageReq 0 "Repeat Message State not requested" 1 "Repeat Message State requested";
+VAL_ 1745 IHU_NM_ActiveWakeup 0 "Node has not woken up the network (Passive wakeup)" 1 "Node has woken up the network (Local active wakeup)";
+VAL_ 1745 IHU_NM_State 0 "Reserved" 1 "Repeat Message State(from Bus Sleep Mode)" 2 "Repeat Message State(from Prepare Bus Sleep Mode)" 3 "Repeat Message State(from Normal Operation State)" 4 "Repeat Message State(from Ready Sleep State)" 5 "Normal Operation State(from Repeat Message State)" 6 "Normal Operation State(from Ready Sleep State)" 7 "Reserved";
+VAL_ 1745 IHU_NM_GatewayRequest 0 "No Gateway Request" 1 "Gateway Request";
+VAL_ 1745 IHU_NM_WakeupSource1 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource2 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource3 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource4 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource5 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource6 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource7 0 "Inactive" 1 "Active";
+VAL_ 1745 IHU_NM_WakeupSource8 0 "Inactive" 1 "Active";

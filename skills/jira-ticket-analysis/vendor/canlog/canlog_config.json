@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "default_dbc": [
+    "WB101_IHU_CAN矩阵_V2.4_20260722-&&-WB102_IHU_CAN矩阵_V2.2_20260805.dbc"
+  ],
+  "output_root": "output",
+  "options": {
+    "enum_mode": "label",
+    "include_raw_columns": false,
+    "include_direction": false,
+    "unknown_id_report": true,
+    "dump_unknown": false,
+    "allow_truncated": true,
+    "prefer_messages": [],
+    "csv_float_decimals": null
+  }
+}

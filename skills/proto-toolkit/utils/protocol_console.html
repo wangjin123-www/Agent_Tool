@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>协议控制台 · proto-toolkit</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--txt:#1f2329;--dim:#646a73;--line:#e5e6eb;
+--pri:#0958d9;--pri2:#e8f1ff;--err:#d4380d;--errbg:#fff1e8;--warn:#ad6800;
+--warnbg:#fffbe6;--ok:#237804;--okbg:#f6ffed}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:var(--bg);color:var(--txt);
+font:14px/1.6 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:1280px;margin:0 auto}
+h1{font-size:20px;margin:0 0 2px}
+.sub{color:var(--dim);font-size:13px;margin-bottom:16px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+button{font:inherit;padding:6px 14px;border:1px solid var(--line);border-radius:6px;
+background:#fff;cursor:pointer;color:var(--txt)}
+button:hover{border-color:var(--pri);color:var(--pri)}
+button.pri{background:var(--pri);color:#fff;border-color:var(--pri)}
+button.pri:hover{opacity:.88;color:#fff}
+button.danger{background:var(--err);border-color:var(--err);color:#fff}
+button.danger:hover{opacity:.88;color:#fff}
+a.link{color:var(--pri);text-decoration:none;font-size:13px;border:1px solid var(--line);
+padding:6px 14px;border-radius:6px;background:#fff}
+a.link:hover{border-color:var(--pri)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;
+padding:16px 18px;margin-bottom:14px}
+.panel h2{font-size:15px;margin:0 0 12px;display:flex;gap:8px;align-items:center}
+.tag{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:10px;
+padding:0 8px;font-weight:400}
+label{display:block;font-size:12px;color:var(--dim);margin-bottom:3px}
+input,select,textarea{font:inherit;padding:5px 8px;border:1px solid var(--line);
+border-radius:6px;background:#fff;color:var(--txt);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pri)}
+textarea{font-family:ui-monospace,Consolas,monospace;font-size:12px;resize:vertical}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.row{display:flex;gap:8px;align-items:end;flex-wrap:wrap}
+.row>.f{flex:1;min-width:150px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f4f7;font-size:12px;font-weight:600;white-space:nowrap}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:12px}
+.miss{color:var(--dim)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{border-radius:6px 6px 0 0;border-bottom-color:transparent}
+.tabs button.on{background:var(--pri2);border-color:var(--pri);color:var(--pri);font-weight:600}
+.hide{display:none}
+.hit{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:10px;
+background:#fbfcfe}
+.hit .hd{font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hit .meta{color:var(--dim);font-size:12px}
+.pill{font-size:11px;border-radius:10px;padding:1px 8px;background:#eef1f5;color:var(--dim)}
+.pill.mcu{background:#f0f5ff;color:#1d39c4}
+.pill.soc{background:var(--okbg);color:var(--ok)}
+.msg{margin-top:10px;padding:10px 12px;border-radius:6px;font-size:13px;white-space:pre-wrap;
+font-family:ui-monospace,Consolas,monospace;max-height:420px;overflow:auto}
+.msg.err{background:var(--errbg);color:var(--err);border:1px solid #ffbb96}
+.msg.ok{background:var(--okbg);color:var(--ok);border:1px solid #b7eb8f}
+.msg.warn{background:var(--warnbg);color:var(--warn);border:1px solid #ffe58f}
+.badge{font-size:11px;padding:1px 8px;border-radius:10px}
+.badge.err{background:var(--errbg);color:var(--err)}
+.badge.warn{background:var(--warnbg);color:var(--warn)}
+.badge.ok{background:var(--okbg);color:var(--ok)}
+footer{color:var(--dim);font-size:12px;text-align:center;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>协议控制台</h1>
+  <div class="sub" id="metaLine">连接中…</div>
+
+  <div class="bar">
+    <button class="pri" id="btnSync">① sync 校验并修正</button>
+    <a class="link" id="lnkReport" href="/check_report.html" target="_blank">查看校验报告</a>
+    <button id="btnParse">③ 解析 → protocol.json</button>
+    <button id="btnGen">③ 生成代码</button>
+    <select id="langSel" style="width:130px"></select>
+    <label style="display:flex;gap:6px;align-items:center;margin:0;font-size:13px;color:var(--txt)">
+      <input type="checkbox" id="dryRun" style="width:auto"> 预览（不写表）
+    </label>
+  </div>
+  <div id="opMsg"></div>
+
+  <!-- 查询 -->
+  <div class="panel">
+    <h2>④ 查协议 <span class="tag">接口名 / desc / msg_id / struct / 枚举 / C 常量</span></h2>
+    <div class="row">
+      <div class="f"><label>关键词</label><input id="kw" placeholder="如 SmokeTest / 0x0801 / POWER_STATE_ENUM"></div>
+      <button class="pri" id="btnQuery">查询</button>
+      <button id="btnQueryJson">导出 JSON</button>
+    </div>
+    <div id="qResult"></div>
+  </div>
+
+  <!-- 写操作 -->
+  <div class="panel">
+    <h2>② 增删改 <span class="tag">默认直接写表，勾选「预览」才只出计划</span></h2>
+    <div class="tabs">
+      <button data-tab="additf" class="on">加接口</button>
+      <button data-tab="addst">加 struct</button>
+      <button data-tab="adden">加枚举</button>
+      <button data-tab="moditf">改接口</button>
+      <button data-tab="delitf">删接口（级联）</button>
+    </div>
+
+    <!-- 加接口 -->
+    <div id="tab-additf">
+      <div class="grid">
+        <div><label>服务</label><select id="ai_svc"></select></div>
+        <div><label>方向</label><select id="ai_dir"></select></div>
+        <div><label>接口名</label><input id="ai_name" placeholder="SmokeTest"></div>
+        <div><label>描述</label><input id="ai_desc" placeholder="冒烟测试"></div>
+        <div><label>类型</label><select id="ai_type"></select></div>
+        <div><label>发送类型</label><input id="ai_tx" value="event"></div>
+        <div><label>消息 id</label><input id="ai_msg" placeholder="0x0109"></div>
+        <div><label>关联 id</label><input id="ai_pair" placeholder="0x8109（可空）"></div>
+        <div><label>传输层</label><input id="ai_trans" value="uart"></div>
+        <div><label>QoS</label><input id="ai_qos" value="level1"></div>
+      </div>
+      <h3 style="font-size:13px;margin:14px 0 6px">参数</h3>
+      <table><thead><tr><th>名称</th><th>类型</th><th>方向</th><th>描述</th><th></th></tr></thead>
+        <tbody id="ai_params"></tbody></table>
+      <div class="bar" style="margin-top:8px">
+        <button id="ai_addp">+ 加参数</button>
+        <button class="pri" data-submit="additf">提交</button>
+      </div>
+    </div>
+
+    <!-- 加 struct -->
+    <div id="tab-addst" class="hide">
+      <div class="grid">
+        <div><label>struct 名</label><input id="st_name" placeholder="SmokeTestReq"></div>
+        <div><label>服务</label><input id="st_svc" placeholder="PowerMgr"></div>
+        <div><label>命名空间</label><input id="st_ns" placeholder="power"></div>
+        <div><label>描述</label><input id="st_desc"></div>
+      </div>
+      <h3 style="font-size:13px;margin:14px 0 6px">成员</h3>
+      <table><thead><tr><th>字节</th><th>bit</th><th>名称</th><th>类型</th><th>描述</th><th></th></tr></thead>
+        <tbody id="st_members"></tbody></table>
+      <div class="bar" style="margin-top:8px">
+        <button id="st_addm">+ 加成员</button>
+        <button class="pri" data-submit="addst">提交</button>
+      </div>
+    </div>
+
+    <!-- 加枚举 -->
+    <div id="tab-adden" class="hide">
+      <div class="grid">
+        <div><label>枚举名</label><input id="en_name" placeholder="SMOKE_TEST_ENUM"></div>
+        <div><label>消息 id（PE E 列）</label><input id="en_msg" placeholder="0x0109"></div>
+      </div>
+      <h3 style="font-size:13px;margin:14px 0 6px">取值</h3>
+      <table><thead><tr><th>取值</th><th>C 常量</th><th>描述</th><th></th></tr></thead>
+        <tbody id="en_vals"></tbody></table>
+      <div class="bar" style="margin-top:8px">
+        <button id="en_addv">+ 加取值</button>
+        <button class="pri" data-submit="adden">提交</button>
+      </div>
+    </div>
+
+    <!-- 改接口 -->
+    <div id="tab-moditf" class="hide">
+      <div class="row">
+        <div class="f"><label>接口名（先查询确认存在）</label><input id="md_name"></div>
+      </div>
+      <p class="sub" style="margin:8px 0">只填要改的列，空着不动：F 描述 / G 类型 / H 发送类型 / J 消息id / K 关联id / L 传输层 / M QoS / N 参数名 / O 参数类型 / P 参数描述 / Q 参数方向</p>
+      <table><thead><tr><th>列</th><th>新值</th></tr></thead><tbody id="md_fields"></tbody></table>
+      <div class="bar" style="margin-top:8px">
+        <button id="md_addf">+ 加一列</button>
+        <button class="pri" data-submit="moditf">提交</button>
+      </div>
+    </div>
+
+    <!-- 删接口 -->
+    <div id="tab-delitf" class="hide">
+      <div class="row">
+        <div class="f"><label>接口名</label><input id="dl_name"></div>
+        <button class="danger" data-submit="delitf">级联删除</button>
+      </div>
+      <p class="sub" style="margin-top:8px">
+        连带删除：该接口 SI 行块（接口行 + 全部参数行）、<b>对端接口</b>（关联 id 指向）、
+        以及<b>只被这批接口引用</b>的 struct（DS 整块）与枚举（PE 整块）。
+        仍被其他接口引用的 struct/枚举会保留并在计划里提示。
+      </p>
+    </div>
+  </div>
+
+  <footer>proto-toolkit 控制台 · 所有操作都落到 cli.py 的现成能力（sync / edit / parse / gen / query）</footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+let META = null, QRES = null, SEEDED = false;
+
+function esc(v){return (v==null?"":String(v)).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+function show(html, cls){
+  $("#opMsg").innerHTML = html ? `<div class="msg ${cls||''}">${esc(html)}</div>` : "";
+}
+function showJSON(obj){
+  show(typeof obj === "string" ? obj : JSON.stringify(obj, null, 2), "ok");
+}
+
+async function api(path, opt){
+  const r = await fetch(path, opt);
+  const txt = await r.text();
+  let data;
+  try { data = JSON.parse(txt); } catch(e){ throw new Error(txt.slice(0,800)); }
+  if(!r.ok || (data && data.error)) throw new Error((data && data.error) || ("HTTP "+r.status));
+  return data;
+}
+const post = (path, body) => api(path, {method:"POST", headers:{"Content-Type":"application/json"},
+                                        body: JSON.stringify(body||{})});
+
+// ------------------------------------------------------------------ 初始化
+async function init(){
+  try{
+    META = await api("/api/meta");
+  }catch(e){
+    $("#metaLine").innerHTML = `<span class="badge err">连接失败</span> ${esc(e.message)}`;
+    return;
+  }
+  $("#metaLine").innerHTML = `表格 <b>${esc(META.spreadsheet)}</b> ｜ revision=${esc(META.revision)} ｜ `
+    + `${META.counts.services} 服务 / ${META.counts.interfaces} 接口 / `
+    + `${META.counts.structs} struct / ${META.counts.enums} 枚举`;
+  $("#lnkReport").style.display = META.report ? "" : "none";
+  $("#ai_svc").innerHTML = META.svcs.map(s=>`<option value="${esc(s.name)}">${esc(s.name)} ${esc(s.id_hex)}</option>`).join("");
+  $("#ai_dir").innerHTML = META.directions.map(d=>`<option>${esc(d)}</option>`).join("");
+  $("#ai_type").innerHTML = META.if_types.map(d=>`<option>${esc(d)}</option>`).join("");
+  $("#langSel").innerHTML = META.langs.map(l=>`<option value="${esc(l.name)}" ${l.status!=='ready'?'disabled':''}>${esc(l.name)} ${esc(l.label)}</option>`).join("");
+  if(!SEEDED){                 // 动态行只在首次初始化时播种，避免每次刷新叠加空行
+    SEEDED = true;
+    addParam(); addMember(); addValue(); addField("F"); addField("J");
+  }
+}
+
+// ------------------------------------------------------------------ 顶部按钮
+$("#btnSync").onclick = async () => {
+  const dry = $("#dryRun").checked;
+  show("sync 执行中…（" + (dry?"只读":"写表并修正") + "）", "warn");
+  try{
+    const r = await post("/api/sync", {dry});
+    let s = `错误 ${r.err} / 告警 ${r.warn} / 通过 ${r.ok}\n`;
+    if(r.fixed && r.fixed.length) s += "已修：\n  " + r.fixed.join("\n  ") + "\n";
+    if(r.rows && r.rows.length) s += "\n" + r.rows.map(x=>`[${x[0]}] ${x[1]} ${x[2]}`).join("\n");
+    if(r.report) s += `\n\n报告 → ${r.report}`;
+    show(s, r.err ? "err" : (r.warn ? "warn" : "ok"));
+    if(r.report) $("#lnkReport").style.display = "";
+    init();
+  }catch(e){ show("sync 失败：" + e.message, "err"); }
+};
+$("#btnParse").onclick = async () => {
+  show("解析中…", "warn");
+  try{ showJSON(await post("/api/parse", {lang: $("#langSel").value || "none"})); init(); }
+  catch(e){ show("解析失败：" + e.message, "err"); }
+};
+$("#btnGen").onclick = async () => {
+  show("生成中…", "warn");
+  try{ showJSON(await post("/api/gen", {lang: $("#langSel").value || "c"})); }
+  catch(e){ show("生成失败：" + e.message, "err"); }
+};
+
+// ------------------------------------------------------------------ 查询
+async function doQuery(){
+  const kw = $("#kw").value.trim();
+  if(!kw){ show("请输入关键词", "warn"); return; }
+  $("#qResult").innerHTML = '<span class="miss">查询中…</span>';
+  try{
+    QRES = await api("/api/query?keyword=" + encodeURIComponent(kw));
+    renderQuery(QRES);
+  }catch(e){ $("#qResult").innerHTML = `<span class="badge err">失败</span> ${esc(e.message)}`; }
+}
+$("#btnQuery").onclick = doQuery;
+$("#kw").addEventListener("keydown", e => { if(e.key === "Enter") doQuery(); });
+$("#btnQueryJson").onclick = () => {
+  if(!QRES){ show("先查询", "warn"); return; }
+  const blob = new Blob([JSON.stringify(QRES, null, 2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "query_result.json"; a.click();
+};
+
+function renderQuery(r){
+  const s = r.summary;
+  let h = `<div class="sub" style="margin:10px 0 8px">命中 接口 ${s.interfaces} / struct ${s.structs} / 枚举 ${s.enums} / 参数 ${s.params}（revision=${esc(r.revision)}）</div>`;
+  for(const i of r.interfaces){
+    const dir = (i.msg_id || 0) & 0x8000;
+    h += `<div class="hit"><div class="hd">● ${esc(i.service)}.${esc(i.name)}
+      <span class="pill mono">${esc(i.msg_id_hex)}</span>
+      <span class="pill ${dir?'mcu':'soc'}">${dir?"MCU→SOC":"SOC→MCU"}</span>
+      ${i.jump?`<a class="link" style="margin-left:auto;padding:2px 8px" href="${esc(i.jump)}" target="_blank">SI!${esc(i.row)}</a>`:`<span class="pill">SI!${esc(i.row)}</span>`}
+      </div>
+      <div class="meta">${esc(i.desc||"—")} · ${esc(i.type||"—")} · ${esc(i.transport||"—")} · ${esc(i.qos||"—")}</div>`;
+    if(i.peer) h += `<div class="meta">对端：${esc(i.peer.name)} <span class="mono">${esc(i.peer.msg_id_hex)}</span> SI!${esc(i.peer.row)}${i.close_peer?' <span class="badge warn">对端未回指 S05</span>':''}</div>`;
+    if(i.params.length){
+      h += `<table style="margin-top:8px"><thead><tr><th>参数</th><th>类型</th><th>方向</th><th>描述</th><th>行</th></tr></thead><tbody>`
+        + i.params.map(p=>`<tr><td>${esc(p.name)}</td><td class="mono">${esc(p.type)}</td><td>${esc(p.io||"—")}</td><td>${esc(p.desc||"")}${p.ref_name?` <span class="pill">${esc(p.ref_kind)}:${esc(p.ref_name)}</span>`:""}</td><td class="mono">${esc(p.row||"—")}</td></tr>`).join("")
+        + `</tbody></table>`;
+    }
+    h += `</div>`;
+  }
+  for(const st of r.structs){
+    h += `<div class="hit"><div class="hd">◆ struct ${esc(st.name)}
+      <span class="pill mono">${esc(st.fixed_bytes)}B${st.has_open?"+N":""}</span>
+      ${st.jump?`<a class="link" style="margin-left:auto;padding:2px 8px" href="${esc(st.jump)}" target="_blank">DS!${esc(st.row)}</a>`:`<span class="pill">DS!${esc(st.row)}</span>`}
+      </div><div class="meta">${esc(st.desc||"—")}</div>`;
+    h += `<table style="margin-top:8px"><thead><tr><th>字节</th><th>bit</th><th>成员</th><th>类型</th><th>描述</th><th>行</th></tr></thead><tbody>`
+      + st.members.map(m=>{
+          const span = m.open ? `${m.byte_start}-NB` : (m.byte_end===m.byte_start?`${m.byte_start}B`:`${m.byte_start}-${m.byte_end}B`);
+          return `<tr><td class="mono">${esc(span)}</td><td class="mono">${esc(m.bit||"—")}</td><td>${esc(m.name)}</td><td class="mono">${esc(m.type)}</td><td>${esc(m.desc||"")}</td><td class="mono">${esc(m.row||"—")}</td></tr>`;
+        }).join("")
+      + `</tbody></table>`;
+    h += `<div class="meta" style="margin-top:6px">被引用：${st.used_by.length? st.used_by.map(u=>`${esc(u.msg_id_hex)} ${esc(u.name)}`).join("、") : "无"}</div></div>`;
+  }
+  for(const en of r.enums){
+    h += `<div class="hit"><div class="hd">◇ 枚举 ${esc(en.name)} <span class="pill">${en.items.length} 值</span>
+      ${en.jump?`<a class="link" style="margin-left:auto;padding:2px 8px" href="${esc(en.jump)}" target="_blank">PE!${esc(en.row)}</a>`:`<span class="pill">PE!${esc(en.row)}</span>`}
+      </div>`;
+    h += `<table style="margin-top:8px"><thead><tr><th>取值</th><th>C 常量</th><th>描述</th></tr></thead><tbody>`
+      + en.items.map(v=>`<tr><td class="mono">${esc(v.value_hex)}</td><td class="mono">${esc(v.c_name)}</td><td>${esc(v.desc||"")}</td></tr>`).join("")
+      + `</tbody></table>`;
+    h += `<div class="meta" style="margin-top:6px">被引用：${en.used_by.length? en.used_by.map(u=>`${esc(u.msg_id_hex)} ${esc(u.name)}`).join("、") : "无"}</div></div>`;
+  }
+  if(!r.interfaces.length && !r.structs.length && !r.enums.length)
+    h += '<span class="miss">未命中任何接口 / struct / 枚举</span>';
+  $("#qResult").innerHTML = h;
+}
+
+// ------------------------------------------------------------------ 标签页
+$$(".tabs button").forEach(b => b.onclick = () => {
+  $$(".tabs button").forEach(x => x.classList.toggle("on", x === b));
+  ["additf","addst","adden","moditf","delitf"].forEach(t =>
+    $("#tab-" + t).classList.toggle("hide", t !== b.dataset.tab));
+});
+
+// ------------------------------------------------------------------ 动态行
+function rowDel(btn){ btn.closest("tr").remove(); }
+
+function addParam(){
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td><input class="p_name" placeholder="mode"></td>
+    <td><input class="p_type" placeholder="uint8 / struct:Name / enum:NAME"></td>
+    <td><input class="p_io" placeholder="IN" value="IN"></td>
+    <td><input class="p_desc"></td>
+    <td><button onclick="rowDel(this)">×</button></td>`;
+  $("#ai_params").appendChild(tr);
+}
+function addMember(){
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td><input class="m_byte" placeholder="0-1B"></td>
+    <td><input class="m_bit" placeholder=""></td>
+    <td><input class="m_name" placeholder="mode"></td>
+    <td><input class="m_type" placeholder="uint16"></td>
+    <td><input class="m_desc"></td>
+    <td><button onclick="rowDel(this)">×</button></td>`;
+  $("#st_members").appendChild(tr);
+}
+function addValue(){
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td><input class="v_val" placeholder="0x00"></td>
+    <td><input class="v_cname" placeholder="SMOKE_A"></td>
+    <td><input class="v_desc"></td>
+    <td><button onclick="rowDel(this)">×</button></td>`;
+  $("#en_vals").appendChild(tr);
+}
+function addField(col){
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td><input class="f_col" value="${esc(col||"")}" style="width:70px"
+      placeholder="F"></td><td><input class="f_val"></td>
+    <td><button onclick="rowDel(this)">×</button></td>`;
+  $("#md_fields").appendChild(tr);
+}
+$("#ai_addp").onclick = addParam;
+$("#st_addm").onclick = addMember;
+$("#en_addv").onclick = addValue;
+$("#md_addf").onclick = () => addField("");
+
+// ------------------------------------------------------------------ 提交
+function buildOps(kind){
+  if(kind === "additf"){
+    const params = $$("#ai_params tr").map(tr => ({
+      name: tr.querySelector(".p_name").value.trim(),
+      type: tr.querySelector(".p_type").value.trim(),
+      io: tr.querySelector(".p_io").value.trim(),
+      desc: tr.querySelector(".p_desc").value.trim(),
+    })).filter(p => p.name && p.type);
+    return [{kind:"add_interface", service:$("#ai_svc").value, direction:$("#ai_dir").value,
+             name:$("#ai_name").value.trim(), desc:$("#ai_desc").value.trim(),
+             if_type:$("#ai_type").value, tx_type:$("#ai_tx").value.trim(),
+             msg_id:$("#ai_msg").value.trim(), pair_id:$("#ai_pair").value.trim(),
+             transport:$("#ai_trans").value.trim(), qos:$("#ai_qos").value.trim(),
+             params}];
+  }
+  if(kind === "addst"){
+    const members = $$("#st_members tr").map(tr => ({
+      byte: tr.querySelector(".m_byte").value.trim(),
+      bit: tr.querySelector(".m_bit").value.trim(),
+      name: tr.querySelector(".m_name").value.trim(),
+      type: tr.querySelector(".m_type").value.trim(),
+      desc: tr.querySelector(".m_desc").value.trim(),
+    })).filter(m => m.byte && m.name && m.type);
+    return [{kind:"add_struct", name:$("#st_name").value.trim(), service:$("#st_svc").value.trim(),
+             namespace:$("#st_ns").value.trim(), desc:$("#st_desc").value.trim(), members}];
+  }
+  if(kind === "adden"){
+    const values = $$("#en_vals tr").map(tr => ({
+      value: tr.querySelector(".v_val").value.trim(),
+      c_name: tr.querySelector(".v_cname").value.trim(),
+      desc: tr.querySelector(".v_desc").value.trim(),
+    })).filter(v => v.value && v.c_name);
+    return [{kind:"add_enum", name:$("#en_name").value.trim(), msg_id:$("#en_msg").value.trim(), values}];
+  }
+  if(kind === "moditf"){
+    const fields = {};
+    $$("#md_fields tr").forEach(tr => {
+      const c = tr.querySelector(".f_col").value.trim().toUpperCase();
+      const v = tr.querySelector(".f_val").value;
+      if(c && v !== "") fields[c] = v;
+    });
+    return [{kind:"mod_interface", name:$("#md_name").value.trim(), fields}];
+  }
+  if(kind === "delitf"){
+    return [{kind:"delete_interface", name:$("#dl_name").value.trim()}];
+  }
+  return [];
+}
+
+// 必填校验：只看该 op 真正需要的字段（数组/对象不能靠 every(v==="") 判断）
+function missing(kind, op){
+  const need = {
+    additf: [["name","接口名"],["msg_id","消息 id"]],
+    addst:  [["name","struct 名"]],
+    adden:  [["name","枚举名"],["msg_id","消息 id"]],
+    moditf: [["name","接口名"]],
+    delitf: [["name","接口名"]],
+  }[kind] || [];
+  for(const [k, label] of need) if(!op[k]) return label;
+  if(kind === "addst" && !op.members.length) return "至少一个成员";
+  if(kind === "adden" && !op.values.length) return "至少一个取值";
+  if(kind === "moditf" && !Object.keys(op.fields).length) return "至少改一列";
+  return "";
+}
+
+$$("[data-submit]").forEach(btn => btn.onclick = async () => {
+  const kind = btn.dataset.submit;
+  const ops = buildOps(kind);
+  const bad = !ops.length ? "无可用内容" : missing(kind, ops[0]);
+  if(bad){ show("请先填写：" + bad, "warn"); return; }
+  if(kind === "delitf" && !confirm("级联删除 " + ops[0].name + "（含对端接口/专属 struct/enum）？不可撤销。")) return;
+  const dry = $("#dryRun").checked;
+  show((dry ? "预览中…" : "写表中…"), "warn");
+  try{
+    const r = await post("/api/edit", {ops, dry_run: dry, force: false});
+    let s = `executed=${r.execute}  blocked=${r.blocked}\n`;
+    const p = r.plan || {};
+    (p.notes||[]).forEach(n => s += "· " + n + "\n");
+    (p.inserts||[]).forEach(x => s += `↑ 插入 ${x[0]} 第${x[1]}行起 ${x[2]} 行（${x[3]}）\n`);
+    (p.deletes||[]).forEach(x => s += `✂ 删除 ${x[0]} 第${x[1]}行起 ${x[2]} 行（${x[3]}）\n`);
+    (p.merges||[]).forEach(x => s += `⊟ 合并 ${x[0]}!${x[1]}\n`);
+    s += `✎ ${p.writes||0} 格写入\n`;
+    (p.warnings||[]).forEach(w => s += "! " + w + "\n");
+    if(r.precheck && r.precheck.length){
+      s += "\n预检：\n";
+      r.precheck.forEach(x => s += `  ${x.level} [${x.code}] ${x.msg}\n`);
+    }
+    if(r.sync) s += `\n校验：错误 ${r.sync.err} / 告警 ${r.sync.warn} / 通过 ${r.sync.ok}\n`;
+    if(r.revision) s += `protocol.json revision=${r.revision} ${JSON.stringify(r.counts)}\n`;
+    if(r.report) s += `报告 → ${r.report}\n`;
+    show(s, r.blocked ? "err" : (r.sync && r.sync.err ? "warn" : "ok"));
+    if(r.report) $("#lnkReport").style.display = "";
+    init();
+  }catch(e){ show("失败：" + e.message, "err"); }
+});
+
+init();
+</script>
+</body>
+</html>

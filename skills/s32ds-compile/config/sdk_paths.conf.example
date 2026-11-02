@@ -1,0 +1,14 @@
+# sdk_paths.conf — 覆盖自动探测的 S32DS 安装路径
+#
+# 用法:复制本文件为同目录下的 sdk_paths.conf,按需填值。
+# 自动探测逻辑(脚本内):
+#   S32DS_ROOT   -> glob C:/NXP/S32DS.* 下含 S32DS/build_tools 的目录
+#   TOOLCHAIN_BIN-> <S32DS_ROOT>/S32DS/build_tools/gcc_v10.2/gcc-*/bin
+#   SDK_BASENXP  -> <S32DS_ROOT>/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_*
+#   SDK_PLATFORM -> <S32DS_ROOT>/S32DS/software/PlatformSDK_S32K3/RTD/Platform_*
+# 只填探测失败的项即可(本机默认都自动探测得到)。
+#
+# S32DS_ROOT=C:/NXP/S32DS.3.5
+# TOOLCHAIN_BIN=C:/NXP/S32DS.3.5/S32DS/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin
+# SDK_BASENXP=C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0
+# SDK_PLATFORM=C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/Platform_TS_T40D34M40I0R0

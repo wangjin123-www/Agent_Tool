@@ -1,0 +1,44 @@
+# config.conf.example — 模板,复制为 config.conf 后按本机环境修改
+# config.conf 已被本 skill 的 .gitignore 忽略,不会随仓提交
+# 报告目录已废弃独立配置:统一报告路径规则见 SKILL.md「统一报告文件」
+# (git 仓库内 → <项目根>/.project-maintenance/output/OutPut_YYYYMMDD.html;仓库外 → skill 自带 output/)。
+
+# ---- 运行结果邮件通知 ----
+# notify_email: 收件人邮箱(必填才发;留空/缺省 = 不发邮件,静默跳过)
+# notify_cc:    抄送邮箱,多个用英文逗号分隔(可留空)
+# 发送方式: 每轮维护跑完自动 --confirm-send 直发(用户已授权),发送失败不阻塞维护流程
+notify_email =
+notify_cc =
+
+# ============================================================
+# [map] CLAUDE.md 地图范围 —— 哪些目录进地图、哪些不进
+#   由 mdmap.py 的 scan/plan 读取,替代算法自行判定。
+#   路径一律相对工程根,用正斜杠;末尾不加 /。
+# ============================================================
+[map]
+# 强制纳入地图的目录,格式 <前缀>:<mode>,逗号分隔。
+#   mode=always 无源码文件也强制成模块(如 doc/ 纯 md+pdf) | auto 交算法(默认)
+#   例: include = doc:always, tools:auto
+include = doc:always
+# 永不生成模块的目录前缀;优先级高于 include(即 include 与 exclude 冲突时以 exclude 为准)
+#   例: exclude = tools/legacy, third_party/obsolete
+exclude =
+# 非代码文档模块(纯 md/文本,如 doc/)的 CLAUDE.md 行数预算
+doc_budget = 80
+
+# ============================================================
+# [doc_filter] doc/ 目录过滤 —— 哪些进 .claudeignore
+#   双通道:①你直接编辑 config/doc-filter.txt 手填规则
+#           ②filter 模式分析 doc/ 后回写该文件再执行
+# ============================================================
+[doc_filter]
+# 排除规则文件(相对本 config 目录),纯 .gitignore 语法,一行一条;可直接手填
+file = doc-filter.txt
+# 需要扫描/过滤的文档目录(相对工程根),逗号分隔
+scan_dirs = doc
+# true = filter 模式先分析 scan_dirs 里的二进制/大文件,汇总后写入 file
+# false = 不自动分析,只用 file 里手填的内容
+auto_analyze = true
+# true = 允许把分析结果回写 file(回写前自动备份为 file.bak)
+# false = 只打印建议、不改 file
+writeback = true

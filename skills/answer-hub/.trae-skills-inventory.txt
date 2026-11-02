@@ -1,0 +1,48 @@
+# C:\Users\Lenovo\.trae-cn\skills 目录盘点
+# 盘点时间: 2026-10-24
+# 盘点方法: Read 探针（<dir>\SKILL.md 存在性判定，limit=1）
+# 原因: 本会话 PowerShell 终端全故障（"Toolhost terminal commands must be routed through the agent runtime"，含换新终端重试 3 次+间隔重试均失败）；
+#       LS/Glob/Grep 工具亦故障（fd.exe ENOENT / Ripgrep not initialized），无法 Get-ChildItem 全量枚举。
+# 局限: 仅覆盖 34 个候选目录名的探针结果，非穷举；未探测到的目录不会出现在本清单。
+#       "未发现"仅表示该名字下无 SKILL.md（可能位于项目 .claude\skills、插件目录，或目录名不同）。
+
+== 探针确认存在（21 个）==
+answer-hub
+canvas-design
+code-porting
+data-analysis
+defuddle
+gh-cli
+git-commit
+hyperframes
+html-ppt
+jira-commit
+json-canvas
+obsidian-bases
+obsidian-cli
+obsidian-markdown
+ppt-page
+project-maintenance
+report-page
+serial-log
+skill-creator-lowkey
+theme-factory
+web-artifacts-builder
+
+== 探针未发现（13 个候选名）==
+dynamic-ui
+hyperframes-cli
+jira-ticket-analysis
+llm-wiki
+s32ds-compile
+s32k3-rtd-master
+schedule
+skill-creator
+trae-browseruse
+trae-debugger
+trae-code-review
+trae-generate-mini-app
+trae-security-review
+
+== 终端恢复后的全量枚举命令（补正本清单）==
+Get-ChildItem "C:\Users\Lenovo\.trae-cn\skills" -Directory | Select-Object -ExpandProperty Name

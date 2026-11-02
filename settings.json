@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(/.claude/skills/jira-ticket-analysis/**)",
+      "Read(//d/wnagjin/Compay_Project/CDC_7255/6125/FreeRTOS_S32K312/CVI_McuPlatform/L4_Services/Service_SocComm/**)"
+    ],
+    "deny": [
+      "Read(./Debug_FLASH/**)",
+      "Read(./RemoteSystemsTempFiles/**)",
+      "Read(./.settings/**)",
+      "Edit(./.cproject)",
+      "Write(./.cproject)",
+      "Edit(./test_prj.mex)",
+      "Write(./test_prj.mex)",
+      "Edit(./Project_Settings/Linker_Files/**)",
+      "Write(./Project_Settings/Linker_Files/**)",
+      "Edit(./Project_Settings/Startup_Code/**)",
+      "Write(./Project_Settings/Startup_Code/**)"
+    ]
+  }
+}

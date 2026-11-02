@@ -1,0 +1,4 @@
+[TODO: Choose a license for s32k3-rtd-master and replace this file's contents,
+or delete the file if the skill is not distributed.]
+
+Common choices: Apache-2.0, MIT, or an internal company license.

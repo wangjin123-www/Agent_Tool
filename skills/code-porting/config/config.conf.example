@@ -1,0 +1,7 @@
+# code-porting 配置 —— 复制为 config.conf 后生效（config.conf 已 gitignore）
+# 仅存放与具体机器/工程相关的默认值；skill 逻辑不得硬编码这些值。
+# 注：范例移植方案已随包内置在 example/ 下（example/6125To7255电源管理移植.md），
+#     不需要在本文件配置外部路径。
+
+# 默认扫描深度（port_scan.py --depth）
+scan_depth = 8

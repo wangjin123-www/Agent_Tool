@@ -1,0 +1,9 @@
+{
+  "_comment": "Java 语言生成契约（占位）。照 codegen/c/config/codegen_config.json 的写法：protocol_json 输入、output_dir 输出、file_names 模板→文件名一一对应。",
+  "language": "java",
+  "status": "todo",
+  "protocol_json": "output/protocol.json",
+  "output_dir": "codegen/java/generated",
+  "file_names": {},
+  "note": "生成器未实现：在 scripts/gen/lang_java.py 里补 generate()，模板放 codegen/java/templates/，输出目录 codegen/java/generated/。"
+}

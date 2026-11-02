@@ -1,0 +1,28 @@
+{
+  "_comment": "C 代码生成配置：输出目录、文件命名、生成器行为。改这里，不改脚本。",
+  "protocol_json": "output/protocol.json",
+  "output_dir": "codegen/c/generated",
+  "file_names": {
+    "types_h": "Proto_Types.h",
+    "enums_h": "Proto_Enums.h",
+    "cmd_table_c": "Proto_CmdTable.c",
+    "cmd_stub_c": "Proto_CmdStub.c"
+  },
+  "header": {
+    "include_guard_prefix": "PROTO_",
+    "copyright": "Copyright (c) 2026, cviauto.com. All rights reserved.",
+    "author": "proto-toolkit",
+    "cmd_enum_prefix": "PROTO_CMD_",
+    "struct_prefix": "Proto_",
+    "handler_suffix": "_Fun",
+    "include_files": [
+      "..\\..\\..\\..\\..\\CVI_McuPlatform\\L6_Public\\Proj_Includes.h"
+    ]
+  },
+  "behaviour": {
+    "emit_pack_unpack": true,
+    "emit_version_comment": true,
+    "big_endian": true,
+    "strict_undefined": true
+  }
+}

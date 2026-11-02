@@ -1,0 +1,132 @@
+
+== 语义校验 ==
+  ! [S15] PowerMgr.PowerOnHandshakeMtd 缺QoS
+  ! [S15] PowerMgr.PowerOffReqMtd 缺QoS
+  ! [S15] PowerMgr.HeartbeatSetMtd 缺QoS
+  ! [S15] PowerMgr.HeartbeatReqMtd 缺QoS
+  ! [S15] PowerMgr.PowerMgmtReqMtd 缺QoS
+  ! [S15] PowerMgr.StrStateFbMtd 缺QoS
+  ! [S15] PowerMgr.StrDebugSetMtd 缺QoS
+  ! [S15] PowerMgr.PowerStateSetMtd 缺QoS
+  ! [S15] PowerMgr.HandshakeAckEvt 缺QoS
+  ! [S15] PowerMgr.PowerOffReqEvt 缺QoS
+  ! [S15] PowerMgr.HeartbeatSetStatusEvt 缺QoS
+  ! [S15] PowerMgr.HeartbeatFeedbackEvt 缺QoS
+  ! [S15] PowerMgr.PowerMgmtStatusEvt 缺QoS
+  ! [S15] PowerMgr.AccStatusEvt 缺QoS
+  ! [S15] PowerMgr.BatteryStatusEvt 缺QoS
+  ! [S15] PowerMgr.ResetReasonEvt 缺QoS
+  ! [S15] PowerMgr.AutosarNmModeEvt 缺QoS
+  ! [S15] PowerMgr.VehicleAntiTheftEvt 缺QoS
+  ! [S15] PowerMgr.RemoteControlModeEvt 缺QoS
+  ✗ [S05] SelfCtrlSrv.SocFanQueryMtd → 0x8802 单向指配（对方回指 空）
+  ! [S15] SelfCtrlSrv.SocFanQueryMtd 缺传输层/QoS/发送类型
+  ✗ [S05] SelfCtrlSrv.SocFanCtrlMtd → 0x8802 单向指配（对方回指 空）
+  ! [S15] SelfCtrlSrv.SocFanCtrlMtd 缺传输层/QoS/发送类型
+  ! [S15] SelfCtrlSrv.SocFanSpeedEvt 缺传输层/QoS/发送类型
+  ! [S15] OtaSrv.UpgradeCmdEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeFileInfoRspEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeDataRspEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeStatusEvt 缺QoS
+  ! [S15] OtaSrv.UpgradeFileInfoReqMtd 缺QoS
+  ! [S15] OtaSrv.UpgradeDataReqMtd 缺QoS
+  · [SEC] BacklightSrv 为空服务块（占位）
+  · [SEC] AdasSrv 为空服务块（占位）
+  · [SEC] BodySrv 为空服务块（占位）
+  · [SEC] HvacSrv 为空服务块（占位）
+  · [SEC] SeatSrv 为空服务块（占位）
+  · [SEC] SafetySrv 为空服务块（占位）
+  · [SEC] DiagSrv 为空服务块（占位）
+  · [SEC] SysSrv 为空服务块（占位）
+  · [SEC] VersionSrv 为空服务块（占位）
+  · [SEC] VehicleSignalSrv 为空服务块（占位）
+  ! [LNK] data_structure!C11 漂移(现指向 88c520!N63) → 已重算写入 N45
+  ! [LNK] data_structure!C13 漂移(现指向 88c520!N121) → 已重算写入 N90
+  ! [LNK] data_structure!C16 漂移(现指向 88c520!N122) → 已重算写入 N91
+  ! [LNK] data_structure!C2 漂移(现指向 88c520!N36) → 已重算写入 N26
+  ! [LNK] data_structure!C20 漂移(现指向 88c520!N95) → 已重算写入 N65
+  ! [LNK] data_structure!C22 漂移(现指向 88c520!N67) → 已重算写入 N48
+  ! [LNK] data_structure!C24 漂移(现指向 88c520!N69) → 已重算写入 N49
+  ! [LNK] parameter_enum!A105 漂移(现指向 88c520!P99) → 已重算写入 P68
+  ! [LNK] parameter_enum!A110 漂移(现指向 88c520!P61) → 已重算写入 P43
+  ! [LNK] parameter_enum!A44 漂移(现指向 88c520!P57) → 已重算写入 P39
+  ! [LNK] parameter_enum!A48 漂移(现指向 88c520!P59) → 已重算写入 P41
+  ! [LNK] parameter_enum!A59 漂移(现指向 88c520!P60) → 已重算写入 P42
+  ! [LNK] parameter_enum!A82 漂移(现指向 88c520!P64) → 已重算写入 P46
+  ! [LNK] parameter_enum!A86 漂移(现指向 88c520!P65) → 已重算写入 P47
+  ! [LNK] parameter_enum!A88 漂移(现指向 88c520!P120) → 已重算写入 P89
+  ! [LNK] parameter_enum!A92 漂移(现指向 88c520!P124) → 已重算写入 P93
+  ! [LNK] service_interface!K10 漂移(现指向 88c520!J58) → 已重算写入 J40
+  ! [LNK] service_interface!K11 漂移(现指向 88c520!J59) → 已重算写入 J41
+  ! [LNK] service_interface!K13 漂移(现指向 88c520!J70) → 已重算写入 J50
+  ! [LNK] service_interface!K14 漂移(现指向 88c520!J68) → 已重算写入 J49
+  ! [LNK] service_interface!K15 漂移(现指向 88c520!J56) → 已重算写入 J38
+  ! [LNK] service_interface!K16 漂移(现指向 88c520!J61) → 已重算写入 J43
+  ! [LNK] service_interface!K17 漂移(现指向 88c520!J72) → 已重算写入 J51
+  ! [LNK] service_interface!K18 漂移(现指向 88c520!J73) → 已重算写入 J52
+  ! [LNK] service_interface!K19 漂移(现指向 88c520!J74) → 已重算写入 J53
+  ! [LNK] service_interface!K20 漂移(现指向 88c520!J76) → 已重算写入 J54
+  ! [LNK] service_interface!K21 漂移(现指向 88c520!J77) → 已重算写入 J55
+  ! [LNK] service_interface!K22 漂移(现指向 88c520!J78) → 已重算写入 J56
+  ! [LNK] service_interface!K24 漂移(现指向 88c520!J81) → 已重算写入 J58
+  ! [LNK] service_interface!K26 漂移(现指向 88c520!J84) → 已重算写入 J60
+  ! [LNK] service_interface!K27 漂移(现指向 88c520!J86) → 已重算写入 J61
+  ! [LNK] service_interface!K29 漂移(现指向 88c520!J88) → 已重算写入 J62
+  ! [LNK] service_interface!K30 漂移(现指向 88c520!J90) → 已重算写入 J63
+  ! [LNK] service_interface!K31 漂移(现指向 88c520!J92) → 已重算写入 J64
+  ! [LNK] service_interface!K32 漂移(现指向 88c520!J94) → 已重算写入 J65
+  ! [LNK] service_interface!K33 漂移(现指向 88c520!J96) → 已重算写入 J66
+  ! [LNK] service_interface!K34 漂移(现指向 88c520!J97) → 已重算写入 J67
+  ! [LNK] service_interface!K35 漂移(现指向 88c520!J98) → 已重算写入 J68
+  ! [LNK] service_interface!K43 漂移(现指向 88c520!J17) → 已重算写入 J16
+  ! [LNK] service_interface!K51 漂移(现指向 88c520!J19) → 已重算写入 J17
+  ! [LNK] service_interface!K52 漂移(现指向 88c520!J21) → 已重算写入 J18
+  ! [LNK] service_interface!K53 漂移(现指向 88c520!J23) → 已重算写入 J19
+  ! [LNK] service_interface!K54 漂移(现指向 88c520!J25) → 已重算写入 J20
+  ! [LNK] service_interface!K55 漂移(现指向 88c520!J27) → 已重算写入 J21
+  ! [LNK] service_interface!K56 漂移(现指向 88c520!J29) → 已重算写入 J22
+  ! [LNK] service_interface!K58 漂移(现指向 88c520!J32) → 已重算写入 J24
+  ! [LNK] service_interface!K60 漂移(现指向 88c520!J35) → 已重算写入 J26
+  ! [LNK] service_interface!K61 漂移(现指向 88c520!J37) → 已重算写入 J27
+  ! [LNK] service_interface!K62 漂移(现指向 88c520!J40) → 已重算写入 J29
+  ! [LNK] service_interface!K63 漂移(现指向 88c520!J42) → 已重算写入 J30
+  ! [LNK] service_interface!K64 漂移(现指向 88c520!J44) → 已重算写入 J31
+  ! [LNK] service_interface!K65 漂移(现指向 88c520!J46) → 已重算写入 J32
+  ! [LNK] service_interface!K66 漂移(现指向 88c520!J48) → 已重算写入 J33
+  ! [LNK] service_interface!K67 漂移(现指向 88c520!J50) → 已重算写入 J34
+  ! [LNK] service_interface!K68 漂移(现指向 88c520!J52) → 已重算写入 J35
+  ! [LNK] service_interface!K7 漂移(现指向 88c520!J55) → 已重算写入 J37
+  ! [LNK] service_interface!K8 漂移(现指向 88c520!J66) → 已重算写入 J48
+  ! [LNK] service_interface!K80 漂移(现指向 88c520!J114) → 已重算写入 J83
+  ! [LNK] service_interface!K81 漂移(现指向 88c520!J114) → 已重算写入 J83
+  ! [LNK] service_interface!K9 漂移(现指向 88c520!J57) → 已重算写入 J39
+  ! [LNK] service_interface!K90 漂移(现指向 88c520!J125) → 已重算写入 J94
+  ! [LNK] service_interface!K91 漂移(现指向 88c520!J126) → 已重算写入 J95
+  ! [LNK] service_interface!K94 漂移(现指向 88c520!J121) → 已重算写入 J90
+  ! [LNK] service_interface!K95 漂移(现指向 88c520!J122) → 已重算写入 J91
+  ! [LNK] 枚举 RESET_TYPE（PE A4）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [LNK] 枚举 POWER_MGMT_REQ（PE A14）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [LNK] 枚举 STR_DEBUG（PE A28）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [LNK] 枚举 BATTERY_STATUS（PE A63）无引用源（SI P / DS L 均未链向它），跳过反链
+  ! [STY] MPU_REQ_DATA_SYNC（A2:E3）缺边框/样式 → 已补齐
+  ! [STY] RESET_TYPE（A4:E7）缺边框/样式 → 已补齐
+  ! [STY] HEARTBEAT_SET（A8:E11）缺边框/样式 → 已补齐
+  ! [STY] HEARTBEAT_STATE（A12:E13）缺边框/样式 → 已补齐
+  ! [STY] POWER_MGMT_REQ（A14:E24）缺边框/样式 → 已补齐
+  ! [STY] STR_STATE（A25:E27）缺边框/样式 → 已补齐
+  ! [STY] STR_DEBUG（A28:E31）缺边框/样式 → 已补齐
+  ! [STY] IC_POWER_STATE（A32:E43）缺边框/样式 → 已补齐
+  ! [STY] HEARTBEAT_STATUS（A44:E47）缺边框/样式 → 已补齐
+  ! [STY] POWER_MGMT_STATUS（A48:E58）缺边框/样式 → 已补齐
+  ! [STY] ACC_STATUS（A59:E62）缺边框/样式 → 已补齐
+  ! [STY] BATTERY_STATUS（A63:E68）缺边框/样式 → 已补齐
+  ! [STY] AUTOSAR_NM_MODE（A69:E72）缺边框/样式 → 已补齐
+  ! [STY] AUTOSAR_NM_STATE（A73:E81）缺边框/样式 → 已补齐
+  ! [STY] VEHICLE_ANTI_THEFT_STS（A82:E85）缺边框/样式 → 已补齐
+  ! [STY] REMOTE_CTRL_ST（A86:E87）缺边框/样式 → 已补齐
+  ! [STY] POWER_REQ_CMD（A102:E104）缺边框/样式 → 已补齐
+  ! [STY] TEMPERATURE_STATUS（A105:E109）缺边框/样式 → 已补齐
+  ! [STY] VOLTAGE_STATUS（A110:E114）缺边框/样式 → 已补齐
+
+  汇总: 2 错误 / 115 告警 / 89 通过
+protocol: 13 服务 / 65 接口 / 9 struct / 21 枚举  (revision=1078)
