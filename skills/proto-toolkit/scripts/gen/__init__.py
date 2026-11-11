@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """多语言代码生成调度：按 codegen/config/languages.json 分发到 scripts/gen/lang_<lang>.py。
 
-每个语言生成器约定签名：generate(proto, gcfg, root) -> list[str]（写出的文件路径）。
+每个语言生成器约定签名：generate(data, gcfg) -> list[str]（写出的文件路径）。
+data = pull 产出的 protocol.json dict；gcfg = 该语言的 codegen_config.json。
+新增语言 = 建 codegen/<lang>/（config/templates/generated）+ 写 scripts/gen/lang_<lang>.py
+        + 在 codegen/config/languages.json 加一条，不改本文件。
 """
 import importlib
 
 from ..common import conf
-from ..model import Protocol
 
 
 def available():
@@ -16,8 +18,9 @@ def available():
 
 
 def resolve_languages(spec):
-    """把用户参数解析成待生成语言列表。
-    spec: None → 注册表 default；'all' → 全部 ready；'c,java' → 逗号分隔；单值 → [单值]"""
+    """参数 → 待生成语言列表。
+    None → 注册表 default；'all' → 全部 ready；'c,arxml' → 逗号分隔；'none' → []
+    """
     langs = conf.languages()["languages"]
     if spec in (None, ""):
         spec = conf.languages().get("default", "c")
@@ -30,7 +33,7 @@ def resolve_languages(spec):
         name = name.strip().lower()
         if not name:
             continue
-        conf.lang_entry(name)          # 未注册即报错
+        conf.lang_entry(name)              # 未注册即报错
         out.append(name)
     return out
 
@@ -40,17 +43,22 @@ def _generator(lang):
     return importlib.import_module("%s.%s" % (__package__, entry))
 
 
-def generate(langs=None, proto=None):
+def generate(langs=None, data=None):
     """按语言生成代码，返回 {lang: [paths]}。"""
     targets = resolve_languages(langs)
     if not targets:
         return {}
-    if proto is None:
-        gcfg = conf.codegen_lang(targets[0])
-        proto = Protocol.load(conf.output_path(gcfg["protocol_json"]))
+    if data is None:
+        from .. import pull
+        data = pull.load()
     result = {}
+    skipped = {}
     for lang in targets:
-        gcfg = conf.codegen_lang(lang)
-        root = conf.lang_root(lang)
-        result[lang] = _generator(lang).generate(proto, gcfg, root)
+        entry = conf.lang_entry(lang)
+        if entry.get("status") != "ready":
+            skipped[lang] = entry.get("status", "todo")
+            continue
+        result[lang] = _generator(lang).generate(data, conf.codegen_lang(lang))
+    if skipped:
+        result["_skipped"] = ["%s(%s)" % (k, v) for k, v in skipped.items()]
     return result

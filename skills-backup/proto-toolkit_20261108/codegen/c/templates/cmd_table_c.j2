@@ -1,0 +1,46 @@
+/*************************************************************************************************
+ * @file    {{ files.cmd_table_c }}
+ * @brief   7255 MCU&SOC 协议命令登记表（由 proto-toolkit 从协议表生成，禁止手改）
+ * @copyright {{ header.copyright }}
+ *
+ * 源: {{ spreadsheet }} rev.{{ revision }}
+ * 统计: RX(SOC→MCU) {{ rx|length }} 条 / TX(MCU→SOC) {{ tx|length }} 条
+ * 说明: 生成表是协议表的机器视图，供比对 App_SocComSysCmd.h 手写清单差异；
+ *       仍以手写 X-macro 清单为编译期真源（见 SKILL.md 约束）。
+ ************************************************************************************************/
+#include "{{ files.types_h }}"
+
+/* 命令 id 枚举（与 {{ files.enums_h }} 分离，只含消息 id） */
+typedef enum
+{
+{% for e in rx + tx %}
+    {{ e.enum }} = {{ e.id_hex }},     /* {{ e.name }} {{ e.type }} {{ e.tx_type }} */
+{% endfor %}
+}{{ header.cmd_enum_prefix }}Id_t;
+
+typedef struct
+{
+    uint16_t cmd;
+    void (*handler)(uint8_t channel, const uint8_t *pdata, uint16_t len);
+}{{ header.struct_prefix }}CmdEntry_t;
+
+/* RX：SOC → MCU 下发/请求 */
+const {{ header.struct_prefix }}CmdEntry_t {{ header.struct_prefix }}RxCmdTable[] =
+{
+{% for e in rx %}
+    { {{ e.id_hex }}u, {{ e.handler }} },      /* {{ e.name }} */
+{% endfor %}
+    { 0xFFFFu, NULL }
+};
+
+/* TX：MCU → SOC 上报/应答 */
+const {{ header.struct_prefix }}CmdEntry_t {{ header.struct_prefix }}TxCmdTable[] =
+{
+{% for e in tx %}
+    { {{ e.id_hex }}u, {{ e.handler }} },      /* {{ e.name }} */
+{% endfor %}
+    { 0xFFFFu, NULL }
+};
+/*************************************************************************************************
+ * End of File
+ ************************************************************************************************/

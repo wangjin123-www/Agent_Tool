@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "proto-toolkit ARXML codegen config",
+  "type": "object",
+  "required": ["protocol_json", "output_dir", "arxml", "scope", "naming", "behaviour"],
+  "properties": {
+    "protocol_json": {"type": "string"},
+    "output_dir": {"type": "string"},
+    "file_names": {
+      "type": "object",
+      "properties": {"arxml": {"type": "string"}}
+    },
+    "arxml": {
+      "type": "object",
+      "required": ["version", "namespace", "schema_location", "package_prefix",
+                   "platform_types_package"],
+      "properties": {
+        "version": {"type": "string"},
+        "namespace": {"type": "string"},
+        "schema_location": {"type": "string"},
+        "schema_attribute": {"type": "string"},
+        "package_prefix": {"type": "string", "pattern": "^/"},
+        "platform_types_package": {"type": "string", "pattern": "^/"},
+        "tool_profile": {
+          "type": "string",
+          "enum": ["generic", "davinci", "isolar", "tresos"]
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["datatypes", "interfaces", "swc", "com"],
+      "properties": {
+        "datatypes": {"type": "boolean"},
+        "interfaces": {"type": "boolean"},
+        "swc": {"type": "boolean"},
+        "com": {"type": "boolean"}
+      }
+    },
+    "naming": {
+      "type": "object",
+      "required": ["datatype_package", "interface_package", "mapping_package",
+                   "implementation_type_suffix", "array_type_suffix"],
+      "properties": {
+        "datatype_package": {"type": "string"},
+        "interface_package": {"type": "string"},
+        "mapping_package": {"type": "string"},
+        "implementation_type_suffix": {"type": "string"},
+        "array_type_suffix": {"type": "string"},
+        "open_array_max_elements": {"type": "integer", "minimum": 1, "maximum": 65535}
+      }
+    },
+    "behaviour": {
+      "type": "object",
+      "properties": {
+        "emit_desc": {"type": "boolean"},
+        "emit_bit_representation": {"type": "boolean"},
+        "emit_dummy_for_empty_event": {"type": "boolean"},
+        "reference_check": {"type": "boolean"}
+      }
+    }
+  }
+}

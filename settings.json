@@ -1,21 +1,56 @@
-{
-  "permissions": {
-    "allow": [
-      "Edit(/.claude/skills/jira-ticket-analysis/**)",
-      "Read(//d/wnagjin/Compay_Project/CDC_7255/6125/FreeRTOS_S32K312/CVI_McuPlatform/L4_Services/Service_SocComm/**)"
-    ],
-    "deny": [
-      "Read(./Debug_FLASH/**)",
-      "Read(./RemoteSystemsTempFiles/**)",
-      "Read(./.settings/**)",
-      "Edit(./.cproject)",
-      "Write(./.cproject)",
-      "Edit(./test_prj.mex)",
-      "Write(./test_prj.mex)",
-      "Edit(./Project_Settings/Linker_Files/**)",
-      "Write(./Project_Settings/Linker_Files/**)",
-      "Edit(./Project_Settings/Startup_Code/**)",
-      "Write(./Project_Settings/Startup_Code/**)"
-    ]
-  }
+{
+  "permissions": {
+    "allow": [
+      "Edit(/.claude/skills/jira-ticket-analysis/**)",
+      "Read(//d/wnagjin/Compay_Project/CDC_7255/6125/FreeRTOS_S32K312/CVI_McuPlatform/L4_Services/Service_SocComm/**)",
+      "Bash(sed -n 28,50p CVI_McuPlatform/L3_RTOS/OS2_TmrSched/Os2_UpInf/Os2If_cfg.c)",
+      "Bash(grep -n \"Task3_TimerCallbackFunction\\\\|Tasks_SwTimerPeriodGroup\\\\[\" CVI_McuPlatform/L3_RTOS/OS1_FreeRTOS/Os1_UpInf/OsIf_SwTimer.c)",
+      "Bash(sed -n 18,60p CVI_McuPlatform/L3_RTOS/OS1_FreeRTOS/Os1_UpInf/Os1If_cfg.c)",
+      "Bash(grep -rn \"Os1_TaskCfg\\\\|TaskCfgTable\\\\|TaskCfg\\\\[\" CVI_McuPlatform/L3_RTOS/OS1_FreeRTOS/Os1_UpInf/OsIf_Task.c CVI_McuPlatform/L3_RTOS/OS1_FreeRTOS/Os1_UpInf/Os1If_cfg.h CVI_McuPlatform/L3_RTOS/OS1_FreeRTOS/Os1_UpInf/Os1If_cfg.c)",
+      "Bash(sed -n 30,75p CVI_McuPlatform/L3_RTOS/OS1_FreeRTOS/Os1_UpInf/OsIf_Task.h)",
+      "Bash(grep -n \"Os_CreateTask\" CVI_McuPlatform/L2_Tasks/Task_Shell/Task_Shell.c CVI_McuPlatform/L2_Tasks/Task_SocComm/Task_SocComm.c)",
+      "Bash(sed -n 56,110p CVI_McuPlatform/L1_APP/App_SocCom/APP_SOC_COM_7255/App_SocComCmd_7255.c)",
+      "Bash(sed -n 160,245p CVI_McuPlatform/L1_APP/App_SocCom/APP_SOC_COM_7255/App_SocComCmd_7255.c)",
+      "Bash(sed -n 104,160p CVI_McuPlatform/L1_APP/App_SocCom/APP_SOC_COM_7255/App_SocComCmd_7255.c)",
+      "Bash(sed -n 295,360p CVI_McuPlatform/L1_APP/App_SocCom/APP_SOC_COM_7255/App_SocComCmd_7255.c)",
+      "Bash(sed -n 596,645p CVI_McuPlatform/L1_APP/APP_Power/App_PowerHsm.c)",
+      "Bash(grep -n \"HSM_STANDBY_STR_TIMEOUT\\\\|HSM_STANDBY_UPDATE_TIMEOUT\\\\|HSM_STANDBY_STRFAILED_TIMEOUT\\\\|HSM_STANDBY_STRREADY_TIMEOUT\" CVI_McuPlatform/L1_APP/APP_Power/App_PowerHsm.h)",
+      "Bash(sed -n 700,760p CVI_McuPlatform/L1_APP/APP_Power/App_PowerHsm.c)",
+      "Bash(grep -n \"case HSM_STATE_PWR_SSD_STANDBY\" CVI_McuPlatform/L1_APP/APP_Power/App_PowerHsm.c)",
+      "Bash(sed -n 34,45p CVI_McuPlatform/L5_EcuAL/EcuAL_GPIO/EcuAL_GPIO_cfg.c)",
+      "Bash(sed -n 66,78p CVI_McuPlatform/L5_EcuAL/EcuAL_GPIO/EcuAL_GPIO_Cfg.h)",
+      "Bash(sed -n 708,720p CVI_McuPlatform/L4_Service/Service_Board/Service_Board.c)",
+      "Bash(grep -n \"SOC_MCU_0x0007_CMD_Fun\" -B8 -A25 CVI_McuPlatform/L1_APP/App_SocCom/APP_SOC_COM_7255/App_SocComCmd_7255.c)",
+      "Bash(grep -rn \"STRDebugValue\\\\|Get_App_SocComSysData_STRDebugValue\" --include=*.c --include=*.h CVI_McuPlatform)",
+      "Bash(sed -n 35,60p \"d:/software/Feishu/download/MCU与SoC间通信协议定义_电源管理相关约定_20261030.md\")",
+      "Read(//d/software/Feishu/download/**)",
+      "Read(//d/wnagjin/Compay_Project/CDC_7255/6125/**)",
+      "Bash(sed -n 205,260p FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_SocCom/App_SocComSysCmd.c)",
+      "Bash(grep -rn \"SocReadyToSTRReqCnt\" FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_Power/App_PowerHsm.c)",
+      "Bash(grep -n \"case HSM_STATE_PWR_SSD_RUN\\\\|case HSM_STATE_PWR_SSD_STANDBY\\\\|case HSM_STATE_PWR_SSD_PRE_SLEEP\\\\|SocReadyToSTR==\\\\|SocReadyToSTR==STR_READY\\\\|SocReadyTimer\\\\|SocUpdateTimer\\\\|SocReadyOKNotTimer\\\\|SocReadySTRFaildTimer\\\\|SOC_PWRSTA_UPDATE\\\\|GetSocSTRIOLevel\" FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_Power/App_PowerHsm.c)",
+      "Bash(sed -n 560,730p FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_Power/App_PowerHsm.c)",
+      "Bash(cd \"d:/wnagjin/Compay_Project/CDC_7255/cdc_7255\" && grep -n \"case HSM_STATE_PWR_SSD_\" CVI_McuPlatform/L1_APP/APP_Power/App_PowerHsm.c | sed -n 1,20p; echo ====6125====; grep -n \"case HSM_STATE_PWR_SSD_\" \"D:/wnagjin/Compay_Project/CDC_7255/6125/FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_Power/App_PowerHsm.c\" | sed -n 1,20p)",
+      "Read(//d/wnagjin/Compay_Project/CDC_7255/6125/FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_Power/**)",
+      "Bash(grep -n \"App_Power_UpdatePowerToSoc\\\\|GetToSocHsmState\\\\|MCU_SOC_0X8005\" -A12 FreeRTOS_S32K312/CVI_McuPlatform/L1_Applications/App_Power/App_PowerHsm.c)",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import openpyxl,sys; print\\(openpyxl.__version__\\); print\\(sys.version\\)\")",
+      "Bash(python -)",
+      "Bash(ls -la \"/d/software/Feishu/download/\" 2>/dev/null | grep -i -E \"SOC|协议|MCU\" | head -30)",
+      "Read(//d/software/Feishu/download//**)",
+      "Bash(python .claude/skills/embedded-build-debug/platforms/s32ds/scripts/s32ds_compile.py quick CVI_McuPlatform/L1_APP/APP_Power/App_PowerHsm.c)",
+      "Bash(ls CVI_McuPlatform/L5_EcuAL/EcuAL_Can/)",
+      "Bash(grep -rn \"EcuAL_Can\" --include=*.c --include=*.h CVI_McuPlatform/ src/)"
+    ],
+    "deny": [
+      "Read(./Debug_FLASH/**)",
+      "Read(./RemoteSystemsTempFiles/**)",
+      "Read(./.settings/**)",
+      "Edit(./Project_Settings/Linker_Files/**)",
+      "Write(./Project_Settings/Linker_Files/**)",
+      "Edit(./Project_Settings/Startup_Code/**)",
+      "Write(./Project_Settings/Startup_Code/**)",
+      "Read(./.git/**)",
+      "Read(./.cache/**)"
+    ]
+  }
 }

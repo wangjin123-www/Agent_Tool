@@ -1,0 +1,8 @@
+# yct 工具链配置(init 自动生成, 可手改)
+# 工具来源: 云途官网 www.ytmicro.com -> YCT 配置工具(自带 gcc/ninja/SDK)
+CMAKE="D:\software\bin\cmake.exe"
+GCC_DIR="C:\Users\Lenovo\AppData\Roaming\yt_config_tool\gcc-arm-none-eabi-10.3-2021.10\bin"
+NINJA="C:\Users\Lenovo\AppData\Roaming\yt_config_tool\ninja-win\ninja.exe"
+SDK_DIR="C:\Users\Lenovo\AppData\Roaming\yt_config_tool\sdk\YTM32B1MD2_1_4_1"
+PROJECT_DIR="D:\wnagjin\Compay_Project\yadea\yadea_8srceen\yadea_8screen_APP"
+ARM_CPU="cortex-m33"

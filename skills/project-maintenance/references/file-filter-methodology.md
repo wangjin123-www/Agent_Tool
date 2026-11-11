@@ -36,7 +36,7 @@
 |---|---|---|---|
 | 嵌入式 C（Keil MDK） | `*.uvprojx` `*.uvoptx` | `MDK/output/` `*.o` `*.axf` `*.map` | 链接脚本 `.sct`、bootloader、二进制固件 |
 | 嵌入式 C（IAR） | `*.eww` `*.ewp` | `EWARM/settings/` `*.dep` `*.o` | 链接脚本 `.icf` |
-| 嵌入式 C（GCC/Studio） | `Makefile` `CMakeLists.txt` `.cproject` | `build/` `*.o` `*.elf` | 链接脚本 `.ld` |
+| 嵌入式 C（GCC/Studio） | `Makefile` `CMakeLists.txt` `.cproject` | `build/` `*.o` `*.elf` | 链接脚本 `.ld`（`.cproject`/`.mex` 保持可写,不进 deny） |
 | Node 前端 | `package.json` | `node_modules/` `dist/` `.next/` `coverage/` | `.env` `.env.*` `credentials.json` |
 | Node 后端 | `package.json`（无框架信号） | `node_modules/` `logs/` `*.log` | `.env`、API keys、数据库配置 |
 | Python | `requirements.txt` `pyproject.toml` | `__pycache__/` `.venv/` `*.pyc` `.pytest_cache/` | `.env` `credentials.json` `secrets.yaml` |
@@ -45,6 +45,8 @@
 | Go | `go.mod` | `vendor/` 编译二进制 | `secrets.yaml` `.env` |
 | Rust | `Cargo.toml` | `target/` | `.env` |
 | C#/.NET | `*.csproj` `*.sln` | `bin/` `obj/` | `appsettings.Production.json` |
+
+> **构建工程主文件例外**:`.cproject`、`*.uvprojx`、`test_prj.mex` 都是构建/配置的唯一输入源,**必须保持 `Edit`/`Write` 可写**,不得放进 `permissions.deny`。`.mex` 尤其如此:`board/`、`generate/` 的改动必须回写 mex,否则 Config Tools 一次重新生成就会覆盖回退。工程主文件保护只用于链接脚本、启动代码等真正的只读生成物。
 | Ruby | `Gemfile` `*.gemspec` | `vendor/bundle/` `*.gem` | `.env` `credentials.yml` |
 | PHP | `composer.json` | `vendor/` `storage/logs/` | `.env` |
 | Monorepo | `pnpm-workspace.yaml` `lerna.json` | 各子项目 `node_modules/` `dist/` | 各包 `.env` |
@@ -198,8 +200,6 @@ logs/
       "Read(./**/*.key)",
       "Read(./<local_db>.db)",
       "Read(./<log_dir>/**)",
-      "Edit(./<project_main_file>)",
-      "Write(./<project_main_file>)",
       "Edit(./<linker_script_dir>/**)",
       "Write(./<linker_script_dir>/**)",
       "Edit(./<bootloader_dir>/**)",
@@ -208,6 +208,8 @@ logs/
   }
 }
 ```
+
+> **构建工程主文件不放进 deny**:`.cproject`、`*.uvprojx`、`test_prj.mex` 等是构建/配置的唯一输入源,必须保持 `Edit`/`Write` 可写(用户 2026-11-05 裁定)——否则无法维护工程配置、无法把 `board/`、`generate/` 的改动回写 mex,重新生成即回退。deny 只用于链接脚本、启动代码、密钥/凭据/本地状态等真正不该改的项。
 
 ### 5.3 决策矩阵
 

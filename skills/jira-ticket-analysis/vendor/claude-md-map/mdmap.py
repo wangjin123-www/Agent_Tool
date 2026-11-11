@@ -1014,7 +1014,7 @@ def _extract_paths(text: str) -> list:
         if ".." in s:            # ../ 或省略号式上下穿越引用,不校验
             continue
         if re.fullmatch(r"/[A-Za-z0-9._-]+", s):
-            continue   # /skill 或 /命令 引用(如 /s32ds-compile),非文件路径
+            continue   # /skill 或 /命令 引用(如 /embedded-build-debug),非文件路径
         res.append(s.replace("\\", "/"))
     return res
 

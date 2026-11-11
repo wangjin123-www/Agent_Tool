@@ -24,6 +24,9 @@ else
     OUTPUT="$SKILL_DIR/output"
 fi
 export JIRA_COMMIT_OUTPUT_DIR="$OUTPUT"
+# 报告脚本的 git remote/branch 固定在该根下查询；
+# 不设的话脚本从 .claude/skills/jira-commit 运行时会被 .claude 自身 .git 劫持
+export JIRA_COMMIT_PROJECT_ROOT="$PROJECT_ROOT"
 mkdir -p "$OUTPUT"
 ```
 
@@ -389,7 +392,7 @@ python "$SKILL_DIR/script/preview_tasks.py"   # 输出目录由 JIRA_COMMIT_OUTP
 核心调用：
 ```bash
 python "$SKILL_DIR/script/generate_report.py" --check-norm   # 0. 前置门禁：规范建议全 checked 才继续（错误即停，不建单）
-python "$SKILL_DIR/script/create_jira_tasks.py"   # 1. 创建JIRA，jira_id 写回 commit_message（输出目录由 JIRA_COMMIT_OUTPUT_DIR 决定）
+python "$SKILL_DIR/script/create_jira_tasks.py"   # 1. 创建JIRA，jira_id 写回 commit_message（输出目录由 JIRA_COMMIT_OUTPUT_DIR 决定；脚本入口自带规范门禁硬校验——建议未全部确认/产物缺失即退出，一条 JIRA 都不建）
 python "$SKILL_DIR/script/generate_report.py"     # 2. 再次校验门禁 → 合并commit → commit_report.html（只读内嵌）→ 飞书邮件
 ```
 
@@ -443,7 +446,7 @@ execute前必须 AskUserQuestion 确认。JIRA未配置时也要 AskUserQuestion
 
 0. **问前缀（必须）**：AskUserQuestion 询问任务标题【】前缀，规则同 analyze 的「任务标题前缀」
 1. **润色（必须）**：把用户的话稍作优化——整理成规范中文标题（`title` / `title_cn` 同源中文，含统一【前缀】）、简要 `[what]` 描述；保持原意，不扩写
-2. **生成单任务 tasks.json**（按上方 analyze 的 schema；`type`/`difficulty`/`impact` 从 config 选取，拿不准时 AskUserQuestion 问用户；`labels` 按「标签选取」从 `template/labels.md` 选（≤3，不打 `已分析`，表里没有就补词）；`jira_key=""`、`completed=false`、`dirs`/`git_add_pattern` 可填当前仓库根 `.`
+2. **生成单任务 tasks.json**（按上方 analyze 的 schema；`type`/`difficulty`/`impact` 从 config 选取，拿不准时 AskUserQuestion 问用户；`labels` 按「标签选取」从 `template/labels.md` 选（≤3，不打 `已分析`，表里没有就补词）；`jira_key=""`、`completed=false`、`dirs`/`git_add_pattern` 可填当前仓库根 `.`）；**同时生成空 suggestions 的 `$OUTPUT/norm_analysis.json`**（`analyzed_at` 与 tasks.json `generated_at` 同批时间）——建单脚本入口有规范门禁，缺该文件会直接拒绝创建
 3. **创建**：
 ```bash
 cd "$SKILL_DIR" && python script/create_jira_tasks.py

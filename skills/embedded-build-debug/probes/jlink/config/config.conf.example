@@ -1,0 +1,17 @@
+# J-Link 探针配置（模板）
+# 首次运行时 init_env.sh 自动拷贝为 config.conf（config.conf 不入库）
+# JLINK 路径若在本机不存在，init_env.sh 会自动扫描常见安装目录，
+# 找不到则交互式询问输入，并写回 config.conf
+
+# J-Link 工具路径（JLink.exe / JLinkExe）
+JLINK="D:/keil/ARM/Segger/JLink.exe"
+
+# 目标设备（J-Link 设备名，烧录/调试都用它）
+DEVICE="HC32F460PETB"
+
+# 默认固件镜像（相对仓库根；download/full_download 未显式传文件时使用）
+HEX_PATH="MDK/output/debug/DAB.hex"
+BIN_PATH="MDK/output/debug/DAB.bin"
+
+# 链接脚本（full_download / erase 解析整片 Flash 范围用，相对仓库根）
+LINKER_SCRIPT="MDK/config/linker/HC32F460xE.sct"

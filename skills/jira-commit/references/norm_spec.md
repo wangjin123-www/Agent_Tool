@@ -169,6 +169,20 @@ Xxx/                      例：EcuAL_Spi/
      `EcuAL_UartCtrl` 亦在 `.dtcm_data` 段。
    - 反例：在 `Xxx.c` 实现文件里就地 `static` 定义大块缓冲/队列（与实现耦合、无法按产品裁剪）。
 
+10. **EcuAL 模块三层链必须完整：`XxxUpInf`（对外）→ `Xxx.c`（核心）→ `XxxLowInf`（向下）**。
+    模块只要封装 RTD（或其它下层驱动），就必须建 LowInf 层，且：
+    ① **LowInf 是唯一允许 include RTD 驱动头、直调 RTD API 的层**
+       （`IntCtrl_Ip_*` / `Siul2_*` / `Lpuart_*` / `Adc_Sar_*` / `Emios_*` 等）；
+    ② **核心层 `Xxx.c` 只 include 本模块 `XxxLowInf.h`，判空转发**，不得直调 RTD；
+    ③ **UpInf 表成员必须是 `XxxUpInf.c` 内的 `static` 包装函数**（命名 `<模块>UpInf_*`），
+       包装函数再调核心层；不得在表里直挂核心层函数，也不跨过核心层直连 LowInf
+       （照 `Service_SocCommUpInf` 用户裁定 2026-10-05；存量直挂旧表不追溯，新增/改动的表按此）。
+    - 反例（2026-11-05）：`EcuAL_Interrupt` 初版只有 UpInf + 核心两层，核心直接
+      `IntCtrl_Ip_Init` / `Siul2_Icu_Ip_*`，UpInf 表直挂核心；已补
+      `EcuAL_InterruptLowInf.c/.h`，并把表成员改为 `EcuAL_InterruptUpInf_*` static 包装。
+    - 存量例外（不追溯）：`EcuAL_GPIO`（Dio 视野，核心直调 `Siul2_Dio_Ip_*`，无 LowInf）、
+      `EcuAL_PIT`（单层 1ms 时基，直调 RTD）。新增代码不得再以它们为由跳过 LowInf。
+
 ### 证据（6125）
 
 - `EcuAL_Port/EcuAL_PortUpInf.h`：`STRUCT_ECUAL_PORT_UPINF` + `extern EcuAL_Port_UpInf`，含 `EcuAL_DioUpInf_WritePin1` 等，并在头尾给 `DIO_INF1_WRITE_PIN` 宏别名。
@@ -232,7 +246,7 @@ Xxx/                      例：EcuAL_Spi/
 | N-07 | 无裸类型 / 有 stdint | 全部 | info | 是 | 新增 `int`/`char` 声明 |
 | N-08 | 新模块必须有 UpInf（对外接口） | App/Service/EcuAL | warn | 是 | 新模块目录无 `*UpInf.*` |
 | N-09 | commit 消息格式合规 | - | error | 是 | 首行 `[type][JIRA]中文标题` + what/why/how/影响等级/建议测试范围 |
-| N-10 | 生成物未被手改 | - | error | 是 | diff 命中 `generate/` `board/` `Debug_FLASH/` → 报错 |
+| N-10 | 生成物改动须与 test_prj.mex 同步 | - | error | 是 | diff 命中 `generate/` `board/` 时必须同时有 `test_prj.mex` 对应改动；只改生成物不改 mex → 报错（`Debug_FLASH/` 仍禁改） |
 | N-11 | 禁止跨模块 extern 全局变量 | 全部 | error | 是 | diff 新增 `extern <类型> <变量>;` 且变量定义在**其它模块** → 报错，改用对方 UpInf 的 Get/Set |
 | N-12 | 跨模块调用只许走对方 UpInf（禁中间层） | 全部 | error | 是 | diff 新增 `extern <类型> <模块函数>(...);` 裸原型调用、或 include 对方实现头（`Xxx.h`，非 `XxxUpInf.h`）后直调 `Xxx_*` 函数 → 报错，改用 `Xxx_UpInf.Func()` |
 | N-13 | 标识符命名合规（枚举值/类型/宏/成员/指针） | 全部 | warn | 是 | 见下「N-13 子规则」，任一命中即报警 |
@@ -241,6 +255,7 @@ Xxx/                      例：EcuAL_Spi/
 | N-16 | 分层单向依赖 / 层间解耦 / 跨模块内部访问 | 全部 | warn | 是 | 见下「N-16 子规则」，任一命中即报警 |
 | N-17 | SOC 通信发送统一走 SendCmd（禁手工传通道） | L1_APP | error | 是 | 见下「N-17 子规则」，任一命中即报错 |
 | N-18 | cmd 号唯一真源（清单+枚举生成，禁硬编码 #define） | L1_APP | warn | 是 | 见下「N-18 子规则」，任一命中即报警 |
+| N-19 | EcuAL 模块三层链完整（UpInf → 核心 → LowInf） | L5_EcuAL | error | 是 | 见下「N-19 子规则」，任一命中即报错 |
 
 **severity 语义**：`error` 必须改（阻断提交）；`warn` 建议改；`info` 仅提示。
 
@@ -248,7 +263,7 @@ Xxx/                      例：EcuAL_Spi/
 
 - N-04 反例：`L1_APP/App_Power/App_Power.c` 里 `#include "EcuAL_Uart.h"` → 应为 `EcuAL_UartUpInf.h`。
 - N-05 反例：`L5_EcuAL/` 下出现 `RedLight_On()` → 业务语义应在 App；`L1_APP/` 下出现 `gpio3_set()` → 硬件编号应在 EcuAL。
-- N-10 反例：diff 里改 `generate/src/*_PBcfg.c` 或 `board/Siul2_Port_Ip_Cfg.h` → 生成物勿手改，须改 `test_prj.mex` 重新生成。
+- N-10 反例：只改 `generate/src/*_PBcfg.c` / `board/Siul2_Port_Ip_Cfg.h` 而不改 `test_prj.mex` → Config Tools 重新生成时按 mex 旧配置覆盖。实例（2026-11-05）：PTC24/EIRQ19 + ICU ch19 + IntCtrl `SIUL_2` 只落在生成物，重新生成后回退成 GPIO、ICU 仅 ch25、IntCtrl 无 `SIUL_2`，心跳中断链整体失效。
 - N-11 反例：`L1_APP/APP_Power/App_PowerHsm.c:49` 直接 `extern uint32_t SrvCan_RecvCounter;`（该量定义在 `L4_Service/Service_Canbus/Service_CanComm/Service_CanCommLowinf.c:29`）→ 属跨模块抓别人的全局变量，应改由 `Service_CanCommUpInf` 提供 `GetRecvCounter()` 取值。
 - N-12 反例：`L4_Service/Service_SocComm/Service_SocCommLowInf.c:223` 写 `extern uint8_t App_Power_GetPwrHsmState(void);`、:242 直接调用 → 绕过 `App_Power_UpInf` 表抓 L2 函数，**连 include 都没写**（比 N-04 更隐蔽：N-04 查 include，N-12 查裸原型/直调）；正例见 §二 硬规则 7。
 
@@ -369,6 +384,22 @@ Xxx/                      例：EcuAL_Spi/
 
 - 判据：diff **新增/改动的 cmd 相关行**；存量已收敛（11 个硬编码 `#define` 已删，清单上移 `App_SocComSysCmd.h`）。
 - 严重度 `warn`（建议改，不阻断提交）；`detail` 注明命中的子规则编号。
+
+### N-19 子规则（EcuAL 模块三层链完整，对照 diff 新增/改动的 L5 模块文件）
+
+EcuAL 模块封装 RTD 时必须三层齐全：`XxxUpInf.*`（对外表）→ `Xxx.c/.h`（核心）→ `XxxLowInf.*`（向下适配）。
+
+| # | 对象 | 规则 | 正例 | 反例 |
+|---|------|------|------|------|
+| 1 | LowInf 存在性 | 核心层调 RTD 的模块必须有 `XxxLowInf.c/.h` | `EcuAL_McuLowInf.*` `EcuAL_PortLowInf.*` `EcuAL_InterruptLowInf.*` | 只有 `Xxx.c` + `XxxUpInf.*`，核心直接包 RTD |
+| 2 | RTD 调用落点 | RTD 驱动头 include 与 API 调用只允许出现在 `XxxLowInf.c` | `EcuAL_InterruptLowInf.c` 调 `IntCtrl_Ip_Init` / `Siul2_Icu_Ip_*` | `EcuAL_Interrupt.c` 里直接 `#include "IntCtrl_Ip.h"` 并调用 |
+| 3 | 核心层职责 | 核心 `Xxx.c` 只 include `XxxLowInf.h`，判空/直接转发 | `EcuAL_Interrupt.c` → `EcuAL_Interrupt_LowInf.EalInterrupt_LowInf_*()` | 核心层把 RTD 调用与业务逻辑混写 |
+| 4 | UpInf 表接线 | 表成员由 `XxxUpInf.c` 内 `static` 包装函数（`<模块>UpInf_*`）注册，包装函数再调核心层；不直挂核心函数、不跨层直连 LowInf | `EcuAL_InterruptUpInf.c` 的 `.Init = EcuAL_InterruptUpInf_Init`（static → `EcuAL_Interrupt_Init`） | `.Init = EcuAL_Interrupt_Init`（直挂核心）或 `.Init = EcuAL_InterruptLowInf_Init`（跨层） |
+
+- 判据：对照 **diff 新增/改动的 L5 模块 .c/.h**；检查核心层 .c 是否出现 RTD 驱动头 include 或 RTD API 调用，以及 UpInf 表成员名是否为 `<模块>UpInf_*` 包装。
+- 存量例外（不追溯）：`EcuAL_GPIO`（Dio 视野，核心直调 `Siul2_Dio_Ip_*`）、`EcuAL_PIT`（单层时基，直调 RTD）；已直挂核心的旧表（`EcuAL_Port` / `EcuAL_Mcu`）不追溯。新增模块/文件及改动的接口表不得引用这些例外。
+- 与 N-15 边界：N-15 查三件套**文件命名/存在性**；N-19 查**调用链职责**（RTD 只出现在 LowInf、核心不得直调）。
+- 严重度 `error`（用户裁定 2026-11-05：分层缺失会重复出现，阻断提交）；`detail` 注明命中的子规则编号。
 
 ---
 

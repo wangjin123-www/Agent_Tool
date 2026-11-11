@@ -1,75 +1,116 @@
 {
-  "spreadsheet_token": "YrK8sncCThe8UstV0yBcvkjQnMR",
-  "spreadsheet_name": "7255 MCU&SOC 通信协议表",
-  "host": "ycn2z3lx0867.feishu.cn",
-  "sheets": {
-    "service_interface": { "id": "88c520", "name": "Service Interface" },
-    "data_structure": { "id": "5OYF2M", "name": "Data Structure" },
-    "parameter_enum": { "id": "lD4JBt", "name": "Parameter Enum" },
-    "rule": { "id": "fszAfs", "name": "AI修订规则" },
-    "error_code": { "id": "MQgQZb", "name": "错误码" }
-  },
-  "si_columns": {
-    "service_name": "A",
-    "service_id": "B",
-    "service_desc": "C",
-    "namespace": "D",
-    "if_name": "E",
-    "if_desc": "F",
-    "if_type": "G",
-    "tx_type": "H",
-    "msg_dir": "I",
-    "msg_id": "J",
-    "pair_id": "K",
-    "transport": "L",
-    "qos": "M",
-    "param_name": "N",
-    "param_type": "O",
-    "param_desc": "P",
-    "param_dir": "Q"
-  },
-  "si_data_start_row": 6,
-  "ds_columns": {
-    "service_name": "A",
-    "namespace": "B",
-    "name": "C",
-    "desc": "D",
-    "category": "E",
-    "size": "F",
-    "byte_index": "G",
-    "bit": "H",
-    "member": "I",
-    "type": "J",
-    "member_desc": "K"
-  },
-  "pe_columns": {
-    "enum_type": "A",
-    "value": "B",
-    "c_name": "C",
-    "desc": "D",
-    "message_id": "E"
-  },
-  "ec_columns": {
-    "group": "A",
-    "value": "B",
-    "c_name": "C",
-    "desc": "D",
-    "message_id": "E"
-  },
-  "error_code": {
-    "group": "COMM_RESULT",
-    "param_name": "result",
-    "param_type": "uint8",
-    "param_desc_keywords": ["成功", "错误码"],
-    "link_text": "错误码定义 →"
-  },
-  "section": {
-    "marker": "▶",
-    "soc_to_mcu": "▶ SOC → MCU · 下发/请求",
-    "mcu_to_soc": "▶ MCU → SOC · 上报/应答"
-  },
-  "direction": {
-    "SOC→MCU": "SOC_TO_MCU",
-    "MCU→SOC": "MCU_TO_SOC"
+  "_comment": "平台宏：platform 指定当前活动平台；platforms 下每个平台声明数据源（飞书多维表格）、表坐标、字段语义映射。换平台只改 platform 字段，实现按 scripts/platforms/<module> 匹配另一套。",
+  "_schema": "2026-11-09 字段语义化：表内字段名一律不写在脚本里，全部由本文件的 fields 段声明（semantic_key → 线上字段名，或候选名列表，按顺序兜底）。线上字段改名后跑 `cli.py doctor --fix` 自动重解析写回本文件。label_key / split.field 的值是 semantic_key，不是真实字段名；links 声明「link 字段 semantic_key → 目标表 role」，其字段名同样在 fields 里声明。",
+  "platform": "7255",
+  "platforms": {
+    "7255": {
+      "name": "7255 MCU&SOC 通信协议",
+      "host": "ycn2z3lx0867.feishu.cn",
+      "module": "platform_7255",
+      "source": {
+        "type": "bitable",
+        "url": "https://ycn2z3lx0867.feishu.cn/base/Mj3gbU3NqagG4WsPcQgc0YhSnac?table=tbl1YV1OxMxG3kLm",
+        "base_token": "Mj3gbU3NqagG4WsPcQgc0YhSnac"
+      },
+      "tables": {
+        "service_interface": {
+          "id": "tbl1YV1OxMxG3kLm",
+          "name": "服务接口",
+          "label_key": "interface_name",
+          "links": {
+            "struct_refs": "data_structure",
+            "enum_refs": "data_structure",
+            "related": "service_interface",
+            "error_refs": "error_code"
+          },
+          "fields": {
+            "interface_name": "接口名",
+            "service_name": "服务名",
+            "namespace": "命名空间",
+            "service_id": "服务id",
+            "service_desc": "服务描述",
+            "msg_id": ["消息id(16进制)", "消息id"],
+            "direction": "消息方向",
+            "if_type": "接口类型",
+            "iface_desc": "接口描述",
+            "tx_type": "发送类型",
+            "transport": "传输层协议",
+            "qos": "服务质量",
+            "param_name": "参数名",
+            "param_type": "参数类型",
+            "param_dir": "参数方向",
+            "param_desc": "参数描述",
+            "struct_refs": "引用结构体",
+            "enum_refs": "引用枚举",
+            "related": "关联接口",
+            "error_refs": "引用错误码组"
+          }
+        },
+        "data_structure": {
+          "id": "tblsDjXiMxUOPGCx",
+          "name": "数据结构",
+          "label_key": "name",
+          "links": {
+            "interface_refs": "service_interface"
+          },
+          "split": { "field": "kind", "struct": "结构体", "enum": "枚举" },
+          "fields": {
+            "name": "数据结构名",
+            "kind": "种类",
+            "items": "子项",
+            "desc": "描述",
+            "interface_refs": "引用接口"
+          }
+        },
+        "data_structure_item": {
+          "id": "tblxbsN0Al9ad3o6",
+          "name": "数据结构子项",
+          "label_key": "name",
+          "links": {
+            "owner": "data_structure",
+            "enum_refs": "data_structure"
+          },
+          "split": { "field": "item_type", "enum_value": "枚举值" },
+          "fields": {
+            "name": "子项名",
+            "item_type": "子项类型",
+            "owner": "所属数据结构",
+            "byte": "字节序号(B)",
+            "bit": "位宽(bit)",
+            "arr_len": ["长度", "数组长度"],
+            "bit_range": "Bit范围",
+            "value": "值",
+            "desc": "描述",
+            "enum_refs": "引用枚举"
+          }
+        },
+        "error_code": {
+          "id": "tbl858ZfyLwPOMvj",
+          "name": "错误码",
+          "label_key": "name",
+          "links": {
+            "interface_refs": "service_interface"
+          },
+          "fields": {
+            "group": "错误码组",
+            "value": "值",
+            "name": "常量名",
+            "desc": "描述",
+            "applies_to": "适用消息",
+            "interface_refs": "引用接口"
+          }
+        }
+      },
+      "conventions": {
+        "_comment": "表内约定（非字段名，但会随表维护变化）：检测列按列名关键字发现。",
+        "check_field_keyword": "检测"
+      },
+      "check_rules": {
+        "_comment": "降级规则：多维表格检测列里以 ❌ 报出、但属于「业务尚未定义」而非数据错误的项，不阻断 gen。按表角色（role）分域匹配检测原文子串。doctor 会校验这些子串仍能在该表检测公式里找到，公式改了会提示规则失效。",
+        "degraded": {
+          "data_structure": ["引用接口为空", "子项为空"]
+        }
+      }
+    }
   }
 }

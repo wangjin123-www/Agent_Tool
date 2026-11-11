@@ -1,0 +1,335 @@
+{
+  "protocols": {
+    "1": {
+      "desc": "7255 MCU-SOC UART 帧: {frame}; {len}, {sum}",
+      "fields": [
+        {
+          "name": "SYNC",
+          "len": 2,
+          "value": "5A A5",
+          "auto": "const"
+        },
+        {
+          "name": "ACK",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "LEN",
+          "len": 2,
+          "value": "00",
+          "role": "len",
+          "from": "MODE",
+          "to": "PARAM"
+        },
+        {
+          "name": "MODE",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "CMD",
+          "len": 2,
+          "value": ""
+        },
+        {
+          "name": "PARAM",
+          "len": -1,
+          "value": ""
+        },
+        {
+          "name": "SUM",
+          "len": 1,
+          "role": "sum",
+          "from": "ACK",
+          "to": "PARAM",
+          "alg": "sum_neg"
+        }
+      ]
+    },
+    "12": {
+      "desc": "7255 MCU-SOC UART 帧: {frame}; {len}, {sum}",
+      "fields": [
+        {
+          "name": "SYNC",
+          "len": 2,
+          "value": "5A A5",
+          "auto": "const"
+        },
+        {
+          "name": "ACK",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "LEN",
+          "len": 2,
+          "value": "00",
+          "role": "len",
+          "from": "MODE",
+          "to": "PARAM"
+        },
+        {
+          "name": "MODE",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "CMD",
+          "len": 2,
+          "value": ""
+        },
+        {
+          "name": "PARAM",
+          "len": -1,
+          "value": ""
+        },
+        {
+          "name": "SUM",
+          "len": 1,
+          "role": "sum",
+          "from": "ACK",
+          "to": "PARAM",
+          "alg": "sum_neg"
+        }
+      ]
+    },
+    "魏桥协议": {
+      "desc": "7255 MCU-SOC UART 帧: {frame}; {len}, {sum}",
+      "fields": [
+        {
+          "name": "SYNC",
+          "len": 2,
+          "value": "5A A5",
+          "auto": "const"
+        },
+        {
+          "name": "ACK",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "LEN",
+          "len": 2,
+          "value": "00",
+          "role": "len",
+          "from": "MODE",
+          "to": "PARAM"
+        },
+        {
+          "name": "MODE",
+          "len": 1,
+          "value": "00"
+        },
+        {
+          "name": "CMD",
+          "len": 2,
+          "value": ""
+        },
+        {
+          "name": "PARAM",
+          "len": -1,
+          "value": ""
+        },
+        {
+          "name": "SUM",
+          "len": 1,
+          "role": "sum",
+          "from": "ACK",
+          "to": "PARAM",
+          "alg": "sum_neg"
+        }
+      ]
+    }
+  },
+  "groups": {
+    "project": [
+      {
+        "name": "7255",
+        "protocol": "魏桥协议",
+        "children": [
+          {
+            "name": "风扇测试",
+            "cmds": [
+              {
+                "name": "7255_fan_0",
+                "fields": {
+                  "ACK": "00",
+                  "MODE": "00",
+                  "CMD": "08 02",
+                  "PARAM": "00"
+                }
+              },
+              {
+                "name": "7255_fan_50",
+                "fields": {
+                  "ACK": "00",
+                  "MODE": "00",
+                  "CMD": "08 02",
+                  "PARAM": "32"
+                }
+              },
+              {
+                "name": "7255_fan1_get",
+                "fields": {
+                  "ACK": "00",
+                  "MODE": "00",
+                  "CMD": "08 01",
+                  "PARAM": ""
+                }
+              }
+            ],
+            "children": []
+          },
+          {
+            "name": "echo测试",
+            "cmds": [
+              {
+                "name": "7255_echo_3B",
+                "fields": {
+                  "CMD": "0F FF",
+                  "PARAM": "00 02 03"
+                }
+              }
+            ],
+            "children": []
+          }
+        ],
+        "cmds": []
+      }
+    ],
+    "other": [
+      {
+        "name": "shell",
+        "protocol": null,
+        "cmds": [],
+        "children": [
+          {
+            "name": "help",
+            "cmds": [
+              {
+                "name": "help",
+                "mode": "ascii",
+                "data": "help"
+              },
+              {
+                "name": "help log",
+                "mode": "ascii",
+                "data": "help log"
+              },
+              {
+                "name": "help fan",
+                "mode": "ascii",
+                "data": "help fan"
+              },
+              {
+                "name": "help periodic",
+                "mode": "ascii",
+                "data": "help periodic"
+              },
+              {
+                "name": "clear",
+                "mode": "ascii",
+                "data": "clear"
+              }
+            ],
+            "children": []
+          },
+          {
+            "name": "log",
+            "cmds": [
+              {
+                "name": "log(列出全部模块)",
+                "mode": "ascii",
+                "data": "log"
+              },
+              {
+                "name": "log all on",
+                "mode": "ascii",
+                "data": "log all on"
+              },
+              {
+                "name": "log all off",
+                "mode": "ascii",
+                "data": "log all off"
+              },
+              {
+                "name": "log INIT on",
+                "mode": "ascii",
+                "data": "log INIT on"
+              },
+              {
+                "name": "log POWER_HSM on",
+                "mode": "ascii",
+                "data": "log POWER_HSM on"
+              },
+              {
+                "name": "log SOCOMM on",
+                "mode": "ascii",
+                "data": "log SOCOMM on"
+              },
+              {
+                "name": "log MCUCOM on",
+                "mode": "ascii",
+                "data": "log MCUCOM on"
+              },
+              {
+                "name": "log SOCOMM off",
+                "mode": "ascii",
+                "data": "log SOCOMM off"
+              },
+              {
+                "name": "log MCUCOM off",
+                "mode": "ascii",
+                "data": "log MCUCOM off"
+              }
+            ],
+            "children": []
+          },
+          {
+            "name": "periodic",
+            "cmds": [
+              {
+                "name": "periodic(查询)",
+                "mode": "ascii",
+                "data": "periodic"
+              },
+              {
+                "name": "periodic on",
+                "mode": "ascii",
+                "data": "periodic on"
+              },
+              {
+                "name": "periodic off",
+                "mode": "ascii",
+                "data": "periodic off"
+              }
+            ],
+            "children": []
+          },
+          {
+            "name": "fan",
+            "cmds": [
+              {
+                "name": "fan 0 (停)",
+                "mode": "ascii",
+                "data": "fan 0"
+              },
+              {
+                "name": "fan 50",
+                "mode": "ascii",
+                "data": "fan 50"
+              },
+              {
+                "name": "fan 100 (满速)",
+                "mode": "ascii",
+                "data": "fan 100"
+              }
+            ],
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

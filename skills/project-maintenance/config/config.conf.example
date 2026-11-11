@@ -42,3 +42,21 @@ auto_analyze = true
 # true = 允许把分析结果回写 file(回写前自动备份为 file.bak)
 # false = 只打印建议、不改 file
 writeback = true
+
+# ============================================================
+# [doc_audit] 文档审核整改授权清单 —— 三张管控名单(2026-11-06 增)
+#   doc-audit 模式每次审核前必读;no_claude_md 同时被 mdmap.py 合并进 [map] exclude
+#   路径一律相对工程根,用正斜杠,大小写不敏感;逗号分隔,前缀匹配到目录即整目录生效
+#   支持 * 通配文件名;留空 = 无限制
+# ============================================================
+[doc_audit]
+# ① 不生成 / 不维护 CLAUDE.md 的目录或文件前缀(与 [map] exclude 合并,exclude 优先)
+#   例: no_claude_md = node_modules, third_party/legacy, tools/**/generated
+no_claude_md =
+# ② 完全不允许修改的 doc(命中则整份跳过:不浓缩 / 不补章节 / 不改版本行,报告标「按配置跳过」)
+#   例: no_modify_docs = doc/对外发布/接口协议.md, doc/法规/*.md
+no_modify_docs =
+# ③ 允许修改,但禁止把 Mermaid 转 Canvas,也禁止把流程图 / 架构图 / 状态机图转 Canvas
+#    命中后只做格式 / 浓缩 / 准确性整改,图保持 Mermaid 原样
+#   例: no_canvas_docs = doc/architecture/通信协议.md
+no_canvas_docs =

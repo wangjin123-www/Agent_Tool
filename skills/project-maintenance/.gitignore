@@ -2,3 +2,7 @@
 config/config.conf
 # doc-filter.txt 是工程级规则(团队共享,随仓提交);只忽略回写备份
 config/*.bak
+
+# Python 字节码(生成物,与解释器版本绑定)
+__pycache__/
+*.py[cod]

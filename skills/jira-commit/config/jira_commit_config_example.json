@@ -6,6 +6,7 @@
   "jira_project": "AERDM",
 
   "default_pull_branch": "origin/main",
+  "mr_target_branch": "main",
 
   "auth": {
     "username": "❗️填写你的域名❗️",

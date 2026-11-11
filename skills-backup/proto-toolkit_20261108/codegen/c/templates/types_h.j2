@@ -1,0 +1,64 @@
+/*************************************************************************************************
+ * @file    {{ files.types_h }}
+ * @brief   7255 MCU&SOC 协议数据结构（由 proto-toolkit 从协议表生成，禁止手改）
+ * @copyright {{ header.copyright }}
+ *
+ * 源: {{ spreadsheet }} rev.{{ revision }}
+ * 约定: 大端（BYTE0 先发，字节内 bit7 先发）；bit 成员不使用 C 位域，
+ *       通过 {{ header.struct_prefix }}<Struct>_Get/Set<X>() 掩码访问，保证跨编译器一致。
+ ************************************************************************************************/
+#ifndef {{ guard }}
+#define {{ guard }}
+
+#include <stdint.h>
+
+{% for s in structs %}
+/* ===== {{ s.name }} · {{ s.service }} · {{ s.desc }} · Size={{ s.size }} ===== */
+{% if s.is_raw %}
+/* 位域结构：按字节原样存储，成员经访问器读写 */
+typedef struct
+{
+    uint8_t Data[{{ s.nbytes }}u];{% if s.has_open %}   /* + 开放尾 */{% endif %}
+
+}{{ s.c_name }};
+
+{% for m in s.members %}
+{% if m.is_bit %}
+/* {{ m.name }}: {{ s.name }} byte {{ m.byte_start }}B bit {{ m.bit }} (mask {{ m.mask }}) - {{ m.desc }} */
+#define {{ s.c_name }}_{{ m.name }}_MASK       ({{ m.mask }}u)
+#define {{ s.c_name }}_{{ m.name }}_SHIFT      ({{ m.shift }}u)
+static inline uint8_t {{ s.c_name }}_Get{{ m.name }}(const {{ s.c_name }} *p)
+{
+    return (uint8_t)((p->Data[{{ m.byte_start }}u] & {{ s.c_name }}_{{ m.name }}_MASK)
+                     >> {{ s.c_name }}_{{ m.name }}_SHIFT);
+}
+static inline void {{ s.c_name }}_Set{{ m.name }}({{ s.c_name }} *p, uint8_t v)
+{
+    p->Data[{{ m.byte_start }}u] = (uint8_t)((p->Data[{{ m.byte_start }}u]
+                                              & (uint8_t)(~{{ s.c_name }}_{{ m.name }}_MASK))
+                                             | (uint8_t)((v << {{ s.c_name }}_{{ m.name }}_SHIFT)
+                                                         & {{ s.c_name }}_{{ m.name }}_MASK));
+}
+{% endif %}
+{% endfor %}
+{% else %}
+typedef struct
+{
+{% for m in s.members %}
+    {% if m.open %}uint8_t {{ m.name }}[1u];      /* 开放尾 {{ m.byte_start }}B..N（长度随帧） - {{ m.desc }} */{% else %}{{ m.ctype }} {{ m.name }};       /* {{ m.byte_start }}B{% if m.byte_end != m.byte_start %}-{{ m.byte_end }}B{% endif %} - {{ m.desc }} */{% endif %}
+
+{% endfor %}
+}{{ s.c_name }};
+
+uint16_t {{ s.c_name }}_Pack(const {{ s.c_name }} *p, uint8_t *buf);
+void {{ s.c_name }}_Unpack({{ s.c_name }} *p, const uint8_t *buf);
+{% endif %}
+{% endfor %}
+/* ===== 命令处理函数原型（stub 由 {{ files.cmd_stub_c }} 生成） ===== */
+{% for e in rx + tx %}
+void {{ e.handler }}(uint8_t channel, const uint8_t *pdata, uint16_t len);   /* {{ e.id_hex }} {{ e.name }} */
+{% endfor %}
+#endif /* {{ guard }} */
+/*************************************************************************************************
+ * End of File
+ ************************************************************************************************/

@@ -159,7 +159,8 @@ def _cfg_list(cfg: dict, section: str, key: str, default: str = "") -> list:
 
 
 def map_config() -> dict:
-    """[map] 段解析结果:哪些目录强制进地图、哪些永不进。"""
+    """[map] 段解析结果:哪些目录强制进地图、哪些永不进。
+    [doc_audit].no_claude_md 一并并入 exclude(禁建 CLAUDE.md 名单)。"""
     global _MAP_CFG
     if _MAP_CFG is not None:
         return _MAP_CFG
@@ -171,14 +172,28 @@ def map_config() -> dict:
         if not pre:
             continue
         (auto if mode.strip().casefold() == "auto" else forced).append(pre)
+    exclude = _cfg_list(cfg, "map", "exclude")
+    for p in _cfg_list(cfg, "doc_audit", "no_claude_md"):
+        if p not in exclude:
+            exclude.append(p)
     _MAP_CFG = {
         "forced": forced,                                     # <前缀>:always
         "include_auto": auto,                                 # <前缀>:auto
-        "exclude": _cfg_list(cfg, "map", "exclude"),
+        "exclude": exclude,                                   # [map].exclude + [doc_audit].no_claude_md
         "strict": _cfg(cfg, "map", "mode", "auto").casefold() == "strict",
         "doc_budget": int(_cfg(cfg, "map", "doc_budget", "80") or 80),
     }
     return _MAP_CFG
+
+
+def doc_audit_config() -> dict:
+    """[doc_audit] 段解析结果:doc-audit 模式的三张管控名单。"""
+    cfg = load_skill_config()
+    return {
+        "no_claude_md": _cfg_list(cfg, "doc_audit", "no_claude_md"),
+        "no_modify_docs": _cfg_list(cfg, "doc_audit", "no_modify_docs"),
+        "no_canvas_docs": _cfg_list(cfg, "doc_audit", "no_canvas_docs"),
+    }
 
 
 def doc_exts_config() -> set:
@@ -1151,7 +1166,7 @@ def _extract_paths(text: str) -> list:
         if ".." in s:            # ../ 或省略号式上下穿越引用,不校验
             continue
         if re.fullmatch(r"/[A-Za-z0-9._-]+", s):
-            continue   # /skill 或 /命令 引用(如 /s32ds-compile),非文件路径
+            continue   # /skill 或 /命令 引用(如 /embedded-build-debug),非文件路径
         res.append(s.replace("\\", "/"))
     return res
 
@@ -1392,6 +1407,22 @@ def report_cmd(args) -> int:
     return 0
 
 
+def doc_audit_config_cmd(args) -> int:
+    """打印 [doc_audit] 三张授权清单(doc-audit 模式开工前调用)。"""
+    cfg = doc_audit_config()
+    root = (Path(args.repo).resolve() if args.repo else Path.cwd().resolve())
+    out(f"repo: {to_posix(root)}")
+    for key in ("no_claude_md", "no_modify_docs", "no_canvas_docs"):
+        items = cfg[key]
+        out(f"[{key}] {len(items)} 项")
+        for it in items:
+            out(f"  - {it}")
+    out("")
+    out("说明: no_claude_md 已并入 [map].exclude;no_modify_docs 整份跳过;"
+        "no_canvas_docs 允许改但不许 Mermaid→Canvas。")
+    return 0
+
+
 def install_cmd(args) -> int:
     draft = Path(args.draft_dir)
     root = repo_root(args.repo)
@@ -1522,6 +1553,10 @@ def main(argv: list) -> int:
     p.add_argument("--mode", choices=["init", "update"], default="init")
     p.add_argument("--state-local", action="store_true")
     p.set_defaults(fn=install_cmd)
+
+    p = sub.add_parser("doc-audit-config", help="打印 [doc_audit] 三张授权清单")
+    p.add_argument("--repo")
+    p.set_defaults(fn=doc_audit_config_cmd)
 
     args = ap.parse_args(argv)
     return args.fn(args)

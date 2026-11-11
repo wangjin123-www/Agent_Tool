@@ -9,6 +9,13 @@
       "root": "codegen/c",
       "config": "codegen/c/config/codegen_config.json"
     },
+    "arxml": {
+      "name": "AUTOSAR ARXML",
+      "status": "ready",
+      "entry": "lang_arxml",
+      "root": "codegen/arxml",
+      "config": "codegen/arxml/config/codegen_config.json"
+    },
     "java": {
       "name": "Java",
       "status": "todo",

@@ -3,7 +3,7 @@ version: 1.6.1
 author: wangjin0115
 company: CDC_7255
 name: answer-hub
-description: 统一应答调度器，按用户可观察意图路由，回答形态按 Karpathy 四层输出阶梯取最低够用层；本工程一切 HTML 产出统一走本 skill 的 L3 层（report-page 融合版式）。盘问——Use when 用户丢出不完整的方案/想法/一句话需求就要求实施、点名 grill me/盘问我/问我吧、要求需求确认、或要求优化某个 prompt 再执行——进度条逐问消耗至 100%，装配完整提示词并立即执行。L1 受控语言文字——Use when 一句话能说清——按 ASD-STE100 简化技术英语 80% 纪律压缩作答。L2 图——Use when 一张图能说清（结构/关系/流转/时序/拓扑/甘特）——聊天内 mermaid 单图，不手写 SVG。L3 交互 HTML——Use when 回答会长、含对比/趋势/占比/流程/链路/状态、需多图交互、点名要 html/网页/可视化页面/dashboard——单文件 output.html：文字越少越好；能 mermaid 就 mermaid 渲染，能动态效果图就动态效果图，其次表格；代码变更/diff/MR 一律 GitLab MR Changes 视图（浅色、双列行号、增绿删红、hunk 头）；GitLab/JIRA 引用必须是可跳转链接；内容必须来自实际工程，禁止捏造。纯代码片段不走 HTML，直接 markdown 围栏 + 语言高亮。L4 讲解视频占位不实现，要视频时降层 L3。不用于闲聊问候、文档交付（markdown）。
+description: 统一应答调度器：按用户可观察意图路由，回答形态按 Karpathy 四层输出阶梯（L1 文字→L2 图→L3 交互HTML→L4 视频占位）取最低够用层；本工程 HTML 产出统一走 L3。触发：盘问/grill me/需求确认/优化 prompt，或需 HTML/网页/可视化/dashboard 的回答。详细规则见 SKILL 正文与 references/。
 ---
 
 # answer-hub · 统一应答调度器

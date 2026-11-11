@@ -270,7 +270,18 @@ def validate_only_mode():
 
 
 def create_mode():
-    """自动模式：创建JIRA任务，更新jira_key（不标记completed）"""
+    """自动模式：创建JIRA任务，更新jira_key（不标记completed）
+
+    规范门禁（execute 全流程统一硬门禁）：与 generate_report 共用同一道校验，
+    norm_analysis.json 缺失/损坏/建议未全部人工确认 → 直接退出，
+    一条 JIRA 都不创建，整个 execute 就此中止。
+    """
+    from generate_report import load_norm_analysis
+    norm = load_norm_analysis(jira_paths.get_output_dir())
+    n = len(norm['suggestions'])
+    print(f"[OK] 规范分析门禁通过：{n} 条建议均已人工确认"
+          + ("（无违规 ✓）" if not n else ""))
+
     config = load_json(CONFIG_FILE)
     config = resolve_placeholders(config, config['auth']['username'])
     tasks_data = load_json(TASKS_FILE)

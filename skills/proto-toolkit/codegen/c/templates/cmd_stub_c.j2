@@ -4,6 +4,7 @@
  * @copyright {{ header.copyright }}
  *
  * 源: {{ spreadsheet }} rev.{{ revision }}
+ * 命名: 类型名直接用表内名（Xxx_t / Xxx_E），函数名带 {{ header.helper_prefix }} 前缀。
  * 集成: 参考实现落点。真实现接入后，用 <名>_Fun 同名函数替换桩体即可（表不用改）。
  ************************************************************************************************/
 #include "{{ files.types_h }}"
@@ -11,7 +12,7 @@
 
 {% for s in structs if not s.is_raw %}
 /* {{ s.name }}: {{ s.desc }} 大端 Pack（返回写入字节数） */
-uint16_t {{ s.c_name }}_Pack(const {{ s.c_name }} *p, uint8_t *buf)
+uint16_t {{ s.fname }}_Pack(const {{ s.c_name }} *p, uint8_t *buf)
 {
     uint16_t i = 0u;
 {% for m in s.members %}
@@ -32,7 +33,7 @@ uint16_t {{ s.c_name }}_Pack(const {{ s.c_name }} *p, uint8_t *buf)
     return i;
 }
 
-void {{ s.c_name }}_Unpack({{ s.c_name }} *p, const uint8_t *buf)
+void {{ s.fname }}_Unpack({{ s.c_name }} *p, const uint8_t *buf)
 {
     uint16_t i = 0u;
 {% for m in s.members %}

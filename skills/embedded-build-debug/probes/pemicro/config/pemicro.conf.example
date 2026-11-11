@@ -1,0 +1,23 @@
+# PEmicro 探针配置（模板）
+# 复制为 config/pemicro.conf 生效（不入库）；通常全部留空走自动探测即可
+
+# S32DS 安装根目录（留空则自动扫 C:/NXP/S32DS.* 与 D:/NXP/S32DS.*）
+S32DS_ROOT=""
+
+# pegdbserver_console.exe 完整路径（留空则取 S32DS_ROOT 下
+# S32DS/eclipse/plugins/com.pemicro.debug.gdbjtag.pne*/win32/pegdbserver_console.exe）
+PEGDBSERVER=""
+
+# arm-none-eabi-gdb.exe 完整路径（留空则取 S32DS_ROOT 下
+# S32DS/build_tools/gcc_v*/gcc-*/bin/arm-none-eabi-gdb.exe）
+GDB=""
+
+# PEmicro 设备名（见 PEmicro 设备支持列表; S32K312 默认如下。
+# S32DS launch 里的 NXP_S32K3xx_S32K312-SECUREDEBUG 是调试用变体，烧录用基础名即可）
+DEVICE="NXP_S32K312"
+
+# 探针接口: usbmultilink(Multilink) | opensda | usbemulator | netshiel
+INTERFACE="usbmultilink"
+
+# GDB Server 本地端口
+PORT="7224"

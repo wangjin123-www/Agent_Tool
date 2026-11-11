@@ -13,7 +13,8 @@
     "copyright": "Copyright (c) 2026, cviauto.com. All rights reserved.",
     "author": "proto-toolkit",
     "cmd_enum_prefix": "PROTO_CMD_",
-    "struct_prefix": "Proto_",
+    "struct_prefix": "",
+    "helper_prefix": "Proto_",
     "handler_suffix": "_Fun",
     "include_files": [
       "..\\..\\..\\..\\..\\CVI_McuPlatform\\L6_Public\\Proj_Includes.h"

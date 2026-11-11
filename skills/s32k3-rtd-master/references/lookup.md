@@ -26,7 +26,8 @@
 | Flash/NVM | `c40` / `fls` / `fee` | 4 个工程 + flash.md |
 | eMIOS/PWM | `emios` | 2 个工程 + emios.md |
 | SPI | `spi` | 4 个工程 + spi.md |
-| 中断/ICU/PIT/STM/OSIF | `pit` 或 `osif` 或 `intctrl` | timing.md |
+| EIRQ / SIUL2 外部引脚中断 | `eirq` 或 `siul2` 或 `siul2_icu` | 无独立训练工程；**siul2-eirq.md**（本工程实测指南） |
+| 中断/ICU/PIT/STM/OSIF | `pit` 或 `osif` 或 `intctrl` | timing.md（eMIOS ICU 见 emios.md） |
 
 ## 常见异常与处置
 

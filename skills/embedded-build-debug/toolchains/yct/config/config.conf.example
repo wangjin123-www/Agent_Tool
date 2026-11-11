@@ -1,0 +1,16 @@
+# YCT 工具链配置（模板）
+# 正常情况不用手填：跑 `yct_build.py init --project <工程根>` 自动探测生成 config.conf（不入库）
+# 所有工具的统一来源：云途官网 www.ytmicro.com -> 产品 -> YTM32工具链 -> YCT 配置工具
+#   （YCT 安装时终端弹窗一键部署 CMake / arm-none-eabi-gcc / Ninja 并写 PATH；SDK 在 YCT 内按芯片下载）
+
+# 工具路径
+CMAKE="D:/software/bin/cmake.exe"
+NINJA="C:/Users/<用户名>/AppData/Roaming/yt_config_tool/ninja-win/ninja.exe"
+GCC_DIR="C:/Users/<用户名>/AppData/Roaming/yt_config_tool/gcc-arm-none-eabi-10.3-2021.10/bin"
+SDK_DIR="C:/Users/<用户名>/AppData/Roaming/yt_config_tool/sdk/YTM32B1MD2_1_4_1"
+
+# 目标工程（YCT 生成的 CMake 工程根，含 CMakeLists.txt / project.yct）
+PROJECT_DIR="D:/wnagjin/Compay_Project/yadea/yadea_8srceen/yadea_8screen_APP"
+
+# 目标 CPU 内核（YTM32B1MD2 = Cortex-M33）
+ARM_CPU="cortex-m33"

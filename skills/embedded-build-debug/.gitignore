@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+# 各后端/探针的本地配置(init_env / init 生成, 不入库; 只提交 *.conf.example)
+**/config/config.conf
+

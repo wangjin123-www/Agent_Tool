@@ -223,18 +223,19 @@ def write_merge_request(title, desc):
     return out
 
 
-def _read_git_file(*parts):
-    """直接读 .git 下文件（git 子进程偶发失败时的兜底），要求 cwd=仓库根"""
-    p = Path('.git').joinpath(*parts)
+def _read_git_file(*parts, root=None):
+    """直接读 <root>/.git 下文件（git 子进程偶发失败时的兜底）。"""
+    base = Path(root) if root else Path('.')
+    p = base.joinpath('.git', *parts)
     try:
         return p.read_text(encoding='utf-8', errors='replace').strip()
     except Exception:
         return ''
 
 
-def _remote_url_from_config():
-    """解析 .git/config 中 [remote "origin"] 的 url"""
-    text = _read_git_file('config')
+def _remote_url_from_config(root=None):
+    """解析 <root>/.git/config 中 [remote "origin"] 的 url"""
+    text = _read_git_file('config', root=root)
     if not text:
         return ''
     in_origin = False
@@ -264,29 +265,35 @@ def _web_url_from_remote(out):
     return ''
 
 
-def gitlab_web_url():
-    """从 git remote origin 推导 GitLab 网页地址；git 子进程失败时读 .git/config 兜底"""
+def gitlab_web_url(root=None):
+    """从 <root> 的 git remote origin 推导 GitLab 网页地址。
+
+    root 必须是业务工程根；不能依赖当前 cwd——从 .claude/skills/jira-commit
+    运行时，git 会命中 .claude 自己的仓库（Agent_Tool），导致 MR 链接指错项目。
+    """
     out = ''
     try:
         out = subprocess.run(['git', 'remote', 'get-url', 'origin'],
-                             capture_output=True, text=True, timeout=10).stdout.strip()
+                             capture_output=True, text=True, timeout=10,
+                             cwd=root or None).stdout.strip()
     except Exception:
         pass
     if not out:
-        out = _remote_url_from_config()
+        out = _remote_url_from_config(root)
     return _web_url_from_remote(out)
 
 
-def current_branch():
-    """当前分支；git 子进程失败时读 .git/HEAD 兜底（detached HEAD 返回 ''）"""
+def current_branch(root=None):
+    """<root> 当前分支；git 子进程失败时读 .git/HEAD 兜底（detached HEAD 返回 ''）"""
     try:
         branch = subprocess.run(['git', 'branch', '--show-current'],
-                                capture_output=True, text=True, timeout=10).stdout.strip()
+                                capture_output=True, text=True, timeout=10,
+                                cwd=root or None).stdout.strip()
         if branch:
             return branch
     except Exception:
         pass
-    head = _read_git_file('HEAD')
+    head = _read_git_file('HEAD', root=root)
     if head.startswith('ref: refs/heads/'):
         return head[len('ref: refs/heads/'):].strip()
     return ''
@@ -469,8 +476,8 @@ git add &lt;本次变更的全部文件或目录&gt;
 # 2. 提交（所有任务合并成一次 commit，不要分开提交；内容改过请先「下载」替换文件）
 git commit -F "commit_preview.md"
 
-# 3. 先同步 main（避免推送冲突）
-git pull origin main
+# 3. 先同步 __MR_TARGET__（避免推送冲突）
+git pull origin __MR_TARGET__
 
 # 4. 推送当前分支
 git push -u origin __BRANCH__</code></pre>
@@ -485,9 +492,9 @@ __JIRA_HTML__
 
 <div class="card">
   <h2><span class="num">4</span>在 GitLab 提 merge request</h2>
-  <p>推送完成后，从当前分支 <b>__BRANCH__</b> 向 main 提交 MR。标题与描述已按本次 commit 内容浓缩，
+  <p>推送完成后，从当前分支 <b>__BRANCH__</b> 向 <b>__MR_TARGET__</b> 提交 MR。标题与描述已按本次 commit 内容浓缩，
      可直接复制粘贴：</p>
-  <p><a class="btn" id="mrBtn" href="__MR_URL__" target="_blank">新建 Merge Request：__BRANCH__ → main</a></p>
+  <p><a class="btn" id="mrBtn" href="__MR_URL__" target="_blank">新建 Merge Request：__BRANCH__ → __MR_TARGET__</a></p>
   <div class="hint">MR 标题（点击复制）：</div>
   <pre id="mrTitle" style="cursor:pointer" onclick="copyEl('mrTitle', this)">__MR_TITLE_ESC__</pre>
   <div class="hint">MR 描述（点击复制）：</div>
@@ -699,7 +706,7 @@ def _label_chips(labels, esc):
     return ''.join(f'<span class="tag">{esc(l)}</span>' for l in labels)
 
 
-def write_html(combined, parsed, jira_links, web_url, branch, norm, mr, out_path):
+def write_html(combined, parsed, jira_links, web_url, branch, target_branch, norm, mr, out_path):
     esc = html_mod.escape
 
     if jira_links:
@@ -711,7 +718,9 @@ def write_html(combined, parsed, jira_links, web_url, branch, norm, mr, out_path
     else:
         jira_html = '<p>本次未创建 JIRA 任务（jira_key 为空）。</p>'
 
-    mr_url = f"{web_url}/-/merge_requests/new?merge_request%5Bsource_branch%5D={esc(branch)}" if web_url else '#'
+    mr_url = (f"{web_url}/-/merge_requests/new?"
+              f"merge_request%5Bsource_branch%5D={esc(branch)}"
+              f"&merge_request%5Btarget_branch%5D={esc(target_branch)}") if web_url else '#'
     # tag：commit 此刻尚未创建（SHA 未知），链接到"新建 tag"表单并预填当前分支；
     # 用户 push 后分支顶端即本次合并 commit，从该表单建 tag 正好落在正确 commit 上
     tags_url = f"{web_url}/-/tags/new?ref={esc(branch)}" if web_url else '#'
@@ -734,6 +743,7 @@ def write_html(combined, parsed, jira_links, web_url, branch, norm, mr, out_path
     html = (HTML_TEMPLATE
             .replace('__NOW__', esc(_now()))
             .replace('__BRANCH__', esc(branch))
+            .replace('__MR_TARGET__', esc(target_branch))
             .replace('__NTASKS__', str(len(parsed)))
             .replace('__COMBINED_ESC__', esc(combined))
             .replace('__COMBINED_JSON__', combined_json)
@@ -788,8 +798,19 @@ def main():
     # 入口硬校验：规范分析产物不合法 → 直接退出，HTML 都不生成（先重跑 analyze）
     norm = load_norm_analysis(out_dir)
     config = load_config()
-    web_url = gitlab_web_url()
-    branch = current_branch()
+    project_root = jira_paths.get_project_root()
+    if project_root:
+        print(f"[INFO] 项目根: {project_root}")
+    else:
+        print("[WARN] 未解析到项目根，git 查询回退到当前目录"
+              "（可能命中 .claude 仓库）；请设置 JIRA_COMMIT_PROJECT_ROOT",
+              file=sys.stderr)
+    web_url = gitlab_web_url(project_root)
+    branch = current_branch(project_root)
+    target_branch = (config.get('mr_target_branch') or 'main').strip() or 'main'
+    if web_url and ('Agent_Tool' in web_url or '/.claude' in web_url):
+        print(f"[WARN] Git remote 解析到技能仓库自身: {web_url}；"
+              f"请把 JIRA_COMMIT_PROJECT_ROOT 指向业务工程根", file=sys.stderr)
     if not branch or not web_url:
         print(f"[WARN] GitLab 信息获取不完整 branch={branch!r} web_url={web_url!r}："
               f"报告 MR/tag 按钮将是空链接；请在工程仓库根目录重跑本脚本重新生成",
@@ -810,7 +831,7 @@ def main():
     mr_path = write_merge_request(mr_title, mr_desc)
     html_path = os.path.join(out_dir, 'commit_report.html')
     # 规范分析结果只读内嵌 HTML（入口已校验全 checked；无服务，file:// 双击打开）
-    write_html(combined, parsed, jira_links, web_url, branch, norm,
+    write_html(combined, parsed, jira_links, web_url, branch, target_branch, norm,
                (mr_title, mr_desc), html_path)
 
     err_n = sum(1 for s in norm['suggestions'] if (s.get('severity') or 'info') == 'error')
@@ -825,7 +846,7 @@ def main():
     print(combined)
     print()
     print("=== 请手动执行（commit_report.html 有完整指引） ===")
-    print("  1. 手动提交和 push commit（git pull origin main 后再 push）")
+    print(f"  1. 手动提交和 push commit（git pull origin {target_branch} 后再 push）")
     print("  2. 手动把 JIRA 任务打到「待验证」")
     print("  3. 在 GitLab 提 merge request")
     print("  4. 一键复制分析结果 → 打开本分支提交列表 → 点顶端 commit 粘贴为评论")
@@ -834,7 +855,7 @@ def main():
     # 飞书邮件（execute 完成提示，lark-cli；scene=execute 附 JIRA 链接与清单）
     msg = ("jira-commit 执行完成 ✅\n\n"
            "规范分析建议已全部人工确认 ✓\n\n"
-           "1. 手动提交和 push commit（先 pull main 再 push）\n"
+           f"1. 手动提交和 push commit（先 pull {target_branch} 再 push）\n"
            "2. 手动把 JIRA 任务打到「待验证」\n"
            "3. 在 GitLab 提 merge\n"
            "4. 报告页一键复制分析结果贴为 commit 评论\n"

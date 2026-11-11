@@ -68,6 +68,11 @@ argument-hint: claude-md|filter|doc-audit|memory|all
 **config.conf 其余配置段**(脚本读取,均带默认值,详见文件内注释):
 - `[map]`(mdmap.py scan/plan 读取):`mode`(auto=算法聚类/strict=只认 include)、`include`(强制纳入,格式 `前缀:always|auto`)、`exclude`(永不建模块,优先级高于 include)、`doc_budget`(纯文档模块行数预算)。**哪些目录建/不建 CLAUDE.md 由本段决定,不得由 AI 自行判定**。
 - `[doc_filter]`(docfilter.py 读取):`file`(规则文件,默认 doc-filter.txt)、`scan_dirs`(扫描的文档目录)、`auto_analyze`(是否自动分析回写)、`writeback`(是否允许回写)。排除规则双通道:手填 `config/doc-filter.txt` 或 filter 模式分析后回写,见 `references/file-filter-workflow.md`。
+- `[doc_audit]`(doc-audit 模式读取,2026-11-06 增)——三张授权清单,**优先级高于 doc-audit 规则里的所有图形式要求**:
+  - `no_claude_md` = 不生成/不维护 CLAUDE.md 的目录或文件前缀;mdmap.py 会并入 `[map].exclude` 一起生效。
+  - `no_modify_docs` = 完全不许改的 doc;命中整份跳过(不浓缩/不补章节/不改版本行),报告记「按配置跳过」。
+  - `no_canvas_docs` = 允许改但**禁止 Mermaid→Canvas**、禁止流程图/架构图/状态机图转 Canvas;命中后所有图保持 Mermaid 原样。
+  - 路径相对工程根、正斜杠、大小写不敏感、支持 `*` 通配;目录前缀命中即整目录生效;留空 = 无限制。详见 `references/doc-audit-workflow.md` §0。
 
 **发送**(统一走脚本,**禁止直接 bash 调 lark-cli**):
 
@@ -103,8 +108,11 @@ python <本skill目录>/scripts/send_mail.py \
 用户说「给这个工程建 CLAUDE.md / 代码库地图」「代码更新了,同步一下文档」等即调用。脚本统一:
 
 ```
-python <本skill目录>/scripts/mdmap.py <detect|scan|plan|brief|detect-changes|lint|report|install> ...
+python <本skill目录>/scripts/mdmap.py <detect|scan|plan|brief|detect-changes|lint|report|install|doc-audit-config> ...
+python <本skill目录>/scripts/canvas_layout.py <check|layout|colorize> <file.canvas> [--out ...]
 ```
+
+doc-audit 生成/修改 `.canvas` 后必须跑 `canvas_layout.py check`,输出 `OK` 才允许保存;流程图/状态机可先 `layout` 初排,固定色带式架构图只用 `check`。规则见 `references/canvas-layout.md`。
 
 两条流程的完整步骤见 `references/init-workflow.md`(P0-P5)与 `references/update-workflow.md`(U0-U4);brief/回执模板见 `references/brief-and-report.md`;评分见 `references/scoring-digest.md`。本文件只写主控逻辑与硬规则。
 

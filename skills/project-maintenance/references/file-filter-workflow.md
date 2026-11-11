@@ -55,7 +55,8 @@ du -sh */ 2>/dev/null | sort -rh | head -10
 - 严格按 §5.3 决策矩阵选择机制(.claudeignore / deny Read / deny Write)。
 - 第三方库源码忽略实现(.c/.py/.js),但必须保留接口(.h/类型定义),如 nanopb。
 - 所有层级 CLAUDE.md 必须可读,通配符不能误伤(**用 `!**/CLAUDE.md` 兜底**)。
-- 链接脚本、工程主文件(`*.uvprojx`/`.cproject` 等)只 deny Write,不 deny Read。
+- **构建工程主文件必须可编辑**:`.cproject`、`*.uvprojx`、`test_prj.mex` 等构建/配置输入源**不加入 `Edit/Write` deny**(用户 2026-11-05 裁定);否则无法维护工程配置、无法把 `board/`、`generate/` 回写 mex,重新生成即回退。
+- deny Write 只用于链接脚本、启动代码、密钥/凭据/本地状态等真正不该改的项。
 - 含密钥/凭据/本地路径的文件必须用 `permissions.deny`,不能只用 `.claudeignore`。
 - 业务文档(.md)必须可读,只忽略二进制文档(.pdf/.xlsx/.png)。
 - 锁文件不要忽略。

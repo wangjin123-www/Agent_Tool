@@ -1,0 +1,62 @@
+/*************************************************************************************************
+ * @file    {{ files.cmd_stub_c }}
+ * @brief   7255 MCU&SOC 协议命令处理桩 + Pack/Unpack 实现（由 proto-toolkit 生成，禁止手改）
+ * @copyright {{ header.copyright }}
+ *
+ * 源: {{ spreadsheet }} rev.{{ revision }}
+ * 集成: 参考实现落点。真实现接入后，用 <名>_Fun 同名函数替换桩体即可（表不用改）。
+ ************************************************************************************************/
+#include "{{ files.types_h }}"
+#include <string.h>
+
+{% for s in structs if not s.is_raw %}
+/* {{ s.name }}: {{ s.desc }} 大端 Pack（返回写入字节数） */
+uint16_t {{ s.c_name }}_Pack(const {{ s.c_name }} *p, uint8_t *buf)
+{
+    uint16_t i = 0u;
+{% for m in s.members %}
+{% if m.open %}
+    /* {{ m.name }}: 开放尾由调用方追加，此处不写 */
+{% elif m.ctype == 'uint8_t' %}
+    buf[i] = p->{{ m.name }}; i++;
+{% elif m.ctype == 'uint16_t' %}
+    buf[i] = (uint8_t)(p->{{ m.name }} >> 8); i++;
+    buf[i] = (uint8_t)(p->{{ m.name }}); i++;
+{% elif m.ctype == 'uint32_t' %}
+    buf[i] = (uint8_t)(p->{{ m.name }} >> 24); i++;
+    buf[i] = (uint8_t)(p->{{ m.name }} >> 16); i++;
+    buf[i] = (uint8_t)(p->{{ m.name }} >> 8); i++;
+    buf[i] = (uint8_t)(p->{{ m.name }}); i++;
+{% endif %}
+{% endfor %}
+    return i;
+}
+
+void {{ s.c_name }}_Unpack({{ s.c_name }} *p, const uint8_t *buf)
+{
+    uint16_t i = 0u;
+{% for m in s.members %}
+{% if m.open %}
+    /* {{ m.name }}: 开放尾由调用方按帧长拷贝 */
+{% elif m.ctype == 'uint8_t' %}
+    p->{{ m.name }} = buf[i]; i++;
+{% elif m.ctype == 'uint16_t' %}
+    p->{{ m.name }} = (uint16_t)(((uint16_t)buf[i] << 8) | buf[i + 1u]); i += 2u;
+{% elif m.ctype == 'uint32_t' %}
+    p->{{ m.name }} = ((uint32_t)buf[i] << 24) | ((uint32_t)buf[i + 1u] << 16) \
+                    | ((uint32_t)buf[i + 2u] << 8) | buf[i + 3u]; i += 4u;
+{% endif %}
+{% endfor %}
+}
+
+{% endfor %}
+{% for e in rx + tx %}
+/* {{ e.id_hex }} {{ e.name }} {% for p in e.params %}{{ p.name }}:{{ p.type }} {{ p.io }} {% endfor %}*/
+void {{ e.handler }}(uint8_t channel, const uint8_t *pdata, uint16_t len)
+{
+    (void)channel; (void)pdata; (void)len;    /* TODO: 接入真实现 */
+}
+{% endfor %}
+/*************************************************************************************************
+ * End of File
+ ************************************************************************************************/

@@ -30,6 +30,7 @@ cp config/jira_commit_config_example.json config/jira_commit_config.json
   "jira_project": "AERDM", # 项目代号（如AERDM）
 
   "default_pull_branch": "origin/main", # 拉取分支
+  "mr_target_branch": "main", # MR 目标分支（master/dev 按项目改）
 
 
   "auth": {

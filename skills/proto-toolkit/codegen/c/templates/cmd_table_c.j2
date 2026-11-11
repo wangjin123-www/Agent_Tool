@@ -22,10 +22,10 @@ typedef struct
 {
     uint16_t cmd;
     void (*handler)(uint8_t channel, const uint8_t *pdata, uint16_t len);
-}{{ header.struct_prefix }}CmdEntry_t;
+}{{ header.helper_prefix }}CmdEntry_t;
 
 /* RX：SOC → MCU 下发/请求 */
-const {{ header.struct_prefix }}CmdEntry_t {{ header.struct_prefix }}RxCmdTable[] =
+const {{ header.helper_prefix }}CmdEntry_t {{ header.helper_prefix }}RxCmdTable[] =
 {
 {% for e in rx %}
     { {{ e.id_hex }}u, {{ e.handler }} },      /* {{ e.name }} */
@@ -34,7 +34,7 @@ const {{ header.struct_prefix }}CmdEntry_t {{ header.struct_prefix }}RxCmdTable[
 };
 
 /* TX：MCU → SOC 上报/应答 */
-const {{ header.struct_prefix }}CmdEntry_t {{ header.struct_prefix }}TxCmdTable[] =
+const {{ header.helper_prefix }}CmdEntry_t {{ header.helper_prefix }}TxCmdTable[] =
 {
 {% for e in tx %}
     { {{ e.id_hex }}u, {{ e.handler }} },      /* {{ e.name }} */

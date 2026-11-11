@@ -9,7 +9,7 @@
 
 ### 步骤 0: 前置门禁（创建 JIRA 之前，规范建议必须全部人工确认）
 ```bash
-cd "$SKILL_DIR" && python script/generate_report.py --check-norm
+python "$SKILL_DIR/script/generate_report.py" --check-norm
 ```
 - 只校验不产出：逐条检查 `$OUTPUT/norm_analysis.json`，任一建议 `status != "checked"`（结构不合法同理）
   → `[ERROR]` 退出，**不创建 JIRA、不生成任何文件**
@@ -24,10 +24,11 @@ cd "$SKILL_DIR" && python script/generate_report.py --check-norm
 
 ### 步骤 2: 创建 JIRA 任务（用户选择"是"）
 ```bash
-cd "$SKILL_DIR" && python script/create_jira_tasks.py
+python "$SKILL_DIR/script/create_jira_tasks.py"
 ```
 
 **行为**:
+- **规范门禁（入口硬校验）**: norm_analysis.json 缺失/损坏/建议未全部人工确认 → 直接 `[ERROR]` 退出，**一条 JIRA 都不创建**（与 generate_report 共用同一道校验）
 - **跳过已有有效 JIRA key 的任务**（不重复创建），但**把本地任务内容追加到该 JIRA 描述后面**（GET 现描述 → 已含同样内容则幂等跳过 → 否则 PUT 追加；失败仅 WARN 不中断）
 - 只为空或无效 key 的任务创建/查找 JIRA
 - **新建**的工单带上 `tasks[].labels`（来自 analyze 的标签选取）；**已有 jira_key 的工单不补打标签**
@@ -43,9 +44,12 @@ cd "$SKILL_DIR" && python script/create_jira_tasks.py
 
 ### 步骤 3: 生成合并 commit + HTML 报告（入口硬门禁 + 只读内嵌） + 邮件通知
 ```bash
-cd "$SKILL_DIR" && python script/generate_report.py
+python "$SKILL_DIR/script/generate_report.py"
 ```
 （入口门禁与步骤 0 同源，这里再校验一次——防步骤 1/2 期间 json 被改动）
+
+> 报告里的 MR 链接固定按 `JIRA_COMMIT_PROJECT_ROOT`（业务工程根）的 remote/branch 生成，
+> 不再受当前 cwd 影响；目标分支取 `config/jira_commit_config.json` 的 `mr_target_branch`（默认 `main`）。
 
 **行为**（读取 tasks.json，无任何 git 操作）:
 1. **入口硬门禁**（两道，任一不过直接 `[ERROR]` 退出，**HTML 都不生成**）：

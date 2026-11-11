@@ -4,8 +4,10 @@
  * @copyright {{ header.copyright }}
  *
  * 源: {{ spreadsheet }} rev.{{ revision }}
+ * 命名: 类型名直接用表内名（结构体 Xxx_t / 枚举 Xxx_E），成员名小驼峰；
+ *       Pack/Unpack 与位域访问器带 {{ header.helper_prefix }} 前缀，避免与业务符号冲突。
  * 约定: 大端（BYTE0 先发，字节内 bit7 先发）；bit 成员不使用 C 位域，
- *       通过 {{ header.struct_prefix }}<Struct>_Get/Set<X>() 掩码访问，保证跨编译器一致。
+ *       通过 {{ header.helper_prefix }}<Struct>_Get/Set<X>() 掩码访问，保证跨编译器一致。
  ************************************************************************************************/
 #ifndef {{ guard }}
 #define {{ guard }}
@@ -25,19 +27,19 @@ typedef struct
 {% for m in s.members %}
 {% if m.is_bit %}
 /* {{ m.name }}: {{ s.name }} byte {{ m.byte_start }}B bit {{ m.bit }} (mask {{ m.mask }}) - {{ m.desc }} */
-#define {{ s.c_name }}_{{ m.name }}_MASK       ({{ m.mask }}u)
-#define {{ s.c_name }}_{{ m.name }}_SHIFT      ({{ m.shift }}u)
-static inline uint8_t {{ s.c_name }}_Get{{ m.name }}(const {{ s.c_name }} *p)
+#define {{ s.fname }}_{{ m.name }}_MASK       ({{ m.mask }}u)
+#define {{ s.fname }}_{{ m.name }}_SHIFT      ({{ m.shift }}u)
+static inline uint8_t {{ s.fname }}_Get{{ m.name }}(const {{ s.c_name }} *p)
 {
-    return (uint8_t)((p->Data[{{ m.byte_start }}u] & {{ s.c_name }}_{{ m.name }}_MASK)
-                     >> {{ s.c_name }}_{{ m.name }}_SHIFT);
+    return (uint8_t)((p->Data[{{ m.byte_start }}u] & {{ s.fname }}_{{ m.name }}_MASK)
+                     >> {{ s.fname }}_{{ m.name }}_SHIFT);
 }
-static inline void {{ s.c_name }}_Set{{ m.name }}({{ s.c_name }} *p, uint8_t v)
+static inline void {{ s.fname }}_Set{{ m.name }}({{ s.c_name }} *p, uint8_t v)
 {
     p->Data[{{ m.byte_start }}u] = (uint8_t)((p->Data[{{ m.byte_start }}u]
-                                              & (uint8_t)(~{{ s.c_name }}_{{ m.name }}_MASK))
-                                             | (uint8_t)((v << {{ s.c_name }}_{{ m.name }}_SHIFT)
-                                                         & {{ s.c_name }}_{{ m.name }}_MASK));
+                                              & (uint8_t)(~{{ s.fname }}_{{ m.name }}_MASK))
+                                             | (uint8_t)((v << {{ s.fname }}_{{ m.name }}_SHIFT)
+                                                         & {{ s.fname }}_{{ m.name }}_MASK));
 }
 {% endif %}
 {% endfor %}
@@ -45,13 +47,16 @@ static inline void {{ s.c_name }}_Set{{ m.name }}({{ s.c_name }} *p, uint8_t v)
 typedef struct
 {
 {% for m in s.members %}
-    {% if m.open %}uint8_t {{ m.name }}[1u];      /* 开放尾 {{ m.byte_start }}B..N（长度随帧） - {{ m.desc }} */{% else %}{{ m.ctype }} {{ m.name }};       /* {{ m.byte_start }}B{% if m.byte_end != m.byte_start %}-{{ m.byte_end }}B{% endif %} - {{ m.desc }} */{% endif %}
-
+{% if m.open %}
+    uint8_t {{ m.name }}[1u];      /* 开放尾 {{ m.byte_start }}B..N（长度随帧） - {{ m.desc }} */
+{% else %}
+    {{ m.ctype }} {{ m.name }};       /* {{ m.byte_start }}B{% if m.byte_end != m.byte_start %}-{{ m.byte_end }}B{% endif %} - {{ m.desc }} */
+{% endif %}
 {% endfor %}
 }{{ s.c_name }};
 
-uint16_t {{ s.c_name }}_Pack(const {{ s.c_name }} *p, uint8_t *buf);
-void {{ s.c_name }}_Unpack({{ s.c_name }} *p, const uint8_t *buf);
+uint16_t {{ s.fname }}_Pack(const {{ s.c_name }} *p, uint8_t *buf);
+void {{ s.fname }}_Unpack({{ s.c_name }} *p, const uint8_t *buf);
 {% endif %}
 {% endfor %}
 /* ===== 命令处理函数原型（stub 由 {{ files.cmd_stub_c }} 生成） ===== */

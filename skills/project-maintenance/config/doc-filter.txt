@@ -6,9 +6,11 @@
 # ==== 自动生成区(docfilter.py 分析 scan_dirs 后重写,勿手改) ====
 # 二进制文档 → 排除(进上下文也是乱码)
 *.doc
+*.jpeg
 *.jpg
 *.pdf
 *.png
+*.xlsx
 # 例外:业务文档必须保留(见方法论 §7 误判第 4 条)
 !**/CLAUDE.md
 !**/*.md

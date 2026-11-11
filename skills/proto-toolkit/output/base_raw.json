@@ -1,0 +1,8999 @@
+{
+  "raw_version": "1.0.0",
+  "platform": "7255",
+  "source": {
+    "type": "bitable",
+    "url": "https://ycn2z3lx0867.feishu.cn/base/Mj3gbU3NqagG4WsPcQgc0YhSnac?table=tbl1YV1OxMxG3kLm",
+    "base_token": "Mj3gbU3NqagG4WsPcQgc0YhSnac"
+  },
+  "tables": {
+    "data_structure": "tblsDjXiMxUOPGCx",
+    "data_structure_item": "tblxbsN0Al9ad3o6",
+    "error_code": "tbl858ZfyLwPOMvj",
+    "service_interface": "tbl1YV1OxMxG3kLm"
+  },
+  "records": {
+    "data_structure": [
+      {
+        "record_id": "reczz28X6QYURIES",
+        "子项": [
+          {
+            "id": "reczz28X6uFB8MN2"
+          },
+          {
+            "id": "reczz28X6uFBAVLu"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYfCSQ"
+          }
+        ],
+        "描述": "车身信号状态（MD 18）",
+        "数据结构名": [
+          "VehicleSignalStatus_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYURQ6p",
+        "子项": [
+          {
+            "id": "reczz28X6uFB8pjU"
+          },
+          {
+            "id": "reczz28X6uFB8Zv7"
+          },
+          {
+            "id": "reczz28X6uFB6aSu"
+          },
+          {
+            "id": "reczz28X6uFB7jeO"
+          },
+          {
+            "id": "reczz28X6uFBAZuo"
+          },
+          {
+            "id": "reczz28X6uFB7Uvy"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYe4iE"
+          },
+          {
+            "id": "reczz28XVdvYfHiK"
+          },
+          {
+            "id": "reczz28XVdvYdiMP"
+          },
+          {
+            "id": "reczz28XVdvYeQXa"
+          },
+          {
+            "id": "reczz28XVdvYdEcc"
+          }
+        ],
+        "描述": "时间同步（0x0D 0x01/0x02、0x8D 0x02）",
+        "数据结构名": [
+          "DateTime_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUSMdE",
+        "子项": [
+          {
+            "id": "reczz28X6uFB8eHO"
+          },
+          {
+            "id": "reczz28X6uFB9r1Q"
+          },
+          {
+            "id": "reczz28X6uFB8oxc"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYf1bR"
+          }
+        ],
+        "描述": "版本查询回复载荷（0x8E01）",
+        "数据结构名": [
+          "VersionInfo_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUSPDH",
+        "子项": [
+          {
+            "id": "reczz28X6uFBATPC"
+          },
+          {
+            "id": "reczz28X6uFB8XMw"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeO0W"
+          }
+        ],
+        "描述": "SoC 睡眠/关机请求的响应（MD 4）",
+        "数据结构名": [
+          "PowerOffReqResult_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUSYi3",
+        "子项": [
+          {
+            "id": "reczz28X6uFB8nxp"
+          },
+          {
+            "id": "reczz28X6uFB7t8L"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeim5"
+          },
+          {
+            "id": "reczz28XVdvYdmvl"
+          }
+        ],
+        "描述": "STR 最大维持时长（MD 14）",
+        "数据结构名": [
+          "StrMaxDuration_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUSZfp",
+        "子项": [
+          {
+            "id": "reczz28X6uFB7h7Y"
+          },
+          {
+            "id": "reczz28X6uFB97Od"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYbpXs"
+          }
+        ],
+        "描述": "MCU 电源控制应答载荷（0x8113）",
+        "数据结构名": [
+          "McuPowerAck_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUSsBG",
+        "子项": [
+          {
+            "id": "reczz28X6uFBAGjh"
+          },
+          {
+            "id": "reczz28X6uFB7kKM"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYcZBh"
+          }
+        ],
+        "描述": "外设电源控制应答载荷（0x0112）",
+        "数据结构名": [
+          "PeripheralPowerAck_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUT8ph",
+        "子项": [
+          {
+            "id": "reczz28X6uFB3gdV"
+          },
+          {
+            "id": "reczz28X6uFB3AuA"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYe5qJ"
+          }
+        ],
+        "描述": "Autosar 网络管理模式与状态（0x810A）",
+        "数据结构名": [
+          "AutosarNmStatus_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUTCpO",
+        "子项": [
+          {
+            "id": "reczz28X6uFB6fJn"
+          },
+          {
+            "id": "reczz28X6uFBALXJ"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYd9ZM"
+          }
+        ],
+        "描述": "外设电源控制请求载荷（0x8112）",
+        "数据结构名": [
+          "PeripheralPowerReq_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUTc6T",
+        "子项": [
+          {
+            "id": "reczz28X6uFB70eC"
+          },
+          {
+            "id": "reczz28X6uFB9weh"
+          },
+          {
+            "id": "reczz28X6uFB7bL6"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeV5X"
+          }
+        ],
+        "描述": "升级文件信息（0x0C02）",
+        "数据结构名": [
+          "UpgradeFileInfo_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUU8AF",
+        "子项": [
+          {
+            "id": "reczz28X6uFB9PUh"
+          },
+          {
+            "id": "reczz28X6uFB98zV"
+          },
+          {
+            "id": "reczz28X6uFB6zga"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYcDua"
+          }
+        ],
+        "描述": "升级包数据（0x0C03）",
+        "数据结构名": [
+          "UpgradeDataPkg_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUUC7J",
+        "子项": [
+          {
+            "id": "reczz28X6uFB9uvi"
+          },
+          {
+            "id": "reczz28X6uFB7qxm"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYc8TW"
+          }
+        ],
+        "描述": "SoC 电源状态同步的响应（MD 10）",
+        "数据结构名": [
+          "PowerStateSyncResult_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUUN0g",
+        "子项": [
+          {
+            "id": "reczz28X6uFB9xnK"
+          },
+          {
+            "id": "reczz28X6uFB9FHQ"
+          },
+          {
+            "id": "reczz28X6uFBAMTk"
+          }
+        ],
+        "引用接口": [],
+        "描述": "外设工作状态（0x8D 0x04）",
+        "数据结构名": [
+          "PeripheralStatus_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUUPUi",
+        "子项": [
+          {
+            "id": "reczz28X6uFBATar"
+          },
+          {
+            "id": "reczz28X6uFB98ij"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYcTkN"
+          }
+        ],
+        "描述": "时区偏移信息（0x0115）",
+        "数据结构名": [
+          "TimeZoneInfo_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28X6QYUUTtL",
+        "子项": [
+          {
+            "id": "reczz28X6uFB7mTM"
+          },
+          {
+            "id": "reczz28X6uFBAYzK"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYbsSl"
+          }
+        ],
+        "描述": "MCU 电源控制请求载荷（0x0113）",
+        "数据结构名": [
+          "McuPowerReq_t"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "结构体"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsgAiu",
+        "子项": [
+          {
+            "id": "reczz28XSHmac2xd"
+          },
+          {
+            "id": "reczz28XSHmabhYL"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYdeGj"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "HeartbeatState_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsgp0E",
+        "子项": [
+          {
+            "id": "reczz28XSHmacxYJ"
+          },
+          {
+            "id": "reczz28XSHmadnap"
+          },
+          {
+            "id": "reczz28XSHmaaI78"
+          },
+          {
+            "id": "reczz28XSHmac9hw"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYbtYJ"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "VehicleAntiTheftSts_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsh4UI",
+        "子项": [
+          {
+            "id": "reczz28XSHmabKEJ"
+          },
+          {
+            "id": "reczz28XSHmab5fE"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYf5XC"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "MpuReqDataSync_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjshD6L",
+        "子项": [
+          {
+            "id": "reczz28XSHmabFKT"
+          },
+          {
+            "id": "reczz28XSHmacnRp"
+          },
+          {
+            "id": "reczz28XSHmac0Q5"
+          },
+          {
+            "id": "reczz28XSHmaeHCH"
+          },
+          {
+            "id": "reczz28XSHmaaw6e"
+          },
+          {
+            "id": "reczz28XSHmaba2O"
+          },
+          {
+            "id": "reczz28XSHmacMRJ"
+          },
+          {
+            "id": "reczz28XSHmacXEO"
+          },
+          {
+            "id": "reczz28XSHmacz91"
+          },
+          {
+            "id": "reczz28XSHmaaPBM"
+          },
+          {
+            "id": "reczz28XSHmabGkH"
+          }
+        ],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [
+          "PowerMgmtReq_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjshGTl",
+        "子项": [
+          {
+            "id": "reczz28XSHmacPqn"
+          },
+          {
+            "id": "reczz28XSHmaaAYW"
+          },
+          {
+            "id": "reczz28XSHmadaYe"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYbk0m"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "PowerReqCmd_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjshSHH",
+        "子项": [
+          {
+            "id": "reczz28XSHmadbd3"
+          },
+          {
+            "id": "reczz28XSHmadQBS"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeHO2"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "RemoteCtrlSt_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjshbVD",
+        "子项": [
+          {
+            "id": "reczz28XSHmadD4K"
+          },
+          {
+            "id": "reczz28XSHmaaa68"
+          },
+          {
+            "id": "reczz28XSHmac9FU"
+          },
+          {
+            "id": "reczz28XSHmabQur"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYe9Uh"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "HeartbeatStatus_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsheSB",
+        "子项": [
+          {
+            "id": "reczz28XSHmaaAR4"
+          },
+          {
+            "id": "reczz28XSHmaagHy"
+          },
+          {
+            "id": "reczz28XSHmadC6j"
+          },
+          {
+            "id": "reczz28XSHmabSCY"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYfZFi"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "HeartbeatSet_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsho2e",
+        "子项": [
+          {
+            "id": "reczz28XSHmaaREc"
+          },
+          {
+            "id": "reczz28XSHmaaBFW"
+          },
+          {
+            "id": "reczz28XSHmaaabG"
+          },
+          {
+            "id": "reczz28XSHmacfPx"
+          }
+        ],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [
+          "StrDebug_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsi1zM",
+        "子项": [
+          {
+            "id": "reczz28XSHmaayTa"
+          },
+          {
+            "id": "reczz28XSHmadlfi"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeWSx"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "StrState_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsi7s5",
+        "子项": [
+          {
+            "id": "reczz28XSHmadMuN"
+          },
+          {
+            "id": "reczz28XSHmaaBvh"
+          },
+          {
+            "id": "reczz28XSHmadw9H"
+          },
+          {
+            "id": "reczz28XSHmabiCm"
+          }
+        ],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [
+          "ResetType_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsiACh",
+        "子项": [
+          {
+            "id": "reczz28XSHmabCGW"
+          },
+          {
+            "id": "reczz28XSHmabVgD"
+          },
+          {
+            "id": "reczz28XSHmabH8C"
+          },
+          {
+            "id": "reczz28XSHmabbgP"
+          },
+          {
+            "id": "reczz28XSHmaaHUg"
+          },
+          {
+            "id": "reczz28XSHmabbFj"
+          },
+          {
+            "id": "reczz28XSHmaaTc2"
+          },
+          {
+            "id": "reczz28XSHmadiMX"
+          },
+          {
+            "id": "reczz28XSHmaaURr"
+          },
+          {
+            "id": "reczz28XSHmae9Ay"
+          },
+          {
+            "id": "reczz28XSHmadHQF"
+          },
+          {
+            "id": "reczz28XSHmacgHK"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYf1G2"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "IcPowerState_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsiEhw",
+        "子项": [
+          {
+            "id": "reczz28XSHmaaFNi"
+          },
+          {
+            "id": "reczz28XSHmaazmd"
+          },
+          {
+            "id": "reczz28XSHmabUbd"
+          },
+          {
+            "id": "reczz28XSHmadtLw"
+          }
+        ],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [
+          "AutosarNmMode_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsiY9w",
+        "子项": [
+          {
+            "id": "reczz28XSHmadMK4"
+          },
+          {
+            "id": "reczz28XSHmad74B"
+          },
+          {
+            "id": "reczz28XSHmacMiC"
+          },
+          {
+            "id": "reczz28XSHmaamHa"
+          },
+          {
+            "id": "reczz28XSHmaaD1x"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYccLu"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "VersionModule_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsikmz",
+        "子项": [
+          {
+            "id": "reczz28XSHmadFPO"
+          },
+          {
+            "id": "reczz28XSHmadhoH"
+          },
+          {
+            "id": "reczz28XSHmabXtd"
+          },
+          {
+            "id": "reczz28XSHmac1G8"
+          },
+          {
+            "id": "reczz28XSHmacdTN"
+          },
+          {
+            "id": "reczz28XSHmadEXL"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYejSo"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "VoltageStatus_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsikqu",
+        "子项": [
+          {
+            "id": "reczz28XSHmacUlU"
+          },
+          {
+            "id": "reczz28XSHmae1EI"
+          },
+          {
+            "id": "reczz28XSHmacpXC"
+          },
+          {
+            "id": "reczz28XSHmacTBQ"
+          },
+          {
+            "id": "reczz28XSHmacq7s"
+          },
+          {
+            "id": "reczz28XSHmac1aw"
+          },
+          {
+            "id": "reczz28XSHmadp6y"
+          },
+          {
+            "id": "reczz28XSHmadLOG"
+          },
+          {
+            "id": "reczz28XSHmaanB3"
+          },
+          {
+            "id": "reczz28XSHmaeJ6d"
+          },
+          {
+            "id": "reczz28XSHmadktA"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYcpvL"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "PowerMgmtStatus_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsjI4Z",
+        "子项": [
+          {
+            "id": "reczz28XSHmacXcq"
+          },
+          {
+            "id": "reczz28XSHmabPzW"
+          },
+          {
+            "id": "reczz28XSHmadAjR"
+          },
+          {
+            "id": "reczz28XSHmadaKK"
+          },
+          {
+            "id": "reczz28XSHmadacJ"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYc4ei"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "TemperatureStatus_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsjQcD",
+        "子项": [
+          {
+            "id": "reczz28XSHmaeFWz"
+          },
+          {
+            "id": "reczz28XSHmabW5z"
+          },
+          {
+            "id": "reczz28XSHmaeDLw"
+          },
+          {
+            "id": "reczz28XSHmacbvj"
+          },
+          {
+            "id": "reczz28XSHmadLxx"
+          },
+          {
+            "id": "reczz28XSHmabl4N"
+          },
+          {
+            "id": "reczz28XSHmacXHq"
+          },
+          {
+            "id": "reczz28XSHmaax7j"
+          },
+          {
+            "id": "reczz28XSHmabGK7"
+          }
+        ],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [
+          "AutosarNmState_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsjQt1",
+        "子项": [
+          {
+            "id": "reczz28XSHmaaY8A"
+          },
+          {
+            "id": "reczz28XSHmadqR5"
+          },
+          {
+            "id": "reczz28XSHmac9rL"
+          },
+          {
+            "id": "reczz28XSHmadAzy"
+          },
+          {
+            "id": "reczz28XSHmadbiF"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeM3Y"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "OtaReqSts_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsjZaP",
+        "子项": [
+          {
+            "id": "reczz28XSHmae5pj"
+          },
+          {
+            "id": "reczz28XSHmabkM7"
+          },
+          {
+            "id": "reczz28XSHmabdS6"
+          },
+          {
+            "id": "reczz28XSHmabLLY"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYeVPW"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "AccStatus_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsji9I",
+        "子项": [
+          {
+            "id": "reczz28XSHmacYJG"
+          },
+          {
+            "id": "reczz28XSHmacygj"
+          },
+          {
+            "id": "reczz28XSHmacjHf"
+          },
+          {
+            "id": "reczz28XSHmabGGM"
+          },
+          {
+            "id": "reczz28XSHmad1pk"
+          },
+          {
+            "id": "reczz28XSHmaeCJO"
+          },
+          {
+            "id": "reczz28XSHmacZY9"
+          },
+          {
+            "id": "reczz28XSHmaaiof"
+          },
+          {
+            "id": "reczz28XSHmadU1S"
+          },
+          {
+            "id": "reczz28XSHmacQ2n"
+          },
+          {
+            "id": "reczz28XSHmacWlo"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYfSka"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "OtaUpgradeSts_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjsjl8d",
+        "子项": [
+          {
+            "id": "reczz28XSHmabkaU"
+          },
+          {
+            "id": "reczz28XSHmabhUT"
+          },
+          {
+            "id": "reczz28XSHmac5Ty"
+          },
+          {
+            "id": "reczz28XSHmaasFT"
+          },
+          {
+            "id": "reczz28XSHmaaf5L"
+          },
+          {
+            "id": "reczz28XSHmaaBB9"
+          }
+        ],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [
+          "BatteryStatus_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XSHjskEsM",
+        "子项": [
+          {
+            "id": "reczz28XSHmabvXl"
+          },
+          {
+            "id": "reczz28XSHmabQCt"
+          }
+        ],
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYdUOB"
+          }
+        ],
+        "描述": null,
+        "数据结构名": [
+          "RestartType_E"
+        ],
+        "数据结构正常性检测": null,
+        "种类": [
+          "枚举"
+        ]
+      },
+      {
+        "record_id": "reczz28XnGGLeM7a",
+        "子项": [],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [],
+        "数据结构正常性检测": null,
+        "种类": []
+      },
+      {
+        "record_id": "reczz28XnGQQzwx0",
+        "子项": [],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [],
+        "数据结构正常性检测": null,
+        "种类": []
+      },
+      {
+        "record_id": "reczz28XnGRtZLjk",
+        "子项": [],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [],
+        "数据结构正常性检测": null,
+        "种类": []
+      },
+      {
+        "record_id": "reczz28XnGUZBnG6",
+        "子项": [],
+        "引用接口": [],
+        "描述": null,
+        "数据结构名": [],
+        "数据结构正常性检测": null,
+        "种类": []
+      }
+    ],
+    "data_structure_item": [
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB3AuA",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "nmState"
+        ],
+        "子项类型": [
+          "uint8(枚举)"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUT8ph"
+          }
+        ],
+        "描述": "Autosar网络管理状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB3gdV",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "nmMode"
+        ],
+        "子项类型": [
+          "uint8(枚举)"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsiEhw"
+          }
+        ],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUT8ph"
+          }
+        ],
+        "描述": "Autosar网络管理模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "16 ~ 23",
+        "record_id": "reczz28X6uFB6aSu",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "day"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 2,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "描述": "日",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB6fJn",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "powerType"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUTCpO"
+          }
+        ],
+        "描述": "外设类型 0x00 背光 / 0x01 功放 / 0x02 中控屏幕 / 0x03 仪表屏幕",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "48 ~ 8239",
+        "record_id": "reczz28X6uFB6zga",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "upgradeData"
+        ],
+        "子项类型": [
+          "uint8[n]"
+        ],
+        "字节序号(B)": 6,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUU8AF"
+          }
+        ],
+        "描述": "升级包数据 BYTE6-N，末包以 0xFF 填充",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1024
+      },
+      {
+        "Bit范围": "0 ~ 31",
+        "record_id": "reczz28X6uFB70eC",
+        "位宽(bit)": 32,
+        "值": null,
+        "子项名": [
+          "fileSize"
+        ],
+        "子项类型": [
+          "uint32"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUTc6T"
+          }
+        ],
+        "描述": "文件大小 BYTE0-3（byte3-byte0）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "40 ~ 47",
+        "record_id": "reczz28X6uFB7Uvy",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "second"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 5,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "描述": "秒",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "48 ~ 79",
+        "record_id": "reczz28X6uFB7bL6",
+        "位宽(bit)": 32,
+        "值": null,
+        "子项名": [
+          "totalPkgNum"
+        ],
+        "子项类型": [
+          "uint32"
+        ],
+        "字节序号(B)": 6,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUTc6T"
+          }
+        ],
+        "描述": "包序号总数 BYTE6-9（byte3-byte0）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB7h7Y",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "ctrlType"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSZfp"
+          }
+        ],
+        "描述": "控制类型 0x00 保留 / 0x01 VBUS",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "24 ~ 31",
+        "record_id": "reczz28X6uFB7jeO",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "hour"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 3,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "描述": "时",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB7kKM",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "result"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSsBG"
+          }
+        ],
+        "描述": "0x00 成功 / 非0 错误码",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB7mTM",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "ctrlType"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUTtL"
+          }
+        ],
+        "描述": "控制类型 0x00 保留 / 0x01 请求控制 VBUS 电源",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB7qxm",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "result"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUC7J"
+          }
+        ],
+        "描述": "0 成功 / 非0 错误码",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB7t8L",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "hours"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSYi3"
+          }
+        ],
+        "描述": "0 - 7×24 小时",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB8MN2",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "ignState"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURIES"
+          }
+        ],
+        "描述": "0 IGN OFF / 1 IGN ON / 0xFF 无效",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB8XMw",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "result"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSPDH"
+          }
+        ],
+        "描述": "0 成功 / 非0 错误码",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB8Zv7",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "month"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "描述": "月",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB8eHO",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "module"
+        ],
+        "子项类型": [
+          "uint8(枚举)"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSMdE"
+          }
+        ],
+        "描述": "模块号：0x01 DVR / 0x02 RADAR / 0x03 HW / 0x04 诊断SW / 0x05 MCU",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB8nxp",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "function"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSYi3"
+          }
+        ],
+        "描述": "0 关闭 / 1 打开 / 2 读取状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "16 ~ 527",
+        "record_id": "reczz28X6uFB8oxc",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "verArray"
+        ],
+        "子项类型": [
+          "uint8[n]"
+        ],
+        "字节序号(B)": 2,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSMdE"
+          }
+        ],
+        "描述": "版本号字符串",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 64
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB8pjU",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "year"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "描述": "年",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB97Od",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "result"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSZfp"
+          }
+        ],
+        "描述": "0x00 成功 / 非0 错误码",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 23",
+        "record_id": "reczz28X6uFB98ij",
+        "位宽(bit)": 16,
+        "值": null,
+        "子项名": [
+          "offsetSeconds"
+        ],
+        "子项类型": [
+          "uint16"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUPUi"
+          }
+        ],
+        "描述": "当前需要偏移的秒数",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "32 ~ 47",
+        "record_id": "reczz28X6uFB98zV",
+        "位宽(bit)": 16,
+        "值": null,
+        "子项名": [
+          "dataLen"
+        ],
+        "子项类型": [
+          "uint16"
+        ],
+        "字节序号(B)": 4,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUU8AF"
+          }
+        ],
+        "描述": "本包数据长度（字节数）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB9FHQ",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "can2"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUN0g"
+          }
+        ],
+        "描述": "CAN2：0=在线/1=故障",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 31",
+        "record_id": "reczz28X6uFB9PUh",
+        "位宽(bit)": 32,
+        "值": null,
+        "子项名": [
+          "pkgSeq"
+        ],
+        "子项类型": [
+          "uint32"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUU8AF"
+          }
+        ],
+        "描述": "包序号 BYTE0-3（从 0 开始递增）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFB9r1Q",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "len"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSMdE"
+          }
+        ],
+        "描述": "版本数组长度 n（ver_array 元素个数）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB9uvi",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "powerState"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUC7J"
+          }
+        ],
+        "描述": "高4bit OTA模式 / 低4bit SoC电源状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "32 ~ 47",
+        "record_id": "reczz28X6uFB9weh",
+        "位宽(bit)": 16,
+        "值": null,
+        "子项名": [
+          "frameUpgradeDataLen"
+        ],
+        "子项类型": [
+          "uint16"
+        ],
+        "字节序号(B)": 4,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUTc6T"
+          }
+        ],
+        "描述": "数据分包长度 BYTE4-5（byte1-byte0）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFB9xnK",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "can1"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUN0g"
+          }
+        ],
+        "描述": "CAN1：0=在线/1=故障",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFBAGjh",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "powerType"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSsBG"
+          }
+        ],
+        "描述": "外设类型 0x00 背光 / 0x01 功放 / 0x02 中控屏幕 / 0x03 仪表屏幕",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFBALXJ",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "onOff"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUTCpO"
+          }
+        ],
+        "描述": "0x00 关闭 / 0x01 打开",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "16 ~ 23",
+        "record_id": "reczz28X6uFBAMTk",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "other"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 2,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUN0g"
+          }
+        ],
+        "描述": "其它外设状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFBATPC",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "powerReqCmd"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUSPDH"
+          }
+        ],
+        "描述": "0 请求STR / 1 请求关机 / 2 请求重启",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "0 ~ 7",
+        "record_id": "reczz28X6uFBATar",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "sign"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 0,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUPUi"
+          }
+        ],
+        "描述": "0x00 正数 / 0x01 负数",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFBAVLu",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "vehicleIgnState"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURIES"
+          }
+        ],
+        "描述": "0 IGN_OFF / 1 IGN_ACC / 2 IGN_ON / 3 IGN_START",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "8 ~ 15",
+        "record_id": "reczz28X6uFBAYzK",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "ctrlCmd"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 1,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYUUTtL"
+          }
+        ],
+        "描述": "0x00 关闭 / 0x01 打开 / 0x02 重启",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "32 ~ 39",
+        "record_id": "reczz28X6uFBAZuo",
+        "位宽(bit)": 8,
+        "值": null,
+        "子项名": [
+          "minute"
+        ],
+        "子项类型": [
+          "uint8"
+        ],
+        "字节序号(B)": 4,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "描述": "分",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "",
+        "长度": 1
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaAR4",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "HeartbeatSet_HB_SET_COMM_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsheSB"
+          }
+        ],
+        "描述": "开启 Comm UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaAYW",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "PowerReqCmd_PWR_REQ_SHUTDOWN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshGTl"
+          }
+        ],
+        "描述": "请求关机",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaBB9",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "BatteryStatus_BATTERY_INVALID"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjl8d"
+          }
+        ],
+        "描述": "无效",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaBFW",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "StrDebug_STR_DEBUG_1MIN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsho2e"
+          }
+        ],
+        "描述": "1 分钟",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaBvh",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "ResetType_RESET_MCU"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsi7s5"
+          }
+        ],
+        "描述": "复位 MCU",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaD1x",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "VersionModule_VER_MOD_MCU"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "描述": "MCU 软件版本",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaFNi",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "AutosarNmMode_NM_MODE_BUS_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiEhw"
+          }
+        ],
+        "描述": "总线睡眠模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaHUg",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "IcPowerState_IC_PWR_STANDBY3"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STANDBY3 待机模式3（KL15 OFF，但带部分显示/控制）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaI78",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "VehicleAntiTheftSts_ANTI_FULL_ALARMED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsgp0E"
+          }
+        ],
+        "描述": "全报警状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaPBM",
+        "位宽(bit)": null,
+        "值": "0x09",
+        "子项名": [
+          "PowerMgmtReq_PWR_EXIT_HALF_RUN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "退出半运行",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x09",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaREc",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "StrDebug_STR_DEBUG_OFF"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsho2e"
+          }
+        ],
+        "描述": "关闭",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaTc2",
+        "位宽(bit)": null,
+        "值": "0x06",
+        "子项名": [
+          "IcPowerState_IC_PWR_STR"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STR 系统休眠（等待网络信号 MCU 触发唤醒）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x06",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaURr",
+        "位宽(bit)": null,
+        "值": "0x08",
+        "子项名": [
+          "IcPowerState_IC_PWR_STR_ENTER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STR_ENTER 进入中",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x08",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaY8A",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "OtaReqSts_OTA_REQ_NONE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQt1"
+          }
+        ],
+        "描述": "无升级（预留）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaa68",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "HeartbeatStatus_HB_STS_COMM_OFF"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshbVD"
+          }
+        ],
+        "描述": "关闭 Comm UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaabG",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "StrDebug_STR_DEBUG_5MIN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsho2e"
+          }
+        ],
+        "描述": "5 分钟",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaf5L",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "BatteryStatus_BATTERY_UNDER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjl8d"
+          }
+        ],
+        "描述": "超低电压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaagHy",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "HeartbeatSet_HB_SET_COMM_OFF"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsheSB"
+          }
+        ],
+        "描述": "关闭 Comm UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaiof",
+        "位宽(bit)": null,
+        "值": "0x07",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_WRITE_FAIL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "MCU 写 flash 失败，退出升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x07",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaamHa",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "VersionModule_VER_MOD_DIAG_SW"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "描述": "诊断 SW 版本",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaanB3",
+        "位宽(bit)": null,
+        "值": "0x08",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_BATT_HIGH"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "电池电压高",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x08",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaasFT",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "BatteryStatus_BATTERY_OVER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjl8d"
+          }
+        ],
+        "描述": "超高电压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaaw6e",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "PowerMgmtReq_PWR_ENTRY_STANDBY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "进入待机",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaax7j",
+        "位宽(bit)": null,
+        "值": "0x07",
+        "子项名": [
+          "AutosarNmState_NM_STATE_WAIT_CHECK_ACTIVATION"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "等待检查激活",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x07",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaayTa",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "StrState_STR_NOT_IN_STR"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsi1zM"
+          }
+        ],
+        "描述": "不处于 STR 状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaazmd",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "AutosarNmMode_NM_MODE_PREPARE_BUS_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiEhw"
+          }
+        ],
+        "描述": "准备总线睡眠模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmab5fE",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "MpuReqDataSync_NO_REQUEST"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsh4UI"
+          }
+        ],
+        "描述": "无请求",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabCGW",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "IcPowerState_IC_PWR_INIT"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "INIT 初始（上电）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabFKT",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "PowerMgmtReq_PWR_PREPARE_SLEEP_READY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "准备休眠就绪",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabGGM",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_COND_UNSAT"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "当前条件不满足升级条件，退出升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabGK7",
+        "位宽(bit)": null,
+        "值": "0x08",
+        "子项名": [
+          "AutosarNmState_NM_STATE_WAIT_NETWORK_STARTUP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "等待网络启动",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x08",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabGkH",
+        "位宽(bit)": null,
+        "值": "0xFF",
+        "子项名": [
+          "PowerMgmtReq_PWR_REQ_INVALID"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "无效值",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0xFF",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabH8C",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "IcPowerState_IC_PWR_STANDBY1"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STANDBY1 待机模式1（ACC OFF 10 分钟且无报警、无设防）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabKEJ",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "MpuReqDataSync_REQUEST"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsh4UI"
+          }
+        ],
+        "描述": "请求",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabLLY",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "AccStatus_ACC_START"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjZaP"
+          }
+        ],
+        "描述": "启动",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabPzW",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "TemperatureStatus_TEMP_LOW"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjI4Z"
+          }
+        ],
+        "描述": "低温",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabQCt",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "RestartType_RESTART_WAKE_UP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjskEsM"
+          }
+        ],
+        "描述": "wake up",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabQur",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "HeartbeatStatus_HB_STS_FAST_OFF"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshbVD"
+          }
+        ],
+        "描述": "关闭 Fast UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabSCY",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "HeartbeatSet_HB_SET_FAST_OFF"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsheSB"
+          }
+        ],
+        "描述": "关闭 Fast UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabUbd",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "AutosarNmMode_NM_MODE_SYNCHRONIZED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiEhw"
+          }
+        ],
+        "描述": "同步模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabVgD",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "IcPowerState_IC_PWR_RUN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "RUN 运行（KL15 ON）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabW5z",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "AutosarNmState_NM_STATE_BUS_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "总线睡眠状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabXtd",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "VoltageStatus_VOLTAGE_NORMAL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "描述": "正常",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaba2O",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "PowerMgmtReq_PWR_EXIT_STANDBY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "退出待机",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabbFj",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "IcPowerState_IC_PWR_STANDBY4"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STANDBY4 待机模式4（有报警信息）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabbgP",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "IcPowerState_IC_PWR_STANDBY2"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STANDBY2 待机模式2（ACC ON 但未完全进入 RUN，或报警/门等特殊场景后恢复）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabdS6",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "AccStatus_IGN_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjZaP"
+          }
+        ],
+        "描述": "IGN 开",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabhUT",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "BatteryStatus_BATTERY_HIGH"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjl8d"
+          }
+        ],
+        "描述": "高电压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabhYL",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "HeartbeatState_HEARTBEAT_TIMEOUT"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsgAiu"
+          }
+        ],
+        "描述": "接收 MCU 心跳反馈超时 10 秒",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabiCm",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "ResetType_RESET_FACTORY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsi7s5"
+          }
+        ],
+        "描述": "恢复出厂设置复位",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabkM7",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "AccStatus_ACC_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjZaP"
+          }
+        ],
+        "描述": "ACC 开",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabkaU",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "BatteryStatus_BATTERY_NORMAL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjl8d"
+          }
+        ],
+        "描述": "正常电压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabl4N",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "AutosarNmState_NM_STATE_REPEAT_MESSAGE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "重复消息状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmabvXl",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "RestartType_RESTART_POWER_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjskEsM"
+          }
+        ],
+        "描述": "power on reset",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac0Q5",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "PowerMgmtReq_PWR_BATT_TOO_HIGH_READY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "电池电压过高就绪",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac1G8",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "VoltageStatus_VOLTAGE_HIGH"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "描述": "高压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac1aw",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_PRE_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "休眠前",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac2xd",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "HeartbeatState_HEARTBEAT_OK"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsgAiu"
+          }
+        ],
+        "描述": "正常",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac5Ty",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "BatteryStatus_BATTERY_LOW"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjl8d"
+          }
+        ],
+        "描述": "低电压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac9FU",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "HeartbeatStatus_HB_STS_FAST_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshbVD"
+          }
+        ],
+        "描述": "开启 Fast UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac9hw",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "VehicleAntiTheftSts_ANTI_ALARMED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsgp0E"
+          }
+        ],
+        "描述": "报警状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmac9rL",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "OtaReqSts_OTA_REQ_START"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQt1"
+          }
+        ],
+        "描述": "升级开始",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacMRJ",
+        "位宽(bit)": null,
+        "值": "0x06",
+        "子项名": [
+          "PowerMgmtReq_PWR_ENTRY_CLOCK_MODE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "进入时钟模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x06",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacMiC",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "VersionModule_VER_MOD_HW"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "描述": "HW 版本",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacPqn",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "PowerReqCmd_PWR_REQ_STR"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshGTl"
+          }
+        ],
+        "描述": "请求 STR",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacQ2n",
+        "位宽(bit)": null,
+        "值": "0x09",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_HASH_FAIL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "升级文件 hash 校验失败，退出升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x09",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacTBQ",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_EXTEND_RUN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "延长运行",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacUlU",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_UNKNOWN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "未知",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacWlo",
+        "位宽(bit)": null,
+        "值": "0x0A",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_CANCEL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "收到 SOC 取消升级请求，已中断升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x0A",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacXEO",
+        "位宽(bit)": null,
+        "值": "0x07",
+        "子项名": [
+          "PowerMgmtReq_PWR_EXIT_CLOCK_MODE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "退出时钟模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x07",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacXHq",
+        "位宽(bit)": null,
+        "值": "0x06",
+        "子项名": [
+          "AutosarNmState_NM_STATE_SYNCHRONIZED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "同步状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x06",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacXcq",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "TemperatureStatus_TEMP_UNDER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjI4Z"
+          }
+        ],
+        "描述": "超低温",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacYJG",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_NONE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "无升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacZY9",
+        "位宽(bit)": null,
+        "值": "0x06",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_ERASE_FAIL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "MCU 擦除 flash 失败，退出升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x06",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacbvj",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "AutosarNmState_NM_STATE_READY_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "就绪睡眠状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacdTN",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "VoltageStatus_VOLTAGE_OVER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "描述": "超高压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacfPx",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "StrDebug_STR_DEBUG_30MIN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsho2e"
+          }
+        ],
+        "描述": "30 分钟",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacgHK",
+        "位宽(bit)": null,
+        "值": "0x0B",
+        "子项名": [
+          "IcPowerState_IC_PWR_UPDATE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "UPDATE 软件升级中",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x0B",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacjHf",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_READY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "升级就绪",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacnRp",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "PowerMgmtReq_PWR_EXIT_DELAY_WORK"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "退出延时工作",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacpXC",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_RUNNING"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "运行中",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacq7s",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_STANDBY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "待机",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacxYJ",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "VehicleAntiTheftSts_ANTI_DISALARMED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsgp0E"
+          }
+        ],
+        "描述": "已撤防",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacygj",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_FLAG_SAVED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "升级标志位已存储，准备重启进入升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmacz91",
+        "位宽(bit)": null,
+        "值": "0x08",
+        "子项名": [
+          "PowerMgmtReq_PWR_ENTRY_HALF_RUN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "进入半运行（预留）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x08",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmad1pk",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_FILE_DONE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "当前文件校验结束，申请切换分区进行升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmad74B",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "VersionModule_VER_MOD_RADAR"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "描述": "RADAR 版本（示例帧实证 0x02）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadAjR",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "TemperatureStatus_TEMP_NORMAL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjI4Z"
+          }
+        ],
+        "描述": "正常",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadAzy",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "OtaReqSts_OTA_REQ_DONE_REBOOT"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQt1"
+          }
+        ],
+        "描述": "升级完成，请求重启",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadC6j",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "HeartbeatSet_HB_SET_FAST_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsheSB"
+          }
+        ],
+        "描述": "开启 Fast UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadD4K",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "HeartbeatStatus_HB_STS_COMM_ON"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshbVD"
+          }
+        ],
+        "描述": "开启 Comm UART 心跳功能",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadEXL",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "VoltageStatus_VOLTAGE_DISCONNECT"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "描述": "断开",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadFPO",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "VoltageStatus_VOLTAGE_UNDER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "描述": "超低压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadHQF",
+        "位宽(bit)": null,
+        "值": "0x0A",
+        "子项名": [
+          "IcPowerState_IC_PWR_REMOTE_CTRL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "REMOTE_CTRL 远程控制模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x0A",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadLOG",
+        "位宽(bit)": null,
+        "值": "0x07",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_DEEP_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "深度休眠",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x07",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadLxx",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "AutosarNmState_NM_STATE_NORMAL_OPERATION"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "正常运行状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadMK4",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "VersionModule_VER_MOD_DVR"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "描述": "DVR 版本",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadMuN",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "ResetType_RESET_MPU"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsi7s5"
+          }
+        ],
+        "描述": "复位 MPU",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadQBS",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "RemoteCtrlSt_REMOTE_CTRL_ACTIVE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshSHH"
+          }
+        ],
+        "描述": "远程控制模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadU1S",
+        "位宽(bit)": null,
+        "值": "0x08",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_SIGN_FAIL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "签名校验失败，退出升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x08",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadaKK",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "TemperatureStatus_TEMP_HIGH"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjI4Z"
+          }
+        ],
+        "描述": "高温",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadaYe",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "PowerReqCmd_PWR_REQ_RESTART"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshGTl"
+          }
+        ],
+        "描述": "请求重启",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadacJ",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "TemperatureStatus_TEMP_OVER"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjI4Z"
+          }
+        ],
+        "描述": "超高温",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadbd3",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "RemoteCtrlSt_REMOTE_CTRL_NONE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshSHH"
+          }
+        ],
+        "描述": "非远程控制模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadbiF",
+        "位宽(bit)": null,
+        "值": "0x04",
+        "子项名": [
+          "OtaReqSts_OTA_REQ_CANCEL"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQt1"
+          }
+        ],
+        "描述": "取消升级（SOC 主动中止升级）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x04",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadhoH",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "VoltageStatus_VOLTAGE_LOW"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "描述": "低压",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadiMX",
+        "位宽(bit)": null,
+        "值": "0x07",
+        "子项名": [
+          "IcPowerState_IC_PWR_STR_PREPARE"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STR_PREPARE 休眠准备",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x07",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadktA",
+        "位宽(bit)": null,
+        "值": "0x0A",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_STR"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "STR",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x0A",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadlfi",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "StrState_STR_PREPARE_ENTRY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsi1zM"
+          }
+        ],
+        "描述": "准备进入 STR 状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadnap",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "VehicleAntiTheftSts_ANTI_PRE_ALARMED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsgp0E"
+          }
+        ],
+        "描述": "预警状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadp6y",
+        "位宽(bit)": null,
+        "值": "0x06",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "休眠",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x06",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadqR5",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "OtaReqSts_OTA_REQ_FLAG_SAVED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQt1"
+          }
+        ],
+        "描述": "升级请求（MCU 收到后存储升级标志位）",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadtLw",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "AutosarNmMode_NM_MODE_NETWORK"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiEhw"
+          }
+        ],
+        "描述": "网络模式",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmadw9H",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "ResetType_RESET_TOUCH_KEY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsi7s5"
+          }
+        ],
+        "描述": "复位 TOUCH KEY",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmae1EI",
+        "位宽(bit)": null,
+        "值": "0x01",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_HALF_RUN"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "半运行",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x01",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmae5pj",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "AccStatus_ACC_OFF"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjZaP"
+          }
+        ],
+        "描述": "ACC 关",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmae9Ay",
+        "位宽(bit)": null,
+        "值": "0x09",
+        "子项名": [
+          "IcPowerState_IC_PWR_STR_FAILED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "描述": "STR_FAILED 休眠失败",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x09",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaeCJO",
+        "位宽(bit)": null,
+        "值": "0x05",
+        "子项名": [
+          "OtaUpgradeSts_OTA_STS_REQ_TIMEOUT"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "描述": "数据请求次数超时，退出升级",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x05",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaeDLw",
+        "位宽(bit)": null,
+        "值": "0x02",
+        "子项名": [
+          "AutosarNmState_NM_STATE_PREPARE_BUS_SLEEP"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "准备总线睡眠状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x02",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaeFWz",
+        "位宽(bit)": null,
+        "值": "0x00",
+        "子项名": [
+          "AutosarNmState_NM_STATE_UNINITIALIZED"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsjQcD"
+          }
+        ],
+        "描述": "未初始化状态",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x00",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaeHCH",
+        "位宽(bit)": null,
+        "值": "0x03",
+        "子项名": [
+          "PowerMgmtReq_PWR_BATT_TOO_LOW_READY"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjshD6L"
+          }
+        ],
+        "描述": "电池电压过低就绪",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x03",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XSHmaeJ6d",
+        "位宽(bit)": null,
+        "值": "0x09",
+        "子项名": [
+          "PowerMgmtStatus_PWR_ST_BATT_LOW"
+        ],
+        "子项类型": [
+          "枚举值"
+        ],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "描述": "电池电压低",
+        "数据结构子项正常性检测": "",
+        "枚举值建议": "0x09",
+        "长度": null
+      },
+      {
+        "Bit范围": "",
+        "record_id": "reczz28XnFUD1nd0",
+        "位宽(bit)": null,
+        "值": null,
+        "子项名": [],
+        "子项类型": [],
+        "字节序号(B)": null,
+        "引用枚举": [],
+        "所属数据结构": [],
+        "描述": null,
+        "数据结构子项正常性检测": "❌ 所属数据结构为空；❌ 子项名为空；❌ 子项类型为空；❌ 描述为空；❌ 字节序号为空；❌ 位宽为空",
+        "枚举值建议": "",
+        "长度": 1
+      }
+    ],
+    "error_code": [
+      {
+        "record_id": "reczz28WjyEwlgL6",
+        "值": "0x03",
+        "常量名": "COMM_ERR_EXEC",
+        "引用接口": [],
+        "描述": "执行失败",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwlgZJ",
+        "值": "0x02",
+        "常量名": "COMM_ERR_UNSUPPORTED",
+        "引用接口": [],
+        "描述": "不支持的命令",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwlycO",
+        "值": "0x01",
+        "常量名": "COMM_ERR_PARAM",
+        "引用接口": [],
+        "描述": "参数错误（长度/取值非法）",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwlzoT",
+        "值": "0x06",
+        "常量名": "COMM_ERR_STATE",
+        "引用接口": [],
+        "描述": "当前状态不允许",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwm8mR",
+        "值": "0x07",
+        "常量名": "COMM_ERR_INTERNAL",
+        "引用接口": [],
+        "描述": "内部错误（未分类）",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwmQAm",
+        "值": "0x05",
+        "常量名": "COMM_ERR_TIMEOUT",
+        "引用接口": [],
+        "描述": "执行超时",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwnSMP",
+        "值": "0x00",
+        "常量名": "COMM_OK",
+        "引用接口": [
+          {
+            "id": "reczz28XVdvYe951"
+          },
+          {
+            "id": "reczz28XVdvYfd1R"
+          },
+          {
+            "id": "reczz28XVdvYcTI9"
+          },
+          {
+            "id": "reczz28XVdvYcGwK"
+          },
+          {
+            "id": "reczz28XVdvYeVw7"
+          },
+          {
+            "id": "reczz28XVdvYeYUu"
+          },
+          {
+            "id": "reczz28XVdvYeeLc"
+          },
+          {
+            "id": "reczz28XVdvYfMdz"
+          },
+          {
+            "id": "reczz28XVdvYf7bJ"
+          },
+          {
+            "id": "reczz28XVdvYff9e"
+          },
+          {
+            "id": "reczz28XVdvYfJIt"
+          },
+          {
+            "id": "reczz28XVdvYctDg"
+          },
+          {
+            "id": "reczz28XVdvYeszL"
+          },
+          {
+            "id": "reczz28XVdvYdz6k"
+          }
+        ],
+        "描述": "成功",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      },
+      {
+        "record_id": "reczz28WjyEwookJ",
+        "值": "0x04",
+        "常量名": "COMM_ERR_BUSY",
+        "引用接口": [],
+        "描述": "设备忙，稍后重试",
+        "适用消息": null,
+        "错误码组": [
+          "COMM_RESULT"
+        ]
+      }
+    ],
+    "service_interface": [
+      {
+        "record_id": "reczz28XVdvYbhVq",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdeGj"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HeartbeatFeedbackEvt"
+        ],
+        "接口描述": "MCU 心跳反馈",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8103",
+        "消息id建议": "0x8103",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYbk0m",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeO0W"
+          }
+        ],
+        "参数名": [
+          "powerReqCmd"
+        ],
+        "参数描述": "电源请求命令",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjshGTl"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerOffReqMtd"
+        ],
+        "接口描述": "SoC 主动向 MCU 请求睡眠或关机",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0101",
+        "消息id建议": "0x0101",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYbpXs",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYbsSl"
+          }
+        ],
+        "参数名": [
+          "mcuPowerAck"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUSZfp"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "McuPowerCtrlAckEvt"
+        ],
+        "接口描述": "MCU 应答外设电源控制",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8113",
+        "消息id建议": "0x8113",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYbsDr",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfMdz"
+          }
+        ],
+        "参数名": [
+          "enable"
+        ],
+        "参数描述": "0=关闭，1=开启",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "SentryModeSetMtd"
+        ],
+        "接口描述": "SoC 通知 MCU 哨兵模式激活状态",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0116",
+        "消息id建议": "0x0116",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYbsSl",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYbpXs"
+          }
+        ],
+        "参数名": [
+          "mcuPowerReq"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUUTtL"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "McuPowerCtrlReqMtd"
+        ],
+        "接口描述": "SoC 请求 MCU 控制某些外设电源",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0113",
+        "消息id建议": "0x0113",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYbtYJ",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "vehicleAntiTheftSts"
+        ],
+        "参数描述": "车辆防盗状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsgp0E"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "VehicleAntiTheftEvt"
+        ],
+        "接口描述": "MCU 上报车辆防盗状态",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x810B",
+        "消息id建议": "0x810B",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYc1m4",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeszL"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HeartbeatRecoveredEvt"
+        ],
+        "接口描述": "MCU 通知 SoC 心跳丢失现象已恢复",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x811B",
+        "消息id建议": "0x811B",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYc1wE",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcpvL"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerMgmtReqMtd"
+        ],
+        "接口描述": "SoC 主动查询 MCU 的电源状态",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0105",
+        "消息id建议": "0x0105",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYc4ei",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcGwK"
+          }
+        ],
+        "参数名": [
+          "temperatureStatus"
+        ],
+        "参数描述": "温度状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsjI4Z"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "TemperatureAbnormalEvt"
+        ],
+        "接口描述": "MCU 通知 SoC 温度异常",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x811C",
+        "消息id建议": "0x811C",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYc8TW",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYf1G2"
+          }
+        ],
+        "参数名": [
+          "powerStateSyncResult"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUUC7J"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerStateSetStatusEvt"
+        ],
+        "接口描述": "MCU 应答 SoC 电源状态同步",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8108",
+        "消息id建议": "0x8108",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcDua",
+        "传输层协议": [
+          "spi"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdd6o"
+          }
+        ],
+        "参数名": [
+          "upgradeDataPkg"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "ota"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUU8AF"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "UpgradeDataRspEvt"
+        ],
+        "接口描述": "SOC 回复升级包数据（0x8C03 的响应）",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0C",
+        "服务名": [
+          "OtaSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "升级：升级指令/状态/文件信息/分包数据",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0C03",
+        "消息id建议": "0x0C03",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcGwK",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYc4ei"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "TemperatureAbnormalAckEvt"
+        ],
+        "接口描述": "SoC 应答温度异常上报",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x011C",
+        "消息id建议": "0x011C",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcNEv",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYes88"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "KeyRestartReqEvt"
+        ],
+        "接口描述": "MCU 因按键请求重启 SoC（有车速时 SoC 弹窗确认）",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8110",
+        "消息id建议": "0x8110",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcTI9",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdUOB"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "McuRestartAckEvt"
+        ],
+        "接口描述": "MCU 应答 SoC 重启请求",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x810F",
+        "消息id建议": "0x810F",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcTkN",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeYUu"
+          }
+        ],
+        "参数名": [
+          "timeZoneInfo"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUUPUi"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "TimeZoneSetMtd"
+        ],
+        "接口描述": "SoC 向 MCU 通知当前时区",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0115",
+        "消息id建议": "0x0115",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcZBh",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYd9ZM"
+          }
+        ],
+        "参数名": [
+          "peripheralPowerAck"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUSsBG"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "SocPowerCtrlAckEvt"
+        ],
+        "接口描述": "SoC 应答外设供电控制",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0112",
+        "消息id建议": "0x0112",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYccLu",
+        "传输层协议": [
+          "uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYf1bR"
+          }
+        ],
+        "参数名": [
+          "module"
+        ],
+        "参数描述": "模块号",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "version"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsiY9w"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "VersionQueryMtd"
+        ],
+        "接口描述": "SoC 查询 MCU 指定模块的 SW 版本",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x0E",
+        "服务名": [
+          "VersionSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "版本查询",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0E01",
+        "消息id建议": "0x0E01",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYcccJ",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "safety"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x0A",
+        "服务名": [
+          "SafetySrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "安全与告警",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYco9r",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "backlight"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x02",
+        "服务名": [
+          "BacklightSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "背光与亮度",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYcpvL",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYc1wE"
+          }
+        ],
+        "参数名": [
+          "powerManageStatus"
+        ],
+        "参数描述": "电源管理状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsikqu"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerMgmtStatusEvt"
+        ],
+        "接口描述": "MCU 电源管理状态上报",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8105",
+        "消息id建议": "0x8105",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYctDg",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfWIK"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "EnterStrAckEvt"
+        ],
+        "接口描述": "SoC 应答进入 STR 通知",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x010D",
+        "消息id建议": "0x010D",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYd9ZM",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcZBh"
+          }
+        ],
+        "参数名": [
+          "peripheralPowerReq"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUTCpO"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "SocPowerCtrlReqEvt"
+        ],
+        "接口描述": "MCU 向 SoC 请求对某些外设进行供电控制",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8112",
+        "消息id建议": "0x8112",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdEcc",
+        "传输层协议": [
+          "uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYe4iE"
+          }
+        ],
+        "参数名": [
+          "dateTime"
+        ],
+        "参数描述": "0~6Byte：年、月、日、时、分、秒",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "sys"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "TimeQueryAckEvt"
+        ],
+        "接口描述": "MCU 应答时间查询，返回当前时间",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0D",
+        "服务名": [
+          "SysSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "系统服务：时间同步/外设状态",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8D01",
+        "消息id建议": "0x8D01",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdOfZ",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "resetReason"
+        ],
+        "参数描述": "复位原因，值定义见 MCU 芯片手册",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "ResetReasonEvt"
+        ],
+        "接口描述": "MCU 上报启动状态：复位原因值定义见 MCU 芯片手册",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x811D",
+        "消息id建议": "0x811D",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdUOB",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcTI9"
+          }
+        ],
+        "参数名": [
+          "restartType"
+        ],
+        "参数描述": "重启类型",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjskEsM"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "McuRestartReqMtd"
+        ],
+        "接口描述": "SoC 主动请求 MCU 对其重启",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x010F",
+        "消息id建议": "0x010F",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdd6o",
+        "传输层协议": [
+          "spi"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcDua"
+          }
+        ],
+        "参数名": [
+          "pkgSeq"
+        ],
+        "参数描述": "包序号 BYTE0-3，从 0 开始每次 +1，到 0xFFFFFFFF 后回 0",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint32"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "ota"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "UpgradeDataReqMtd"
+        ],
+        "接口描述": "MCU 请求升级包数据",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x0C",
+        "服务名": [
+          "OtaSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "升级：升级指令/状态/文件信息/分包数据",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8C03",
+        "消息id建议": "0x8C03",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdeGj",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYbhVq"
+          }
+        ],
+        "参数名": [
+          "heartbeatState"
+        ],
+        "参数描述": "心跳状态",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "Cycle(1000ms)"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsgAiu"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HeartbeatReqMtd"
+        ],
+        "接口描述": "心跳请求：周期 1000ms 发送；握手后默认开启心跳",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ event 接口名须以 Evt 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0103",
+        "消息id建议": "0x0103",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdfSo",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfHyd"
+          }
+        ],
+        "参数名": [
+          "restartResult"
+        ],
+        "参数描述": "0=OK，1=NOK",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "RtcRestartAckEvt"
+        ],
+        "接口描述": "SoC 应答 RTC 重启请求",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0111",
+        "消息id建议": "0x0111",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdiMP",
+        "传输层协议": [
+          "uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "dateTime"
+        ],
+        "参数描述": "0~6Byte：年、月、日、时、分、秒",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "sys"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "TimeSetEvt"
+        ],
+        "接口描述": "SoC 向 MCU 设置当前时间",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0D",
+        "服务名": [
+          "SysSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "系统服务：时间同步/外设状态",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0D02",
+        "消息id建议": "0x0D02",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdlv2",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "speed"
+        ],
+        "参数描述": "风扇转速",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint16"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "selfctrl"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "SocFanSpeedEvt"
+        ],
+        "接口描述": "SOC 降温风扇转速事件：控制与查询的响应都走这里",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x08",
+        "服务名": [
+          "SelfCtrlSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "自身控制：SOC 降温风扇",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8802",
+        "消息id建议": "0x8802",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdmvl",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeim5"
+          }
+        ],
+        "参数名": [
+          "strMaxDuration"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUSYi3"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "StrDebugSetMtd"
+        ],
+        "接口描述": "SoC 向 MCU 通知 STR 最大维持时长",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x011E",
+        "消息id建议": "0x011E",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdxFd",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "seat"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x07",
+        "服务名": [
+          "SeatSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "座椅：主/副驾设置",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYdz6k",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeFRk"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=OK，1=NOK",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "HeartbeatLostAckEvt"
+        ],
+        "接口描述": "SoC 应答心跳丢失通知",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x011A",
+        "消息id建议": "0x011A",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYdzRe",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfJIt"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerOffReqEvt"
+        ],
+        "接口描述": "MCU 通知 SoC 关机（0x8101）",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x811F",
+        "消息id建议": "0x811F",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYe4iE",
+        "传输层协议": [
+          "uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdEcc"
+          }
+        ],
+        "参数名": [
+          "dateTime"
+        ],
+        "参数描述": "0~6Byte：年、月、日、时、分、秒",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "sys"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "TimeQueryMtd"
+        ],
+        "接口描述": "SoC 查询 MCU 当前时间",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x0D",
+        "服务名": [
+          "SysSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "系统服务：时间同步/外设状态",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0D01",
+        "消息id建议": "0x0D01",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYe5qJ",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "autosarNmStatus"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUT8ph"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "AutosarNmModeEvt"
+        ],
+        "接口描述": "MCU 上报 Autosar 网络管理模式与状态",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x810A",
+        "消息id建议": "0x810A",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYe951",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfmpd"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "BatteryVoltageAckEvt"
+        ],
+        "接口描述": "SoC 应答电池电压",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0118",
+        "消息id建议": "0x0118",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYe9Uh",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfZFi"
+          }
+        ],
+        "参数名": [
+          "heartbeatStatus"
+        ],
+        "参数描述": "心跳开关状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjshbVD"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HeartbeatSetStatusEvt"
+        ],
+        "接口描述": "MCU 心跳开关状态上报",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8102",
+        "消息id建议": "0x8102",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeD7i",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdlv2"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "selfctrl"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "SocFanQueryMtd"
+        ],
+        "接口描述": "SOC 降温风扇查询：查询风扇速度",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x08",
+        "服务名": [
+          "SelfCtrlSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "自身控制：SOC 降温风扇",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0801",
+        "消息id建议": "0x0801",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeEY9",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "adas"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x04",
+        "服务名": [
+          "AdasSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "ADAS 控制：子项设置/查询全部/全量回显",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYeFRk",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdz6k"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HeartbeatLostEvt"
+        ],
+        "接口描述": "MCU 通知 SoC 其心跳已丢失",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x811A",
+        "消息id建议": "0x811A",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeHO2",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "remoteControlSt"
+        ],
+        "参数描述": "远程控制模式",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjshSHH"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "RemoteControlModeEvt"
+        ],
+        "接口描述": "MCU 上报远程控制模式",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x810C",
+        "消息id建议": "0x810C",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeM3Y",
+        "传输层协议": [
+          "spi"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "upgradeReqStatus"
+        ],
+        "参数描述": "升级请求状态",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "ota"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsjQt1"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "UpgradeCmdEvt"
+        ],
+        "接口描述": "SOC 通知 MCU 升级指令",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0C",
+        "服务名": [
+          "OtaSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "升级：升级指令/状态/文件信息/分包数据",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0C00",
+        "消息id建议": "0x0C00",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeO0W",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYbk0m"
+          }
+        ],
+        "参数名": [
+          "powerOffReqResult"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUSPDH"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerOffReqStatusEvt"
+        ],
+        "接口描述": "MCU 应答 SoC 睡眠/关机请求：0=成功，非0=错误码",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8101",
+        "消息id建议": "0x8101",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeQXa",
+        "传输层协议": [
+          "uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "dateTime"
+        ],
+        "参数描述": "0~6Byte：年、月、日、时、分、秒",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "Cycle(60000ms)"
+        ],
+        "命名空间": [
+          "sys"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "TimeUploadEvt"
+        ],
+        "接口描述": "MCU 每 1min 主动上传当前时间",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0D",
+        "服务名": [
+          "SysSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "系统服务：时间同步/外设状态",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8D02",
+        "消息id建议": "0x8D02",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeV5X",
+        "传输层协议": [
+          "spi"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYf3Br"
+          }
+        ],
+        "参数名": [
+          "upgradeFileInfo"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "ota"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUTc6T"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "UpgradeFileInfoRspEvt"
+        ],
+        "接口描述": "SOC 回复升级文件信息（0x8C02 的响应）",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0C",
+        "服务名": [
+          "OtaSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "升级：升级指令/状态/文件信息/分包数据",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0C02",
+        "消息id建议": "0x0C02",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeVPW",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "accStatus"
+        ],
+        "参数描述": "ACC状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsjZaP"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "AccStatusEvt"
+        ],
+        "接口描述": "MCU 上报 ACC 状态",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8106",
+        "消息id建议": "0x8106",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeVw7",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYejSo"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "BatteryStatusAckEvt"
+        ],
+        "接口描述": "SoC 应答电压异常上报",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0107",
+        "消息id建议": "0x0107",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeWSx",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "strState"
+        ],
+        "参数描述": "STR状态",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsi1zM"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "StrStateFbMtd"
+        ],
+        "接口描述": "STR 状态反馈",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ event 接口名须以 Evt 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0106",
+        "消息id建议": "0x0106",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeYUu",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcTkN"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "TimeZoneSetAckEvt"
+        ],
+        "接口描述": "MCU 应答时区设置",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8115",
+        "消息id建议": "0x8115",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeYnR",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYf5XC"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HandshakeAckEvt"
+        ],
+        "接口描述": "MCU 回复 MPU 握手成功",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8100",
+        "消息id建议": "0x8100",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeeLc",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfCSQ"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "VehicleSignalAckEvt"
+        ],
+        "接口描述": "SoC 应答车身信号",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0119",
+        "消息id建议": "0x0119",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYefWm",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "diag"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x0B",
+        "服务名": [
+          "DiagSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "诊断：UDS 透传",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYeim5",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdmvl"
+          }
+        ],
+        "参数名": [
+          "strMaxDuration"
+        ],
+        "参数描述": "参数为结构体，详见引用结构体",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUSYi3"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "StrDebugSetStatusEvt"
+        ],
+        "接口描述": "MCU 应答 STR 最大维持时长设置",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x811E",
+        "消息id建议": "0x811E",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYejSo",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeVw7"
+          }
+        ],
+        "参数名": [
+          "batteryStatus"
+        ],
+        "参数描述": "电压状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsikmz"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "BatteryStatusEvt"
+        ],
+        "接口描述": "MCU 通知 SoC 电压异常（0x8107）：0超低压/1低压/2正常/3高压/4超高压/5断开",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8107",
+        "消息id建议": "0x8107",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYelxJ",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYff9e"
+          }
+        ],
+        "参数名": [
+          "enable"
+        ],
+        "参数描述": "0=关闭，1=开启",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PetModeSetMtd"
+        ],
+        "接口描述": "SoC 通知 MCU 宠物模式激活状态",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0117",
+        "消息id建议": "0x0117",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYersH",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "body"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x05",
+        "服务名": [
+          "BodySrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "车身与灯光：子项设置/执行控制/查询全部/全量回显",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYes88",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYcNEv"
+          }
+        ],
+        "参数名": [
+          "keyResult"
+        ],
+        "参数描述": "0=NOK，1=OK",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "KeyRestartAckEvt"
+        ],
+        "接口描述": "SoC 回复按键结果",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0110",
+        "消息id建议": "0x0110",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYeszL",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYc1m4"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=OK，1=NOK",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "HeartbeatRecoveredAckEvt"
+        ],
+        "接口描述": "SoC 应答心跳恢复通知",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x011B",
+        "消息id建议": "0x011B",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYevEQ",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "vehicle"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x83",
+        "服务名": [
+          "VehicleSignalSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "车辆状态与信号：一帧承载 N 个信号",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYevha",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdlv2"
+          }
+        ],
+        "参数名": [
+          "pwm"
+        ],
+        "参数描述": "PWM 值，范围 [0-100]",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "selfctrl"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "SocFanCtrlMtd"
+        ],
+        "接口描述": "SOC 降温风扇控制：通过 pwm 值调整风扇转速",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x08",
+        "服务名": [
+          "SelfCtrlSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "自身控制：SOC 降温风扇",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0802",
+        "消息id建议": "0x0802",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYf1G2",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYc8TW"
+          }
+        ],
+        "参数名": [
+          "powerState"
+        ],
+        "参数描述": "高4bit OTA模式，低4bit SoC电源状态",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsiACh"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerStateSetMtd"
+        ],
+        "接口描述": "SoC 向 MCU 同步自身电源状态",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0108",
+        "消息id建议": "0x0108",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYf1bR",
+        "传输层协议": [
+          "uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYccLu"
+          }
+        ],
+        "参数名": [
+          "versionInfo"
+        ],
+        "参数描述": "0B 模块号 + 1B 版本长度 N + NB 版本数组",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "version"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYUSMdE"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "VersionQueryAckEvt"
+        ],
+        "接口描述": "MCU 应答版本查询，返回模块号与 SW 版本数组",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0E",
+        "服务名": [
+          "VersionSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "版本查询",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8E01",
+        "消息id建议": "0x8E01",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYf3Br",
+        "传输层协议": [
+          "spi"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeV5X"
+          }
+        ],
+        "参数名": [
+          "frameUpgradeDataLen"
+        ],
+        "参数描述": "数据分包长度，大端字节序\n（Byte0：FrameUpgradeDataLen_H）\n（Byte1：FrameUpgradeDataLen_L）",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint16"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "ota"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "UpgradeFileInfoReqMtd"
+        ],
+        "接口描述": "MCU 请求升级文件信息",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x0C",
+        "服务名": [
+          "OtaSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "升级：升级指令/状态/文件信息/分包数据",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8C02",
+        "消息id建议": "0x8C02",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYf5O6",
+        "传输层协议": [],
+        "关联接口": [],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [],
+        "命名空间": [
+          "hvac"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [],
+        "接口描述": null,
+        "接口类型": [],
+        "服务id": "0x06",
+        "服务名": [
+          "HvacSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "空调：子项设置/查询全部/全量回显",
+        "服务质量": [],
+        "消息id(16进制)": null,
+        "消息id建议": "",
+        "消息方向": []
+      },
+      {
+        "record_id": "reczz28XVdvYf5XC",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeYnR"
+          }
+        ],
+        "参数名": [
+          "mpuRequestsDataSynchronization"
+        ],
+        "参数描述": "MPU请求数据同步",
+        "参数方向": [
+          "NONE（无参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsh4UI"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "PowerOnHandshakeMtd"
+        ],
+        "接口描述": "上电握手：SoC 启动后首先发送本命令与 MCU 建立通讯握手\n1 秒内未收到 0x8100 需重发，握手成功后停放",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ event 接口名须以 Evt 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0100",
+        "消息id建议": "0x0100",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYf7bJ",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfR7E"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "WakeSocAckEvt"
+        ],
+        "接口描述": "SoC 应答唤醒",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x010E",
+        "消息id建议": "0x010E",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfCSQ",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYeeLc"
+          }
+        ],
+        "参数名": [
+          "vehicleSignalStatus"
+        ],
+        "参数描述": "IGN 状态与整车 IGN 状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYURIES"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "VehicleSignalEvt"
+        ],
+        "接口描述": "MCU 向 SoC 通知车身信号（IGN、车门等）",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8119",
+        "消息id建议": "0x8119",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfHiK",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfd1R"
+          }
+        ],
+        "参数名": [
+          "dateTime"
+        ],
+        "参数描述": "年/月/日/时/分/秒",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "struct"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [
+          {
+            "id": "reczz28X6QYURQ6p"
+          }
+        ],
+        "引用错误码组": [],
+        "接口名": [
+          "RtcTimeSetMtd"
+        ],
+        "接口描述": "SoC 向 MCU 通知 RTC 唤醒时间",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0114",
+        "消息id建议": "0x0114",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfHyd",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdfSo"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "RtcRestartReqEvt"
+        ],
+        "接口描述": "MCU 因 RTC 定时时间到请求重启 SoC",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8111",
+        "消息id建议": "0x8111",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfJIt",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYdzRe"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "PowerOffReqAckEvt"
+        ],
+        "接口描述": "SoC 应答 MCU 关机通知",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x011F",
+        "消息id建议": "0x011F",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfMdz",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYbsDr"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "SentryModeAckEvt"
+        ],
+        "接口描述": "MCU 应答哨兵模式状态",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8116",
+        "消息id建议": "0x8116",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfR7E",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYf7bJ"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "WakeSocEvt"
+        ],
+        "接口描述": "MCU 唤醒 SoC",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x810E",
+        "消息id建议": "0x810E",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfSka",
+        "传输层协议": [
+          "spi"
+        ],
+        "关联接口": [],
+        "参数名": [
+          "mcuUpgradeStatus"
+        ],
+        "参数描述": "升级状态",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "ota"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsji9I"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "UpgradeStatusEvt"
+        ],
+        "接口描述": "MCU 通知 soc 升级状态",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x0C",
+        "服务名": [
+          "OtaSrv"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "升级：升级指令/状态/文件信息/分包数据",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8C01",
+        "消息id建议": "0x8C01",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfWIK",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYctDg"
+          }
+        ],
+        "参数名": [],
+        "参数描述": null,
+        "参数方向": [],
+        "参数类型": [],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "EnterStrEvt"
+        ],
+        "接口描述": "MCU 通知 SoC 进入 STR",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x810D",
+        "消息id建议": "0x810D",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfZFi",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYe9Uh"
+          }
+        ],
+        "参数名": [
+          "heartbeatSet"
+        ],
+        "参数描述": "心跳设置状态",
+        "参数方向": [
+          "IN（入参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [
+          {
+            "id": "reczz28XSHjsheSB"
+          }
+        ],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "HeartbeatSetMtd"
+        ],
+        "接口描述": "心跳设置下发：开启/关闭 Comm UART 或 Fast UART 心跳",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x0102",
+        "消息id建议": "0x0102",
+        "消息方向": [
+          "SOC→MCU"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfd1R",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYfHiK"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "RtcTimeSetAckEvt"
+        ],
+        "接口描述": "MCU 应答 RTC 时间设置",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8114",
+        "消息id建议": "0x8114",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYff9e",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYelxJ"
+          }
+        ],
+        "参数名": [
+          "result"
+        ],
+        "参数描述": "0=成功，非0=错误码",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint8(枚举)"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [
+          {
+            "id": "reczz28WjyEwnSMP"
+          }
+        ],
+        "接口名": [
+          "PetModeAckEvt"
+        ],
+        "接口描述": "MCU 应答宠物模式状态",
+        "接口类型": [
+          "event"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8117",
+        "消息id建议": "0x8117",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      },
+      {
+        "record_id": "reczz28XVdvYfmpd",
+        "传输层协议": [
+          "spi&uart"
+        ],
+        "关联接口": [
+          {
+            "id": "reczz28XVdvYe951"
+          }
+        ],
+        "参数名": [
+          "voltage"
+        ],
+        "参数描述": "电池电压",
+        "参数方向": [
+          "OUT（出参）"
+        ],
+        "参数类型": [
+          "uint16"
+        ],
+        "发送类型": [
+          "event"
+        ],
+        "命名空间": [
+          "power"
+        ],
+        "引用枚举": [],
+        "引用结构体": [],
+        "引用错误码组": [],
+        "接口名": [
+          "BatteryVoltageEvt"
+        ],
+        "接口描述": "MCU 向 SoC 通知电池电压",
+        "接口类型": [
+          "method(rr)"
+        ],
+        "服务id": "0x01",
+        "服务名": [
+          "PowerMgr"
+        ],
+        "服务接口正常性检测": "❌ method 接口名须以 Mtd 结尾",
+        "服务描述": "电源管理：上下电握手/休眠/复位/心跳",
+        "服务质量": [
+          "level1"
+        ],
+        "消息id(16进制)": "0x8118",
+        "消息id建议": "0x8118",
+        "消息方向": [
+          "MCU→SOC"
+        ]
+      }
+    ]
+  },
+  "row_counts": {
+    "data_structure": 42,
+    "data_structure_item": 161,
+    "error_code": 8,
+    "service_interface": 79
+  }
+}

@@ -1,0 +1,18 @@
+# Keil 工具链配置（模板）
+# 首次运行时 init_env.sh 自动拷贝为 config.conf（config.conf 不入库）
+# 工具路径（UV4/FROMELF）若在本机不存在，init_env.sh 会自动查找，
+# 找不到则交互式询问输入，并写回 config.conf
+# 烧录/探针相关配置（JLINK/DEVICE/镜像路径）在 probes/jlink/config/
+
+# 工具路径
+UV4="D:/keil/UV4/UV4.exe"
+FROMELF="D:/keil/ARM/ARMCC/bin/fromelf.exe"
+
+# Keil Target 名称（uvprojx 中的 TargetName）
+UV4_TARGET="hc32f460petb_Debug"
+
+# 工程配置
+MDK_DIR="MDK"
+UVPROJX="hc32f460petb.uvprojx"
+TARGET_NAME="DAB"
+OUTPUT_SUBDIR="output/debug"

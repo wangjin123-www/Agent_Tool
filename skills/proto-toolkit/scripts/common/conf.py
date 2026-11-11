@@ -1,25 +1,16 @@
 # -*- coding: utf-8 -*-
-"""配置加载：表格坐标 / 列映射 / 色板 / 代码生成输出的唯一来源。
+"""配置加载：平台宏 + 各平台数据源（飞书多维表格）坐标的唯一来源。
 
-脚本内禁止出现 token、sheet_id、列字母、输出路径等魔法值。
+脚本内禁止出现 base_token、table_id、字段名等魔法值——全部来自 config/proto_config.json。
+换平台 = 改 config.platform；实现按 scripts/platforms/<module> 匹配另一套，类似项目里的平台宏。
 """
 import json
 import os
 
 SKILL_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CONFIG_DIR = os.path.join(SKILL_DIR, "config")
-CODEGEN_DIR = os.path.join(SKILL_DIR, "codegen")
+CONFIG_PATH = os.path.join(SKILL_DIR, "config", "proto_config.json")
 OUTPUT_DIR = os.path.join(SKILL_DIR, "output")
-PROTO_JSON = os.path.join(OUTPUT_DIR, "protocol.json")
-
-# mod_interface 允许修改的 SI 列（改接口只动非主键列）：
-# 落表引擎（edit/apply.py）与写表前预检（rules/precheck.py）共用本表，
-# 避免两处各写一份导致「导出即被自己的预检拒绝」。
-MOD_INTERFACE_COLUMNS = {
-    "F": "if_desc", "G": "if_type", "H": "tx_type",
-    "J": "msg_id", "K": "pair_id", "L": "transport", "M": "qos",
-    "N": "param_name", "O": "param_type", "P": "param_desc", "Q": "param_dir",
-}
+CODEGEN_DIR = os.path.join(SKILL_DIR, "codegen")
 
 
 def _read_json(path):
@@ -27,16 +18,71 @@ def _read_json(path):
         return json.load(f)
 
 
-def proto():
-    """协议表配置 config/proto_config.json"""
-    return _read_json(os.path.join(CONFIG_DIR, "proto_config.json"))
+def load():
+    """整个 config：{ platform, platforms: { <id>: { name, module, source, tables } } }"""
+    return _read_json(CONFIG_PATH)
 
 
-def codegen():
-    """C 代码生成配置 codegen/c/config/codegen_config.json（默认语言 c）"""
-    return codegen_lang("c")
+def platform():
+    """当前活动平台 id（config.platform）。"""
+    return load()["platform"]
 
 
+def platforms():
+    """所有已配置平台的 dict。"""
+    return load()["platforms"]
+
+
+def platform_cfg(name=None):
+    """取某平台配置；name 缺省取当前活动平台。不存在直接报错并列出可用平台。"""
+    cfg = load()
+    key = name or cfg["platform"]
+    plats = cfg["platforms"]
+    if key not in plats:
+        raise ValueError("未配置的平台: %s（可用: %s）" % (key, ", ".join(sorted(plats))))
+    return plats[key]
+
+
+def source(name=None):
+    """当前平台数据源坐标。"""
+    return platform_cfg(name)["source"]
+
+
+def tables(name=None):
+    """当前平台表坐标 dict：{ role: {id, name, label_key, fields} }。"""
+    return platform_cfg(name)["tables"]
+
+
+def table(role, name=None):
+    """取某张表坐标：table('service_interface')['id']。"""
+    t = tables(name)
+    if role not in t:
+        raise ValueError("平台 %s 未配置表角色: %s（可用: %s）"
+                         % (name or platform(), role, ", ".join(sorted(t))))
+    return t[role]
+
+
+def conventions(name=None):
+    """表内约定：检测列关键字、问答表状态机取值等。"""
+    return platform_cfg(name).get("conventions") or {}
+
+
+def qa_state(key, name=None):
+    """问答表状态取值（pending/created/failed）；未配置时退回中文默认值。"""
+    defaults = {"pending": "待处理", "created": "已创建", "failed": "失败"}
+    return (conventions(name).get("qa_states") or {}).get(key, defaults.get(key, ""))
+
+
+def ensure_output():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    return OUTPUT_DIR
+
+
+def rel(*parts):
+    return os.path.join(SKILL_DIR, *parts)
+
+
+# ------------------------------------------------------------------ 代码生成注册表
 def languages():
     """语言注册表 codegen/config/languages.json"""
     return _read_json(os.path.join(CODEGEN_DIR, "config", "languages.json"))
@@ -58,48 +104,6 @@ def codegen_lang(lang):
 def lang_root(lang):
     """某语言的资产根目录（内含 config/ templates/ generated/）。"""
     return output_path(lang_entry(lang)["root"])
-
-
-def ensure_output():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    return OUTPUT_DIR
-
-
-def rel(*parts):
-    return os.path.join(SKILL_DIR, *parts)
-
-
-def sheets(cfg, key):
-    """取子表 id：sheets(cfg, 'data_structure')['id']"""
-    return cfg["sheets"][key]
-
-
-def col_index(letter):
-    """'A'→0, 'Q'→16, 'AA'→26"""
-    n = 0
-    for ch in letter.upper():
-        n = n * 26 + (ord(ch) - ord("A") + 1)
-    return n - 1
-
-
-def col_letter(idx):
-    """col_index 的逆：0→'A', 16→'Q'（列号↔字母只此一份实现）。"""
-    s = ""
-    idx += 1
-    while idx:
-        idx, rem = divmod(idx - 1, 26)
-        s = chr(ord("A") + rem) + s
-    return s
-
-
-def parse_a1(ref):
-    """'J24' → (col_index, row_1based)"""
-    ref = (ref or "").strip().upper()
-    letters = "".join(c for c in ref if c.isalpha())
-    digits = "".join(c for c in ref if c.isdigit())
-    if not letters or not digits:
-        raise ValueError("非法 A1 坐标: %r" % ref)
-    return col_index(letters), int(digits)
 
 
 def output_path(rel_or_abs):

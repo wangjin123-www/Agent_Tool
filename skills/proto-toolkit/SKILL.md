@@ -1,202 +1,206 @@
 ---
-version: 2.0.0
+version: 4.4.0
 author: wangjin0115
 company: cviauto
 name: proto-toolkit
-description: 7255 MCU&SOC 通信协议表（飞书 YrK8sncCThe8UstV0yBcvkjQnMR）全生命周期工具。Use when user mentions "检查协议", "校验协议", "协议检查", "relink", "链接修复", "修改协议", "加接口", "加协约", "解析协议", "protocol.json", "生成代码", "协议代码生成", "命令表", "错误码", or asks to edit/verify the Service Interface / Data Structure / Parameter Enum / 错误码 sheets. 三能力：① sync 校验并直接修正（语义+分节行+链接 E1~E6 全量重算+枚举块边框/样式补齐；--dry-run 只报不改）；② edit 全参数化改表（add-interface/add-struct/add-enum/mod-interface/delete-interface 直接传参→默认直接写表，写完自动复跑 sync+parse）；③ parse 三表→protocol.json 并按 --lang 生成多语言代码（c 就绪 / java 插槽）。④ query 三表关联闭包查询 + console 本地可视化控制台（增删改查 / sync / parse / gen）。统一错误码独立成「错误码」子表，SI P 列 result 参数双向跳转。生成物 protocol.json / codegen/*/generated 禁手改。所有输入均命令行传参，无 AI 逐项问答；可视化需求走 console（本地页面，业务逻辑仍复用 edit apply / query）。
+description: 通信协议工具链（数据源为飞书多维表格 Bitable），按平台宏路由。读取理解（read/query/show）、拉取快照（pull → base_raw.json 唯一提交物，解析在内存完成，自带检测统计）、代码生成（gen → C / AUTOSAR ARXML）、兜底修复（fix）。Use when user wants to 看懂/查询协议、接口/结构体/枚举/错误码/服务及其关联闭包，or mentions 协议表、protocol、查协议、接口详情、消息id、参数、struct 成员、enum 取值，or says 拉协议/导出json/base_raw/生成代码/生成 .h .c/生成 arxml/自动修复/修复表/协议变更了拉下来看差异/检测不通过。表结构维护与 Base 治理（字段转单选、检测公式、删视图、建表/迁数据、文档块）走 references/base-maintenance.md 的受控写 SOP。校验与日常格式修复在多维表格（检测公式 + 建议列 + 自动回填 workflow）；能多维表格实现的就在多维表格实现，skill 做表格实现不了的（raw 快照 + 内存解析 + 模板生成 + 批量兜底修复）。新增协议内容：对话里问清服务/结构/枚举等语义后直接写正式表（检测公式与自动回填把关），无需中间问答表。所有交互命令行传参，无 AI 问答。
 ---
 
 # proto-toolkit
 
-7255 协议表（飞书）→ 校验并修正 → protocol.json 契约 → 按语言生成代码，一条命令链全覆盖。
+通信协议工具链：从飞书多维表格读取协议、导出可 diff 的 JSON 快照、自动修复表数据、生成 C / ARXML 代码。
 
-## 初始化
+## 表结构（2026-11-09 表优化定稿，5 张表）
+
+表 id 与字段名见 `config/proto_config.json`（本文不重复抄写，避免文档与配置分叉）。表职责：
+
+| 表 | 表 id | 说明 |
+|---|---|---|
+| 服务接口 | tbl1YV1OxMxG3kLm | **纯接口表**：每行一个接口，`服务名`/`命名空间`/`服务id`/`服务描述` 是普通列（不是 link）。主字段=`接口名`（保证 link 字段引用时显示接口名而非服务名）。无接口的预留服务也保留行，接口字段留空待补 |
+| 数据结构 | tblsDjXiMxUOPGCx | 结构体与枚举合并，`种类`=结构体/枚举；`子项` link 指向子项表 |
+| 数据结构子项 | tblxbsN0Al9ad3o6 | 成员变量与枚举值合并，`子项类型`=枚举值 的为枚举值，其余为结构体成员。字段分组：`字节序号(B)` / `位宽(bit)` / `长度`（变量长度：标量=1、`[n]` 数组=1024/64，非枚举值行必填）/ `Bit范围`（公式，闭区间 `字节×8 ~ 字节×8+位宽×长度-1`） |
+| 错误码 | tbl858ZfyLwPOMvj | 独立表，接口用 `引用错误码组` 关联 |
+
+（原「自动修改协议」问答表已退役删除，2026-11-09：新增协议内容改为对话确认语义后直接写正式表。）
+
+服务接口表共 79 行 = 71 条接口行（`接口名` 非空）+ 8 条只有服务信息的预留行（BacklightSrv/AdasSrv/BodySrv/HvacSrv/SeatSrv/SafetySrv/DiagSrv/VehicleSignalSrv，接口字段全空待补）。reader 按 `接口名` 是否为空分流，服务由全部行的 `服务名` 去重聚合，`interface_names` 按行归属统计。
+
+结构体/子项表按 `种类`/`子项类型` 分流回 structs / enums / members / enum_values，对外模型与合并前一致。
+
+## 核心链路（v4.2）
+
+```
+                        ①pull（API）
+多维表格 ─────────────────────▶ base_raw.json   ← 唯一提交物（git）
+                                      │
+                                      └─ ②内存解析 ──▶ protocol.json 形态的 dict
+                                                        ├─ check  判定 ❌/⚠️
+                                                        ├─ ③gen  → codegen/<lang>/generated/
+                                                        └─ fix / read / query / show
+```
+
+**只有一份 JSON**：`base_raw.json` 是唯一落盘产物与唯一真源；解析在内存里完成，不落中间文件。
+
+- `base_raw.json` = API 原始记录（record_id、link id、检测公式原文），稳定排序，提交 git。
+- 协议表改了 → 重新 `pull` → `git diff base_raw.json` 直接看到表里改了什么。
+- 解析逻辑（[pull.transform](scripts/pull.py)）只此一处，gen/check/fix 共用，不会各写一遍。
+- 需要人工 review 解析结果时才 `pull --model` 额外导出 `protocol.json`（默认不落，不入 git）。
+
+**检测约定**：每个实体带 `check` 字段（多维表格「XX正常性检测」公式原文）——`❌`=违规（阻断 gen）、`⚠️`=警告、`✅`/空=通过。业务性缺失（服务暂未定义接口、结构体暂未被引用）自动降级为警告，不阻断。表里加检测列 pull 自动带上。
+
+## 铁律：表坐标与字段名只从 config 取，禁止硬编码
+
+**任何脚本（含一次性诊断脚本）禁止硬编码 `tbl`/`vew`/`fld` 开头的 id，也禁止硬编码表内字段名。** 坐标走 `conf.tables()` / `conf.table(role)` / `conf.platform_cfg()`；字段名走 `schema.from_records()` / `schema.declared()` 拿到的语义键。
+
+理由（2026-11-09 两次事故）：
+- Base 重建「服务接口」表后 id 从 `tblHdNLTj7tfascd` 变成 `tbl1YV1OxMxG3kLm`，一次性脚本硬编码旧 id，lark-cli 只回 `not_found`；
+- 表里字段从 `数组长度` 改名 `长度` 后，reader 硬编码旧名，**静默读到空**——`upgradeData`(1024) / `verArray`(64) 的数组长度全部丢失，且不报错。
+
+### 字段语义映射（config `tables.<role>.fields`）
+
+脚本里只写语义键（`msg_id` / `arr_len` / `interface_name` …），真实字段名声明在 config：
+
+```json
+"fields": {
+  "msg_id":  ["消息id(16进制)", "消息id"],   // 候选名，按顺序兜底
+  "arr_len": ["长度", "数组长度"]
+}
+```
+
+两层保护：
+1. **运行时**：[schema.from_records()](scripts/common/schema.py) 按 raw 记录里实际出现的键就地解析语义键 → 真实字段名。字段改名只要命中任一候选，就不会读成空；表为空等极端情况退回首选名。
+2. **体检时**：`doctor` 拿线上 `+field-list` 核对声明；声明的名字全都不存在时按命名包含关系唯一推断，`doctor --fix` 回写 config（新名提首选、旧名留候选）。
+
+`label_key` / `split.field` 的值是**语义键**不是字段名；`links` 声明「link 字段语义键 → 目标表 role」，doctor 会核对该 link 字段线上确实指向目标表。
+
+### 降级规则（config `check_rules.degraded`）
+
+「业务尚未定义、不阻断 gen」的 ❌ 项按表角色声明匹配串（如 `data_structure: ["引用接口为空", "子项为空"]`）。这些串匹配的是多维表格检测公式的**输出文本**，公式一改写就会静默失效（gen 突然被阻断，且报错看起来像协议问题），所以 `doctor` 会校验每个串仍能在该表的 formula 字段表达式里找到，找不到直接报 ERROR。
+
+**动手前先体检：**
 
 ```powershell
-$SKILL_DIR = "<repo>\.claude\skills\proto-toolkit"
-$PY = "$SKILL_DIR\utils\.venv\Scripts\python.exe"
-
-# 首次/依赖变更：搭环境（建 venv + 装 jinja2/jsonschema，全隔离在 utils\ 内）
-powershell -ExecutionPolicy Bypass -File "$SKILL_DIR\utils\setup_env.ps1"
+python scripts/cli.py doctor          # 表 id / 字段语义 / link 目标 / split / 降级规则
+python scripts/cli.py doctor --fix    # 回写失效表 id 与被改名的字段，改完 git diff 确认
 ```
 
-lark-cli 需已登录（`lark-cli auth status`）。
+`pull` 联网读表失败时会自动提示改用 `doctor --fix`。
 
-## 命令（唯一入口 scripts\cli.py）
+### 不随表漂移、因此刻意保留在代码里的
 
-| 命令 | 能力 | 说明 | 退出码 |
-|------|------|------|--------|
-| `sync [--dry-run]` | ① 校验并修正 | 语义(S01~S17) + 分节行(规则27) + 链接 E1~E6 全量重算 + 禁止列多链清理 + 枚举块边框/样式补齐 + 服务块 A~D 合并校验 + 规则表对账(RUL)；缺失/漂移链接重写、多余链接清成纯文本、枚举块缺边框即补写、服务块合并不全即按块重做；`--dry-run` 只报不改 | 0=过，1=有错 |
-| `sync --materialize` | ① 校验并修正 | 连带执行「可自动修」规则（当前 R23 枚举取值 `0xNN` 规整）；默认关，因为会改表 | 同上 |
-| `sync --emit-fix <json>` | ① 校验并修正 | 把能算出的修法导出成 `edit_request.json`（当前 S17 复合参数→建 struct 三连 op），再走 `edit apply` 落表 | 同上 |
-| `sync --freeze-rules` | ① 校验并修正 | 刷新 `config/rule_snapshot.json`（规则表 C 列正文 hash 快照），RUL 对账用 | 同上 |
-| `edit add-interface <参数> [--dry-run] [--force]` | ② 修改协议 | 参数化加接口：`--service --direction --name --desc --if-type --tx-type --msg-id --pair-id --transport --qos --param`（可重复）；**默认直接写表** | 0 |
-| `edit add-struct <参数> [--dry-run] [--force]` | ② 修改协议 | 参数化加 struct：`--name --service --namespace --desc --member`（可重复）；**默认直接写表** | 0 |
-| `edit add-enum <参数> [--dry-run] [--force]` | ② 修改协议 | 参数化加枚举：`--name --msg-id --value`（可重复）；**默认直接写表** | 0 |
-| `edit mod-interface <参数> [--dry-run] [--force]` | ② 修改协议 | 参数化改接口：`--name --set 列=值`（F/G/H/J/K/L/M/N/O/P/Q）；**默认直接写表** | 0 |
-| `edit delete-interface <参数> [--dry-run] [--force]` | ② 修改协议 | **级联删**：`--name 接口名`。连带删对端接口（K 列互指方）、只被这批接口引用的 struct（DS 整块）与枚举（PE 整块）；仍被其他接口引用的保留并在计划里提示。`delete` 是唯一会 `+dim-delete` 行的 op，固定最后按行号自下而上执行 | 0 |
-| `edit apply <json> [--dry-run] [--force]` | ② 修改协议 | 批量落表：**默认直接写表**；`--dry-run` 才只出计划（插入点/写入格/合并/删除/警告）。写前跑**预检**（`scripts/rules/precheck.py`，与 sync 同一套判据）；预检有 ERR 时拒绝写表，`--force` 可越过；写后自动复跑 sync + parse 刷新 | 0=过，1=预检拦截 |
-| `query <关键词> [--json]` | ④ 查询协议 | 输入接口名/描述/msg_id/pair_id/服务名/struct 名/枚举名/C 常量名（`0x801`/`2049`/`801` 均可），迭代展开三表关联闭包到不动点，输出接口（含 SI 行号 + 飞书跳转）+ 被引用 struct/enum + 引用方；`--json` 落 `output/query_result.json` | 0 |
-| `console [--port 8765]` | ④ 可视化控制台 | 起本地 `http.server`（默认 8765）托管 `utils/protocol_console.html` + JSON API：sync / 跳转校验报告 / parse / gen / 查询 / 增删改查表单；业务逻辑全部复用现成 `edit apply` 与 `query`，页面只做视图 | 0 |
-| `langs` | ③ 解析协议 | 列出已注册语言与状态（c=ready / java=todo） | 0 |
-| `parse [--lang c\|java\|all\|none]` | ③ 解析协议 | SI+DS+PE 三表 → `output/protocol.json`（含 revision 快照），然后按 `--lang` 生成代码；缺省按注册表 default（`c`），`none` 只出 json | 0 |
-| `gen --lang <lang>` | ③ 解析协议 | 只生成代码（不重解析）：`codegen/<lang>/generated/` | 0 |
-| `rule` | 辅助 | 打印「AI修订规则」子表原文 | 0 |
+- 基础类型位宽：`uint8=8 / uint16=16 / uint32=32`（协议常识，不是表数据）
+- 语言类型映射：`uint8 → uint8_t`（C 语言知识）
+- ❌/⚠️/✅ 的阻断语义、msg_id bit15 方向判定、C 命名规范（业务约定，表里无对应数据）
+
+这些搬进 config 只是挪常量，不降低风险；真正会漂移的是字段名、表 id、split 选项，已全部配置化。
+
+## 用法
 
 ```powershell
-& $PY "$SKILL_DIR\scripts\cli.py" sync            # 校验 + 自动修正
-& $PY "$SKILL_DIR\scripts\cli.py" sync --dry-run  # 只看会改哪些
+cd .claude/skills/proto-toolkit
+
+# 理解协议（联网）
+python scripts/cli.py read                     # 概览
+python scripts/cli.py query <关键词>           # 搜索（含关联闭包）
+python scripts/cli.py show interface <接口名>  # 定向：interface|struct|enum|error|service
+
+# 离线（读 base_raw.json，不联网）
+python scripts/cli.py read --from-raw output/base_raw.json
+
+# 主体链路
+python scripts/cli.py doctor                   # 先体检：config 表坐标 vs 线上 Base
+python scripts/cli.py doctor --fix             # 表 id 失效则按表名自动重解析
+python scripts/cli.py pull                     # 表 → base_raw.json（唯一提交物，自带 ❌/⚠️ 统计）
+python scripts/cli.py pull --from-raw output/base_raw.json   # 用已有 raw 重跑（不联网）
+python scripts/cli.py pull --model             # 额外导出 protocol.json 供人工 review
+python scripts/cli.py fix                      # 预览自动修复计划（兜底：批量/点名场景，默认 dry-run）
+python scripts/cli.py fix --apply              # 真正写表修复
+python scripts/cli.py langs                    # 列出语言与状态
+python scripts/cli.py gen --lang c             # raw → 内存解析 → C 代码
+python scripts/cli.py gen --lang arxml         # → AUTOSAR ARXML
+python scripts/cli.py gen --lang all           # 全部 ready 语言
 ```
 
-## 路由
+`gen` 的路径参数接受 `base_raw.json` 或 `protocol.json`（自动识别形态）；缺省读 `output/base_raw.json`。检测统计已并入 `pull` 输出（原 `check` 命令退役）。**`gen` 缺省读本地快照、不联网**，会打印快照文件修改时间并提示先 `pull`；要生成前确保用最新数据，用 `gen --fresh`（先 `pull` 再 `gen`）或先手动 `pull`。
 
-- 「检查/校验一下协议」「链接挂了」→ `sync`（校验并直接修正，不需要再加 `--fix`）；
-  只想看会改什么 → `sync --dry-run`。
-- 「加协约/加接口/加 struct/加枚举」「改协议」「删接口」→ 直接拼 `edit add-interface|add-struct|add-enum|mod-interface|delete-interface`
-  命令行（字段值全部当参数传），**默认直接写表**，不再预览确认；
-  写完内部已自动复跑 sync + parse，无需再手动补跑。
-  只想要计划不落表时才加 `--dry-run`；描述含英文逗号或一次要改多项时，改用 `edit apply <json>` 传文件。
-- 「查一下某个接口/协议」「这个 struct 被谁用」→ `query <关键词>`（三表关联闭包，带行号与跳转）。
-- 「可视化改协议」→ `console`（浏览器打开控制台，增删改查 + sync/parse/gen 按钮）。
-- 「解析协议」「导出 json」→ `parse`（出 protocol.json；要只要 json 就 `parse --lang none`）；
-  「生成 C 代码」→ `parse --lang c` 或 `gen --lang c`；「都生成」→ `parse --lang all`；
-  「有哪些语言」→ `langs`。**语言必须由参数指定，不得反问用户后再临时实现新语言。**
-- 「同步位域图」「Message Layout」→ 该能力已移除，直接 `sync` 即可（位域图子表不存在）。
-- 用户只说「看看/问一下」→ `sync --dry-run` 或 `parse --lang none`，不执行任何写表。
+依赖：`lark-cli`（`--as user` 登录）、`python` + `jinja2`（C 生成用；`python -m pip install jinja2`）。
 
-## 规则注册表（检查与修改的唯一判据源）
+## 表内自动化（多维表格承担，2026-11-09 第十一批）
 
-`scripts/rules/` 是全部规范的单一真源。`sync`（全表检查）和 `edit apply`（写表前预检）
-调同一套 `Rule`，不再各写一份判据。
+格式类修复已下沉到多维表格，skill 不再是日常修复入口：
 
-| 文件 | 职责 |
-|------|------|
-| `rules/__init__.py` | `Rule` / `Issue` / `Ctx` / `RULES` / `register()`；入口 `run_sync` `run_precheck` `precheck_blocked` `emit_fix` `freeze` `apply_fix` |
-| `rules/legacy.py` | COV 解析覆盖率对账 + 既有 6 个 checker 包成聚合 Rule（SEM / SEC / LNK / STY / S16 / MERGE） |
-| `rules/basic.py` | 新增可修规则：S17 复合参数建 struct、R23 枚举取值格式 |
-| `rules/precheck.py` | `scope="precheck"` 规则（PRE）：对未落表的 edit ops 做纯逻辑拦截 |
-| `rules/drift.py` | 规则表对账（RUL）：代码 `rule_no` ↔ 「AI修订规则」子表序号 |
+| 表 | 建议列（formula） | 回填自动化（workflow，enabled） |
+|---|---|---|
+| 服务接口 | `消息id建议`（fldyCBkNNe，`0x%04X`） | `消息id格式自动回填` wkfo9S9hIasLUeUj |
+| 数据结构子项 | `枚举值建议`（fldj1xDyDG，`0x%02X`） | `枚举值格式自动回填` wkfR0LFGuPAlRl7B |
 
-`Rule` 字段：`id`（检查码）/ `title` / `rule_no`（对应规则表序号，drift 用）/ `scope`
-（`table` 全表 / `precheck` 写表前）/ `fixable` / `default`（`False` 表示需 `--materialize`）。
+机制：`ChangeRecordTrigger`（检测字段 isNotEmpty）→ `IfElseBranch`（原值 ≠ 建议值才写，防同值死循环）→ `SetRecordAction`（ref_info 引用触发记录，把建议列计算结果写回原字段）。回填后公式重算、检测转绿，链路自然终止。实测：注入 `102` → 30s 内自动修回 `0x0801`；注入 `0` → 自动修回 `0x00`；19 条常驻命名违规在场时零意外写入。
 
-`Issue.fix` 是声明式修法，两种形态：`{"ops": [...]}`（转成 edit_request 走 apply）、
-`{"cells": [...]}`（直接写格）。新增一条规范 = 在 `basic.py` 写 `detect` 并 `register`，
-sync/edit 自动双向生效。
+**已知边界**：已经非空的检测不会因公式更新/同值写入自动再触发（无变更事件）——改检测公式产生的存量问题需要一次真编辑才触发回填，平时靠 A2 每日体检兜底展示。
 
-**修复路径只有一条**：checker 的 `report(ctx)` 只只读校验、`repair(ctx, sink)` 只把
-「要写什么」塞进 sink（`writes` / `styles` / `merges`），真正写表统一由 `rules.apply_fix`
-执行；dry 与否只由 `Rule.report` 判定，另有 `feishu.set_read_only` 闸门兜底——
-dry-run 下任何写表调用直接抛 `ReadOnlyError`。
+子项表检测公式同批补了「❌ 枚举值须0x开头十六进制」项（REGEXMATCH `^0[xX][0-9A-Fa-f]{1,2}$`），是子项表回填的触发源。
 
-## 规则
+## 自动修复（fix）
 
-- **真源唯一**：协议表是唯一真源；`output/protocol.json`、`codegen/*/generated/`
-  全部是生成物，**禁手改**（下次 parse/gen/apply 即被覆盖）。
-- **表格→json 双保险**（2026-10-31 定稿）：
-  A 解析覆盖率对账——`parse_*` 把「行有内容但没进模型」的情况记进
-  `proto.source.parse_stats.*.skipped`（行号+原因），sync 的 COV 规则汇总告警，
-  杜绝静默丢行/错列读空/截断；
-  B JSON Schema 契约——`config/protocol.schema.json`（draft-07 子集，执行器
-  `scripts/model/jsonschema_lite.py`，无第三方依赖）在 `save()` 落盘前与 `load()`
-  读入时双向校验（schema_version 1.1.0），违规抛 `SchemaError`，保护 gen 等下游。
-- **全参数化，无 AI 问答**：修改协议用 `edit add-*`/`mod-interface`/`delete-interface` 传参，
-  语言用 `--lang` 传参；不逐项问答。批量复杂的才落 JSON 文件给 `edit apply`。
-  需要界面时用 `console`：`utils/protocol_console.html` 只做视图，所有写操作调用同一套
-  `edit apply`，不新增第二条业务路径（页面按钮 = 命令行参数）。
-- **手写代码不动**：`App_SocComSysCmd.h` 的 X-macro 清单仍是编译期真源；
-  生成表只做比对视图，不直接编入工程（见 CLAUDE.md SOC 通信链）。
-- **链接只认主键**：sync 重算链接按 struct 名/枚举首行/接口行定位，不存绝对 URL；
-  base64 一律程序生成，禁手算。
-- **消息 id 列不带链接**（2026-10-30 定稿）：SI J（消息 id）、PE E（Message Id）必须纯文本；
-  枚举的双向链接只走「SI P 参数描述 ↔ PE A」与「DS K 成员描述 ↔ PE A」，
-  struct 走「SI N ↔ DS C」，请求/应答走「SI K ↔ 对端 SI J」，
-  统一错误码走「SI P result ↔ 错误码!A（COMM_RESULT 组首行）」；result 按规则 26
-  进 struct 时，改走「DS K result 成员描述 ↔ 错误码!A」。
-  其余列一律不允许挂链接，sync 会把多余链接清成纯文本。
-- **枚举关联真源 = 描述列内链**：表里枚举参数的 O 列写的是基线标量（如 `uint8`），
-  枚举归属只体现在「SI P / DS K 内链 → PE 枚举名首行」。解析时把链接解成枚举名存入
-  `Param.enum_ref` / `Member.enum_ref`（`type` 保持原文本，C 产物不变），
-  `resolve_type` 见 `enum_ref` 优先判 `enum`——只看 type 文本永远判不出枚举。
-- **参数值域必须进 Parameter Enum**：SI P 列只放中文描述 + 枚举链接，禁止写
-  `0=…/1=…`、`0x00:…` 这类内联值域；`add-interface` 用 `type=enum:枚举名` 会自动写
-  `O=uint8` + `P` 链接；sync 的 S16 检查会标记 P 列内联值域。
-- **统一错误码进「错误码」子表**：所有应答类接口的返回码参数（`N=result` / `O=uint8` /
-  `Q=OUT`，且 P 列写「0=成功，非0=错误码」）的 P 列必须链到 `错误码!A2`（组 `COMM_RESULT`
-  首行），错误码表 A2 反向链回首个引用行（E6）。表结构 A 错误码组 / B Value / C 常量名 /
-  D 描述 / E 适用消息；取值 `0x00` 成功起、`0x01~0x07` 通用错误，命名 `COMM_*` 全大写。
-  「0=OK，1=NOK」这类具体业务二值语义不算统一错误码，仍走 Parameter Enum。
-- **复合参数必须建 struct**（规则 8/9/26，sync S17 强制检查）：一个接口的命令字载荷
-  成员数 ≥2 时，**不得**在 SI 拆成多行 N/O 参数；必须在 Data Structure 建 struct，
-  SI 只留一行 `N=数据结构名（链 DS C）/ O=struct（下拉）/ P 留空`，原多参数行
-  **清空内容不删行**。典型反例（S17 会点名）：`SocPowerCtrlReqEvt{powerType,onOff}`、
-  `McuPowerCtrlReqMtd{ctrlType,ctrlCmd}`、`TimeZoneSetMtd{sign,offsetSeconds}`。
-  判定：同一接口有 ≥2 个参数且其中无 `struct` 类型 → S17 WARN（sync 只报不改，因为
-  struct 名与成员语义需人工定；但 `sync --emit-fix out.json` 会按「接口名去 Mtd/Evt + 参数
-  顺序」推导出 add_struct + clear_params + mod_interface 三连 op，人工确认后 `edit apply`
-  一次落表）；`edit add-interface` 传 ≥2 个标量 `--param` 会被写表前预检直接拦下（ERR）。
-  例外：多个**独立**参数（各自是不同物理量、非同一命令字载荷）才拆行，如 0x0108。
-- **插行只允许自下而上**（+dim-insert），避免行号漂移；优先填块内缓冲空行。
-- **接口参数落行**：第一个参数与接口同行（`N/O/P/Q` 与 `E` 同行），第 2 个起才另起参数行；
-  每个接口占 `max(1, len(params))` 行，禁止「接口一行、参数下一行」。
-- **枚举块样式**：A 列加粗左对齐、B/E 居中、C/D 左对齐、A~E 四周 `#1F2329` 细边框；
-  `add-enum` 只写值，sync 按块比对并补齐边框/对齐。
-- **分节行文案一字不改**：`▶ SOC → MCU · 下发/请求` / `▶ MCU → SOC · 上报/应答`。
-  分节行**只是排版分组**（表格好看），不是方向真源；方向真源 = msg_id bit15
-  （`0x8000` 置位 = MCU→SOC，如 0x8802；为 0 = SOC→MCU，如 0x0100），
-  接口 `direction` 由解析层按 bit15 推导，所在分节位置不符只报 S03 排版 WARN。
-- **服务块 A~D 纵向合并**：Service Interface 每个服务块（A 列服务首行 → 下一服务首行前一行，
-  末块到最后内容行）的 A/B/C/D 四列必须各自**整块纵向合并单段**（`A{首}:A{末}`…`D{首}:D{末}`），
-  只首行带值、其余行显示同值；插/删行不会自动扩展已有合并区，故写完表必须按块重算。
-  `sync` 比对 `+sheet-info` 的 merged_cells 并在不一致时按块重做（先 unmerge 整块 `A{首}:D{末}`
-  再逐列 merge，飞书不允许与既有合并重叠）；`edit` 落表后自动执行同一修复。
-  漏合并的表现：块内每行重复显示服务名/服务 id/描述/命名空间（如「48 行起又是 power」）。
-- **写表必校验**：任何写表（sync / apply）之后以退出码为准，非 0 不报"完成"。
-- **写表前先预检**：`edit` 各命令（含 `delete-interface`）会在写表前先用 `scripts/rules/precheck.py`
-  对**未落表的 ops** 跑一遍判据（与 sync 同一套 Rule），有 ERR 时拒绝落表；确要强写才加 `--force`。
-  默认直接写表，`--dry-run` 只出计划。
-- **配置即真值**：token/sheet_id/列映射只在 `config/proto_config.json`；
-  语言清单/默认语言/status 只在 `codegen/config/languages.json`；
-  各语言的输出路径/命名/前缀只在 `codegen/<lang>/config/codegen_config.json`；脚本零魔法值。
-- **生成器插件化**：语言 = `scripts/gen/lang_<lang>.py` + `codegen/<lang>/` + 注册表一条；
-  新语言照 `codegen/java/README.md` 三步接入，不改 `cli.py`。
-- **确定性生成**：gen 渲染两次 hash 必须相同（脚本自检），否则中止。
+**定位：兜底**——批量修复、用户点名修复、表内自动化覆盖不到的表。日常格式修复由上面的表内自动化接管。
 
-## 状态
+只修**能确定性推导**的问题（语义类只报告，不猜）：
 
-- 表 revision 1144（2026-11-01）；13 服务 / 65 接口 / 14 struct / 22 枚举；错误码 1 组 8 条。
-  （2026-11-01 删除「Message Layout」子表与 DS G 列位域布局，DS 列 G~K = 字节序号/位/成员/类型/成员描述。）
-- 已知遗留数据问题（sync 报 ERR，待表侧修）：
-  `SocFanQueryMtd(0x0801)`、`SocFanCtrlMtd(0x0802)` 都单指 `0x8802`，
-  而 `SocFanSpeedEvt(0x8802)` 的关联 id（K 列）为空。
-- 产物：`output/protocol.json` + `output/_writes_*.json`（临时）；
-  `codegen/c/generated/{Proto_Types.h, Proto_Enums.h, Proto_CmdTable.c, Proto_CmdStub.c}`。
+| 项 | 修复内容 |
+|---|---|
+| R1 消息id 规范化 | `801` / `0x801` → `0x0801`（4 位大写十六进制） |
+| R2 枚举值规范化 | `1` / `0x1` → `0x01`（2 位大写十六进制） |
+| R3 select 选项缺失 | 记录值不在字段选项内 → 补选项（**用 `+field-search-options` 取全量基集，绝不用会截断的 field-get options**，避免误删选项清空数据） |
+| R4 类型别名规范化 | `uint8_t` / `int8` → `uint8` / `sint8` |
 
-## 目录
+流程：`pull`（落 raw）→ `fix`（基于 raw 算差异，默认只预览）→ `fix --apply`（写表）→ 再 `pull` 复核。修复幂等，修完再跑 diff 为空。
 
-```
-proto-toolkit/
-├── SKILL.md / README.md
-├── config/proto_config.json        # 表坐标/列映射/分节文案（唯一配置源）
-├── config/protocol.schema.json     # protocol.json 契约（校验手段 B，save/load 双向拦）
-├── scripts/
-│   ├── cli.py                      # 唯一入口
-│   ├── common/{conf,log,feishu}.py # 配置 / Report / lark-cli 封装
-│   ├── model/protocol.py           # protocol.json 数据模型
-│   ├── parse/sheet_reader.py       # SI+DS+PE 三表解析
-│   ├── check/{semantics,sections,links,blocks}.py
-│   ├── rules/                      # 规则注册表（唯一判据源）
-│   │   ├── __init__.py             # Rule/Issue/Ctx + run_sync/run_precheck/emit_fix/freeze
-│   │   ├── legacy.py               # 既有 checker → 聚合 Rule 适配器
-│   │   ├── basic.py                # 可修规则 S17 / R23
-│   │   ├── precheck.py             # 写表前预检（scope=precheck）
-│   │   └── drift.py                # 规则表对账 RUL + 快照 freeze
-│   ├── edit/{request_builder,apply}.py  # 命令行参数→请求 / edit_request.json 落表引擎
-│   └── gen/{__init__,lang_c,lang_java}.py  # 语言分发 + C 生成器 + Java 插槽
-├── codegen/
-│   ├── config/languages.json       # 语言注册表（--lang 取值 / 默认语言 / status）
-│   ├── c/{config,templates,generated}   # C 语言插槽（就绪）
-│   └── java/{config,templates,generated} + README.md   # Java 插槽（待实现）
-├── utils/{setup_env.ps1, requirements.txt, .venv/}
-└── output/                         # protocol.json + 中间产物
-```
+> 表合并后「接口列表 / 所属服务」双向字段已取消（改为服务接口表内单向自关联 `归属服务`），故原 R5 双向回填不再适用。
+
+## 代码生成（gen）
+
+与 v2 完全一致：**jinja2 模板 + 语言注册表 + 插件化生成器**，模板零逻辑、StrictUndefined、两次渲染 md5 自检（确定性）。
+
+- 语言注册表：`codegen/config/languages.json`（c=ready / arxml=ready / java=todo）
+- 每种语言：`codegen/<lang>/{config,templates,generated}` + `scripts/gen/lang_<lang>.py` + 注册表一条
+- C 产物：`Proto_Types.h`（结构体+位域访问器+Pack/Unpack 原型）、`Proto_Enums.h`、`Proto_CmdTable.c`（RX/TX 登记表，方向真源=msg_id bit15）、`Proto_CmdStub.c`
+- ARXML 产物：`codegen/arxml/generated/CDC7255_Protocol.arxml`（AUTOSAR 4.2.2，DataType + Interface）
+- 新增语言三步：建 `codegen/<lang>/` + 写 `scripts/gen/lang_<lang>.py`（签名 `generate(data, gcfg)`）+ 注册表加一条，不改 cli
+
+`scripts/gen/object_view.py` 把扁平 protocol.json 包装成 v2 对象接口，供 arxml 等按对象属性访问的生成器复用。
+
+### C 命名规范（2026-11-09 定案，方案 A）
+
+表内名字即 C 名字，生成器**不再叠加类型前缀**；只有函数名保留 `Proto_` 辅助前缀：
+
+| 对象 | 表内写法 | 生成物 |
+|---|---|---|
+| 结构体类型 | `PowerOffReqResult_t` | `typedef struct {...} PowerOffReqResult_t;` |
+| 枚举类型 | `AccStatus_E` | `typedef enum {...} AccStatus_E;` |
+| 枚举值 | `AccStatus_ACC_OFF`（枚举名去 `_E` + `_` + 值名） | `AccStatus_ACC_OFF = 0x00,` |
+| 结构体成员 / 接口参数 | `powerOffReqResult`（lowerCamelCase） | 同名成员/参数 |
+| Pack/Unpack、位域访问器 | — | `Proto_PowerOffReqResult_Pack(...)`（`helper_prefix`） |
+| 命令 id 枚举 | — | `PROTO_CMD_<接口名>`（`cmd_enum_prefix`） |
+
+配置项（`codegen/c/config/codegen_config.json`）：`struct_prefix` 已置空（类型名直接用表内名），新增 `helper_prefix: "Proto_"` 只作用于函数名。
+
+**为什么必须这样**：C 的 typedef 名与变量名同属一个普通标识符命名空间。若结构体类型与其成员/参数同名（如参数 `PowerOffReqResult` 引用结构体 `PowerOffReqResult`），生成 `X X;` 后类型名被遮蔽，后续声明直接编译失败（MISRA C 2012 Rule 5.3）。类型名加 `_t`/`_E`、成员与参数用小驼峰即可从形态上根本区分。
+
+表内三条命名检测公式（数据结构 / 服务接口 / 数据结构子项）负责守门，`pull` 会把结果带进 `check`，违规即阻断 `gen`。
+
+## Base 表维护（写操作）
+
+**改结构（字段 / 公式 / 视图 / 自动化）必须先在飞书「沙箱」里验证，不许直接改正式表**——沙箱是 Base 右上角 `···` 菜单里的隔离副本，验证通过一键更新线上，同步后立刻 `pull` + `gen` 复核。（`fix --apply` 改的是数据行，不受此限。）
+
+字段类型改造（text→单选）、检测公式增删、删视图、建表/迁数据、文档块写入等结构性变更，**先读 [references/base-maintenance.md](references/base-maintenance.md)** 按受控流程执行。检测公式产出必须遵守 ❌/⚠️/✅ 语义（gen/fix 只认这个约定）。
+
+## 平台宏机制
+
+`config/proto_config.json` 的 `platform` 指定活动平台，实现按 `scripts/platforms/<module>/` 匹配。换平台 = 改配置 + 在新平台 reader 实现 `read_raw()` / `assemble_raw()` / `read()`。pull/fix/gen 是平台无关通用层。
+
+新增平台三步：① `platforms` 下加一项声明 `module` 与数据源/表坐标；② 新建 `platform_<id>/reader.py`（实现 `read()`/`read_raw()`/`assemble_raw()`，实体带 `check`）；③ `platforms/__init__.py` 的 `_REGISTRY` 登记。
+
+## 与历史版本的关系
+
+v2（电子表格全生命周期 sync/edit/parse/gen/console/check）备份于 `.claude/skills-backup/proto-toolkit_20261108/`；其 protocol.json 契约（保序、双 id、无时间戳、可 diff）、C/ARXML 生成器（jinja2、模板零逻辑、确定性渲染、位域访问器）在 v4 完整继承。
+v3 起数据源迁到多维表格；v4.0 建 pull/check/gen 链路；v4.1 三处对齐 v2（pull 拆出 raw 层、代码生成恢复 jinja2 + languages.json + arxml、新增 fix 自动修复改表）；**v4.2 去掉 protocol.json 中转**——raw 是唯一提交物，解析在内存完成直接喂 gen/check/fix，`--model` 才导出解析视图（已实测 5 个生成物与改造前逐字节一致）。校验规则仍由多维表格检测字段承担，skill 只判定与阻断。

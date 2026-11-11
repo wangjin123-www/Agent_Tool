@@ -128,6 +128,15 @@ code,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
 - 文件头徽章数字必须与行区实际增删行数一致。
 - 多文件时：页首统计 tiles（文件数 / +行 / −行 / 关键结论）+ TOC 锚点胶囊；数据量小时 tiles/callout/TOC 可省，**控制条不可省**。
 
+### 横滚与行号（移动端铁律 · 2026-11-08 实测教训）
+
+- **横向滚动只挂容器级**（`.diff-wrap` 文件块 wrapper，`overflow-x:auto`）。**禁止任何行/单元格级 `overflow-x`**——per-cell 滚动 = 一次只能拖一行、整块不联动，手机上不可用（2026-11-08 实测翻车，用户当场打回）。
+- 表格按内容撑开：`table.diff{width:max-content;min-width:100%}`；**禁 `table-layout:fixed` + `width:100%`**（长行被压回单元格，是逼出 per-cell 滚动的根因）。
+- **行号列 sticky**（GitLab 网页版同款）：`td.ln{position:sticky}`，第一列 `left:0`、第二列 `left:46px`（= 行号列宽）；hunk 头 `position:sticky;left:0`。横滚长行时行号/hunk 头固定在左侧不丢失。
+- 触摸惯性：`.diff-wrap` 加 `-webkit-overflow-scrolling:touch`。
+- 手机适配 `@media(max-width:640px)`：代码字号降 11.5px、行号列收窄 34px（第二列 `left` 偏移同步改 34px）。
+- 换行模式开启时：`table.diff{width:100%;min-width:0}` + `td.ln{position:static}`（无横滚需求，sticky 反占宽）。
+
 ### 完整模板
 
 ```html
@@ -189,18 +198,22 @@ code,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
   .caret{color:var(--ink3);transition:transform .15s;font-size:10px}
   details[open].file-diff .caret{transform:rotate(90deg)}
   .path{font-size:12.5px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .diff-wrap{overflow-x:auto;border-top:1px solid var(--line)}
-  table.diff{width:100%;border-collapse:collapse;font-family:ui-monospace,Consolas,monospace;
+  .diff-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid var(--line)}
+  table.diff{width:max-content;min-width:100%;border-collapse:collapse;font-family:ui-monospace,Consolas,monospace;
              font-size:var(--code-fs);line-height:1.55;tab-size:4}
   table.diff td{padding:0 10px;vertical-align:top;border:0}
-  td.ln{text-align:right;color:var(--ink3);background:var(--line2);border-right:1px solid var(--line);
-        user-select:none;font-variant-numeric:tabular-nums;font-size:11px;width:46px}
+  td.ln{text-align:right;color:var(--ink3);background:var(--line2);
+        user-select:none;font-variant-numeric:tabular-nums;font-size:11px;width:46px;position:sticky}
+  td.ln:nth-child(1){left:0;border-right:none}
+  td.ln:nth-child(2){left:46px;border-right:1px solid var(--line)}
   td.code{white-space:pre;color:var(--ink);padding-top:1px;padding-bottom:1px}
   body.wrap-on td.code{white-space:pre-wrap;word-break:break-all}
+  body.wrap-on table.diff{width:100%;min-width:0}
+  body.wrap-on td.ln{position:static;border-right:1px solid var(--line)}
   tr.add td.code{background:var(--add);color:var(--add-b)}
   tr.del td.code{background:var(--del);color:var(--del-b)}
   tr.hunk td{background:var(--hunk);color:var(--ink2);font-size:11px;padding:4px 12px;
-             border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+             border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:sticky;left:0}
   .sign{display:inline-block;width:1.1em;color:var(--ink3)}
   tr.add .sign{color:var(--add-b);font-weight:700}
   tr.del .sign{color:var(--del-b);font-weight:700}
@@ -208,6 +221,8 @@ code,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
   .hl-del{background:var(--del-hl);border-radius:2px}
 
   @media (max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){:root{--code-fs:11.5px}
+    td.ln{width:34px}td.ln:nth-child(2){left:34px}}
   @media print{.ctrlbar{display:none!important}details.file-diff{break-inside:avoid}}
 </style>
 </head>

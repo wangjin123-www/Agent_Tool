@@ -1,0 +1,70 @@
+{
+  "spreadsheet_token": "YrK8sncCThe8UstV0yBcvkjQnMR",
+  "spreadsheet_name": "7255 MCU&SOC 通信协议表",
+  "host": "ycn2z3lx0867.feishu.cn",
+  "sheets": {
+    "service_interface": { "id": "88c520", "name": "Service Interface" },
+    "data_structure": { "id": "5OYF2M", "name": "Data Structure" },
+    "parameter_enum": { "id": "lD4JBt", "name": "Parameter Enum" },
+    "rule": { "id": "fszAfs", "name": "AI修订规则" },
+    "error_code": { "id": "MQgQZb", "name": "错误码" }
+  },
+  "si_columns": {
+    "service_name": "A",
+    "service_id": "B",
+    "service_desc": "C",
+    "namespace": "D",
+    "if_name": "E",
+    "if_desc": "F",
+    "if_type": "G",
+    "tx_type": "H",
+    "msg_dir": "I",
+    "msg_id": "J",
+    "pair_id": "K",
+    "transport": "L",
+    "qos": "M",
+    "param_name": "N",
+    "param_type": "O",
+    "param_desc": "P",
+    "param_dir": "Q"
+  },
+  "si_data_start_row": 6,
+  "ds_columns": {
+    "service_name": "A",
+    "namespace": "B",
+    "name": "C",
+    "desc": "D",
+    "category": "E",
+    "size": "F",
+    "byte_index": "G",
+    "bit": "H",
+    "member": "I",
+    "type": "J",
+    "member_desc": "K"
+  },
+  "pe_columns": {
+    "enum_type": "A",
+    "value": "B",
+    "c_name": "C",
+    "desc": "D",
+    "message_id": "E"
+  },
+  "ec_columns": {
+    "group": "A",
+    "value": "B",
+    "c_name": "C",
+    "desc": "D",
+    "message_id": "E"
+  },
+  "error_code": {
+    "group": "COMM_RESULT",
+    "param_name": "result",
+    "param_type": "uint8",
+    "param_desc_keywords": ["成功", "错误码"],
+    "link_text": "错误码定义 →"
+  },
+  "direction": {
+    "SOC→MCU": "SOC_TO_MCU",
+    "MCU→SOC": "MCU_TO_SOC"
+  }
+}

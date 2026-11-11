@@ -1,0 +1,41 @@
+{
+  "_comment": "ARXML 生成配置：改这里，不改生成器逻辑（除非 AUTOSAR 元素结构变化）。",
+  "protocol_json": "output/protocol.json",
+  "output_dir": "codegen/arxml/generated",
+  "file_names": {
+    "arxml": "CDC7255_Protocol.arxml"
+  },
+
+  "arxml": {
+    "version": "4.2.2",
+    "namespace": "http://autosar.org/schema/r4.0",
+    "schema_location": "AUTOSAR_4-2-2.xsd",
+    "schema_attribute": "4.2.2",
+    "package_prefix": "/CDC7255",
+    "platform_types_package": "/AUTOSAR_Platform",
+    "tool_profile": "generic"
+  },
+
+  "scope": {
+    "datatypes": true,
+    "interfaces": true,
+    "swc": false,
+    "com": false
+  },
+
+  "naming": {
+    "datatype_package": "DataTypes",
+    "interface_package": "Interfaces",
+    "mapping_package": "DataTypeMappingSets",
+    "implementation_type_suffix": "_Impl",
+    "array_type_suffix": "_Array",
+    "open_array_max_elements": 255
+  },
+
+  "behaviour": {
+    "emit_desc": true,
+    "emit_bit_representation": true,
+    "emit_dummy_for_empty_event": true,
+    "reference_check": true
+  }
+}
